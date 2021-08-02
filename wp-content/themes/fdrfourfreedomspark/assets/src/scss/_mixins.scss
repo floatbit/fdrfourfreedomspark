@@ -39,3 +39,20 @@
     }
   }
 }
+
+
+@mixin vertical-space($props, $expanded: false) {
+  @if $expanded == true {
+    #{$props}: $vertical-space-expanded;
+  }
+  @if $expanded == false {
+    #{$props}: $vertical-space-small;
+  }
+  @include breakpoint (medium) {
+    #{$props}: $vertical-space-medium;
+  }
+  @include breakpoint (large) {
+    #{$props}: $vertical-space-large;
+  }
+}
+
