@@ -96,21 +96,22 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('default', ['sass', 'scripts'], function() {
-  gulp.watch(['assets/src/**/*.scss'], ['sass']);
-  gulp.watch(['assets/src/**/*.js'], ['scripts']);
+  gulp.watch(['assets/src/*/.scss'], ['sass']);
+  gulp.watch(['assets/src/*/.js'], ['scripts']);
 });
 
 gulp.task('watch', ['sass', 'scripts'], function() {
   gulp.watch(['assets/src/**/*.scss'], ['sass']);
   gulp.watch(['assets/src/**/*.js'], ['scripts']);
+  gulp.watch(['assets/src/**/*.js'], ['scripts-concat']);
 });
 
 gulp.task('browser', ['sass', 'scripts', 'browser-sync'], function() {
-  gulp.watch(['assets/src/**/*.scss'], ['sass']);
-  gulp.watch(['assets/src/**/*.js'], ['scripts']);
+  gulp.watch(['assets/src/*/.scss'], ['sass']);
+  gulp.watch(['assets/src/*/.js'], ['scripts']);
 });
 
 gulp.task('browser-scripts-concat', ['sass', 'scripts-concat', 'browser-sync'], function() {
-  gulp.watch(['assets/src/**/*.scss'], ['sass']);
-  gulp.watch(['assets/src/**/*.js'], ['scripts-concat']);
+  gulp.watch(['assets/src/*/.scss'], ['sass']);
+  gulp.watch(['assets/src/*/.js'], ['scripts-concat']);
 });

@@ -1,0 +1,74 @@
+.border-bottom,
+.border-top,
+.v-border-1, .v-border-2, .v-border-3 {
+    border-style: solid;
+    border-color: $border-gray;
+    border-width: 1px;
+}
+
+.border-top {
+    border-top: 1px;
+}
+
+.border-bottom {
+    border-bottom: 1px;
+}
+
+.v-border-1 {
+    left: 25%;
+} 
+
+.v-border-2 {
+    left: 50%;
+} 
+
+.v-border-3 {
+    left: 75%;
+}
+.v-border-1, .v-border-2, .v-border-3 {
+    border-left: 1px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+$def-small : 8px;
+$def-large : 30px;
+
+.vert-pad-top-expanded {
+    @include fluid-props($def-large, 70px, padding-top);
+}
+
+.vert-pad-bottom-expanded {
+    @include fluid-props($def-large, 70px, padding-bottom);
+}
+
+.vert-pad-top {
+  @include fluid-props($def-small, $def-large, padding-top); 
+}
+
+.vert-pad-bottom {
+  @include fluid-props($def-small, $def-large, padding-bottom);
+}
+
+.vert-margin-top {
+  @include fluid-props($def-small, $def-large, margin-top);
+}
+
+.vert-margin-bottom {
+  @include fluid-props($def-small, $def-large, margin-bottom);
+}
+
+.cancel-padding-x {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cancel-padding-y {
+    padding-top: 0;
+    padding-bottom: 0;
+}

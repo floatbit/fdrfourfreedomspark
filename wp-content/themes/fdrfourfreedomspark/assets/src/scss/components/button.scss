@@ -1,0 +1,55 @@
+.button {
+    @include fluid-props(6px, 9px, padding-top);
+    @include fluid-props(6px, 9px, padding-bottom);
+    @include fluid-props(16px, 25px, padding-left);
+    @include fluid-props(16px, 25px, padding-right);
+
+    @extend .button-text;
+    @extend .bg-color-blue;
+    &, &:visited {
+        @extend .color-white;
+
+        &.white {
+            @extend .bg-color-white;
+            @extend .color-blue;    
+        }
+
+        &.outline {
+            @extend .bg-color-transaparent;
+            @extend .color-blue;    
+            border: 2px solid $blue;
+            &.white {
+                @extend .bg-color-transaparent;
+                @extend .color-white;    
+                border-color: $white;
+            } 
+        }
+    }
+    
+    border-radius: 20px;
+    cursor: pointer;
+
+}   
+
+.no-touchevents {
+    .button:hover {
+        @extend .bg-color-white;
+        @extend .color-blue;
+
+        &.white {
+            @extend .bg-color-blue;
+            @extend .color-white;    
+        }
+
+        &.outline {
+            @extend .bg-color-blue;
+            @extend .color-white;
+            &.white {
+                @extend .bg-color-transaparent;
+                @extend .color-blue;    
+                border-color: $blue;
+            }     
+        }
+    }
+}
+
