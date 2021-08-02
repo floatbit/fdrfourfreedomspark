@@ -43,6 +43,7 @@ function fdrfourfreedomspark_css_js() {
   // wp_enqueue_script( 'flickity-js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), '', true );
   wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.min.js', array(), CSS_JS_VERSION, true );
   wp_enqueue_script( 'pages', get_template_directory_uri() . '/assets/js/pages.min.js', array(), CSS_JS_VERSION, true );
+  wp_enqueue_script( 'headroom-js', 'https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js', array(), '', true );
   // css
   // wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), '', 'all' );
   wp_enqueue_style( 'app', get_template_directory_uri() . '/assets/css/app.css', array(), CSS_JS_VERSION, 'all' );
@@ -93,3 +94,23 @@ if( function_exists('acf_add_options_page') ) {
     'menu_title'  => 'Global Content',
   ));
 }
+
+function ffp_is_current_navigation($nav_item) {
+  global $post;
+  $current_permalink = get_permalink($post->ID);
+  $result = ($nav_item->url == $current_permalink);
+
+  if (!$result) {
+    $main_nav = wp_get_nav_menu_items( 'Main Nav' );
+    foreach ($main_nav as $item) {
+      if ($item->menu_item_parent == $nav_item->ID) {
+        if (($current_permalink == $item->url) && (!$result)) {
+          $result = true;
+        }
+      }
+    }
+  }
+  return $result;
+}
+
+require_once(__DIR__.'/shortcodes.php');

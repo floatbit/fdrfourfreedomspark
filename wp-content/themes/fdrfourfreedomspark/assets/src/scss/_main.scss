@@ -23,17 +23,30 @@ h1 {
 }
 
 header {
-  background-color: $success-color;
-  color: $black;
-  padding: 0.5rem 0;
-  @include breakpoint(medium) {
-    padding: 1.5rem 0;
-  }
-  @include breakpoint(large) {
-    padding: 2rem 0;
-  }
+  background-color: black;
+  color: $white;
+
+  padding: 32px 28px;
+
   p {
     margin: 0;
+  }
+
+  .menus-container {
+    .menu-item-container {
+      @include fluid-props(40px, 76px, margin-right);
+
+      .submenu-items {
+        @include fluid-props(40px, 40px, margin-top);    
+        transition: 250ms ease-in-out;
+        position: fixed;
+        right: 100%;
+
+        &.active {
+          right: 0;
+        }
+      }
+    }
   }
 }
 
