@@ -189,14 +189,22 @@
                     "name": "day",
                     "type": "select",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "mon": "Monday",
+                        "tue": "Tuesday",
+                        "wed": "Wednesday",
+                        "thu": "Thursday",
+                        "fri": "Friday",
+                        "sat": "Saturday",
+                        "sun": "Sunday"
+                    },
                     "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
@@ -211,7 +219,7 @@
                     "name": "hours_info",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -244,5 +252,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627973218
+    "modified": 1627976969
 }
