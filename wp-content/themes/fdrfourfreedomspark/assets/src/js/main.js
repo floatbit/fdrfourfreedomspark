@@ -32,6 +32,8 @@ navHandler = {
   $mainNavMenu = $('.main-nav-menu'),
   $menuItemContainer = $('.menu-item-container'),
   $subMenuItems = $('.submenu-items'),
+  $smallMenuNavigation = $('.small-menu-navigation'),
+  $smallMenuItemContainer = $('.small-menu-item-container'),
 
   init = function(){
     var self = this;
@@ -44,7 +46,6 @@ navHandler = {
       $(subitem).removeClass('hide');
       /* $(subitem).addClass('active'); */
 	  $(boderNavMen).removeClass('hide');
-
     })
 
     $menuItemContainer.on("mouseleave", function(e){
@@ -56,25 +57,66 @@ navHandler = {
       /* $(subitem).removeClass('active'); */
 	  $(boderNavMen).addClass('hide');
     })
+
+	$('[href="#open-small-menu-nav"').on('click', function(e) {
+		e.preventDefault();
+		if ($($smallMenuNavigation).hasClass('active')) {
+			$($smallMenuNavigation).removeClass('active');
+		} else {				
+			$($smallMenuNavigation).addClass('active');
+		}
+	})
+
+	/* $($smallMenuItemContainer).each(function(){
+		var selfContain = this;
+		$('[href="#open-submenu"').on('click', function(e) {
+			e.preventDefault();
+			var subItemContain = $(selfContain).find('.small-subitem-container');
+			var iconDown = $(selfContain).find('.icon-down');
+			var iconUp = $(selfContain).find('.icon-up');
+			if ($(subItemContain).hasClass('hide')) {
+				$(subItemContain).removeClass('hide');
+			} else {				
+				$(subItemContain).addClass('hide');
+			}
+
+			if ($(iconDown).hasClass('hide')) {
+				$(iconDown).removeClass('hide');
+			} else {				
+				$(iconDown).addClass('hide');
+			}
+			
+			if ($(iconUp).hasClass('hide')) {
+				$(iconUp).removeClass('hide');
+			} else {				
+				$(iconUp).addClass('hide');
+			}
+		})
+	}) */
   }
 }
 
 jQuery(document).ready(function($) {
 
+  var headroom  = new Headroom(myElement);
+  
+  headroom.init();
   verticalBorderHandler.init();
   navHandler.init();
 
-  $(window).on("load, scroll", function() {
-    if($(window).scrollTop() > 50) {
+  /* $(window).on("load, scroll", function() {
+    if ($("header").hasClass('front-page')) {
+      if($(window).scrollTop() > 50) {
         $("header").addClass("scrolled");
         $(".logo-white").addClass("hide");
         $(".logo-blue").removeClass("hide");
-    } else {
+      } else {
         $("header").removeClass("scrolled");
         $(".logo-blue").addClass("hide");
         $(".logo-white").removeClass("hide");
+      }
     }
-  });
+  }); */
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {

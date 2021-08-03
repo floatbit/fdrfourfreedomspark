@@ -82,11 +82,14 @@ ul li {
 header {
   z-index: 100;
   width: 100%;
-  position:sticky;
+  position: sticky;
   top:0;
   left:0;
   right:0;
-  padding: 28px 32px;
+  @include fluid-props(16px, 28px, padding-left);
+  @include fluid-props(16px, 28px, padding-right);
+  @include fluid-props(16px, 24px, padding-top);
+  @include fluid-props(16px, 24px, padding-bottom);
 
   p {
     margin: 0;
@@ -94,7 +97,7 @@ header {
 
   .main-logo-container {
     img {
-      @include fluid-props(200px, 480px, width);
+      @include fluid-props(208px, 480px, width);
       @include fluid-props(24px, 56px, height);
     }
   }
@@ -105,6 +108,7 @@ header {
       position: relative;
 
       .main-nav-menu {
+        @include fluid-props(36px, 76px, margin-right);
       }
 
       
@@ -131,13 +135,123 @@ header {
         }
       }
     }
+
+    .button-donate {
+      a {
+        @extend .outline;
+      }
+    }
   }
 
-  &.scrolled {
+  .right-section {
+    text-align: right;
+
+    .icon-bars-menu {
+      font-size: rem-calc(20);
+    }
+  }
+
+  .small-menu-navigation {
+    position: fixed;
+    transition: 250ms ease-in-out;
+    bottom: 100%;
+    right: 100%;
+    left: 0;
+    top: 100%;
+
+    .small-top-container {
+      padding-top: 16px;
+
+      .small-logo{
+        width: rem-calc(208);
+        height: rem-calc(24);
+      }
+
+      .icon-close-menu{
+        font-size: rem-calc(24);
+      }
+    }
+
+    .small-menu-container {
+      margin-top: rem-calc(52);
+
+      hr {
+        margin: 12px 0;
+      }
+
+      .accordion-item {
+        
+        .accordion-title {
+          padding: 0;
+          border: none;
+
+          &:focus {
+            background: none;
+          }
+
+          &::before {
+            font-family: 'Font Awesome 5 Pro';
+            content: "\f078";
+            font-weight: 600;
+
+            @extend .color-black;
+          }
+        }
+
+        .accordion-content {
+          margin-top: rem-calc(20);
+          padding: 0;
+          border: none;
+        }
+
+        &.is-active {
+          .accordion-title::before {
+            content: "\f077";
+          }
+        }
+      }
+
+      .small-button-donate {
+        margin-top: rem-calc(36);
+      }
+    }
+
+    &.active {
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+  }
+
+  &.front-page {
+    @extend .bg-color-transparent;
+
+    .menus-container {
+      .menu-item-container {
+        .menu-title {
+          @extend .color-white;
+        }
+      }
+
+      .button-donate {
+        a {
+          @extend .color-white;
+        }
+      }
+    }
+
+    .right-section {
+      .icon-bars-menu i {
+        font-weight: 500;
+        @extend .color-white;
+      }
+    }
+  }
+
+  /* &.scrolled {
     @extend .bg-color-white;
 
     .menus-container {
-
       .menu-item-container {
         .menu-title {
           @extend .color-black;
@@ -146,26 +260,75 @@ header {
 
       .button-donate {
         a {
-          @extend .outline;
+          color: $blue !important; 
         }
       }
     }
+    .right-section {
+      .icon-bars-menu i {
+        @extend .color-black;
+      }
+    }
+  } */
+
+  &.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+  }
+
+  &.headroom--pinned {
+      position: sticky;
+      top: 0;
+      transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+      transform: translateY(-100%);
+  }
+
+  &.headroom--not-top.headroom--pinned.home-page .nav-logo-container .nav-logo, .nav-logo {
+      @include fluid-props(105px, 174px, width);
+      height: auto;
+      margin-right: rem-calc(60);
   }
 }
 
 footer {
   //@include fluid-props(60px, 116px, min-height);
-  min-height: 116px;
+  /* min-height: 116px; */
   width: 100vw;
-  padding: 32px 28px;
+  @include fluid-props(16px, 28px, padding-left);
+  @include fluid-props(16px, 28px, padding-right);
+  @include fluid-props(40px, 36px, padding-top);
+  @include fluid-props(24px, 36px, padding-bottom);
 
   p {
     margin: 0;
   }
 
   .footer-logo-container {
-    @include fluid-props(28px, 44px, height);
-    @include fluid-props(140px, 272px, width);
+    @include fluid-props(32px, 44px, height);
+    @include fluid-props(216px, 272px, width);
+  }
+
+  @include breakpoint(small only) {
+    .copyright-container {
+      margin-top: rem-calc(36);
+    }
+
+    .footer-menu-container {
+      .footer-menu-item {
+        margin-top: rem-calc(16);
+      }
+    }
+
+    .email-container {
+      margin-top: rem-calc(16);
+    }
+
+    .social-media-container {
+      margin-top: rem-calc(24);
+    }
   }
 
   .social-media-container {
@@ -179,5 +342,20 @@ footer {
 }
 
 .no-touchevents {
-
+  footer {
+    .footer-menu-container {
+      .footer-menu-item {
+        .menu-link:hover{
+          .footer-menu-title{
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+    .social-media-container {
+      .icon-item:hover {
+        opacity: 0.6;
+      }
+    }
+  }
 }
