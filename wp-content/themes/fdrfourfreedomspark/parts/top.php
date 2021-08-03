@@ -7,15 +7,9 @@
 	} */
 ?>
 
-<<<<<<< HEAD
-<header class="bg-color-black">
-	<div class="grid-x grid-margin-x align-middle">
-		<div class="cell medium-6">
-=======
 <header class="bg-color-white <?php print (is_front_page()) ? 'front-page' : ''; ?>">
 	<div class="grid-x align-middle">
 		<div class="cell auto medium-6">
->>>>>>> d15b54624898852e137956d2379dc42722868a06
 			<div class="main-logo-container">
 				<a href="/">
 					<?php if(is_front_page()) : ?>

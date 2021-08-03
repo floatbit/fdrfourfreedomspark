@@ -9,7 +9,7 @@ verticalBorderHandler = {
   tmpBorder = function($type){
     return '<div class="v-border-'+$type+'"></div>';
   },
-//.v-border-1, .v-border-2, .v-border-3 
+
   init = function(){
     var self = this;
 
@@ -98,7 +98,8 @@ navHandler = {
 
 jQuery(document).ready(function($) {
 
-  var headroom  = new Headroom(myElement);
+  var header = document.querySelector("header");
+  var headroom  = new Headroom(header);
   
   headroom.init();
   verticalBorderHandler.init();
