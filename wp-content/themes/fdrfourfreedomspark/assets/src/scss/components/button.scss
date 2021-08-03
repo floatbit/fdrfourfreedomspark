@@ -1,23 +1,26 @@
 .button {
-    @include fluid-props(6px, 9px, padding-top);
-    @include fluid-props(6px, 9px, padding-bottom);
+    @include fluid-props(3px, 3px, padding-top);
+    @include fluid-props(6px, 6px, padding-bottom);
     @include fluid-props(16px, 25px, padding-left);
     @include fluid-props(16px, 25px, padding-right);
 
     @extend .button-text;
     @extend .bg-color-blue;
+    text-transform: uppercase;
+    border: 2px solid $blue;
+    display: block;
     &, &:visited {
         @extend .color-white;
 
         &.white {
             @extend .bg-color-white;
             @extend .color-blue;    
+            border-color: $white;
         }
 
         &.outline {
             @extend .bg-color-transparent;
             @extend .color-blue;    
-            border: 2px solid $blue;
             &.white {
                 @extend .bg-color-transparent;
                 @extend .color-white;    
@@ -35,15 +38,18 @@
     .button:hover {
         @extend .bg-color-white;
         @extend .color-blue;
+        border-color: $white;
 
         &.white {
             @extend .bg-color-blue;
-            @extend .color-white;    
+            @extend .color-white;
+            border-color: $blue;    
         }
 
         &.outline {
             @extend .bg-color-blue;
             @extend .color-white;
+            border-color: $blue;    
             &.white {
                 @extend .bg-color-transparent;
                 @extend .color-blue;    

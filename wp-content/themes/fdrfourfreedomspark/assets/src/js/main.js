@@ -4,7 +4,8 @@ verticalBorderHandler = {
   $vh1 = $('.vb-1'),
   $vh2 = $('.vb-2'),
   $vh3 = $('.vb-3'),
-  
+  $vh2sm = $('.vb-2-small'),
+    
   tmpBorder = function($type){
     return '<div class="v-border-'+$type+'"></div>';
   },
@@ -20,6 +21,9 @@ verticalBorderHandler = {
     })
     this.$vh3.each(function(){
       $(this).append(tmpBorder(3));
+    })
+    this.$vh2sm.each(function(){
+      $(this).append(tmpBorder('2-small'));
     })
   }
 }

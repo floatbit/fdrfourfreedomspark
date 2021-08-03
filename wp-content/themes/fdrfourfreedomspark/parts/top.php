@@ -7,7 +7,7 @@
 	} */
 ?>
 
-<header class="bg-color-transparent">
+<header class="bg-color-black">
 	<div class="grid-x grid-margin-x align-middle">
 		<div class="cell medium-6">
 			<div class="main-logo-container">

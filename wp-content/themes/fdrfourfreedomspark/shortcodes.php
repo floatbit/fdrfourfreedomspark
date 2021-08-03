@@ -22,8 +22,13 @@
     add_shortcode('button', 'ffp_button_shortcode');
 
     function ffp_deck_shortcode($args=array(), $content){
+        $content = str_ireplace('<p>','', $content);
+        $content = str_ireplace('</p>','', $content);   
+        if ($args) {
+            $class = $args['class'];
+        }
 
-        return '<div class="deck-text">'.$content.'</div>';
+        return '<div class="deck-text h3-style '.$class.'">'.$content.'</div>';
     }
     add_shortcode('deck', 'ffp_deck_shortcode');
 

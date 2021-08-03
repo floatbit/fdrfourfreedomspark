@@ -64,7 +64,6 @@
 @import '_mixins';
 @import '_fonts';
 @import '_main';
-@import '_page-home';
-@import '_page-about';
+@import 'pages/index.scss';
 @import 'components/index.scss';
 @import '_debugger';
