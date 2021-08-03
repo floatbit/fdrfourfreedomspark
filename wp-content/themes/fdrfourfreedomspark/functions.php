@@ -125,9 +125,9 @@ function brighterbites_create_posttype() {
       'rewrite'       => array('slug' => 'event'),
       'show_in_rest'  => true,
       'supports'      => array('title', 'editor', 'thumbnail'),
-      'menu_icon'     => 'dashicons-buddicons-buddypress-logo',
+      'menu_icon'     => 'dashicons-calendar-alt',
     )
   );
-)
+}
 
 require_once(__DIR__.'/shortcodes.php');
