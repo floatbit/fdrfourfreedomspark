@@ -885,8 +885,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px
+  small: 40px,
+  medium: 60px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: (
@@ -901,5 +901,6 @@ $xy-block-grid-max: 8;
 
 $blue : #006EAB; 
 $border-gray: #D1D1D1;
+$gray: #F3F2F2;
 
 

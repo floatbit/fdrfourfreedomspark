@@ -21,4 +21,17 @@
     }
     add_shortcode('button', 'ffp_button_shortcode');
 
+    function ffp_deck_shortcode($args=array(), $content){
+
+        return '<div class="deck-text">'.$content.'</div>';
+    }
+    add_shortcode('deck', 'ffp_deck_shortcode');
+
+    function ffp_link_with_icon_shortcode($args=array(), $content){
+        
+        $html = '<a href="'.$args['url'].'" class="" target="'.$args['target'].'">'.$args['title'].'</a>';
+        return $html;
+    }
+    add_shortcode('link-with-icon', 'ffp_link_with_icon_shortcode');
+
 ?>
