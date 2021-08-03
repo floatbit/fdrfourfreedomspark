@@ -8,6 +8,9 @@ html {
   width: 100%;
 }
 
+.hide {
+  display: none;
+}
 
 h1 {
   @extend .h1-style;
@@ -72,27 +75,73 @@ p {
 }
 
 header {
-  background-color: black;
-  color: $white;
-
-  padding: 32px 28px;
+  z-index: 100;
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  padding: 28px 32px;
 
   p {
     margin: 0;
   }
 
+  .main-logo-container {
+    img {
+      @include fluid-props(200px, 480px, width);
+      @include fluid-props(24px, 56px, height);
+    }
+  }
+
   .menus-container {
+
     .menu-item-container {
-      @include fluid-props(40px, 76px, margin-right);
+      position: relative;
+
+      .main-nav-menu {
+      }
+
+      
+      .border-nav-menu {
+        position: absolute;
+        bottom: -12px;
+        border-color: $blue;
+        margin: 0;
+        border-width: 4px;
+        width: 100%;
+      }
 
       .submenu-items {
-        @include fluid-props(40px, 40px, margin-top);    
+        position: absolute;
+        left: -32px;
+        top: 0;
         transition: 250ms ease-in-out;
-        position: fixed;
-        right: 100%;
 
-        &.active {
-          right: 0;
+        .items-container {
+          padding: 20px 24px;
+          min-width: 212px;
+          margin-top: 52px;
+          z-index: 150;
+        }
+      }
+    }
+  }
+
+  &.scrolled {
+    @extend .bg-color-white;
+
+    .menus-container {
+
+      .menu-item-container {
+        .menu-title {
+          @extend .color-black;
+        }
+      }
+
+      .button-donate {
+        a {
+          @extend .outline;
         }
       }
     }
@@ -100,11 +149,27 @@ header {
 }
 
 footer {
-  background-color: $primary-color;
-  color: $black;
-  padding: 1rem 0;
+  //@include fluid-props(60px, 116px, min-height);
+  min-height: 116px;
+  width: 100vw;
+  padding: 32px 28px;
+
   p {
     margin: 0;
+  }
+
+  .footer-logo-container {
+    @include fluid-props(28px, 44px, height);
+    @include fluid-props(140px, 272px, width);
+  }
+
+  .social-media-container {
+    display: flex;
+
+    .icon-item {
+      @include fluid-props(12px, 16px, margin-right);
+
+    }
   }
 }
 

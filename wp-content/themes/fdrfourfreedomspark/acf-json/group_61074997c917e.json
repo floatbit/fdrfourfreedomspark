@@ -148,8 +148,8 @@
                 },
                 {
                     "key": "field_61074b6d54d85",
-                    "label": "M",
-                    "name": "m",
+                    "label": "Medium",
+                    "name": "medium",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -182,5 +182,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627868096
+    "modified": 1627890956
 }
