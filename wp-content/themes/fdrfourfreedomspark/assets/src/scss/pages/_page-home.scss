@@ -1,2 +1,18 @@
 .page-template-page-home main {
+    #home-hero {
+        .hero-container {
+            position: relative;
+            @include fluid-props(-44px, -104px, margin-top);
+
+            .hero-image {
+                width: 100vw;
+                height: 100vh;
+            }
+            .hero-info-container {
+                /* position: absolute;
+                left: 28px;
+                bottom: 60px; */
+            }
+        }
+    }
 }
