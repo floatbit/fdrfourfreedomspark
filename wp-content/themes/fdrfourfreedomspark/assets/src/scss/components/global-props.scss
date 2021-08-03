@@ -2,16 +2,18 @@
 .border-top,
 .v-border-1, .v-border-2, .v-border-3 {
     border-style: solid;
-    border-color: $border-gray;
+    border-color: $border-gray !important;
     border-width: 1px;
 }
 
 .border-top {
-    border-top: 1px;
+    border: 0;
+    border-top: 1px solid;
 }
 
 .border-bottom {
-    border-bottom: 1px;
+    border: 0;
+    border-bottom: 1px solid;
 }
 
 .v-border-1 {
@@ -26,10 +28,15 @@
     left: 75%;
 }
 .v-border-1, .v-border-2, .v-border-3 {
-    border-left: 1px;
-    position: absolute;
-    top: 0;
-    height: 100%;
+    @include breakpoint(small only) {
+        display: none;
+    }
+    @include breakpoint(medium) {
+        border-left: 1px;
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
 }
 
 .pos-relative {
