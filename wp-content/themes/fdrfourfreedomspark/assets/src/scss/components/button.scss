@@ -19,12 +19,24 @@
 
         &.outline {
             @extend .bg-color-transparent;
-            @extend .color-blue;    
+            @extend .color-blue;
+            border: 2px solid $blue;
             &.white {
                 @extend .bg-color-transparent;
-                @extend .color-white;    
+                @extend .color-white;
                 border-color: $white;
             } 
+        }
+
+        &.with-arrow {
+            border: none;
+            @extend .color-blue;
+
+            &::after {
+                font-family: 'Font Awesome 5 Pro';
+                content: "\f061";
+                font-weight: 600;
+            }
         }
     }
     
