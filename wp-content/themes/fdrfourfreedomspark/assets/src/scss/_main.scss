@@ -289,8 +289,6 @@ header {
 }
 
 footer {
-  //@include fluid-props(60px, 116px, min-height);
-  /* min-height: 116px; */
   width: 100vw;
   @include fluid-props(16px, 28px, padding-left);
   @include fluid-props(16px, 28px, padding-right);
