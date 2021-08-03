@@ -33,8 +33,8 @@
     add_shortcode('deck', 'ffp_deck_shortcode');
 
     function ffp_link_with_icon_shortcode($args=array(), $content){
-        
-        $html = '<a href="'.$args['url'].'" class="" target="'.$args['target'].'">'.$args['title'].'</a>';
+
+        $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'"> <span class="icon icon-'.$args['icon'].'"></span>'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-with-icon', 'ffp_link_with_icon_shortcode');

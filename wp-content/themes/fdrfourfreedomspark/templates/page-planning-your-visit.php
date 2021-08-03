@@ -31,8 +31,18 @@
 		</div>
 		<div class="cell medium-3 ">
 			<div class="address-container">
-				<?php do_shortcode( '[address]' ); ?> 
-				<?php do_shortcode( '[hours]' ); ?>
+				<?php 
+					$address = get_field('address', 'option');
+				?> 
+				<div class="addres-container vert-pad-bottom">
+					<p class="font-body-semibold">ADDRRESS</p>
+					<p><?php print $address; ?></p>
+				</div>
+
+				<div class="hours-container vert-pad-bottom">
+					<p class="font-body-semibold">HOURS</p>
+					<p><?php do_shortcode( '[hours]' ); ?></p>
+				</div>
 				<?php if ($additional_text): ?>
 					<p class="font-body-semibold"><?php print strtoupper($additional_text); ?></p>
 				<?php endif; ?>
@@ -90,7 +100,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="cell medium-3 ">
+		<div class="cell medium-3 cell-nos">
 			<div class="text-nos-container vert-pad-top">
 				<?php print do_shortcode( '[deck class="vert-pad-top-expanded"]No[/deck]' ); ?>
 				<?php print $nos; ?>
@@ -98,7 +108,7 @@
 		</div> 
 	</div>
 
-	<div class="grid-x grid-padding-x grid-padding-y middle-image-section pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded border-top">
+	<div class="grid-x grid-padding-x grid-padding-y middle-image-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
 		<div class="cell medium-offset-3 medium-6">
 			<h1>Four Freedoms Park Conservancy<br>
 				strives to make the Park fully<br>
@@ -112,19 +122,19 @@
 		</div>
 	</div>
 
-	<div class="grid-x grid-padding-x grid-padding-y public-events-calendar-section pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top">
+	<div class="grid-x grid-padding-x grid-padding-y public-events-calendar-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded border-top">
 		<?php
 			$events_calendar = get_field('events_calendar');
 			$image = $events_calendar['image'];
 			$description = $events_calendar['description'];
 		?>
-		<div class="cell medium-3 cancel-padding-y">
+		<div class="cell medium-3">
 			<h1>Public Events<br>
 				Calendar</h1>
 		</div>
-		<div class="cell middle-image medium-6 background-cover" style="background-image:url(<?php print $image['url'] ?>)">
+		<div class="cell middle-image vert-margin-top medium-6 background-cover" style="background-image:url(<?php print $image['url'] ?>)">
 		</div>		
-		<div class="cell medium-3 cancel-padding-y">
+		<div class="cell medium-3">
 			<?php print apply_filters( 'the_content', $description); ?>
 		</div>
 	</div>

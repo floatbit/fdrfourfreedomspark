@@ -54,6 +54,16 @@
                 }
             }
         }
+        .cell-nos {
+            @extend .border-top;
+            @include breakpoint (small only) {
+                border-top: 0;
+                padding-top: 0;
+                .vert-pad-top {
+                    padding-top: 0;    
+                }
+            }
+        }
     }
 
     .middle-image-section, .public-events-calendar-section {
