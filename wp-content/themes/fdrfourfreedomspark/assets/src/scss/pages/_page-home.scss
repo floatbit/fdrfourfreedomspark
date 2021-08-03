@@ -16,7 +16,7 @@
                 @include fluid-props(16px, 28px, left);
                 @include fluid-props(32px, 60px, bottom);
 
-                .info-container {
+                .info-open, .info-event, .info-getting, .info-access {
                     padding: 16px 0;
 
                     i {
@@ -29,8 +29,70 @@
 
     #home-intro {
         .intro-container {
-            .intro-image {
-                @include fluid-props(240px, 600px, height);
+            .intro-inner-container {
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+                
+                .intro-title {
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                }
+                
+                .intro-image {
+                    @include fluid-props(240px, 600px, height);
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                }
+    
+                .intro-text {
+                    @include breakpoint(medium) {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #home-featured-blog {
+        .featured-blog-container {
+            .featured-blog-inner-container {
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+
+                .featured-category {
+                    text-transform: uppercase;
+                    @include fluid-props(12px, 12px, margin-bottom);
+                }
+                .featured-title {
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(24);
+                    }
+                }
+                .featured-image{
+                    @include fluid-props(288px, 720px, height);
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                }
+                .featured-text {
+
+                }
+            }
+        }
+    }
+}
+
+.no-touchevents {
+    #home-hero{
+        .hero-container {
+            .hero-info-container {
+                .hero-link:hover {
+                    opacity: 0.7;
+                }
             }
         }
     }

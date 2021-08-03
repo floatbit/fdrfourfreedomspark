@@ -36,7 +36,7 @@
 					<div class="menu-item-container" data-menu-id=<?php print $value->ID; ?>>
 						<div class="main-nav-menu">
 							<a href="<?php print $value->url; ?>">
-								<div class="menu-title p-style color-white"><?php print $value->title; ?></div>
+								<div class="menu-title p-style "><?php print $value->title; ?></div>
 							</a>
 							<hr class="border-nav-menu <?php print (ffp_is_current_navigation($value)) ? 'current' : ''; ?>">
 						</div>
