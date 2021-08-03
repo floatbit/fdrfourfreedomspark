@@ -38,6 +38,7 @@ p {
 
 .h3-style {
   @include fluid-type(18px, 28px);
+  @include fluid-props( 10px, 16px, margin-bottom);
 }
 
 .p-style {
@@ -56,6 +57,10 @@ p {
   @include fluid-type(14px, 14px);
 }
 
+ul li {
+  @extend .p-style;
+}
+
 .quote-text, .h1-style { 
   @extend .font-heading;
 }
@@ -65,7 +70,7 @@ p {
 }
 
 .h2-style, .h3-style, .p-style, .caption-text {
-  @extend .font-body;
+  @extend .font-body; 
 }
 
 .background-cover {
