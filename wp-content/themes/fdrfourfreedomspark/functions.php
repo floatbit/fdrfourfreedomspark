@@ -113,4 +113,21 @@ function ffp_is_current_navigation($nav_item) {
   return $result;
 }
 
+function brighterbites_create_posttype() {
+  register_post_type( 'event',
+    array(
+      'labels'        => array(
+        'name'          => __( 'Events' ),
+        'singular_name' => __( 'Event' )
+      ),
+      'public'        => true,
+      'has_archive'   => true,
+      'rewrite'       => array('slug' => 'event'),
+      'show_in_rest'  => true,
+      'supports'      => array('title', 'editor', 'thumbnail'),
+      'menu_icon'     => 'dashicons-buddicons-buddypress-logo',
+    )
+  );
+)
+
 require_once(__DIR__.'/shortcodes.php');
