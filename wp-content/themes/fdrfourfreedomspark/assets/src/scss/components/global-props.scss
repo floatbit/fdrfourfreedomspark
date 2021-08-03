@@ -1,7 +1,6 @@
 .border-all,
 .border-side,
-.border-bottom,
-.border-top,
+.border-bottom, .border-top, .border-left, .border-right,
 .v-border-1, .v-border-2, .v-border-3, .v-border-2-small {
     border-style: solid;
     border-color: $border-gray !important;
@@ -24,6 +23,16 @@
 .border-bottom {
     border: 0;
     border-bottom: 1px solid;
+}
+
+.border-left {
+    border: 0;
+    border-left: 1px solid;
+}
+
+.border-right {
+    border: 0;
+    border-right: 1px solid;
 }
 
 .v-border-1 {

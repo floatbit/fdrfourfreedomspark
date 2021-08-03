@@ -10,6 +10,11 @@
         .image-maps {
             @include fluid-props(-140px, -290px, margin-top);
         }
+        .grid-hours {
+            p {
+                margin: 0;
+            }
+        }
     }
 
     .transport-section {

@@ -33,6 +33,8 @@
 			<div class="address-container">
 				<?php 
 					$address = get_field('address', 'option');
+					$open_hours = get_field('open_hours', 'option');
+					
 				?> 
 				<div class="addres-container vert-pad-bottom">
 					<p class="font-body-semibold">ADDRRESS</p>
@@ -41,7 +43,18 @@
 
 				<div class="hours-container vert-pad-bottom">
 					<p class="font-body-semibold">HOURS</p>
-					<p><?php do_shortcode( '[hours]' ); ?></p>
+					<?php if ($open_hours): ?>
+						<div class="grid-x grid-hours">
+							<?php foreach ($open_hours as $item): ?>
+								<div class="cell small-3">
+									<p><?php print strtoupper(substr( $item['day'], 0, 1)); ?></p>
+								</div>
+								<div class="cell small-9">
+									<p><?php print $item['hours_info']; ?></p>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php if ($additional_text): ?>
 					<p class="font-body-semibold"><?php print strtoupper($additional_text); ?></p>
