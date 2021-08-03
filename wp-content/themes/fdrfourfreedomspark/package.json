@@ -25,5 +25,8 @@
   "author": "",
   "license": "MIT",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "headroom": "^0.2.0",
+    "headroom.js": "^0.12.0"
+  }
 }

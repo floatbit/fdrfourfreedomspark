@@ -6,24 +6,26 @@
 <footer class="bg-color-blue">
 	<div class="grid-x grid-margin-x align-middle">
 		<div class="cell medium-auto">
-			<img class="footer-logo-container" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>">
+			<a href="/">
+				<img class="footer-logo-container" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>">
+			</a>
 		</div>
 		<div class="cell medium-shrink">
-			<div class="caption-text color-white">© 2021 Four Freedoms Park Concervancy</div>
+			<div class="copyright-container caption-text color-white">© 2021 Four Freedoms Park Concervancy</div>
 		</div>
 		<div class="cell medium-shrink">
 			<div class="footer-menu-container grid-x grid-margin-x">
 				<?php foreach($footer_nav as $item) : ?>
 					<div class="cell medium-shrink footer-menu-item">
-						<a href="<?php print $item->url; ?>">
-							<div class="p-style color-white"><?php print $item->title; ?></div>
+						<a href="<?php print $item->url; ?>" class="menu-link">
+							<div class="footer-menu-title p-style color-white"><?php print $item->title; ?></div>
 						</a>
 					</div>
 				<?php endforeach; ?>
 			</div>
 		</div>
 		<div class="cell medium-shrink">
-			<div class="caption-text color-white"><?php print $email; ?></div>
+			<div class="email-container caption-text color-white"><?php print $email; ?></div>
 		</div>
 		<div class="cell medium-shrink">
 			<div class="social-media-container">
