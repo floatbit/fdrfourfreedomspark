@@ -24,9 +24,53 @@ verticalBorderHandler = {
   }
 }
 
+navHandler = {
+  $mainNavMenu = $('.main-nav-menu'),
+  $menuItemContainer = $('.menu-item-container'),
+  $subMenuItems = $('.submenu-items'),
+
+  init = function(){
+    var self = this;
+
+    $menuItemContainer.on("mouseover", function(e){
+      e.preventDefault();
+      var subitem = $(this).find('.submenu-items');
+      var boderNavMen = $(this).find('.border-nav-menu');
+      /* $(subitem).toggleClass('active'); */
+      $(subitem).removeClass('hide');
+      /* $(subitem).addClass('active'); */
+	  $(boderNavMen).removeClass('hide');
+
+    })
+
+    $menuItemContainer.on("mouseleave", function(e){
+      e.preventDefault();
+      var subitem = $(this).find('.submenu-items');
+      var boderNavMen = $(this).find('.border-nav-menu');
+      /* $(subitem).toggleClass('active'); */
+      $(subitem).addClass('hide');
+      /* $(subitem).removeClass('active'); */
+	  $(boderNavMen).addClass('hide');
+    })
+  }
+}
+
 jQuery(document).ready(function($) {
 
   verticalBorderHandler.init();
+  navHandler.init();
+
+  $(window).on("load, scroll", function() {
+    if($(window).scrollTop() > 50) {
+        $("header").addClass("scrolled");
+        $(".logo-white").addClass("hide");
+        $(".logo-blue").removeClass("hide");
+    } else {
+        $("header").removeClass("scrolled");
+        $(".logo-blue").addClass("hide");
+        $(".logo-white").removeClass("hide");
+    }
+  });
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {

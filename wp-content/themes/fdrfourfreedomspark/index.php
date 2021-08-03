@@ -4,7 +4,7 @@
 
 <main>
   
-  <div class="grid-container pos-relative vb-1 vb-2 vb-3">
+  <div class="grid-container pos-relative vb-1 vb-2 vb-3 bg-color-black">
     <div class="grid-x">
       <div class="cell">
         <?php the_title();?>
