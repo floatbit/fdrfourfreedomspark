@@ -6,7 +6,6 @@
 
     @extend .button-text;
     @extend .bg-color-blue;
-    text-transform: uppercase;
     border: 2px solid $blue;
     display: block;
     &, &:visited {
@@ -43,8 +42,32 @@
     
     border-radius: 20px;
     cursor: pointer;
-
 }   
+
+.btn-link-with-icon {
+    @extend .button-text;
+    display: flex;
+    align-items: center;
+    span {
+        @extend .background-cover;
+        display: inline-block;
+        margin-right: rem-calc(6);
+        &.icon {
+            @include fluid-props(3px, 4px, margin-top);
+            @include fluid-props(18px, 26px, height);
+            @include fluid-props(18px, 26px, width);
+        }
+        &.icon-schedule {
+            background-image: url(../img/icon-schedule.png);
+        }
+        &.icon-info {
+            background-image: url(../img/icon-info.png);
+        }
+        &.icon-bus {
+            background-image: url(../img/icon-bus.png);
+        }
+    }
+}
 
 .no-touchevents {
     .button:hover {
