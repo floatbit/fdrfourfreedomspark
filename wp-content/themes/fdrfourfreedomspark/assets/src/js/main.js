@@ -45,7 +45,7 @@ navHandler = {
       /* $(subitem).toggleClass('active'); */
       $(subitem).removeClass('hide');
       /* $(subitem).addClass('active'); */
-	  $(boderNavMen).removeClass('hide');
+	    $(boderNavMen).addClass('active');
     })
 
     $menuItemContainer.on("mouseleave", function(e){
@@ -55,7 +55,7 @@ navHandler = {
       /* $(subitem).toggleClass('active'); */
       $(subitem).addClass('hide');
       /* $(subitem).removeClass('active'); */
-	  $(boderNavMen).addClass('hide');
+	    $(boderNavMen).removeClass('active');
     })
 
 	$('[href="#open-small-menu-nav"').on('click', function(e) {

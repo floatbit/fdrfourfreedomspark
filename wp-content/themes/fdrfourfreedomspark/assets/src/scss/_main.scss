@@ -8,6 +8,10 @@ html {
   width: 100%;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .hide {
   display: none;
 }
@@ -109,17 +113,22 @@ header {
       position: relative;
 
       .main-nav-menu {
+        position: relative;
         @include fluid-props(36px, 76px, margin-right);
-      }
 
-      
-      .border-nav-menu {
-        position: absolute;
-        bottom: -12px;
-        border-color: $blue;
-        margin: 0;
-        border-width: 4px;
-        width: 100%;
+        .border-nav-menu {
+          position: absolute;
+          bottom: -12px;
+          border-color: $blue;
+          margin: 0;
+          border-width: 4px;
+          width: 100%;
+          display: none;
+
+          &.current, &.active {
+            display: block;
+          }
+        }
       }
 
       .submenu-items {
@@ -278,6 +287,7 @@ header {
       .menu-item-container {
         .menu-title {
           @extend .color-white;
+          text-transform: uppercase;
         }
       }
 

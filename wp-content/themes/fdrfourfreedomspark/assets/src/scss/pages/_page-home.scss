@@ -2,16 +2,35 @@
     #home-hero {
         .hero-container {
             position: relative;
-            @include fluid-props(-44px, -104px, margin-top);
+            @include fluid-props(-64px, -104px, margin-top);
 
             .hero-image {
                 width: 100vw;
                 height: 100vh;
+                @include fluid-props(656px, 810px, height);
             }
+
             .hero-info-container {
-                /* position: absolute;
-                left: 28px;
-                bottom: 60px; */
+                position: absolute;
+                @include fluid-props(16px, 28px, right);
+                @include fluid-props(16px, 28px, left);
+                @include fluid-props(32px, 60px, bottom);
+
+                .info-container {
+                    padding: 16px 0;
+
+                    i {
+                        @include fluid-props(4px, 8px, margin-right);
+                    }
+                }
+            }
+        }
+    }
+
+    #home-intro {
+        .intro-container {
+            .intro-image {
+                @include fluid-props(240px, 600px, height);
             }
         }
     }

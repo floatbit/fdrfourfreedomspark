@@ -128,6 +128,6 @@ function brighterbites_create_posttype() {
       'menu_icon'     => 'dashicons-buddicons-buddypress-logo',
     )
   );
-)
+}
 
 require_once(__DIR__.'/shortcodes.php');
