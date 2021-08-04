@@ -28,7 +28,7 @@
 			<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
 			<div class="hero-info-container bg-color-white">
 				<div class="grid-x grid-padding-x align-middle">
-					<div class="cell medium-6 border-bottom">
+					<div class="cell medium-6 open-border">
 						<div class="p-style color-black info-open">
 							Open Today <span class="info-hour bold"><?php print $open_info; ?></span>
 						</div>
@@ -78,7 +78,7 @@
 				<div class="cell medium-3 show-for-medium"></div>
 				<div class="cell small-11 medium-6 background-cover intro-image" style="background-image:url(<?php print $intro['image']; ?>)">
 				</div>
-				<div class="cell medium-3 intro-text">
+				<div class="cell medium-3 intro-text cancel-padding-y">
 					<?php print $intro['text']; ?>
 				</div>
 			</div>	
