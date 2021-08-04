@@ -113,7 +113,39 @@ function ffp_is_current_navigation($nav_item) {
   return $result;
 }
 
-function brighterbites_create_posttype() {
+function ffp_create_taxonomy() {
+  $labels = array(
+    'name' => _x( 'Events Type', 'taxonomy general name' ),
+    'singular_name' => _x( 'Event Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Event Type' ),
+    'popular_items' => __( 'Popular Event Type' ),
+    'all_items' => __( 'All Event Type' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Event Type' ), 
+    'update_item' => __( 'Update Event Type' ),
+    'add_new_item' => __( 'Add New Event Type' ),
+    'new_item_name' => __( 'New Event Type Name' ),
+    'separate_items_with_commas' => __( 'Separate event type with commas' ),
+    'add_or_remove_items' => __( 'Add or remove event type' ),
+    'choose_from_most_used' => __( 'Choose from the most used event type' ),
+    'menu_name' => __( 'Event Type' ),
+  ); 
+ 
+  register_taxonomy('event_type', 'event_type', array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'event_type' ),
+  ));
+}
+add_action( 'init', 'ffp_create_taxonomy', 0 );
+
+function ffp_create_posttype() {
   register_post_type( 'event',
     array(
       'labels'        => array(
@@ -125,9 +157,11 @@ function brighterbites_create_posttype() {
       'rewrite'       => array('slug' => 'event'),
       'show_in_rest'  => true,
       'supports'      => array('title', 'editor', 'thumbnail'),
+      'taxonomies'    => array( 'event_type'),
       'menu_icon'     => 'dashicons-calendar-alt',
     )
   );
 }
+add_action( 'init', 'ffp_create_posttype' );
 
 require_once(__DIR__.'/shortcodes.php');
