@@ -1,0 +1,20 @@
+.page-template-page-visit-accessibility main {
+    #access-content {
+        .content-container{
+            .content-inner-container {
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+
+                .content-image {
+                    @include fluid-props(232px, 452px, height);
+
+                    
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20)
+                    }
+                }
+            }
+        }
+    }
+}

@@ -68,7 +68,7 @@
 
 	<section id="home-intro">
 		<div class="intro-container">
-			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
+			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
 				<div class="cell medium-6 intro-title">
 					<div class="h1-style">
 						<?php print $intro['title']; ?>

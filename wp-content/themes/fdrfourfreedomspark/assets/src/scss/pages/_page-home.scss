@@ -23,19 +23,6 @@
                         border-bottom: none !important;
                     }
                 }
-                /* .event-border {
-                    @extend .border-left;
-                    @extend .border-bottom;
-
-                    @include breakpoint(small only) {
-                        border-left: none !important;
-                    }
-
-                    @include breakpoint(medium) {
-                        border-bottom: none !important;
-                    }
-
-                } */
 
                 .info-open, .info-event, .info-getting, .info-access {
                     padding: 16px 0;
