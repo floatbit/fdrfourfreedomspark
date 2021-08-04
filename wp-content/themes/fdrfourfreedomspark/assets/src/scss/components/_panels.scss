@@ -12,3 +12,37 @@
     }
 
 }
+
+.quote-container {
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc(40);
+    }
+}
+
+.content-inner-container {
+    @include breakpoint(small only) {
+        justify-content: center;
+    }
+
+    .content-eyebrow {
+        text-transform: uppercase;
+        @include fluid-props(12px, 12px, margin-bottom);
+    }
+    .content-title{
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+
+    .content-image-background {
+        @include fluid-props(232px, 576px, height);
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+
+    .content-image {
+        @include fluid-props(20px, 32px, margin-bottom);
+    }
+}

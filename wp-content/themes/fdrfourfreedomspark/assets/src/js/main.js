@@ -72,25 +72,15 @@ navHandler = {
 jQuery(document).ready(function($) {
 
   var header = document.querySelector("header");
-  var headroom  = new Headroom(header);
+  var options = {
+    // vertical offset in px before element is first unpinned
+    offset : 800,
+  };
+  var headroom  = new Headroom(header, options);
   
   headroom.init();
   verticalBorderHandler.init();
   navHandler.init();
-
-  /* $(window).on("load, scroll", function() {
-    if ($("header").hasClass('front-page')) {
-      if($(window).scrollTop() > 50) {
-        $("header").addClass("scrolled");
-        $(".logo-white").addClass("hide");
-        $(".logo-blue").removeClass("hide");
-      } else {
-        $("header").removeClass("scrolled");
-        $(".logo-blue").addClass("hide");
-        $(".logo-white").removeClass("hide");
-      }
-    }
-  }); */
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {

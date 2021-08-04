@@ -171,9 +171,7 @@ header {
   .small-menu-navigation {
     position: fixed;
     transition: 250ms ease-in-out;
-    bottom: 100%;
-    right: 100%;
-    left: 0;
+    left: 500px;
     top: 100%;
 
     .small-top-container {
@@ -237,6 +235,7 @@ header {
       right: 0;
       bottom: 0;
       top: 0;
+      left: 0;
     }
   }
 

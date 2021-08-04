@@ -28,7 +28,7 @@
 			<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
 			<div class="hero-info-container bg-color-white">
 				<div class="grid-x grid-padding-x align-middle">
-					<div class="cell medium-6 border-bottom">
+					<div class="cell medium-6 open-border">
 						<div class="p-style color-black info-open">
 							Open Today <span class="info-hour bold"><?php print $open_info; ?></span>
 						</div>
@@ -68,7 +68,7 @@
 
 	<section id="home-intro">
 		<div class="intro-container">
-			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
+			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
 				<div class="cell medium-6 intro-title">
 					<div class="h1-style">
 						<?php print $intro['title']; ?>
@@ -78,7 +78,7 @@
 				<div class="cell medium-3 show-for-medium"></div>
 				<div class="cell small-11 medium-6 background-cover intro-image" style="background-image:url(<?php print $intro['image']; ?>)">
 				</div>
-				<div class="cell medium-3 intro-text">
+				<div class="cell medium-3 intro-text cancel-padding-y">
 					<?php print $intro['text']; ?>
 				</div>
 			</div>	
@@ -105,8 +105,18 @@
 							$catName.=', '.$catItem->name;
 						}
 					}
+					set_query_var( 'part_params', array(
+						'eyebrow' => $catName,
+                        'title' => get_the_title(),
+                        'image' => $image,
+                        'text' => get_the_content(),
+                        'border_class' => 'vb-1 vb-2 vb-3',
+                        'additional_class' => 'vert-pad-bottom-expanded',
+                        'less_padding' => true,
+                    ));
+                    get_template_part( 'parts/panel-content' );
 				?>
-				<div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-bottom-expanded featured-blog-inner-container">
+				<!-- <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-bottom-expanded featured-blog-inner-container">
 					<div class="cell medium-3">
 						<div class="p-style featured-category">
 							<?php print $catName; ?>
@@ -119,7 +129,7 @@
 					<div class="cell medium-3 featured-text">
 						<?php the_content(); ?>
 					</div>
-				</div>
+				</div> -->
 			<?php endforeach; ?>
 		</div>
 	</section>

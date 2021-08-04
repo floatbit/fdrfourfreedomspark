@@ -7,7 +7,7 @@
     @extend .button-text;
     @extend .bg-color-blue;
     border: 2px solid $blue;
-    display: block;
+    display: inline-block;
     &, &:visited {
         @extend .color-white;
 

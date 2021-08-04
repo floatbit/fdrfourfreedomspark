@@ -8,7 +8,7 @@
 		<a href="/">
 			<img class="footer-logo-container" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>">
 		</a>
-		<div class="copyright-container font-body-alt color-white">© 2021 Four Freedoms Park Concervancy</div>
+		<div class="copyright-container font-body-alt color-white">© <?php print date('Y'); ?> Four Freedoms Park Concervancy</div>
 		<!-- <div class="footer-menu-container"> -->
 		<?php foreach($footer_nav as $item) : ?>
 			<div class="footer-menu-container">

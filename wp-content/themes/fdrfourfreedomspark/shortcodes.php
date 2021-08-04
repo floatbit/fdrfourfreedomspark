@@ -60,4 +60,28 @@
     }
     add_shortcode('link-with-arrow', 'ffp_link_with_arrow_shortcode');
 
+    function ffp_quote_shortcode($args=array(), $content){
+        if (strpos($content, '<p>')) {
+            $content = str_ireplace('<p>','"', $content);
+            $content = str_ireplace('</p>','"', $content);
+        } else {
+            $content = '"'.$content.'"';
+        }
+        if ($args) {
+            $class = $args['class'];
+            $by = $args['by'];
+        }
+
+        return 
+            '<div class="quote-container '.$class.'">
+                <div class="quote-text color-blue">'
+                    .$content.
+                '</div>
+                <div class="quote-by p-style">
+                    <span class="dashicons dashicons-minus"></span>'.$by.
+                '</div>
+            </div>';
+    }
+    add_shortcode('quote', 'ffp_quote_shortcode');
+
 ?>
