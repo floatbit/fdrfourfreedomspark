@@ -111,6 +111,7 @@ header {
 
     .menu-item-container {
       position: relative;
+      cursor: pointer;
 
       .menu-title {
         @extend .color-black;
@@ -250,9 +251,10 @@ header {
     &.headroom {
       position: sticky;
       top: 0;
+      transition: 250ms ease-in-out;
     }
   
-    &.headroom--pinned {
+    &.headroom--top {
       @extend .bg-color-transparent;
       .main-logo-container {
         .logo-white {
@@ -281,6 +283,17 @@ header {
     }
   
     &.headroom--unpinned {
+      transform: translateY(-100%);
+      @extend .bg-color-white;
+
+      .main-logo-container {
+        .logo-blue {
+          display: block;
+        }
+      }
+    }
+
+    &.headroom--not-top {
       @extend .bg-color-white;
 
       .main-logo-container {
