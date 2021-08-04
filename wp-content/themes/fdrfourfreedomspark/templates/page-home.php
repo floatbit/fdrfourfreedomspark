@@ -105,8 +105,18 @@
 							$catName.=', '.$catItem->name;
 						}
 					}
+					set_query_var( 'part_params', array(
+						'eyebrow' => $catName,
+                        'title' => get_the_title(),
+                        'image' => $image,
+                        'text' => get_the_content(),
+                        'border_class' => 'vb-1 vb-2 vb-3',
+                        'additional_class' => 'vert-pad-bottom-expanded',
+                        'less_padding' => true,
+                    ));
+                    get_template_part( 'parts/panel-content' );
 				?>
-				<div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-bottom-expanded featured-blog-inner-container">
+				<!-- <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-bottom-expanded featured-blog-inner-container">
 					<div class="cell medium-3">
 						<div class="p-style featured-category">
 							<?php print $catName; ?>
@@ -119,7 +129,7 @@
 					<div class="cell medium-3 featured-text">
 						<?php the_content(); ?>
 					</div>
-				</div>
+				</div> -->
 			<?php endforeach; ?>
 		</div>
 	</section>
