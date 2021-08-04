@@ -164,4 +164,14 @@ function ffp_create_posttype() {
 }
 add_action( 'init', 'ffp_create_posttype' );
 
+function ffp_get_first_sentence_of_content($post){
+  $str = $post->post_content;									
+  $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
+  $str = strip_tags($str, '<a><strong><em>');
+  $pos = strpos($str, '.');
+  $str = substr($str, 0, $pos+1);
+
+  return '<p>' . $str . '</p>';
+}
+
 require_once(__DIR__.'/shortcodes.php');

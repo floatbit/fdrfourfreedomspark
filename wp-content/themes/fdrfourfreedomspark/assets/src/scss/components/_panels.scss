@@ -1,0 +1,14 @@
+.part-header-filter {
+    z-index: 1;
+
+    .filter-item-container {
+        visibility: hidden;
+        position: absolute;
+        z-index: 10;
+        
+        &.active {
+            visibility: visible;
+        }
+    }
+
+}
