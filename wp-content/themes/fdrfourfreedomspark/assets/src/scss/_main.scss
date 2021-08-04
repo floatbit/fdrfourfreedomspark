@@ -8,6 +8,10 @@ html {
   width: 100%;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .hide {
   display: none;
 }
@@ -108,18 +112,28 @@ header {
     .menu-item-container {
       position: relative;
 
-      .main-nav-menu {
-        @include fluid-props(36px, 76px, margin-right);
+      .menu-title {
+        @extend .color-black;
+        text-transform: uppercase;
       }
 
-      
-      .border-nav-menu {
-        position: absolute;
-        bottom: -12px;
-        border-color: $blue;
-        margin: 0;
-        border-width: 4px;
-        width: 100%;
+      .main-nav-menu {
+        position: relative;
+        @include fluid-props(36px, 76px, margin-right);
+
+        .border-nav-menu {
+          position: absolute;
+          bottom: -12px;
+          border-color: $blue;
+          margin: 0;
+          border-width: 4px;
+          width: 100%;
+          display: none;
+
+          &.current, &.active {
+            display: block;
+          }
+        }
       }
 
       .submenu-items {
@@ -148,6 +162,7 @@ header {
     text-align: right;
 
     .icon-bars-menu {
+      font-weight: 500;
       font-size: rem-calc(20);
     }
   }
@@ -244,6 +259,25 @@ header {
           display: block;
         }
       }
+      .menus-container {
+        .menu-item-container {
+          .menu-title {
+            @extend .color-white;
+          }
+        }
+  
+        .button-donate {
+          a {
+            @extend .color-white;
+          }
+        }
+      }
+  
+      .right-section {
+        .icon-bars-menu i {
+          color: $white !important;
+        }
+      }
     }
   
     &.headroom--unpinned {
@@ -254,71 +288,8 @@ header {
           display: block;
         }
       }
-      .menus-container {
-        .menu-item-container {
-          .menu-title {
-            @extend .color-black;
-          }
-        }
-  
-        .button-donate {
-          a {
-            color: $blue !important; 
-          }
-        }
-      }
-      .right-section {
-        .icon-bars-menu i {
-          @extend .color-black;
-        }
-      }
-    }
-
-    .menus-container {
-      .menu-item-container {
-        .menu-title {
-          @extend .color-white;
-        }
-      }
-
-      .button-donate {
-        a {
-          @extend .color-white;
-        }
-      }
-    }
-
-    .right-section {
-      .icon-bars-menu i {
-        font-weight: 500;
-        @extend .color-white;
-      }
     }
   }
-
-  /* &.scrolled {
-    @extend .bg-color-white;
-
-    .menus-container {
-      .menu-item-container {
-        .menu-title {
-          @extend .color-black;
-        }
-      }
-
-      .button-donate {
-        a {
-          color: $blue !important; 
-        }
-      }
-    }
-    .right-section {
-      .icon-bars-menu i {
-        @extend .color-black;
-      }
-    }
-  } */
-
 }
 
 footer {
@@ -360,16 +331,6 @@ footer {
       @include fluid-props(32px, 44px, height);
       @include fluid-props(216px, 272px, width);
     }
-
-    /* .footer-menu-container {
-      .footer-menu-item {
-        margin-right: rem-calc(28);
-
-        &:last-of-type {
-          margin-right: 0;
-        }
-      }
-    } */
 
     .social-media-container {
       display: flex;

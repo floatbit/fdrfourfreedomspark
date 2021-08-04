@@ -55,7 +55,7 @@
         $args['target'] = ($args['target'] != null) ? $args['target'] : '';
         $args['class'] = ($args['class'] != null) ? $args['class'] : '';
 
-        $html = '<a href="'.$args['url'].'" class="button with-arrow '.$args['class'].'" target="'.$args['target'].'">'.$args['title'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="btn-with-arrow '.$args['class'].'" target="'.$args['target'].'">'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-with-arrow', 'ffp_link_with_arrow_shortcode');

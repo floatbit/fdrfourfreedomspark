@@ -27,17 +27,6 @@
                 border-color: $white;
             } 
         }
-
-        &.with-arrow {
-            border: none;
-            @extend .color-blue;
-
-            &::after {
-                font-family: 'Font Awesome 5 Pro';
-                content: "\f061";
-                font-weight: 600;
-            }
-        }
     }
     
     border-radius: 20px;
@@ -69,6 +58,20 @@
     }
 }
 
+.btn-with-arrow {
+    border: none;
+    @extend .color-blue;
+    @extend .button-text;
+
+    &::after {
+        transition: 250ms ease-in-out;
+        margin-left: 12px;
+        font-family: 'Font Awesome 5 Pro';
+        content: "\f061";
+        font-weight: 600;
+    }
+}
+
 .no-touchevents {
     .button:hover {
         @extend .bg-color-white;
@@ -90,6 +93,11 @@
                 @extend .color-blue;    
                 border-color: $blue;
             }     
+        }
+    }
+    .btn-with-arrow:hover {    
+        &::after {
+            margin-left: 16px;
         }
     }
 }
