@@ -8,12 +8,16 @@
     $less_padding = $part_params['less_padding'];
     $text_with_image = $part_params['text_with_image'];
     $empty_first_cell = $part_params['empty_first_cell'];
+    $less_padding_class = '';
+    if ($less_padding == true) {
+        $less_padding_class = 'cancel-padding-top';
+    }
 ?>
 <div class="grid-x grid-padding-x pos-relative <?php print $border_class; ?> content-inner-container <?php print $additional_class; ?>">
-    <?php if($empty_first_cell != null && $empty_first_cell == true) : ?>
+    <?php if($empty_first_cell == true) : ?>
         <div class="cell medium-3 show-for-medium"></div>
     <?php endif; ?>
-    <div class="cell medium-3 <?php print ($less_padding != null && $less_padding == true) ? 'cancel-padding-top' : ''; ?>">
+    <div class="cell medium-3 <?php print $less_padding_class; ?>">
         <?php if($eyebrow != null):?>
             <div class="p-style content-eyebrow">
                 <?php print $eyebrow; ?>
@@ -23,18 +27,18 @@
             <?php print $title; ?>
         </div>
     </div>
-    <?php if($less_padding != null && $less_padding == true) : ?>
+    <?php if($less_padding == true) : ?>
         <div class="cell small-11 medium-6 background-cover content-image-background" style="background-image:url(<?php print $image; ?>)"></div>
     <?php else : ?>
         <div class="cell medium-6">
             <img class="content-image" src="<?php print $image; ?>">
-            <?php if($text_with_image != null && $text_with_image == true) : ?>
+            <?php if($text_with_image == true) : ?>
                 <?php print apply_filters('the_content', $text); ?>
             <?php endif; ?>
         </div>
     <?php endif; ?>
     <?php if($text_with_image == null || $text_with_image == false) : ?>
-        <div class="cell medium-3 <?php print ($less_padding != null && $less_padding == true) ? 'cancel-padding-top' : ''; ?>">
+        <div class="cell medium-3 <?php print $less_padding_class; ?>">
             <?php print apply_filters('the_content', $text); ?>
         </div>
     <?php endif; ?>

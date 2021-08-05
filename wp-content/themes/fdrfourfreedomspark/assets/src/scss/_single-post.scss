@@ -2,8 +2,6 @@
     .single-post-container {
         .hero-image {
             @include fluid-props(240px, 664px, height);
-            @include fluid-props(-4px, -80px, margin-left);
-            width: 100vw;
         }
 
         .left-intro-container {

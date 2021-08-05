@@ -87,6 +87,20 @@
     }
 }
 
+.btn-with-back {
+    border: none;
+    @extend .color-blue;
+    @extend .button-text;
+
+    &::before {
+        transition: 250ms ease-in-out;
+        margin-right: 8px;
+        font-family: 'Font Awesome 5 Pro';
+        content: "\f053";
+        font-weight: 600;
+    }
+}
+
 .no-touchevents {
     .button:hover {
         @extend .bg-color-white;
@@ -110,14 +124,22 @@
             }     
         }
     }
+
     .btn-with-arrow:hover {    
         &::after {
             margin-left: 16px;
             margin-right: 0px;
         }
     }
+
     .btn-with-download:hover {
         opacity: 0.6;
+    }
+
+    .btn-with-back:hover {
+        &::before {
+            margin-right: rem-calc(16);
+        }
     }
 }
 
