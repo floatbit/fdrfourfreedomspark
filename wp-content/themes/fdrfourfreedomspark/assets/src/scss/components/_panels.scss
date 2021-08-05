@@ -71,6 +71,11 @@
         width: 100%;
         object-fit: cover;  
     }
+    &.cell-wide {
+        .image {
+            @include fluid-props(165px, 304px, height);            
+        }
+    }
     .content-container, .date-container {
         @include fluid-props(12px, 20px, padding-top);
         p {
@@ -137,7 +142,11 @@
 
 .no-touchevents {
     .panel-item-data:hover {
-        @extend .bg-color-gray;
-    
+        a:not(disable-hover) { 
+            @extend .bg-color-gray;
+        }
+        .disable-hover {
+            cursor: default;
+        }
     }
 }
