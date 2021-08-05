@@ -15,7 +15,7 @@
 
 ?>
 
-<div class="grid-x grid-padding-x grid-padding-y part-header-filter pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
+<div class="grid-x grid-padding-x grid-padding-y panel-header-filter pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
 	<div class="cell title-cell cancel-padding-y">
 		<h1 class="title-text"><?php print $title;?></h1>
 	</div>

@@ -1,4 +1,4 @@
-.part-header-filter {
+.panel-header-filter {
     z-index: 1;
 
     .title-text {
@@ -64,7 +64,7 @@
     }
 }
 
-.part-item-data {
+.panel-item-data {
     z-index: -1;
     .image {
         @include fluid-props(216px, 228px, height);
@@ -136,7 +136,7 @@
 }
 
 .no-touchevents {
-    .part-item-data:hover {
+    .panel-item-data:hover {
         @extend .bg-color-gray;
     
     }

@@ -16,7 +16,7 @@
 			'title' => $post->post_title,
 			'items_per_page' => 2,
 		) );
-		get_template_part( 'parts/part-header-filter' );
+		get_template_part( 'parts/panel-header-filter' );
 	?>
 	
 	<?php
@@ -61,7 +61,7 @@
 						'text'		=> $first_sentence,
 						'image'		=> $image
 					) );
-					get_template_part( 'parts/part-item-data' );
+					get_template_part( 'parts/panel-item-data' );
 				?>
 			<?php endforeach; ?>
 		</div>

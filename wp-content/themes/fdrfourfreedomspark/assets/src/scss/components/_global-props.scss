@@ -113,6 +113,14 @@ $def-large : 30px;
   @include fluid-props($def-small, $def-large, margin-bottom);
 }
 
+.vert-margin-top-expanded {
+    @include fluid-props($def-large, 70px, margin-top);
+}
+  
+.vert-margin-bottom-expanded {
+    @include fluid-props($def-large, 70px, margin-bottom);
+}
+
 .margin-all {
     @include fluid-props($def-small, $def-large, margin);
 }

@@ -1,0 +1,37 @@
+.page-template-page-connect-contact-us main {
+    #contact-us-hero {
+        .hero-container {
+            .hero-inner-container { 
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+
+                .hero-image {
+                    @include fluid-props(240px, 644px, height);
+                }
+            }
+        }
+    }
+
+    #contact-us-links {
+        .links-container {
+            .links-inner-container {
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+
+                .links-image {
+                    @include fluid-props(232px, 580px, height);
+                    
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                }
+
+                .links-title {
+                    @include fluid-props(20px, 28px, margin-bottom);
+                }
+            }
+        }
+    }
+}
