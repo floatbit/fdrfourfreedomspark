@@ -128,9 +128,12 @@
 			if ($events):
 		?>
 			<div class="grid-x pos-relative vb-1 vb-2 border-top">
-				<div class="cell medium-3 padding-all">
-					<div class="vert-pad-top">
+				<div class="cell medium-3 padding-all flex-container flex-dir-column">
+					<div class="vert-pad-top flex-child-auto">
 						<h1><?php print $title; ?></h1>
+					</div>
+					<div class="vert-pad-bottom flex-child-shrink">
+                        <?php print do_shortcode( '[link-with-arrow title="See All Events" url="/events-calendar/"]' ); ?>
 					</div>
 				</div>
 				<div class="cell medium-9">
@@ -178,7 +181,7 @@
                         'image' => $image,
                         'text' => get_the_content(),
                         'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded',
+                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
                         'less_padding' => true,
                     ));
                     get_template_part( 'parts/panel-content' );
