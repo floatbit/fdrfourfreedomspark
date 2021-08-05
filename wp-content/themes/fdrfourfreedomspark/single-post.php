@@ -98,8 +98,8 @@
     </div>
 
     <div class="related-blog-container">
-        <div class="grid-x grid-padding-x pos-relative vb-1 border-top">
-            <?php foreach($related_blogs as $key => $item): ?>
+        <?php foreach($related_blogs as $key => $item): ?>
+            <div class="grid-x grid-padding-x pos-relative vb-1 <?php print ($key == 0) ? 'border-top' : ''; ?>">
                 <?php 
                     $cat = get_the_category($item->ID);
                     $image = get_the_post_thumbnail_url($item->ID);
@@ -134,8 +134,8 @@
                         get_template_part( 'parts/panel-item-data' );
                     ?>
                 </div>
-            <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </main>
 
