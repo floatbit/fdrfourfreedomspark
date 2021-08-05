@@ -133,9 +133,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "single-post.php"
+                "value": "post"
             }
         ]
     ],
@@ -147,5 +147,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628069731
+    "modified": 1628129001
 }

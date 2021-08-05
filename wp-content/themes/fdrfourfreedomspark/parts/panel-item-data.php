@@ -8,12 +8,15 @@
 	$time_info 	= $part_params['time_info'];
 	$text		= $part_params['text'];
 	$image		= $part_params['image'];
+	$cell_wide	= $part_params['cell_wide'];
 
 ?>
 
-<div class="cell medium-6 cancel-padding-y part-item-data border-bottom data-item" data-tax="<?php print $data_tax ?>">
-	<a href="<?php print $link; ?>" class="color-black">
-		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x ">
+<div class="cell <?php print ($cell_wide != null && $cell_wide == true) ? 'medium-9' : '6'; ?> cancel-padding-y panel-item-data border-bottom data-item" data-tax="<?php print $data_tax ?>">
+	<?php if ($link != null) : ?>
+		<a href="<?php print $link; ?>" class="color-black">
+	<?php endif; ?>
+		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x">
 			<div class="cell medium-6">
 				<p class="color-blue"><?php print $tax ?></p>
 				<div class="h3-style"> <?php print $post_title ?></div>
@@ -28,8 +31,10 @@
 				</div>
 			</div>
 			<div class="cell medium-6">
-				<?php print $text; ?>
+				<?php print apply_filters( 'the_content', $text); ?>
 			</div>
 		</div>
-	</a>
+	<?php if ($link != null) : ?>
+		</a>
+	<?php endif; ?>
 </div>

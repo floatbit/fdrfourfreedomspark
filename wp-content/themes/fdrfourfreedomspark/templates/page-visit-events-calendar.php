@@ -61,7 +61,7 @@
 						'text'		=> $first_sentence,
 						'image'		=> $image
 					) );
-					get_template_part( 'parts/part-item-data' );
+					get_template_part( 'parts/panel-item-data' );
 				?>
 			<?php endforeach; ?>
 		</div>
