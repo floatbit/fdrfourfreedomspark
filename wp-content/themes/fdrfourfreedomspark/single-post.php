@@ -116,17 +116,19 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <?php 
-                    set_query_var( 'part_params', array(
-                        'tax' => $catName,
-                        'post_title' => get_the_title(),
-                        'image' => $image,
-                        'text' => get_the_content(),
-                        'start_date' => $date,
-                        'cell_wide' => true,
-                    ));
-                    get_template_part( 'parts/panel-item-data' );
-                ?>
+				<div class="cell medium-9">
+                    <?php 
+                        set_query_var( 'part_params', array(
+                            'tax' => $catName,
+                            'post_title' => get_the_title(),
+                            'image' => $image,
+                            'text' => get_the_content(),
+                            'start_date' => $date,
+                            'cell_wide' => true,
+                        ));
+                        get_template_part( 'parts/panel-item-data' );
+                    ?>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>

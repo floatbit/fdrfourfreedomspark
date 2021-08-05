@@ -28,7 +28,14 @@
     <section id="contact-us-form" class="bg-color-gray">
         <div class="form-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top form-inner-container">
-                <?php print do_shortcode( '[gravityform id="1" ajax=true]' );?>
+                <div class="cell medium-3 medium-offset-3">
+                    <div class="h3-style">
+                        Receive News and Updates From Four Freedoms Park Conservancy
+                    </div>
+                </div>
+                <div class="cell medium-6">
+                    <?php print do_shortcode( '[gravityform id="1" ajax=true]' );?>
+                </div>
             </div>
         </div>
     </section>
