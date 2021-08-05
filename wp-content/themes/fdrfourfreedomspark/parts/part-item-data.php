@@ -14,20 +14,24 @@
 <div class="cell medium-6 cancel-padding-y part-item-data border-bottom data-item" data-tax="<?php print $data_tax ?>">
 	<a href="<?php print $link; ?>" class="color-black">
 		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x ">
-			<div class="cell medium-6">
-				<p class="color-blue"><?php print $tax ?></p>
-				<div class="h3-style"> <?php print $post_title ?></div>
+			<div class="cell medium-6 medium-order-1 small-order-2">
+				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
+				<h3 class="color-black"> <?php print $post_title ?></h3>
 			</div>
-			<div class="cell medium-6">
+			<div class="cell medium-6 medium-order-2 small-order-1">
 				<img src="<?php print $image ?>" class="image">
 			</div>
-			<div class="cell medium-6">
-				<div class="p-style">
+			<div class="cell medium-6 date-container medium-order-3 small-order-4">
+				<p class="color-black show-for-medium">
 					<?php print $start_date; ?><br>
 					<?php print $time_info; ?>
+				</p>
+				<div class="flex-container align-justify show-for-small-only">
+					<p><?php print $start_date; ?></p>
+					<p><?php print $time_info; ?></p>
 				</div>
 			</div>
-			<div class="cell medium-6">
+			<div class="cell medium-6 content-container medium-order-4 small-order-3">
 				<?php print $text; ?>
 			</div>
 		</div>

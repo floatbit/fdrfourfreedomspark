@@ -32,7 +32,7 @@
 	?>	
 
 	<?php if ($events): ?>
-		<div class="grid-x grid-padding-x grid-padding-y events-section pos-relative vb-2 vb-2-small border-top">
+		<div class="grid-x grid-padding-x grid-padding-y events-section pos-relative vb-2 border-top">
 			<?php foreach ($events as $event): ?>
 				<?php
 					$event_type = get_the_terms($event->ID, 'event_type');
@@ -66,8 +66,8 @@
 			<?php endforeach; ?>
 		</div>
 		
-		<div class="grid-x grid-padding-x grid-padding-y pagination-section pos-relative vb-2-small border-top align-center">
-			<div class="cell paging-container">
+		<div class="grid-x grid-padding-x grid-padding-y pagination-section pos-relative vert-pad-top-expanded vert-pad-bottom-expanded border-top align-center">
+			<div class="cell paging-container cancel-padding-y">
 			</div>		
 		</div>
 		
