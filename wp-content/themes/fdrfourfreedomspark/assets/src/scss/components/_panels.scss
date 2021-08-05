@@ -85,6 +85,7 @@
     .text-taxonomy {
         @extend .vert-pad-top;
         margin: 0;
+        text-transform: uppercase;
         @include breakpoint (medium) {
             padding: 0;
         }

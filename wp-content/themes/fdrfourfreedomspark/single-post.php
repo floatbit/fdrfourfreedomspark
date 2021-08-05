@@ -99,7 +99,7 @@
 
     <div class="related-blog-container">
         <?php foreach($related_blogs as $key => $item): ?>
-            <div class="grid-x grid-padding-x pos-relative vb-1 <?php print ($key == 0) ? 'border-top' : ''; ?>">
+            <div class="grid-x pos-relative vb-1 <?php print ($key == 0) ? 'border-top' : ''; ?>">
                 <?php 
                     $cat = get_the_category($item->ID);
                     $image = get_the_post_thumbnail_url($item->ID);
@@ -114,9 +114,9 @@
                         }
                     }
                 ?>
-                <div class="cell medium-3 vert-pad-top-expanded">
+                <div class="cell medium-3 padding-all">
                     <?php if ($key == 0) : ?>
-                        <div class="h1-style">
+                        <div class="h1-style vert-pad-top">
                             Other Stories from the Blog
                         </div>
                     <?php endif; ?>

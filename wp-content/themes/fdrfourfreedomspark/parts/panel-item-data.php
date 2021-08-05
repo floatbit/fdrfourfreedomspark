@@ -1,6 +1,6 @@
 <?php
 
-	$link 		= $part_params['link'] ? : '#';
+	$link 		= $part_params['link'] ? : 'javascript:void(0)';
 	$data_tax 	= $part_params['data_tax'];
 	$tax	 	= $part_params['tax'];
 	$post_title	= $part_params['post_title'];
