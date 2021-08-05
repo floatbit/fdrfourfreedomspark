@@ -36,7 +36,7 @@
         <div class="info-container">
             <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top info-inner-container">
                 <?php foreach($contact_info as $key => $item): ?>
-                    <div class="cell medium-3 <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
+                    <div class="cell medium-3 cancel-padding-top <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
                         <?php if($key == 0) : ?>
                             <div class="h1-style">
                                 Contact Information
