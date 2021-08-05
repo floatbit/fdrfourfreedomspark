@@ -98,30 +98,28 @@
     </div>
 
     <div class="related-blog-container">
-        <?php foreach($related_blogs as $key => $item): ?>
-            <div class="grid-x pos-relative vb-1 <?php print ($key == 0) ? 'border-top' : ''; ?>">
-                <?php 
-                    $cat = get_the_category($item->ID);
-                    $image = get_the_post_thumbnail_url($item->ID);
-                    $date = get_the_date( 'd M Y', $item->ID);
-                    $post = get_post($item->ID);
-                    $catName = '';
-                    foreach($cat as $catKey => $catItem) {
-                        if ($catKey == 0) {
-                            $catName = $catItem->name;
-                        } else {
-                            $catName.=', '.$catItem->name;
-                        }
-                    }
-                ?>
-                <div class="cell medium-3 padding-all">
-                    <?php if ($key == 0) : ?>
-                        <div class="h1-style vert-pad-top">
-                            Other Stories from the Blog
-                        </div>
-                    <?php endif; ?>
+        <div class="grid-x pos-relative vb-1 border-top">
+            <div class="cell medium-3 padding-all">
+                <div class="h1-style vert-pad-top">
+                    Other Stories from the Blog
                 </div>
-                <div class="cell medium-9">
+            </div>
+            <div class="cell medium-9">
+                <?php foreach($related_blogs as $item): ?>
+                    <?php 
+                        $cat = get_the_category($item->ID);
+                        $image = get_the_post_thumbnail_url($item->ID);
+                        $date = get_the_date( 'd M Y', $item->ID);
+                        $post = get_post($item->ID);
+                        $catName = '';
+                        foreach($cat as $catKey => $catItem) {
+                            if ($catKey == 0) {
+                                $catName = $catItem->name;
+                            } else {
+                                $catName.=', '.$catItem->name;
+                            }
+                        }
+                    ?>
                     <?php 
                         set_query_var( 'part_params', array(
                             'tax' => $catName,
@@ -133,9 +131,9 @@
                         ));
                         get_template_part( 'parts/panel-item-data' );
                     ?>
-                </div>
+                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
+        </div>
     </div>
 </main>
 
