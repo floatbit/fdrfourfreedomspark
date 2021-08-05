@@ -63,6 +63,7 @@
 
     #home-featured-blog {
         .featured-blog-container {
+            margin-top: -1px;
             .featured-blog-inner-container {
                 @include breakpoint(small only) {
                     justify-content: center;
