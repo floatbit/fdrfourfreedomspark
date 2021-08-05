@@ -68,7 +68,7 @@
 
 	<section id="home-intro">
 		<div class="intro-container">
-			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
+			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top intro-inner-container">
 				<div class="cell medium-6 intro-title">
 					<div class="h1-style">
 						<?php print $intro['title']; ?>
@@ -86,7 +86,74 @@
 	</section>
 
 	<section id="home-upcoming-event">
+		<?php
+			$today = date('Ymd');
+			$args = array(
+				'post_type'      => 'event',
+				'post_status'    => 'publish',
+				'meta_key' 		 => 'start_date',
+				'orderby' 		 => 'meta_value_num',
+				'order' 		 => 'ASC',
+				'posts_per_page' => -1,
+				'meta_query'     => array(
+					array(
+						'key'	  => 'start_date', 
+					 	'value'   => $today, 
+					  	'compare' => '>'
+					)
+			 	),
+			);
+			$events = get_posts($args);
+			$title = 'Upcoming Event'.((count($events) > 1) ? 's' : '');
+			if (!$events) {
+				$args = array(
+					'post_type'      => 'event',
+					'post_status'    => 'publish',
+					'meta_key' 		 => 'start_date',
+					'orderby' 		 => 'meta_value_num',
+					'order' 		 => 'DESC',
+					'posts_per_page' => 3,
+					'meta_query'     => array(
+						array(
+							'key'	  => 'start_date', 
+							 'value'   => $today, 
+							  'compare' => '>'
+						)
+					 ),
+				);
+				$events = get_posts($args);
+				$title = 'Event'.((count($events) > 1) ? 's' : '');
+			}
 
+			if ($events):
+		?>
+			<div class="grid-x pos-relative vb-1 vb-2 border-top">
+				<div class="cell medium-3 padding-all">
+					<div class="vert-pad-top">
+						<h1><?php print $title; ?></h1>
+					</div>
+				</div>
+				<div class="cell medium-9">
+					<?php 
+						foreach ($events as $event): 
+							$image 		= get_the_post_thumbnail_url($event->ID);
+							$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
+							$time_info  = strtoupper($event->time_info);
+							$first_sentence = ffp_get_first_sentence_of_content($event);
+
+							set_query_var( 'part_params', array(
+								'post_title' => $event->post_title,
+								'image' 	 => $image,
+								'text' 		 => $first_sentence,
+								'start_date' => $start_date,
+								'time_info'	 => $time_info,
+								'cell_wide'  => true,
+							));
+							get_template_part( 'parts/panel-item-data' );
+						endforeach; 
+					?>
+				</div>
+		<?php endif ;?>
 	</section>
 
 	<section id="home-featured-blog">
@@ -111,7 +178,7 @@
                         'image' => $image,
                         'text' => get_the_content(),
                         'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-bottom-expanded',
+                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded',
                         'less_padding' => true,
                     ));
                     get_template_part( 'parts/panel-content' );

@@ -47,6 +47,7 @@
 		$time_info  = strtoupper(get_field('time_info'));
 		$venue_address = get_field('venue_address') ? : get_field('address', 'option');
 		$register_cta  = get_field('register_cta');
+		$price_info    = get_field('price_info');
 	?>
 	<div class="border-top">
 		<div class="grid-x grid-padding-x grid-padding-y content-section pos-relative vb-3 vert-pad-top-expanded vert-pad-bottom-expanded">
@@ -65,8 +66,9 @@
 						<h3><?php print strtoupper(date("l—F d, Y", strtotime( $post->start_date ))); ?></h3>					
 					</div>
 					<p><?php print $time_info ?></p>
+					<p><?php print $price_info ?> </p>
 					<p><?php print $venue_address;?></p>
-					<?php if ($register_cta['url']): ?>
+					<?php if ($register_cta): ?>
 						<div class="vert-pad-top">
 							<a href="<?php print $register_cta['url'] ?>" class="button"><?php print $register_cta['title'] ?></a>
 						</div>
@@ -84,7 +86,11 @@
 	<div class="grid-x vert-pad-bottom-expanded pos-relative vb-3 ">
 		<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom">
 			<div class="hor-pad-left-expanded">
-				<a href="" class="button outline"> xxx </a>
+				<?php if ($event_type): ?>
+					<?php foreach ($event_type as $item): ?>
+						<a href="/events-calendar/?tax=<?php print $item->slug ?>" class="button outline"> <?php print $item->name ?> </a>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

@@ -15,6 +15,7 @@
 			'type' 	=> 'event',
 			'title' => $post->post_title,
 			'items_per_page' => 2,
+			'tax' => $_GET['tax']
 		) );
 		get_template_part( 'parts/panel-header-filter' );
 	?>

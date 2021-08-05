@@ -1,4 +1,5 @@
 eventCalendarHandler = {
+    $panelHeaderFilter = $('.panel-header-filter'),
     $btnFilter = $('.btn-filter'),
     $selectedText = $('.selected-text'),
     $filterItemCont = $('.filter-item-container'),
@@ -9,8 +10,9 @@ eventCalendarHandler = {
     $paging = $('.paging-container').children(),
     $itemPagingButton = $pagingContainer.find('.item-paging-button'),
     $dataCounter = $('.data-counter'),
-    itemsPerPage = 2,
-    pageShowCount = 2, 
+    itemsPerPage = parseInt($panelHeaderFilter.data('items-perpage')),
+    pageShowCount = 8, 
+    selectedFilter = $panelHeaderFilter.data('selected'),
     
     applyFilter = function($tax){
         if ($tax) {
@@ -52,7 +54,7 @@ eventCalendarHandler = {
         self.$pagingContainer.html('');
         if (counter > itemsPerPage ) {
             var $addon = ((counter % itemsPerPage) > 0) ? 1 : 0;
-            pageCount = Math.floor(counter / itemsPerPage)+$addon;
+            pageCount = parseInt(Math.floor(counter / itemsPerPage)+$addon);
             
             self.$pagingContainer.append(templatePaging(pageCount));
             self.$pagingContainer.find('.item-paging').on("click", function(){
@@ -122,8 +124,8 @@ eventCalendarHandler = {
     },
 
     init = function(){
-        var self = this;
-        self.applyFilter('');
+        var self = this;        
+        self.applyFilter(self.selectedFilter);
 
         this.$btnFilter.on('click', function(){
             $(this).toggleClass('active');
