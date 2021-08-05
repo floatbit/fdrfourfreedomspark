@@ -32,7 +32,7 @@
 
 <main class="border-side">
     <div class="single-post-container">
-        <div class="grid-x grid-padding-x pos-relative vb-1">
+        <div class="grid-x grid-padding-x pos-relative vb-1 vert-pad-bottom-expanded">
             <div class="cell cancel-padding-x vert-margin-bottom-expanded background-cover hero-image" style="background-image:url(<?php print $hero_image ?>)"></div>
             <div class="cell vert-pad-bottom-expanded main-title">
                 <a href="/learn/blogs" class="btn-with-back bold">The Blog</a>
@@ -89,11 +89,16 @@
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="cell medium-9 medium-offset-3 border-bottom">
+            <div class="cell medium-9 medium-offset-3">
                 <div class="hor-pad-right-expanded">
                     <?php print $second_section; ?>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="related-blog-container">
+        <div class="grid-x grid-padding-x pos-relative vb-1 border-top">
             <?php foreach($related_blogs as $key => $item): ?>
                 <?php 
                     $cat = get_the_category($item->ID);
@@ -109,14 +114,14 @@
                         }
                     }
                 ?>
-                <div class="cell medium-3 vert-pad-top-expanded border-top">
+                <div class="cell medium-3 vert-pad-top-expanded">
                     <?php if ($key == 0) : ?>
                         <div class="h1-style">
                             Other Stories from the Blog
                         </div>
                     <?php endif; ?>
                 </div>
-				<div class="cell medium-9">
+                <div class="cell medium-9">
                     <?php 
                         set_query_var( 'part_params', array(
                             'tax' => $catName,
