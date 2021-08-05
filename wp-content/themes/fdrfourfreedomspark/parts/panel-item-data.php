@@ -1,6 +1,6 @@
 <?php
 
-	$link 		= $part_params['link'];
+	$link 		= $part_params['link'] ? : '#';
 	$data_tax 	= $part_params['data_tax'];
 	$tax	 	= $part_params['tax'];
 	$post_title	= $part_params['post_title'];
@@ -10,31 +10,38 @@
 	$image		= $part_params['image'];
 	$cell_wide	= $part_params['cell_wide'];
 
+	if ($cell_wide) {
+		$cell_class = 'medium-9';
+	} else {
+		$cell_class = 'medium-6';
+	}
+
 ?>
 
-<div class="cell <?php print ($cell_wide != null && $cell_wide == true) ? 'medium-9' : '6'; ?> cancel-padding-y panel-item-data border-bottom data-item" data-tax="<?php print $data_tax ?>">
-	<?php if ($link != null) : ?>
-		<a href="<?php print $link; ?>" class="color-black">
-	<?php endif; ?>
-		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x">
-			<div class="cell medium-6">
-				<p class="color-blue"><?php print $tax ?></p>
-				<div class="h3-style"> <?php print $post_title ?></div>
+<div class="cell cancel-padding-y panel-item-data border-bottom data-item <?php print $cell_class ?>" data-tax="<?php print $data_tax ?>">
+	<a href="<?php print $link; ?>" class="color-black">
+		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x ">
+			<div class="cell medium-6 medium-order-1 small-order-2">
+				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
+				<h3 class="color-black"> <?php print $post_title ?></h3>
 			</div>
-			<div class="cell medium-6">
+			<div class="cell medium-6 medium-order-2 small-order-1">
 				<img src="<?php print $image ?>" class="image">
 			</div>
-			<div class="cell medium-6">
-				<div class="p-style">
+			<div class="cell medium-6 date-container medium-order-3 small-order-4">
+				<p class="color-black show-for-medium">
 					<?php print $start_date; ?><br>
 					<?php print $time_info; ?>
+				</p>
+				<div class="flex-container align-justify show-for-small-only">
+					<p><?php print $start_date; ?></p>
+					<p><?php print $time_info; ?></p>
 				</div>
 			</div>
-			<div class="cell medium-6">
+
+			<div class="cell medium-6 content-container medium-order-4 small-order-3">
 				<?php print apply_filters( 'the_content', $text); ?>
 			</div>
 		</div>
-	<?php if ($link != null) : ?>
-		</a>
-	<?php endif; ?>
+	</a>
 </div>

@@ -65,6 +65,7 @@
 
     &::after {
         transition: 250ms ease-in-out;
+        margin-right: 4px;
         margin-left: 12px;
         font-family: 'Font Awesome 5 Pro';
         content: "\f061";
@@ -112,6 +113,7 @@
     .btn-with-arrow:hover {    
         &::after {
             margin-left: 16px;
+            margin-right: 0px;
         }
     }
     .btn-with-download:hover {

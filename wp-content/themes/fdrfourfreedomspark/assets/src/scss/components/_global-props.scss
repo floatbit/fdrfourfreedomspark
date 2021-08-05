@@ -78,7 +78,7 @@
     z-index: 0;
 }
 
-$def-small : 8px;
+$def-small : 16px;
 $def-large : 30px;
 
 .vert-pad-top-expanded {
@@ -87,6 +87,14 @@ $def-large : 30px;
 
 .vert-pad-bottom-expanded {
     @include fluid-props($def-large, 70px, padding-bottom);
+}
+
+.hor-pad-left-expanded {
+    @include horiz-grid-space(padding-left);
+}
+
+.hor-pad-right-expanded {
+    @include horiz-grid-space(padding-right);
 }
 
 .vert-pad-top {
@@ -123,6 +131,14 @@ $def-large : 30px;
 
 .cancel-padding-x {
     padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.cancel-padding-left {
+    padding-left: 0 !important;
+}
+
+.cancel-padding-right {
     padding-right: 0 !important;
 }
 

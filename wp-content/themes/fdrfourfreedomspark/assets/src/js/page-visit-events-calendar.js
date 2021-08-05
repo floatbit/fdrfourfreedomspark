@@ -110,7 +110,7 @@ eventCalendarHandler = {
         var html = '';
         if ($pageCount > 1) { 
             for (var i = 0; i < $pageCount; ++i) {
-                html += '<span class="item-paging h2-style-reg '+((i == 0) ? 'active' : '')+' '+( (i+1 > pageShowCount) ? 'hide' : '' )+
+                html += '<span class="item-paging p-style '+((i == 0) ? 'active' : '')+' '+( (i+1 > pageShowCount) ? 'hide' : '' )+
                         ' " data-page="'+parseInt(i+1)+'">'+parseInt(i+1)+'</span>';
             }
 
@@ -137,6 +137,8 @@ eventCalendarHandler = {
             self.applyFilter(val);
             self.$selectedText.html(selectedText);
             
+            self.$itemFilter.removeClass('selected');
+            $(this).addClass('selected');
             self.$btnFilter.removeClass('active');
             self.$filterItemCont.removeClass('active');
         })
