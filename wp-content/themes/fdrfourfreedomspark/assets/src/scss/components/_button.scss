@@ -72,6 +72,20 @@
     }
 }
 
+.btn-with-download {
+    border: none;
+    @extend .color-blue;
+    @extend .button-text;
+
+    &::before {
+        transition: 250ms ease-in-out;
+        margin-right: 12px;
+        font-family: 'Font Awesome 5 Pro';
+        content: "\f019";
+        font-weight: 600;
+    }
+}
+
 .no-touchevents {
     .button:hover {
         @extend .bg-color-white;
@@ -99,6 +113,9 @@
         &::after {
             margin-left: 16px;
         }
+    }
+    .btn-with-download:hover {
+        opacity: 0.6;
     }
 }
 
