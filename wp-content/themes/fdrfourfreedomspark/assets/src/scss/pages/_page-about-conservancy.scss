@@ -1,0 +1,71 @@
+.page-template-page-about-conservancy main {
+    #conserv-intro {
+        .intro-container{
+            .intro-image {
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(40);
+                }
+                @include fluid-props(240px, 756px, height);
+            }
+        }
+    }
+
+    #conserv-bod {
+        .bod-container {
+            .bod-title {
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(40);
+                }
+            }
+
+            .bod-content{
+                .bod-image-container {
+                    @include fluid-props(4px, 12px, margin-bottom);
+                    .bod-image {
+                        width: 100%;
+                    }
+                }
+                .bod-name {
+                    @include fluid-props(4px, 8px, margin-bottom);
+                }
+
+                .bod-title {
+                    
+                }
+            }
+
+            .bod-people-content {
+                @extend .border-top;
+                
+                @include breakpoint(medium) {
+                    border-top: none !important;
+                }
+
+                @include breakpoint(small only) {
+                    padding-top: 40px;
+                }
+            }
+        }
+    }
+
+    #conserv-infos {
+        .infos-container {
+            .infos-top-container {
+                .infos-top-image-container {
+                    @include breakpoint(small only) {
+                        padding-left: rem-calc(16);
+                        padding-right: rem-calc(16);
+                    }
+                    .infos-top-image {
+                        width: 100%;
+                    }
+                }
+                .infos-top-text {
+                    @include fluid-props(16px, 30px, padding-left);
+                    @include fluid-props(16px, 30px, padding-right);
+
+                }
+            }
+        }
+    }
+}

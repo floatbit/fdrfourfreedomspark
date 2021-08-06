@@ -79,7 +79,7 @@
         },
         {
             "key": "field_610bfd6390c50",
-            "label": "board_of_directors",
+            "label": "Board Of Directors",
             "name": "board_of_directors",
             "type": "repeater",
             "instructions": "",
@@ -350,5 +350,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628175844
+    "modified": 1628220654
 }

@@ -12,7 +12,7 @@
 
 <?php get_header();?>
 <main class="border-side">
-    <section id="press-intro">
+    <!-- <section id="press-intro">
         <div class="intro-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vert-pad-top-expanded vert-pad-bottom-expanded border-top intro-inner-container">
                 <div class="cell medium-3">
@@ -67,7 +67,7 @@
                 <?php endforeach; ?>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="press-coverage">
         <div class="coverage-container">

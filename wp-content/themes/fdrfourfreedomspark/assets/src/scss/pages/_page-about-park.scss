@@ -1,0 +1,26 @@
+.page-template-page-about-park main {
+    #park-intro {
+        .intro-container{
+            .intro-image {
+                @include fluid-props(240px, 756px, height);
+            }
+        }
+    }
+
+    #park-content {
+        .content-container {
+            .content-inner-container {
+                .content-image {
+                    @include breakpoint(medium) {
+                        margin-top: rem-calc(96);
+                    }
+
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                    @include fluid-props(284px, 320px, height);
+                }
+            }
+        }
+    }
+}
