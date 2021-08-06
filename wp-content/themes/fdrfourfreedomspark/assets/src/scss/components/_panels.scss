@@ -43,7 +43,7 @@
         left: 50%;
         margin-left: 1px;
         top: 101%;
-        width: stretch;
+        width: 50%;
         @include breakpoint (small only) {
             left: 0;
             top: rem-calc(108);
@@ -142,8 +142,8 @@
 }
 
 .no-touchevents {
-    .panel-item-data:hover {
-        .linked-panel { 
+    .panel-item-data .linked-panel:hover { 
+        .item-data-container {
             @extend .bg-color-gray;
         }
     }

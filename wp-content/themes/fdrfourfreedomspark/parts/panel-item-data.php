@@ -23,7 +23,7 @@
 	<?php if ($link != '#'): ?>
 		<a href="<?php print $link; ?>" class="color-black linked-panel">
 	<?php endif;?>		
-		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x ">
+		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x item-data-container">
 			<div class="cell <?php print $cell_class_left ?> medium-order-1 small-order-2">
 				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
 				<h3 class="color-black"> <?php print $post_title ?></h3>

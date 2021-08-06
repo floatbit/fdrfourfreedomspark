@@ -14,7 +14,7 @@
 		set_query_var( 'part_params', array(
 			'type' 	=> 'event',
 			'title' => $post->post_title,
-			'items_per_page' => 2,
+			'items_per_page' => 6,
 			'tax' => $_GET['tax']
 		) );
 		get_template_part( 'parts/panel-header-filter' );
@@ -41,7 +41,7 @@
 					$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
 					$time_info  = strtoupper($event->time_info);
 
-					$first_sentence = ffp_get_first_sentence_of_content($event);
+					$$text = get_the_excerpt($event);
 
 					$tax = '';
 					$tax_slug = '';
@@ -59,7 +59,7 @@
 						'post_title'=> $event->post_title,
 						'start_date'=> $start_date,
 						'time_info' => $time_info,
-						'text'		=> $first_sentence,
+						'text'		=> $text,
 						'image'		=> $image
 					) );
 					get_template_part( 'parts/panel-item-data' );

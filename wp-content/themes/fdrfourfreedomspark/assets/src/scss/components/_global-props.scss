@@ -79,14 +79,16 @@
 }
 
 $def-small : 16px;
-$def-large : 30px;
+$def-large : 32px;
+$def-expanded : 72px;
+
 
 .vert-pad-top-expanded {
-    @include fluid-props($def-large, 70px, padding-top);
+    @include fluid-props($def-large, $def-expanded, padding-top);
 }
 
 .vert-pad-bottom-expanded {
-    @include fluid-props($def-large, 70px, padding-bottom);
+    @include fluid-props($def-large, $def-expanded, padding-bottom);
 }
 
 .hor-pad-left-expanded {
