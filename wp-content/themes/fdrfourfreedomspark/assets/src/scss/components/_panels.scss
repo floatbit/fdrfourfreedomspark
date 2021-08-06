@@ -111,6 +111,12 @@
     @include breakpoint(small only) {
         margin-bottom: rem-calc(40);
     }
+
+    .quote-by {
+        i {
+            @include fluid-props(8px, 12px, margin-right);
+        }
+    }
 }
 
 .content-inner-container {

@@ -61,12 +61,13 @@
     add_shortcode('link-with-arrow', 'ffp_link_with_arrow_shortcode');
 
     function ffp_quote_shortcode($args=array(), $content){
-        if (strpos($content, '<p>')) {
-            $content = str_ireplace('<p>','"', $content);
-            $content = str_ireplace('</p>','"', $content);
+        if (strpos($content, '<p>') == 0) {
+            $content = substr_replace($content, '<p>"', 0, 3);
+            $content = substr_replace($content, '"</p>', -5, 4);
         } else {
             $content = '"'.$content.'"';
         }
+
         if ($args) {
             $class = $args['class'];
             $by = $args['by'];
@@ -78,7 +79,7 @@
                     .$content.
                 '</div>
                 <div class="quote-by p-style">
-                    <span class="dashicons dashicons-minus"></span>'.$by.
+                    <i class="fal fa-minus"></i>'.$by.
                 '</div>
             </div>';
     }
