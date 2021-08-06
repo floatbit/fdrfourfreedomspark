@@ -1,14 +1,15 @@
 <?php
 
-	$link 		= $part_params['link'] ? : '#';
-	$data_tax 	= $part_params['data_tax'];
-	$tax	 	= $part_params['tax'];
-	$post_title	= $part_params['post_title'];
-	$start_date = $part_params['start_date'];
-	$time_info 	= $part_params['time_info'];
-	$text		= $part_params['text'];
-	$image		= $part_params['image'];
-	$cell_wide	= $part_params['cell_wide'];
+	$link 		 = $part_params['link'] ? : '#';
+	$data_tax 	 = $part_params['data_tax'];
+	$tax	 	 = $part_params['tax'];
+	$post_title	 = $part_params['post_title'];
+	$start_date  = $part_params['start_date'];
+	$time_info 	 = $part_params['time_info'];
+	$text		 = $part_params['text'];
+	$image		 = $part_params['image'];
+	$cell_wide	 = $part_params['cell_wide'];
+	$small_title_first = $part_params['small_title_first'];
 
 	if ($cell_wide) {
 		$cell_class_left = 'medium-4';
@@ -17,6 +18,14 @@
 		$cell_class_left = 'medium-6';
 		$cell_class = 'medium-6';
 	}
+
+	if ($small_title_first) {
+		$small_cell_order_title = 'small-order-1';
+		$small_cell_order_image = 'small-order-2';
+	} else {
+		$small_cell_order_title = 'small-order-2';
+		$small_cell_order_image = 'small-order-1';
+	}
 ?>
 
 <div class="cell cancel-padding-y panel-item-data border-bottom data-item <?php print $cell_class ?>" data-tax="<?php print $data_tax ?>">
@@ -24,11 +33,11 @@
 		<a href="<?php print $link; ?>" class="color-black linked-panel">
 	<?php endif;?>		
 		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x item-data-container">
-			<div class="cell <?php print $cell_class_left ?> medium-order-1 small-order-2">
+			<div class="cell <?php print $cell_class_left ?> medium-order-1 <?php print $small_cell_order_title ?>">
 				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
 				<h3 class="color-black"> <?php print $post_title ?></h3>
 			</div>
-			<div class="cell <?php print $cell_class ?> medium-order-2 small-order-1">
+			<div class="cell <?php print $cell_class ?> medium-order-2 <?php print $small_cell_order_image ?>">
 				<img src="<?php print $image ?>" class="image">
 			</div>
 			<div class="cell <?php print $cell_class_left ?> date-container medium-order-3 small-order-4">

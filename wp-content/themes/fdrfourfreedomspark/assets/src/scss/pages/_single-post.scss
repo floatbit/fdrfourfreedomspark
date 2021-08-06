@@ -5,6 +5,10 @@
         }
 
         .left-intro-container {
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(32);
+            }
+
             .date-container {
                 margin-bottom : rem-calc(28);
 
@@ -24,9 +28,6 @@
                 }
             }
             .social-media-container{
-                @include breakpoint(small only) {
-                    margin-bottom: rem-calc(36);
-                }
 
                 .icon-item {
                     @include fluid-props(16px, 28px, margin-right);
@@ -56,7 +57,7 @@
 
         .middle-image-title {
             @include breakpoint(small only) {
-                margin-bottom: rem-calc(32);
+                margin-bottom: rem-calc(16);
             }
             .image-eyebrow {
                 text-transform: uppercase;
