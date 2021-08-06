@@ -16,7 +16,7 @@
         $args['target'] = ($args['target'] != null) ? $args['target'] : '';
         $args['additional_class'] = ($args['additional_class'] != null) ? $args['additional_class'] : '';
 
-        $html = '<a href="'.$args['url'].'" class="button '.$args['mode'].' '.$args['additional_class'].'" target="'.$args['target'].'">'.$args['label'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="button '.$args['additional_class'].'" target="'.$args['target'].'">'.$args['label'].'</a>';
         return $html;
     }
     add_shortcode('button', 'ffp_button_shortcode');
@@ -33,6 +33,21 @@
     add_shortcode('deck', 'ffp_deck_shortcode');
 
     function ffp_link_with_icon_shortcode($args=array(), $content){
+        if (!$args) {
+            $args = array();
+        }
+
+        if ( empty( $args['url'] ) ) {
+            return '';
+        } 
+        
+        if ( empty( $args['title'] ) ) {
+            return '';
+        }
+
+        if ( empty( $args['icon'] ) ) {
+            return '';
+        }
 
         $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'"> <span class="icon icon-'.$args['icon'].'"></span>'.$args['title'].'</a>';
         return $html;
