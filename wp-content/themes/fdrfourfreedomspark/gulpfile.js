@@ -28,7 +28,8 @@ var concatScripts = [
     'scripts': [
       'assets/src/js/page-about.js',
       'assets/src/js/page-home.js',
-      'assets/src/js/page-visit-events-calendar.js'
+      'assets/src/js/page-visit-events-calendar.js',
+      'assets/src/js/page-learn-timeline',
     ],
     'output': 'pages.js'
   }
