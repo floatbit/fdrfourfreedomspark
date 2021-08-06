@@ -29,15 +29,33 @@
     </section>
 
     <section id="park-content">
-        <div class="content-container bg-color-gray">
-            <?php foreach($content_rows as $item) : ?>
-                <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 border-top vert-pad-top-expanded vert-pad-bottom-expanded content-inner-container">
-                    <div class="cell medium-3 background-cover content-image" style="background-image:url(<?php print $item['image']; ?>)"></div>
-                    <div class="cell medium-3 flex-container align-justify flex-dir-column middle-content">
-                        <div class="h3-style">
-                            <?php print $item['title'] ?>
+        <div class="content-container ">
+            <?php foreach($content_rows as $key => $item) : ?>
+                <?php 
+                    $container_color = 'bg-color-gray';
+                    if ($key == 0) {
+                        $container_color = 'bg-color-white';
+                    }
+                ?>
+                <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 border-top vert-pad-top-expanded vert-pad-bottom-expanded content-inner-container <?php print $container_color; ?>">
+                    <div class="cell medium-6">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-6 medium-offset-6 small-order-2 medium-order-1">
+                                <?php if($item['title'] != null): ?>
+                                    <div class="h3-style">
+                                        <?php print $item['title'] ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if($item['image'] != null): ?>
+                                <div class="cell medium-6 small-order-1 medium-order-2 background-cover content-image" style="background-image:url(<?php print $item['image']; ?>)"></div>
+                            <?php endif; ?>
+                            <div class="cell medium-6 medium-offset-6 small-order-3">
+                                <?php if($item['quote'] != null): ?>
+                                    <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
                     </div>
                     <div class="cell medium-6">
                         <?php print $item['content']; ?>

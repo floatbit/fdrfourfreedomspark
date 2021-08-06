@@ -1,0 +1,38 @@
+.page-template-page-donate main {
+  
+    .donate-container {
+        .donate-title {
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(40);
+            }
+        }
+    }
+
+    .middle-content {
+        h3 {
+            display: grid;
+            @include fluid-props(16px, 20px, margin-bottom);
+
+            @include breakpoint(medium) {
+                display: flex;
+                align-items: flex-end;
+            }
+
+            img {
+                border-radius: 50%;
+                @include fluid-props(96px, 96px, height);
+                @include fluid-props(96px, 96px, width);
+
+                
+                @include breakpoint(medium) {
+                    margin-right: rem-calc(24);
+                }
+
+                
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(20);
+                }
+            }
+        }
+    }
+}

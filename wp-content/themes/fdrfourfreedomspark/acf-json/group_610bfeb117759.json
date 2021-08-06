@@ -5,7 +5,7 @@
         {
             "key": "field_610bfed467e28",
             "label": "Content Rows",
-            "name": "contents_row",
+            "name": "content_rows",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -98,5 +98,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628176120
+    "modified": 1628237023
 }
