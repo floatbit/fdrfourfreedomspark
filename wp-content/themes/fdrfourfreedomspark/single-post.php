@@ -112,6 +112,7 @@
                         $date = get_the_date( 'd M Y', $item->ID);
                         $post = get_post($item->ID);
                         $catName = '';
+
                         foreach($cat as $catKey => $catItem) {
                             if ($catKey == 0) {
                                 $catName = $catItem->name;
@@ -122,12 +123,11 @@
                     ?>
                     <?php 
                         set_query_var( 'part_params', array(
-                            'tax' => $catName,
                             'post_title' => get_the_title(),
                             'image' => $image,
                             'text' => get_the_content(),
                             'start_date' => $date,
-                            'cell_wide' => true,
+                            'cell_wide' => true
                         ));
                         get_template_part( 'parts/panel-item-data' );
                     ?>

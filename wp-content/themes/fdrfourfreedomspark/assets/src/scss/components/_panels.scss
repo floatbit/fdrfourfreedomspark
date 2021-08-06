@@ -143,11 +143,8 @@
 
 .no-touchevents {
     .panel-item-data:hover {
-        a:not(disable-hover) { 
+        .linked-panel { 
             @extend .bg-color-gray;
-        }
-        .disable-hover {
-            cursor: default;
         }
     }
 }
