@@ -57,11 +57,8 @@
 }
 
 @mixin horiz-grid-space($props, $multiplier: 1) {
-  #{$props}: map-get($grid-container-padding, 'small') / 2 * $multiplier;
+  #{$props}: map-get($grid-margin-gutters, 'small') / 2 * $multiplier;
   @include breakpoint(medium) {
-    #{$props}: map-get($grid-container-padding, 'medium') / 2 * $multiplier;
-  }
-  @include breakpoint(large) {
-    #{$props}: map-get($grid-container-padding, 'large') / 2 * $multiplier;
+    #{$props}: map-get($grid-margin-gutters, 'medium') * $multiplier;
   }
 }

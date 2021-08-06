@@ -92,11 +92,15 @@ $def-expanded : 72px;
 }
 
 .hor-pad-left-expanded {
-    @include horiz-grid-space(padding-left);
+    @include breakpoint(medium) {
+        @include horiz-grid-space(padding-left);
+    }
 }
 
 .hor-pad-right-expanded {
-    @include horiz-grid-space(padding-right);
+    @include breakpoint(medium) {
+        @include horiz-grid-space(padding-right);
+    }
 }
 
 .vert-pad-top {
