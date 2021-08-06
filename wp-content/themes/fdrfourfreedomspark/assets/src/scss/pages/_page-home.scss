@@ -40,6 +40,7 @@
             .intro-inner-container {
                 @include breakpoint(small only) {
                     justify-content: center;
+                    padding-bottom: rem-calc(40);
                 }
                 
                 .intro-title {
