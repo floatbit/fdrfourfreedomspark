@@ -16,6 +16,8 @@
     if ($intro_image == null) {
         $intro_image = get_the_post_thumbnail_url();
     }
+
+    //var_dump($infos);
 ?>
 
 <?php get_header();?>
@@ -29,7 +31,7 @@
                     <div class="h1-style"><?php the_title(); ?></div>
                 </div>
             </div>
-			<div class="hero-image background-cover" style="background-image:url(<?php print $intro_image ?>)"></div>
+			<div class="intro-image background-cover" style="background-image:url(<?php print $intro_image ?>)"></div>
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded intro-inner-container bg-color-gray">
                 <div class="cell medium-6 medium-offset-3">
                     <div class="h2-style"><?php print $intro_text ?></div>
@@ -41,13 +43,13 @@
     <section id="conserv-bod">
         <div class="bod-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
-                <div class="cell medium-3">
+                <div class="cell medium-3 bod-title">
                     <div class="h1-style">
                         Board of Directors
                     </div>
                 </div>
                 <div class="cell medium-6">
-                    <div class="grid-x">
+                    <div class="grid-x grid-padding-x">
                         <?php foreach($board_of_directors as $item) : ?>
                             <?php 
                                 $url = $item['url'];
@@ -74,7 +76,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="cell medium-3">
+                <div class="cell medium-3 bod-people-content">
                     <?php print $people; ?>
                 </div>
             </div>
@@ -83,21 +85,21 @@
 
     <section id="conserv-vis-mis">
         <div class="vis-mis-container">
-            <div class="grid-x grid-padding-x pos-relative vb-1 border-top vert-pad-top-expanded vert-pad-bottom">
-                <div class="cell medium-3">
+            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 border-top vert-pad-top-expanded vert-pad-bottom">
+                <div class="cell medium-3 cancel-padding-top">
                     <div class="h1-style">
                         Our Vision
                     </div>
                 </div>
-                <div class="cell medium-9">
+                <div class="cell medium-9 cancel-padding-top">
                     <?php print $vision;  ?>
                 </div>
-                <div class="cell medium-3">
+                <div class="cell medium-3 cancel-padding-top">
                     <div class="h1-style">
                         Our Mission
                     </div>
                 </div>
-                <div class="cell medium-9">
+                <div class="cell medium-9 cancel-padding-top">
                     <?php print $mission;  ?>
                 </div>
             </div>
@@ -106,45 +108,46 @@
 
     <section id="conserv-infos">
         <div class="infos-container">
-            <?php foreach($infos as $key => $item) ?>
-            <?php 
-                $title = $item['title'];
-                $image = $item['image'];
-                $text = $item['text'];
-            ?>
-            <?php if ($key < 2) : ?>
-                <?php if ($key == 0) : ?>
-                    <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom infos-inner-container">
-                <?php endif; ?>
-                    <div class="cell medium-3">
-                        <div class="h1-style">
-                            <?php print $title ?>
-                        </div>
-                    </div>
-                    <div class="cell medium-3">
-                        <div class="top-infos-image-container cancel-padding-x">
-                            <img src="<?php print $image; ?>" class="top-infos-image">
-                        </div>
-                        <div class="infos-text">
-                            <?php print $text ?>
-                        </div>
-                    </div>
-                <?php if ($key == 0) : ?>
-                    </div>
-                <?php endif; ?>
-            <?php else : ?>
+            <?php foreach($infos as $key => $item) : ?>
                 <?php 
-                    set_query_var( 'part_params', array(
-                        'title' => $title,
-                        'image' => $image,
-                        'text' => $text,
-                        'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
-                        'less_padding' => true,
-                    ));
-                    get_template_part( 'parts/panel-content' );
+                    $title = $item['title'];
+                    $image = $item['image'];
+                    $text = $item['text'];
                 ?>
-            <?php endif; ?>
+                <?php if ($key < 2) : ?>
+                    <?php if ($key == 0) : ?>
+                        <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom infos-top-container">
+                    <?php endif; ?>
+                        <div class="cell medium-3">
+                            <div class="h1-style">
+                                <?php print $title ?>
+                            </div>
+                        </div>
+                        <div class="cell medium-3 cancel-padding-x">
+                            <div class="infos-top-image-container">
+                                <img src="<?php print $image; ?>" class="infos-top-image">
+                            </div>
+                            <div class="infos-top-text">
+                                <?php print $text ?>
+                            </div>
+                        </div>
+                    <?php if ($key == 1) : ?>
+                        </div>
+                    <?php endif; ?>
+                <?php else : ?>
+                    <?php 
+                        set_query_var( 'part_params', array(
+                            'title' => $title,
+                            'image' => $image,
+                            'text' => $text,
+                            'border_class' => 'vb-1 vb-2 vb-3',
+                            'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
+                            'less_padding' => true,
+                        ));
+                        get_template_part( 'parts/panel-content' );
+                    ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
     </section>
 </main>
