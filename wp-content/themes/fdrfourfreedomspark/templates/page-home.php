@@ -178,7 +178,7 @@
 						'eyebrow' => $catName,
                         'title' => get_the_title(),
                         'image' => $image,
-                        'text' => get_the_excerpt(),
+                        'text' => get_the_content(),
                         'border_class' => 'vb-1 vb-2 vb-3',
                         'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
                         'less_padding' => true,

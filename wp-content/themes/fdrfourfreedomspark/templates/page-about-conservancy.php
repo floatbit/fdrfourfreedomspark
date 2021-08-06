@@ -31,7 +31,7 @@
                     <div class="h1-style"><?php the_title(); ?></div>
                 </div>
             </div>
-			<div class="intro-image background-cover" style="background-image:url(<?php print $intro_image ?>)"></div>
+            <div class="pos-relative vb-1 vb-2 vb-3 background-cover intro-image" style="background-image:url(<?php print $intro_image ?>)"></div>
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded intro-inner-container bg-color-gray">
                 <div class="cell medium-6 medium-offset-3">
                     <div class="h2-style"><?php print $intro_text ?></div>
@@ -53,15 +53,17 @@
                         <?php foreach($board_of_directors as $item) : ?>
                             <?php 
                                 $url = $item['url'];
+                                $target = '_blank';
                                 if ($url == null) {
                                     $url = '#';
+                                    $target = '';
                                 }
                                 
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
                                 <div class="bod-content">
                                     <div class="bod-image-container">
-                                        <a href="<?php print $url ?>">
+                                        <a href="<?php print $url ?>" target="<?php print $target; ?>">
                                             <img src="<?php print $item['photo'] ?>" class="bod-image">
                                         </a>
                                     </div>
@@ -91,7 +93,7 @@
                         Our Vision
                     </div>
                 </div>
-                <div class="cell medium-9 cancel-padding-top">
+                <div class="cell medium-8 cancel-padding-top">
                     <?php print $vision;  ?>
                 </div>
                 <div class="cell medium-3 cancel-padding-top">
@@ -99,7 +101,7 @@
                         Our Mission
                     </div>
                 </div>
-                <div class="cell medium-9 cancel-padding-top">
+                <div class="cell medium-8 cancel-padding-top">
                     <?php print $mission;  ?>
                 </div>
             </div>

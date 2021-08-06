@@ -48,17 +48,6 @@
                     ));
                     get_template_part( 'parts/panel-content' );
                 ?>
-                <!-- <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-bottom content-inner-container">
-                    <div class="cell medium-3 cancel-padding-top">
-                        <div class="h3-style content-title">
-                            <?php print $title; ?>
-                        </div>
-                    </div>
-                    <div class="cell small-11 medium-6 background-cover content-image" style="background-image:url(<?php print $image; ?>)"></div>
-                    <div class="cell medium-3 cancel-padding-top">
-                        <?php print $description; ?>
-                    </div>
-                </div> -->
             <?php endforeach ?>
         </div>
     </section>

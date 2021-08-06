@@ -76,7 +76,7 @@
     add_shortcode('link-with-arrow', 'ffp_link_with_arrow_shortcode');
 
     function ffp_quote_shortcode($args=array(), $content){
-        if (strpos($content, '<p>') == 0) {
+        if (strpos($content, '<p>') !== false) {
             $content = substr_replace($content, '<p>"', 0, 3);
             $content = substr_replace($content, '"</p>', -5, 4);
         } else {
@@ -86,11 +86,17 @@
         if ($args) {
             $class = $args['class'];
             $by = $args['by'];
+            if ($args['text_color']) {
+                $text_color = $args['text_color'];
+            } else {
+                $text_color = 'color-blue';
+            }
+
         }
 
         return 
             '<div class="quote-container '.$class.'">
-                <div class="quote-text color-blue">'
+                <div class="quote-text '.$text_color.'">'
                     .$content.
                 '</div>
                 <div class="quote-by p-style">

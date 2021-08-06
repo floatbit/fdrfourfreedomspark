@@ -1,5 +1,6 @@
 <?php
     $eyebrow = $part_params['eyebrow'];
+    $eyebrow_color = $part_params['eyebrow_color'];
     $title = $part_params['title'];
     $image = $part_params['image'];
     $text = $part_params['text'];
@@ -9,7 +10,16 @@
     $text_with_image = $part_params['text_with_image'];
     $empty_first_cell = $part_params['empty_first_cell'];
     $link = $part_params['link'];
+    $link_text = $part_params['link_text'];
     $less_padding_class = '';
+
+    if ($link_text == null) {
+        $link_text = 'Read More';
+    }
+
+    if ($eyebrow_color == null) {
+        $eyebrow_color = 'color-blue';
+    }
 
     if ($less_padding == true) {
         $less_padding_class = 'cancel-padding-top';
@@ -23,7 +33,7 @@
 
     <div class="cell medium-3 <?php print $less_padding_class; ?>">
         <?php if ($eyebrow): ?>
-            <div class="p-style content-eyebrow color-blue">
+            <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
                 <?php print $eyebrow; ?>
             </div>
         <?php endif; ?>
@@ -58,7 +68,7 @@
             
             <?php if ($link): ?>
                 <div class="link-container">
-			    	<?php print do_shortcode( '[link-with-arrow title="Read More" url="'.$link.'" target="new" ]' ); ?>		
+			    	<?php print do_shortcode( '[link-with-arrow title="'.$link_text.'" url="'.$link.'" target="new"]' ); ?>		
                 </div>
             <?php endif; ?>
         </div>
