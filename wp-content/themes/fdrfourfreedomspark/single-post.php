@@ -14,6 +14,7 @@
     $middle_image = get_field('middle_image');
 	$second_section = get_field('second_section');
 	$related_blogs = get_field('related_blogs');
+	$social_media = get_field('social_media', 'option');  
     $cat = get_the_category();
     $date = get_the_date( 'd F Y');
     $catName = '';
@@ -35,9 +36,11 @@
         <div class="grid-x grid-padding-x pos-relative vb-1 vert-pad-bottom-expanded">
             <div class="cell cancel-padding-x vert-margin-bottom-expanded background-cover hero-image" style="background-image:url(<?php print $hero_image ?>)"></div>
             <div class="cell vert-pad-bottom-expanded main-title">
-                <a href="/learn/blogs" class="btn-with-back bold">The Blog</a>
-                <div class="h1-style">
-                    <?php the_title(); ?>
+                <div class="hor-pad-left-expanded">
+                    <a href="/learn/blogs" class="btn-with-back bold">The Blog</a>
+                    <div class="h1-style">
+                        <?php the_title(); ?>
+                    </div>
                 </div>
             </div>
             <div class="cell medium-3 left-intro-container">
@@ -76,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cell vert-pad-bottom cancel-padding-x">
+            <div class="cell vert-pad-bottom">
                 <img src="<?php print $middle_image['url'] ?>" class="middle-image">
             </div>
             <div class="cell medium-3 vert-pad-bottom middle-image-title">
@@ -85,7 +88,7 @@
                 </div>
                 <?php if ($middle_image['caption'] != '') : ?>
                     <div class="image-caption">
-                        <?php print $middle_image['caption'] ?> anjay
+                        <?php print $middle_image['caption'] ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -97,44 +100,47 @@
         </div>
     </div>
 
-    <div class="related-blog-container">
-        <div class="grid-x pos-relative vb-1 border-top">
-            <div class="cell medium-3 padding-all">
-                <div class="h1-style vert-pad-top">
-                    Other Stories from the Blog
+    <?php if($related_blogs != null): ?>
+        <div class="related-blog-container">
+            <div class="grid-x pos-relative vb-1 vb-2 border-top">
+                <div class="cell medium-3 padding-all">
+                    <div class="h1-style vert-pad-top">
+                        Other Stories from the Blog
+                    </div>
+                </div>
+                <div class="cell medium-9">
+                    <?php foreach($related_blogs as $item): ?>
+                        <?php 
+                            $cat = get_the_category($item->ID);
+                            $image = get_the_post_thumbnail_url($item->ID);
+                            $date = get_the_date( 'd M Y', $item->ID);
+                            $post = get_post($item->ID);
+                            $catName = '';
+
+                            foreach($cat as $catKey => $catItem) {
+                                if ($catKey == 0) {
+                                    $catName = $catItem->name;
+                                } else {
+                                    $catName.=', '.$catItem->name;
+                                }
+                            }
+                        ?>
+                        <?php 
+                            set_query_var( 'part_params', array(
+                                'post_title' => get_the_title(),
+                                'image' => $image,
+                                'text' => get_the_excerpt(),
+                                'start_date' => $date,
+                                'cell_wide' => true,
+                                'link' => get_the_permalink()
+                            ));
+                            get_template_part( 'parts/panel-item-data' );
+                        ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
-            <div class="cell medium-9">
-                <?php foreach($related_blogs as $item): ?>
-                    <?php 
-                        $cat = get_the_category($item->ID);
-                        $image = get_the_post_thumbnail_url($item->ID);
-                        $date = get_the_date( 'd M Y', $item->ID);
-                        $post = get_post($item->ID);
-                        $catName = '';
-
-                        foreach($cat as $catKey => $catItem) {
-                            if ($catKey == 0) {
-                                $catName = $catItem->name;
-                            } else {
-                                $catName.=', '.$catItem->name;
-                            }
-                        }
-                    ?>
-                    <?php 
-                        set_query_var( 'part_params', array(
-                            'post_title' => get_the_title(),
-                            'image' => $image,
-                            'text' => get_the_content(),
-                            'start_date' => $date,
-                            'cell_wide' => true
-                        ));
-                        get_template_part( 'parts/panel-item-data' );
-                    ?>
-                <?php endforeach; ?>
-            </div>
         </div>
-    </div>
+    <?php endif; ?>
 </main>
 
 <?php get_footer();?>

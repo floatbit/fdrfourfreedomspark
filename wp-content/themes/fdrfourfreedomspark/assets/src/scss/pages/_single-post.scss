@@ -30,6 +30,7 @@
 
                 .icon-item {
                     @include fluid-props(16px, 28px, margin-right);
+                    @include fluid-type(16px, 20px);
                     
                     &:last-of-type{
                         margin-right: 0;
@@ -59,6 +60,18 @@
             }
             .image-eyebrow {
                 text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.no-touchevents {
+    .single-post-container {
+        .left-intro-container {
+            .social-media-container {
+                .icon-item:hover{
+                    opacity: 0.6;
+                }
             }
         }
     }

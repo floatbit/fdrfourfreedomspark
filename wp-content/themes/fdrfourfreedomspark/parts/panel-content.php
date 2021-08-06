@@ -41,6 +41,12 @@
             <?php if ($text_with_image == true): ?>
                 <?php print apply_filters('the_content', $text); ?>
             <?php endif; ?>
+            
+            <?php if ($link): ?>
+                <div class="link-container">
+			    	<?php print do_shortcode( '[link-with-arrow title="Read More" url="'.$link.'" target="new" ]' ); ?>		
+                </div>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
