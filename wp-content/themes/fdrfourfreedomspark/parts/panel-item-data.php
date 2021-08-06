@@ -1,6 +1,6 @@
 <?php
 
-	$link 		= $part_params['link'] ? : 'javascript:void(0)';
+	$link 		= $part_params['link'] ? : '#';
 	$data_tax 	= $part_params['data_tax'];
 	$tax	 	= $part_params['tax'];
 	$post_title	= $part_params['post_title'];
@@ -17,11 +17,12 @@
 		$cell_class_left = 'medium-6';
 		$cell_class = 'medium-6';
 	}
-
 ?>
 
 <div class="cell cancel-padding-y panel-item-data border-bottom data-item <?php print $cell_class ?>" data-tax="<?php print $data_tax ?>">
-	<a href="<?php print $link; ?>" class="color-black <?php print ($link == '#')? 'disable-hover':''; ?>">
+	<?php if ($link != '#'): ?>
+		<a href="<?php print $link; ?>" class="color-black linked-panel">
+	<?php endif;?>		
 		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x ">
 			<div class="cell <?php print $cell_class_left ?> medium-order-1 small-order-2">
 				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
@@ -41,9 +42,11 @@
 				</div>
 			</div>
 
-			<div class="cell <?php print $cell_class ?> content-container medium-order-4 small-order-3">
+			<div class="cell <?php print $cell_class; ?> content-container medium-order-4 small-order-3">
 				<?php print apply_filters( 'the_content', $text); ?>
 			</div>
 		</div>
-	</a>
+	<?php if ($link != '#'):?>
+		</a>
+	<?php endif; ?>
 </div>
