@@ -42,6 +42,8 @@
                     'border_class' => 'vb-1 vb-2 vb-3',
                     'additional_class' => 'grid-padding-y vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
                     'less_padding' => true,
+                    'link' => '/learn/timeline',
+                    'link_text' => 'View Timeline'
                 ));
                 get_template_part( 'parts/panel-content' );
             ?>
@@ -96,7 +98,8 @@
                         'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
                         'less_padding' => false,
                         'text_with_image' => true,
-                        'empty_first_cell' => $even
+                        'empty_first_cell' => $even,
+                        'eyebrow_color' => 'color-black'
                     ));
                     get_template_part( 'parts/panel-content' );
                 ?>

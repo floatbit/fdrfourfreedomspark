@@ -47,3 +47,4 @@ ShortCode
     - target (optional)
 5. ['quote'], has attributes
     - by (required)
+    - text_color (optional, default blue), give color to the quoted text, the value should be color-nameofthecolor(ex: color-black)

@@ -166,7 +166,6 @@
 					$cat = get_the_category($item->ID);
 					$image = get_the_post_thumbnail_url($item->ID);
 					$post = get_post($item->ID);
-					/* $text = $post->post_content; */
 					$catName = '';
 					foreach($cat as $catKey => $catItem) {
 						if ($catKey == 0) {
@@ -183,6 +182,7 @@
                         'border_class' => 'vb-1 vb-2 vb-3',
                         'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
                         'less_padding' => true,
+						'link' => get_the_permalink()
                     ));
                     get_template_part( 'parts/panel-content' );
 				?>

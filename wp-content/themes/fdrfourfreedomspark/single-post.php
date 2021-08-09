@@ -130,9 +130,10 @@
                                 'post_title' => get_the_title(),
                                 'image' => $image,
                                 'text' => get_the_excerpt(),
+                                'tax' => $catName,
                                 'start_date' => $date,
                                 'cell_wide' => true,
-                                'link' => get_the_permalink()
+                                'small_title_first' => true
                             ));
                             get_template_part( 'parts/panel-item-data' );
                         ?>

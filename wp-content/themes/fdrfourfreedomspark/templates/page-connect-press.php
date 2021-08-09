@@ -76,8 +76,10 @@
                     <?php
                         $date = date('d M Y', strtotime($item['date']));
                         $url = $item['url'];
+                        $target = '_blank';
                         if ($url == null) {
                             $url = '#';
+                            $target = '';
                         }
                     ?>
                     <div class="cell medium-3 <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
@@ -88,7 +90,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="cell medium-3 coverage-image-container">
-                        <a href="<?php print $url; ?>" target="_blank" class="coverage-image-link">
+                        <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-image-link">
                             <img src="<?php print $item['image']; ?>" class="coverage-image ">
                         </a>
                     </div>

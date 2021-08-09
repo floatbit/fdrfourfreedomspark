@@ -357,18 +357,19 @@ footer {
 
 .no-touchevents {
   footer {
-    .footer-menu-container {
-      .footer-menu-item {
+    .footer-container {
+      .footer-menu-container {
         .menu-link:hover{
           .footer-menu-title{
             opacity: 0.6;
           }
         }
       }
-    }
-    .social-media-container {
-      .icon-item:hover {
-        opacity: 0.6;
+      
+      .social-media-container {
+        .icon-item:hover {
+          opacity: 0.6;
+        }
       }
     }
   }

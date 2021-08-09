@@ -23,9 +23,8 @@
             </div>
             <div class="cell medium-6">
                 <div class="p-style">
-                    For Non-Commercial, Student Photo & Film Shoots, Family & Friends Events (e.g. wedding ceremonies, quinceaneras, birthday parties, anniversary photo shoots, etc), and Community Events Park Use Permits, please email <span class="color-blue">Lillian.Lee@parks.ny.gov</span> with your request. Please allow up to 10 business days for NY State Parks to review and process your permit.
-
-                    If you are a location scout, film, or commercial producer, and are interested in FDR Four Freedoms State Park as a location for your project, please contact <span class="color-blue"><?php print $rental_contact_email; ?></span> with details of your request, including cast and crew numbers.
+                    <p>For Non-Commercial, Student Photo & Film Shoots, Family & Friends Events (e.g. wedding ceremonies, quinceaneras, birthday parties, anniversary photo shoots, etc), and Community Events Park Use Permits, please email <span class="color-blue">Lillian.Lee@parks.ny.gov</span> with your request. Please allow up to 10 business days for NY State Parks to review and process your permit.</p>
+                    <p>If you are a location scout, film, or commercial producer, and are interested in FDR Four Freedoms State Park as a location for your project, please contact <span class="color-blue"><?php print $rental_contact_email; ?></span> with details of your request, including cast and crew numbers.</p>
                 </div>
             </div>
         </div>
