@@ -44,12 +44,12 @@
         if ( empty( $args['title'] ) ) {
             return '';
         }
-
+        $icon = $args['icon'];
         if ( empty( $args['icon'] ) ) {
-            return '';
+            $icon = '';
         }
 
-        $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'"> <span class="icon icon-'.$args['icon'].'"></span>'.$args['title'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'"> <span class="icon icon-'.$icon.'"></span>'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-with-icon', 'ffp_link_with_icon_shortcode');

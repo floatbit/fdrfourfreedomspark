@@ -2,6 +2,10 @@
     color: $blue;
 }
 
+.color-light-blue {
+    color: $light-blue;
+}
+
 .color-white {
     color: $white;
 }
@@ -36,6 +40,10 @@
 
 .bg-color-transparent {
     background-color: transparent;
+}
+
+.bg-color-light-blue {
+    background-color: $light-blue;
 }
 
 .bg-color-blue {

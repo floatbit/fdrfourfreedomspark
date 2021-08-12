@@ -51,6 +51,7 @@ p {
 
 .quote-text {
   @include fluid-type(20px, 26px);
+  line-height: 1.3;
 }
 
 .button-text {

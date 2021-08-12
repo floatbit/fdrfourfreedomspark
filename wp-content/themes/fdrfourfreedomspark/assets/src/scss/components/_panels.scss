@@ -91,6 +91,15 @@
             padding: 0;
         }
     }
+    .item-data-container {        
+        @include breakpoint (small only) {
+            .date-container {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
 
 .pagination-section {

@@ -129,14 +129,14 @@
 		?>
 			<div class="grid-x pos-relative vb-1 vb-2 border-top">
 				<div class="cell medium-3 padding-all flex-container flex-dir-column">
-					<div class="vert-pad-top flex-child-auto">
+					<div class="vert-pad-top-expanded flex-child-auto">
 						<h1><?php print $title; ?></h1>
 					</div>
-					<div class="vert-pad-bottom flex-child-shrink">
+					<div class="vert-pad-bottom-expanded flex-child-shrink show-for-medium">
                         <?php print do_shortcode( '[link-with-arrow title="See All Events" url="/events-calendar/"]' ); ?>
 					</div>
 				</div>
-				<div class="cell medium-9">
+				<div class="cell medium-9 vert-pad-top cell-events-container">
 					<?php 
 						foreach ($events as $event): 
 							$image 		= get_the_post_thumbnail_url($event->ID);
@@ -180,8 +180,9 @@
                         'image' => $image,
                         'text' => get_the_content(),
                         'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
-                        'less_padding' => true,
+                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top grid-padding-y ',
+                        'less_padding' => false,
+						'eyebrow_color' => 'color-black',
 						'link' => get_the_permalink()
                     ));
                     get_template_part( 'parts/panel-content' );

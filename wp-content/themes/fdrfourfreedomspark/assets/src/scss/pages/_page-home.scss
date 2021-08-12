@@ -61,6 +61,13 @@
             }
         }
     }
+    #home-upcoming-event {
+        .cell-events-container {
+            @include breakpoint (small only) {
+                padding-top: 0 ;
+            }
+        }
+    }
 
     #home-featured-blog {
         .featured-blog-container {

@@ -47,13 +47,17 @@
             @include fluid-props(18px, 26px, width);
         }
         &.icon-schedule {
-            background-image: url(../img/icon-schedule.png);
         }
         &.icon-info {
-            background-image: url(../img/icon-info.png);
+            &::after {
+                transition: 250ms ease-in-out;
+                margin-right: 12px;
+                font-family: 'Font Awesome 5 Pro';
+                content: "\f05a";
+                font-weight: 600;
+            }
         }
         &.icon-bus {
-            background-image: url(../img/icon-bus.png);
         }
     }
 }

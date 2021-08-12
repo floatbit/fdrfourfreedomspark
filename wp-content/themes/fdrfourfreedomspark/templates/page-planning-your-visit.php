@@ -37,7 +37,7 @@
 					
 				?> 
 				<div class="addres-container vert-pad-bottom">
-					<p class="font-body-semibold">ADDRRESS</p>
+					<p class="font-body-semibold">ADDRESS</p>
 					<p><?php print $address; ?></p>
 				</div>
 
