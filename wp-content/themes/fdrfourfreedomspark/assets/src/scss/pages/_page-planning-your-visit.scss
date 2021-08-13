@@ -1,0 +1,83 @@
+.page-template-page-planning-your-visit main {
+
+    .title-section {
+        .title-cell {
+            @include fluid-props(124px, 260px, margin-bottom);
+        }
+    }
+
+    .map-section {
+        .image-maps {
+            @include fluid-props(-140px, -290px, margin-top);
+        }
+        .grid-hours {
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .transport-section {
+        .img-icon {
+            @include fluid-props(66px, 66px, width);
+            @include fluid-props(66px, 66px, height);
+            margin-bottom: rem-calc(20);
+        }
+        .item-container {
+            p {
+                white-space: pre-wrap;
+            }
+        }
+    }
+
+    .park-rules-section {
+        margin-top: -1px;
+        .static-text {
+            margin-bottom: rem-calc(10);
+        }
+        .rules-text {            
+            p {
+                white-space: pre-wrap;
+            }
+        }
+
+        .text-nos-container {
+            ul {
+                list-style: none;
+                li {
+                    position: relative;
+                    padding-left: 6px;
+                    &::before {
+                        content: "\f00d"; 
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        left: rem-calc(-16);
+                        position: absolute;
+                        top: 1px;
+                        @extend .color-blue;
+                    }
+                }
+            }
+        }
+        .cell-nos {
+            @extend .border-top;
+            @include breakpoint (small only) {
+                border-top: 0;
+                padding-top: 0;
+                .vert-pad-top {
+                    padding-top: 0;    
+                }
+            }
+            
+            @include breakpoint (medium) {
+                border-top: 0 !important;
+            }
+        }
+    }
+
+    .middle-image-section, .public-events-calendar-section {
+        .middle-image {
+            @include fluid-props(218px, 578px, height);
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.page-template-page-learn-the-four-freedom-speech main {
+    #hero-section {
+        .hero-container {
+            .hero-image {
+                @include fluid-props(240px, 664px, height);
+            }
+        }
+    }
+
+    #intro-section {
+        .intro-container {
+            /* .intro-inner-container {
+                @include breakpoint(small only) {
+                    justify-content: center;
+                }
+
+                .intro-text {
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(24);
+                    }
+                }
+
+                .intro-image {
+                    @include fluid-props(232px, 576px, height);
+                    
+                    @include breakpoint(small only) {
+                        margin-bottom: rem-calc(20);
+                    }
+                }
+            } */
+        }
+    }
+
+    #featured-blogs-section {
+        .featured-blogs-container {
+            .featured-category {
+                text-transform: uppercase;
+                @include fluid-props(12px, 12px, margin-bottom);
+            }
+            .featured-title {
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(24);
+                }
+            }
+            .featured-image {
+                @include fluid-props(20px, 32px, margin-bottom);
+            }
+        }
+    }
+
+    #sections-section {
+        
+    }
+}

@@ -1,0 +1,188 @@
+.panel-header-filter {
+    z-index: 1;
+
+    .title-text {
+        @include breakpoint (small only) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+    .btn-filter {
+        cursor: pointer;
+        @include breakpoint (small only) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem-calc(8);
+        }
+        .fa-chevron-up {
+            display: none;
+        }
+        
+        .fa-chevron-up,
+        .fa-chevron-down {
+            @include fluid-props(16px, 24px, margin-left);
+        }
+
+        &.active {
+            .fa-chevron-up {
+                display: inline-block;
+            }
+            .fa-chevron-down {
+                display: none;
+            }   
+            .selected-text {
+                @extend .color-dark-gray;
+            }
+        }
+    }
+
+    .filter-item-container {
+        visibility: hidden;
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        margin-left: 1px;
+        top: 101%;
+        width: 50%;
+        @include breakpoint (small only) {
+            left: 0;
+            top: 70%;
+            width: 100%;
+        }
+        
+        &.active {
+            visibility: visible;
+        }
+
+        .item-filter {
+            cursor: pointer;
+            padding-top: rem-calc(6);
+            padding-bottom: rem-calc(6);
+            &.selected {
+                @extend .color-blue;
+            }
+        }
+    }
+}
+
+.panel-item-data {
+    z-index: -1;
+    .image {
+        @include fluid-props(216px, 228px, height);
+        width: 100%;
+        object-fit: cover;  
+    }
+    &.cell-wide {
+        .image {
+            @include fluid-props(165px, 304px, height);            
+        }
+    }
+    .content-container, .date-container {
+        @include fluid-props(12px, 20px, padding-top);
+        p {
+            @extend .color-black;
+        }
+    }
+    .text-taxonomy {
+        @extend .vert-pad-top;
+        margin: 0;
+        text-transform: uppercase;
+        @include breakpoint (medium) {
+            padding: 0;
+        }
+    }
+    .item-data-container {        
+        @include breakpoint (small only) {
+            .date-container {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.pagination-section {
+    margin-top: -1px;
+    text-align: center;
+
+    .paging-container {
+        .item-paging {
+            cursor: pointer;
+            @include fluid-props(16px, 24px, margin-right);
+            &.active {  
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.quote-container {
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc(40);
+    }
+
+    .quote-text {
+        @include fluid-props(8px, 12px, margin-bottom);
+        text-indent: -0.7rem;
+    }
+
+    .quote-by {
+        i {
+            @include fluid-props(8px, 12px, margin-right);
+        }
+    }
+}
+
+.content-inner-container {
+    @include breakpoint(small only) {
+        justify-content: center;
+    }
+
+    li {
+        list-style-type: circle;
+    }
+
+    .content-eyebrow {
+        text-transform: uppercase;
+        @include fluid-props(12px, 12px, margin-bottom);
+    }
+    .content-title{
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+
+    .content-image-background {
+        @include fluid-props(232px, 576px, height);
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+
+    .content-image {
+        @include fluid-props(20px, 32px, margin-bottom);
+    }
+}
+
+.audio-controls {
+    margin-bottom: rem-calc(20);
+    audio {
+        width: stretch;
+        height: rem-calc(38);
+        border: 1px solid $black;
+
+        &, &::-webkit-media-controls-panel {
+            @extend .bg-color-white; 
+        }
+    }
+}
+
+.no-touchevents {
+    .panel-item-data .linked-panel:hover { 
+        .item-data-container {
+            @extend .bg-color-gray;
+        }
+    }
+}

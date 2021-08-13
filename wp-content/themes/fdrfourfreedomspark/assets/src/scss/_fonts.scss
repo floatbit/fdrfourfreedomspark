@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Dapifer Book";
+    src: url('../fonts/dapifer/Dapifer Book.otf');
+}
+
+@font-face {
+    font-family: "Dapifer Book Italic";
+    src: url('../fonts/dapifer/Dapifer Book Italic.otf');
+}
+
+@font-face {
+    font-family: "Dapifer Book Semibold";
+    src: url('../fonts/dapifer/Dapifer Book Semibold.otf');
+}
+
+@font-face {
+    font-family: "Halyard Text Book Regular";
+    src: url('../fonts/halyard/Halyard Text Book Regular.ttf');
+}
+
+@font-face {
+    font-family: "Halyard Text Book Italic";
+    src: url('../fonts/halyard/Halyard Text Book Italic.ttf');
+}
+
+@font-face {
+    font-family: "Halyard Text Semibold";
+    src: url('../fonts/halyard/Halyard Text Semibold.ttf');
+}
+
+.font-body {
+    font-family: "Halyard Text Book Regular";
+}
+
+.font-body-italic {
+    font-family: "Halyard Text Book Italic";
+}
+
+.font-body-semibold {
+    font-family: "Halyard Text Semibold";
+}
+
+.font-body-alt {
+    font-family: 'Lato', sans-serif;
+    @include fluid-type(12px, 15px);
+}
+
+.font-heading {
+    font-family: "Dapifer Book";
+}
+
+.font-heading-semibold {
+    font-family: "Dapifer Book Semibold";
+}
+
+.font-heading-italic {
+    font-family: "Dapifer Book Italic";
+}
+
+.font-heading-alt {
+    font-family: "";
+}

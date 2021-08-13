@@ -8,12 +8,80 @@ html {
   width: 100%;
 }
 
-p {
-  @include fluid-type(16px, 18px);
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
 }
 
 h1 {
-  @include fluid-type(30px, 60px);
+  @extend .h1-style;
+}
+
+h2 {
+  @extend .h2-style;
+}
+
+h3 {
+  @extend .h3-style;
+}
+
+p {
+  @extend .p-style;
+}
+
+.h1-style {
+  @include fluid-type(26px, 44px);
+  letter-spacing: -1px;
+}
+
+.h2-style {
+  @include fluid-type(22px, 32px);
+}
+
+.h3-style {
+  @include fluid-type(18px, 28px);
+  @include fluid-props( 10px, 16px, margin-bottom);
+}
+
+.p-style {
+  @include fluid-type(14px, 18px);
+}
+
+.quote-text {
+  @include fluid-type(20px, 26px);
+  line-height: 1.3;
+}
+
+.button-text {
+  @include fluid-type(12px, 16px);
+  text-transform: uppercase;
+}
+
+.caption-text {
+  @include fluid-type(14px, 14px);
+}
+
+ul li {
+  @extend .p-style;
+}
+
+.quote-text, .h1-style { 
+  @extend .font-heading;
+}
+
+.button-text {
+  @extend .font-body-semibold;
+}
+
+.h2-style, .h3-style, .p-style, .caption-text, small {
+  @extend .font-body; 
 }
 
 .background-cover {
@@ -22,30 +90,309 @@ h1 {
   background-size: cover;
 }
 
+small {
+  font-size: 85%;
+}
+
 header {
-  background-color: $success-color;
-  color: $black;
-  padding: 0.5rem 0;
-  @include breakpoint(medium) {
-    padding: 1.5rem 0;
-  }
-  @include breakpoint(large) {
-    padding: 2rem 0;
-  }
+  z-index: 100;
+  width: 100%;
+  position: sticky;
+  top:0;
+  left:0;
+  right:0;
+  @include fluid-props(16px, 28px, padding-left);
+  @include fluid-props(16px, 28px, padding-right);
+  @include fluid-props(16px, 24px, padding-top);
+  @include fluid-props(16px, 24px, padding-bottom);
+
   p {
     margin: 0;
+  }
+
+  .main-logo-container {
+    img {
+      @include fluid-props(208px, 480px, width);
+      @include fluid-props(24px, 56px, height);
+    }
+  }
+
+  .menus-container {
+
+    .menu-item-container {
+      position: relative;
+      cursor: pointer;
+
+      .menu-title {
+        @extend .color-black;
+        text-transform: uppercase;
+      }
+
+      .main-nav-menu {
+        position: relative;
+        @include fluid-props(36px, 76px, margin-right);
+
+        .border-nav-menu {
+          position: absolute;
+          bottom: -12px;
+          border-color: $blue;
+          margin: 0;
+          border-width: 4px;
+          width: 100%;
+          display: none;
+
+          &.current, &.active {
+            display: block;
+          }
+        }
+      }
+
+      .submenu-items {
+        position: absolute;
+        left: -26px;
+        top: 0;
+        transition: 250ms ease-in-out;
+
+        .items-container {
+          padding: rem-calc(28) rem-calc(26);
+          min-width: rem-calc(280);
+          margin-top: rem-calc(52);
+          z-index: 150;
+
+          .submenu-title {
+            line-height: 1.6;
+          }
+
+          hr {
+            margin-bottom: rem-calc(8);
+          }
+        }
+      }
+    }
+
+    .button-donate {
+      a {
+        @extend .outline;
+      }
+    }
+  }
+
+  .right-section {
+    text-align: right;
+
+    .icon-bars-menu {
+      font-weight: 500;
+      font-size: rem-calc(20);
+    }
+  }
+
+  .small-menu-navigation {
+    position: fixed;
+    transition: 250ms ease-in-out;
+    left: 500px;
+    top: 100%;
+
+    .small-top-container {
+      padding-top: 16px;
+
+      .small-logo{
+        width: rem-calc(208);
+        height: rem-calc(24);
+      }
+
+      .icon-close-menu{
+        font-size: rem-calc(24);
+      }
+    }
+
+    .small-menu-container {
+      margin-top: rem-calc(52);
+
+      hr {
+        margin: 12px 0;
+      }
+
+      .accordion-item {
+
+        &.is-active {
+          margin-bottom: rem-calc(24);
+        }
+        
+        .accordion-title {
+          padding: 0;
+          border: none;
+
+          &:focus {
+            background: none;
+          }
+
+          &::before {
+            font-family: 'Font Awesome 5 Pro';
+            content: "\f078";
+            font-weight: 600;
+
+            @extend .color-black;
+          }
+        }
+
+        .accordion-content {
+          margin-top: rem-calc(20);
+          padding: 0;
+          border: none;
+        }
+
+        &.is-active {
+          .accordion-title::before {
+            content: "\f077";
+          }
+        }
+      }
+
+      .small-button-donate {
+        margin-top: rem-calc(36);
+      }
+    }
+
+    &.active {
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &.front-page {
+
+    .main-logo-container {
+      .logo-white, .logo-blue {
+        display: none;
+      }
+    }
+
+    &.headroom {
+      position: sticky;
+      top: 0;
+      transition: 250ms ease-in-out;
+    }
+  
+    &.headroom--top {
+      @extend .bg-color-transparent;
+      .main-logo-container {
+        .logo-white {
+          display: block;
+        }
+      }
+      .menus-container {
+        .menu-item-container {
+          .menu-title {
+            @extend .color-white;
+          }
+        }
+  
+        .button-donate {
+          a {
+            @extend .color-white;
+          }
+        }
+      }
+  
+      .right-section {
+        .icon-bars-menu i {
+          color: $white !important;
+        }
+      }
+    }
+  
+    &.headroom--unpinned {
+      transform: translateY(-100%);
+      @extend .bg-color-white;
+
+      .main-logo-container {
+        .logo-blue {
+          display: block;
+        }
+      }
+    }
+
+    &.headroom--not-top {
+      @extend .bg-color-white;
+
+      .main-logo-container {
+        .logo-blue {
+          display: block;
+        }
+      }
+    }
   }
 }
 
 footer {
-  background-color: $primary-color;
-  color: $black;
-  padding: 1rem 0;
+  width: 100vw;
+  @include fluid-props(16px, 28px, padding-left);
+  @include fluid-props(16px, 28px, padding-right);
+  @include fluid-props(40px, 36px, padding-top);
+  @include fluid-props(24px, 36px, padding-bottom);
+
   p {
     margin: 0;
+  }
+
+  .footer-container {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    
+    @include breakpoint(small only) {
+      display: block;
+      .copyright-container {
+        margin-top: rem-calc(36);
+      }
+
+      .footer-menu-container {
+        margin-top: rem-calc(16);
+      }
+
+      .email-container {
+        margin-top: rem-calc(16);
+      }
+
+      .social-media-container {
+        margin-top: rem-calc(24);
+      }
+    }
+
+    .footer-logo-container {
+      @include fluid-props(32px, 44px, height);
+      @include fluid-props(216px, 272px, width);
+    }
+
+    .social-media-container {
+      display: flex;
+
+      .icon-item {
+        @include fluid-props(12px, 16px, margin-right);
+
+      }
+    }
   }
 }
 
 .no-touchevents {
-
+  footer {
+    .footer-container {
+      .footer-menu-container {
+        .menu-link:hover{
+          .footer-menu-title{
+            opacity: 0.6;
+          }
+        }
+      }
+      
+      .social-media-container {
+        .icon-item:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,73 @@
+.page-template-page-connect-press main {
+	#press-coverage {
+		.coverage-container {
+			.coverage-inner-container {
+				@include breakpoint(small only) {
+					justify-content: center;
+				}
+
+				.coverage-image-container {
+					@include breakpoint(medium) {
+						padding-left: 0;
+						padding-right: 0;
+					}
+
+					@include breakpoint(small only) {
+						padding-bottom: 0;
+					}
+
+					.coverage-image {
+						@include fluid-props(184px, 228px, height);
+						width: 100%;
+	
+						@include breakpoint(small only) {
+							margin-bottom: rem-calc(20);
+						}
+					}
+				}
+
+				.coverage-title-container {
+					@include breakpoint(small only) {
+						padding-top : 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.no-touchevents {
+	#press-releases {
+		.releases-container {
+			.releases-inner-container {
+				.releases-title-link:hover {
+					.releases-title {
+						opacity: 0.6;
+					}
+				}
+			}
+		}
+	}
+	#press-coverage {
+		.coverage-container {
+			.coverage-inner-container {
+				.coverage-image-container {
+					.coverage-image-link:hover {
+						.coverage-image {
+							opacity: 0.6;
+						}
+					}
+				}
+				.coverage-title-container {
+					.coverage-title {
+						.coverage-title-link:hover {
+							.title-text {
+								opacity: 0.6;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

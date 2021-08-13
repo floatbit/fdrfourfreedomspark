@@ -40,11 +40,14 @@ add_filter('body_class', 'fdrfourfreedomspark_body_class');
 
 // add css and javascript
 function fdrfourfreedomspark_css_js() {
-  // wp_enqueue_script( 'flickity-js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), '', true );
+  wp_enqueue_script( 'flickity-js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array());
+  wp_enqueue_script( 'flickity-js-fade', 'https://unpkg.com/flickity-fade@1/flickity-fade.js', array());
+  wp_enqueue_script( 'headroom-js', 'https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js', array(), '', true );
   wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.min.js', array(), CSS_JS_VERSION, true );
   wp_enqueue_script( 'pages', get_template_directory_uri() . '/assets/js/pages.min.js', array(), CSS_JS_VERSION, true );
   // css
-  // wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), '', 'all' );
+  wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), '', 'all' );
+  wp_enqueue_style( 'flickity-css-fade', 'https://unpkg.com/flickity-fade@1/flickity-fade.css', array(), '', 'all' );
   wp_enqueue_style( 'app', get_template_directory_uri() . '/assets/css/app.css', array(), CSS_JS_VERSION, 'all' );
 }
 add_action('wp_enqueue_scripts', 'fdrfourfreedomspark_css_js');
@@ -93,3 +96,84 @@ if( function_exists('acf_add_options_page') ) {
     'menu_title'  => 'Global Content',
   ));
 }
+
+function ffp_is_current_navigation($nav_item) {
+  global $post;
+  $current_permalink = get_permalink($post->ID);
+  $result = ($nav_item->url == $current_permalink);
+
+  if (!$result) {
+    $main_nav = wp_get_nav_menu_items( 'Main Nav' );
+    foreach ($main_nav as $item) {
+      if ($item->menu_item_parent == $nav_item->ID) {
+        if (($current_permalink == $item->url) && (!$result)) {
+          $result = true;
+        }
+      }
+    }
+  }
+  return $result;
+}
+
+function ffp_create_taxonomy() {
+  $labels = array(
+    'name' => _x( 'Events Type', 'taxonomy general name' ),
+    'singular_name' => _x( 'Event Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Event Type' ),
+    'popular_items' => __( 'Popular Event Type' ),
+    'all_items' => __( 'All Event Type' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Event Type' ), 
+    'update_item' => __( 'Update Event Type' ),
+    'add_new_item' => __( 'Add New Event Type' ),
+    'new_item_name' => __( 'New Event Type Name' ),
+    'separate_items_with_commas' => __( 'Separate event type with commas' ),
+    'add_or_remove_items' => __( 'Add or remove event type' ),
+    'choose_from_most_used' => __( 'Choose from the most used event type' ),
+    'menu_name' => __( 'Event Type' ),
+  ); 
+ 
+  register_taxonomy('event_type', 'event_type', array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'event_type' ),
+  ));
+}
+add_action( 'init', 'ffp_create_taxonomy', 0 );
+
+function ffp_create_posttype() {
+  register_post_type( 'event',
+    array(
+      'labels'        => array(
+        'name'          => __( 'Events' ),
+        'singular_name' => __( 'Event' )
+      ),
+      'public'        => true,
+      'has_archive'   => true,
+      'rewrite'       => array('slug' => 'event'),
+      'show_in_rest'  => true,
+      'supports'      => array('title', 'editor', 'thumbnail'),
+      'taxonomies'    => array( 'event_type'),
+      'menu_icon'     => 'dashicons-calendar-alt',
+    )
+  );
+}
+add_action( 'init', 'ffp_create_posttype' );
+
+function ffp_get_first_sentence_of_content($post){
+  $str = $post->post_content;									
+  $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
+  $str = strip_tags($str, '<a><strong><em>');
+  $pos = strpos($str, '.');
+  $str = substr($str, 0, $pos+1);
+
+  return '<p>' . $str . '</p>';
+}
+
+require_once(__DIR__.'/shortcodes.php');

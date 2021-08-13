@@ -1,0 +1,38 @@
+.single-event main {
+	.cell-hero {
+		@include fluid-props(240px, 663px, height);
+	}
+
+	.title-section {
+		.eyebrow {
+			.p-style {
+				margin: 0;
+			}
+			.fal {
+				@include fluid-props(4px, 8px, margin);
+			}
+		}
+	}
+
+	.content-section {
+		.right-cell {
+			@extend .border-bottom;
+			@include breakpoint (medium) {
+				border-bottom: 0 !important;
+			}
+
+			.share-box {
+				@include fluid-type(16px, 24px);
+				.share-button {
+					@include fluid-props(16px, 20px, margin-right);
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}		
+		}
+	}
+}
+
+.no-touchevents {
+}

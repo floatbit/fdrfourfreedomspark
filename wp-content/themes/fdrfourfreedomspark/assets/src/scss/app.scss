@@ -34,7 +34,7 @@
 // @include foundation-tooltip;
 
 // Containers
-// @include foundation-accordion;
+ @include foundation-accordion;
 // @include foundation-media-object;
 // @include foundation-orbit;
 // @include foundation-responsive-embed;
@@ -64,6 +64,6 @@
 @import '_mixins';
 @import '_fonts';
 @import '_main';
-@import '_page-home';
-@import '_page-about';
+@import 'components/index.scss';
 @import '_debugger';
+@import 'pages/index.scss'

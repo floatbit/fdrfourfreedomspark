@@ -69,7 +69,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1440);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #006EAB,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -78,7 +78,7 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #000000;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
@@ -885,8 +885,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px
+  small: 32px,
+  medium: 64px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: (
@@ -896,4 +896,12 @@ $grid-container-padding: (
 );
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+// Kudos
+
+$blue : #006EAB; 
+$border-gray: #D1D1D1;
+$gray: #F3F2F2;
+$spanish-gray : #979797;
+$light-blue: #84B1CF;
 

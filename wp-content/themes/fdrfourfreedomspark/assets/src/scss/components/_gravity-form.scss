@@ -1,0 +1,111 @@
+.input-style {
+    @extend .p-style;
+    padding: rem-calc(10) rem-calc(16);
+    outline: none;
+    border: 0;
+    width: 100%;
+    resize: none;
+
+    &::placeholder {
+        @extend .color-black;
+    }    
+    &.gray {
+        @extend .bg-color-gray;
+    }
+}
+
+
+.gform_wrapper {
+    .gform_heading {
+        display: none;
+    }
+    .gform_body {
+        .gform_fields {
+            margin: 0;
+            list-style: none;            
+            li {
+                @include fluid-props(16px, 24px, margin-bottom);
+                input[type=text],
+                textarea {
+                    @extend .input-style;
+                }
+                &.gfield_error {
+                    input[type=text],
+                    textarea {
+                        border: 1px solid get-color(alert);
+                    }
+                }
+            }
+        }
+        .gfield_label {
+            text-transform: uppercase;
+        }
+    }
+    .gform_footer {
+        input[type=submit] {    
+            line-height: 1.6;
+            margin-top: rem-calc(16);
+        }
+    }
+}
+
+#gform_wrapper_1 {
+    .gform_body {
+        li {
+            input[type=text] {
+                width: 80%;
+                @include breakpoint(small only) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+#gform_wrapper_2 {
+    .gform_body {
+        li {
+            input[type=text],
+            textarea {
+                @extend .input-style.gray;
+            }
+            &#field_2_2 {
+                margin-top: rem-calc(-6);
+            }
+        }
+    }
+}
+
+.gform_confirmation_wrapper {
+    .gform_confirmation_message {
+        @extend .p-style;
+    }
+}
+
+#ui-datepicker-div {
+
+    @extend .bg-color-white;
+    @extend .p-style;
+    @extend .padding-all;
+    border: 1px solid $black;
+    display: none;
+
+    .ui-datepicker-prev {
+        margin-right: 50%;
+        margin-left: 8%;
+    }
+
+    .ui-datepicker-calendar {
+        margin-top: rem-calc(20);
+        border-spacing: rem-calc(6);
+    }
+
+    .ui-datepicker-title {
+        display: flex;
+    }
+
+    a {
+        @extend .color-black;
+    }
+
+}
