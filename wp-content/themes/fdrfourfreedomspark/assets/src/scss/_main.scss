@@ -38,6 +38,7 @@ p {
 
 .h1-style {
   @include fluid-type(26px, 44px);
+  letter-spacing: -1px;
 }
 
 .h2-style {
@@ -79,7 +80,7 @@ ul li {
   @extend .font-body-semibold;
 }
 
-.h2-style, .h3-style, .p-style, .caption-text {
+.h2-style, .h3-style, .p-style, .caption-text, small {
   @extend .font-body; 
 }
 
@@ -87,6 +88,10 @@ ul li {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+small {
+  font-size: 85%;
 }
 
 header {
@@ -149,11 +154,9 @@ header {
         transition: 250ms ease-in-out;
 
         .items-container {
-          padding: 0 28px;
-          padding-top: rem-calc(24);
-          padding-bottom: rem-calc(36);
-          min-width: 212px;
-          margin-top: 52px;
+          padding: rem-calc(28) rem-calc(26);
+          min-width: rem-calc(280);
+          margin-top: rem-calc(52);
           z-index: 150;
 
           .submenu-title {

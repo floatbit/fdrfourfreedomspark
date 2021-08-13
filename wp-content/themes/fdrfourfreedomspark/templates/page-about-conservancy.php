@@ -92,12 +92,12 @@
     <section id="conserv-vis-mis">
         <div class="vis-mis-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 border-top vert-pad-top-expanded vert-pad-bottom">
-                <div class="cell medium-3 cancel-padding-top vert-margin-top">
+                <div class="cell medium-3 cancel-padding-top vert-margin-top vert-pad-bottom-expanded our-vision">
                     <div class="h1-style">
                         Our Vision
                     </div>
                 </div>
-                <div class="cell medium-8 cancel-padding-top vert-margin-top">
+                <div class="cell medium-8 cancel-padding-top vert-margin-top vert-pad-bottom-expanded">
                     <?php print $vision;  ?>
                 </div>
                 <div class="cell medium-3 cancel-padding-top vert-margin-bottom">

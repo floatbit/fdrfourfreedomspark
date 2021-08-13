@@ -124,6 +124,7 @@
 
     .quote-text {
         @include fluid-props(8px, 12px, margin-bottom);
+        text-indent: -0.7rem;
     }
 
     .quote-by {
@@ -162,6 +163,19 @@
 
     .content-image {
         @include fluid-props(20px, 32px, margin-bottom);
+    }
+}
+
+.audio-controls {
+    margin-bottom: rem-calc(20);
+    audio {
+        width: stretch;
+        height: rem-calc(38);
+        border: 1px solid $black;
+
+        &, &::-webkit-media-controls-panel {
+            @extend .bg-color-white; 
+        }
     }
 }
 

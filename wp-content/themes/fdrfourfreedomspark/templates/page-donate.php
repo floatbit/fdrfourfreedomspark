@@ -30,7 +30,11 @@
 				</div>
 				<div class="cell medium-3 vert-margin-top vert-margin-bottom">
 					<?php if($item['right_text'] != null) : ?>
-						<?php print $item['right_text']; ?>
+						<?php
+							$text = trim( str_replace('<p>', '', $item['right_text']));
+							$text = trim( str_replace('</p>', '', $text));
+						?>
+						<small><?php print $text; ?></small>
 					<?php endif; ?>
 				</div>
 			</div>

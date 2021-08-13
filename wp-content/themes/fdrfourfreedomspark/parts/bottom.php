@@ -16,8 +16,10 @@
 				</a>
 			</div>
 		<?php endforeach; ?>
-		<div class="email-container">
-			<a href="mailto:<?php print $email; ?>" class="font-body-alt color-white"><?php print $email; ?></a>
+		<div class="footer-menu-container email-container">
+			<a href="mailto:<?php print $email; ?>" class="menu-link">
+				<div class="footer-menu-title font-body-alt color-white"><?php print $email; ?></div>
+			</a>
 		</div>
 		<div class="social-media-container">
 			<?php if ($social_media['instagram'] != null) : ?>

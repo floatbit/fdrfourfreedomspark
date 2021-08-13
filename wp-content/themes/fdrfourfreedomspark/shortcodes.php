@@ -106,4 +106,19 @@
     }
     add_shortcode('quote', 'ffp_quote_shortcode');
 
+    function ffp_audio_file_shortcode($args=array()) {
+        if ($args['filename'] == '') {
+            return '';
+        }
+        $html = '<div class="audio-controls">
+                    <audio controls controlsList="nodownload">
+                        <source src="'.TEMPLATE_PATH.'/assets/audio/'.$args['filename'].'" type="audio/mpeg">
+                    </audio>
+                </div>';
+        
+        return $html;
+    }
+    add_shortcode('audio', 'ffp_audio_file_shortcode');
+
+
 ?>

@@ -103,6 +103,12 @@ $def-expanded : 72px;
     }
 }
 
+.hor-pad-right-expanded-double {
+    @include breakpoint(medium) {
+        @include horiz-grid-space(padding-right, 2);
+    }
+}
+
 .hor-pad-left {
     @include fluid-props($def-small, $def-large, padding-left); 
 }

@@ -52,7 +52,10 @@
                             <?php endif; ?>
                             <div class="cell medium-6 medium-offset-6">
                                 <?php if($item['quote'] != null): ?>
-                                    <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
+                                    <?php
+                                        $content = trim( strip_tags(str_replace('</p>', '',$item['quote'])));
+                                    ?>
+                                    <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$content.'[/quote]' ); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -72,7 +75,10 @@
                     </div>
                     <div class="cell show-for-small-only">
                         <?php if($item['quote'] != null): ?>
-                            <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
+                            <?php
+                                $content = strip_tags(str_replace('</p>', '', $item['quote']));
+                            ?>
+                            <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$content.'[/quote]' ); ?>
                         <?php endif; ?>
                     </div>
                 </div>

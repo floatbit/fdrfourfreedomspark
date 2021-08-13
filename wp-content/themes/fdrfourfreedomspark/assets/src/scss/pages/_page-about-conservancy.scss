@@ -59,6 +59,11 @@
             ul {
                 list-style-type: circle;
             }
+            .our-vision {
+                @include breakpoint (small only) {
+                    padding-bottom: 0 !important;
+                }
+            }
         }
     }
 
