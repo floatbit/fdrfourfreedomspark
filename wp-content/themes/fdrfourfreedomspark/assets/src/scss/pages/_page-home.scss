@@ -24,11 +24,16 @@
                     }
                 }
 
-                .info-open, .info-event, .info-getting, .info-access {
-                    padding: 16px 0;
+                .hero-info-item {
+                    @include fluid-props(16px, 16px, padding-top);
+                    @include fluid-props(16px, 16px, padding-bottom);
 
-                    i {
-                        @include fluid-props(4px, 8px, margin-right);
+                    .info-item {
+                        height: 100%;
+                        
+                        i {
+                            @include fluid-props(4px, 8px, margin-right);
+                        }
                     }
                 }
             }

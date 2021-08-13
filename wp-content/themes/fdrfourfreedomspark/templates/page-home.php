@@ -27,39 +27,49 @@
 		<div class="hero-container">
 			<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
 			<div class="hero-info-container bg-color-white">
-				<div class="grid-x grid-padding-x align-middle">
-					<div class="cell medium-6 open-border">
-						<div class="p-style color-black info-open">
-							Open Today <span class="info-hour bold"><?php print $open_info; ?></span>
+				<div class="grid-x grid-padding-x">
+					<div class="cell medium-6 open-border hero-info-item">
+						<div class="flex-container align-middle info-item">
+							<div class="p-style color-black info-open">
+								Open Today <span class="info-hour bold"><?php print $open_info; ?></span>
+							</div>
 						</div>
 					</div>
-					<div class="cell medium-2 border-left show-for-medium">
-						<a href="#home-upcoming-event" class="hero-link">
-							<div class="p-style color-black info-event">
-								<i class="fal fa-calendar"></i>Upcoming Events
-							</div>
-						</a>
+					<div class="cell medium-2 border-left show-for-medium hero-info-item">
+						<div class="flex-container align-middle info-item">
+							<a href="#home-upcoming-event" class="hero-link">
+								<div class="p-style color-black info-event">
+									<i class="fal fa-calendar"></i>Upcoming Events
+								</div>
+							</a>
+						</div>
 					</div>
-					<div class="cell medium-2 border-bottom show-for-small-only">
-						<a href="#home-upcoming-event" class="hero-link">
-							<div class="p-style color-black info-event">
-								<i class="fal fa-calendar"></i>Upcoming Events
-							</div>
-						</a>
+					<div class="cell medium-2 border-bottom show-for-small-only hero-info-item">
+						<div class="flex-container align-middle info-item">
+							<a href="#home-upcoming-event" class="hero-link">
+								<div class="p-style color-black info-event">
+									<i class="fal fa-calendar"></i>Upcoming Events
+								</div>
+							</a>
+						</div>
 					</div>
-					<div class="cell small-6 medium-2 border-left">
-						<a href="/visit/plan-your-visit" class="hero-link">
-							<div class="p-style color-black info-getting">
-								<i class="fal fa-map-marker-alt"></i>Getting Here
-							</div>
-						</a>
+					<div class="cell small-6 medium-2 border-left hero-info-item">
+						<div class="flex-container align-middle info-item">
+							<a href="/visit/plan-your-visit" class="hero-link">
+								<div class="p-style color-black info-getting">
+									<i class="fal fa-map-marker-alt"></i>Getting Here
+								</div>
+							</a>
+						</div>
 					</div>
-					<div class="cell small-6 medium-2 border-left">
-						<a href="/visit/accessibility" class="hero-link">
-							<div class="p-style color-black info-access">
-								<i class="fas fa-wheelchair"></i>Accessibility
-							</div>
-						</a>
+					<div class="cell small-6 medium-2 border-left hero-info-item">
+						<div class="flex-container align-middle info-item">
+							<a href="/visit/accessibility" class="hero-link">
+								<div class="p-style color-black info-access">
+									<i class="fas fa-wheelchair"></i>Accessibility
+								</div>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
