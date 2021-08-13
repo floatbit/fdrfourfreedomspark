@@ -178,7 +178,7 @@
 
 	<section id="home-featured-blog">
 		<div class="featured-blog-container">
-			<?php foreach($featured_blogs as $item) : ?>
+			<?php foreach($featured_blogs as $key => $item) : ?>
 				<?php 
 					$cat = get_the_category($item->ID);
 					$image = get_the_post_thumbnail_url($item->ID);
@@ -191,16 +191,27 @@
 							$catName.=', '.$catItem->name;
 						}
 					}
+
+					$first_class = '';
+					$middle_class = '';
+					if ($key == 0) {
+						$first_class = 'border-top';
+					}
+					if ($key < count($featured_blogs)-1) {
+						$middle_class = 'vert-pad-bottom';
+					}
+
 					set_query_var( 'part_params', array(
 						'eyebrow' => $catName,
                         'title' => get_the_title(),
                         'image' => $image,
                         'text' => get_the_content(),
                         'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top grid-padding-y ',
-                        'less_padding' => false,
+                        'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class,
+                        'less_padding' => true,
 						'eyebrow_color' => 'color-black',
-						'link' => get_the_permalink()
+						'link' => get_the_permalink(),
+						'title_size' => 'h1',
                     ));
                     get_template_part( 'parts/panel-content' );
 				?>

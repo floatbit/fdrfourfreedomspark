@@ -96,7 +96,7 @@
                     </div>
                     <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container">
                         <div class="coverage-title">
-                            <div class="p-style">
+                            <div class="p-style uppercase">
                                 <?php print $item['source']; ?>
                             </div>
                             <a href="<?php print $url; ?>" class="coverage-title-link">
@@ -105,7 +105,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="p-style">
+                        <div class="p-style uppercase">
                             <?php print $date; ?>
                         </div>
                     </div>

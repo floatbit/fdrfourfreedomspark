@@ -42,11 +42,13 @@
 						</div>
 						<div class="submenu-items hide">
 							<div class="items-container bg-color-white">
-								<?php foreach($subitems as $item): ?>
+								<?php foreach($subitems as $key => $item): ?>
 									<a href="<?php print $item->url; ?>" class=sub-nav-menu>
-										<div class="p-style color-black"><?php print $item->title; ?></div>
+										<div class="p-style color-black submenu-title"><?php print $item->title; ?></div>
 									</a>
-									<hr>
+									<?php if($key < count($subitems)-1) : ?>
+										<hr>
+									<?php endif; ?>
 								<?php endforeach; ?>
 							</div>
 						</div>

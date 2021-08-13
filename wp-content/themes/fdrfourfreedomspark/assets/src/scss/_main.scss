@@ -8,6 +8,10 @@ html {
   width: 100%;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -140,15 +144,25 @@ header {
 
       .submenu-items {
         position: absolute;
-        left: -32px;
+        left: -26px;
         top: 0;
         transition: 250ms ease-in-out;
 
         .items-container {
-          padding: 20px 24px;
+          padding: 0 28px;
+          padding-top: rem-calc(24);
+          padding-bottom: rem-calc(36);
           min-width: 212px;
           margin-top: 52px;
           z-index: 150;
+
+          .submenu-title {
+            line-height: 1.6;
+          }
+
+          hr {
+            margin-bottom: rem-calc(8);
+          }
         }
       }
     }
@@ -196,6 +210,10 @@ header {
       }
 
       .accordion-item {
+
+        &.is-active {
+          margin-bottom: rem-calc(24);
+        }
         
         .accordion-title {
           padding: 0;

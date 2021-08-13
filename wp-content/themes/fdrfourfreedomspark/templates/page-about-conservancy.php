@@ -27,13 +27,13 @@
     <section id="conserv-intro">
         <div class="intro-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
-                <div class="cell">
+                <div class="cell vert-margin-top vert-margin-bottom">
                     <div class="h1-style"><?php the_title(); ?></div>
                 </div>
             </div>
             <div class="pos-relative vb-1 vb-2 vb-3 background-cover intro-image" style="background-image:url(<?php print $intro_image ?>)"></div>
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded intro-inner-container bg-color-gray">
-                <div class="cell medium-6 medium-offset-3">
+                <div class="cell medium-6 medium-offset-3 vert-margin-top vert-margin-bottom">
                     <div class="h2-style"><?php print $intro_text ?></div>
                 </div>
             </div>
@@ -43,14 +43,14 @@
     <section id="conserv-bod">
         <div class="bod-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
-                <div class="cell medium-3 bod-title">
+                <div class="cell medium-3 bod-title vert-margin-top vert-margin-bottom">
                     <div class="h1-style">
                         Board of Directors
                     </div>
                 </div>
-                <div class="cell medium-6">
+                <div class="cell medium-6 vert-margin-top vert-margin-bottom">
                     <div class="grid-x grid-padding-x">
-                        <?php foreach($board_of_directors as $item) : ?>
+                        <?php foreach($board_of_directors as $key => $item) : ?>
                             <?php 
                                 $url = $item['url'];
                                 $target = '_blank';
@@ -59,18 +59,22 @@
                                     $target = '';
                                 }
                                 
+                                $last_class = '';
+                                if ($key == count($board_of_directors)-1) {
+                                    $last_class = 'last';
+                                }
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
-                                <div class="bod-content">
-                                    <div class="bod-image-container">
+                                <div class="bod-content <?php print $last_class; ?>">
+                                    <div class="bod-content-image-container">
                                         <a href="<?php print $url ?>" target="<?php print $target; ?>">
                                             <img src="<?php print $item['photo'] ?>" class="bod-image">
                                         </a>
                                     </div>
-                                    <div class="h3-style bod-name">
+                                    <div class="h3-style bod-content-name">
                                         <?php print $item['name'] ?>
                                     </div>
-                                    <div class="p-style bod-title">
+                                    <div class="p-style bod-content-title">
                                         <?php print $item['title'] ?>
                                     </div>
                                 </div>
@@ -78,7 +82,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="cell medium-3 bod-people-content">
+                <div class="cell medium-3 bod-people-content vert-margin-top vert-margin-bottom">
                     <?php print $people; ?>
                 </div>
             </div>
@@ -87,21 +91,21 @@
 
     <section id="conserv-vis-mis">
         <div class="vis-mis-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 border-top vert-pad-top-expanded vert-pad-bottom">
-                <div class="cell medium-3 cancel-padding-top">
+            <div class="grid-x grid-padding-x pos-relative vb-1 border-top vert-pad-top-expanded vert-pad-bottom">
+                <div class="cell medium-3 cancel-padding-top vert-margin-top">
                     <div class="h1-style">
                         Our Vision
                     </div>
                 </div>
-                <div class="cell medium-8 cancel-padding-top">
+                <div class="cell medium-8 cancel-padding-top vert-margin-top">
                     <?php print $vision;  ?>
                 </div>
-                <div class="cell medium-3 cancel-padding-top">
+                <div class="cell medium-3 cancel-padding-top vert-margin-bottom">
                     <div class="h1-style">
                         Our Mission
                     </div>
                 </div>
-                <div class="cell medium-8 cancel-padding-top">
+                <div class="cell medium-8 cancel-padding-top vert-margin-bottom">
                     <?php print $mission;  ?>
                 </div>
             </div>
@@ -120,12 +124,12 @@
                     <?php if ($key == 0) : ?>
                         <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom infos-top-container">
                     <?php endif; ?>
-                        <div class="cell medium-3">
+                        <div class="cell medium-3 vert-margin-top vert-margin-bottom">
                             <div class="h1-style">
                                 <?php print $title ?>
                             </div>
                         </div>
-                        <div class="cell medium-3 cancel-padding-x">
+                        <div class="cell medium-3 cancel-padding-x vert-margin-top vert-margin-bottom">
                             <div class="infos-top-image-container">
                                 <img src="<?php print $image; ?>" class="infos-top-image">
                             </div>
@@ -145,6 +149,8 @@
                             'border_class' => 'vb-1 vb-2 vb-3',
                             'additional_class' => 'vert-pad-bottom-expanded vert-pad-top-expanded border-top',
                             'less_padding' => true,
+                            'title_size' => 'h1',
+                            'cell_class' => 'vert-margin-top vert-margin-bottom',
                         ));
                         get_template_part( 'parts/panel-content' );
                     ?>

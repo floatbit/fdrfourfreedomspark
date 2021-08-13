@@ -9,6 +9,11 @@
     }
 
     .middle-content {
+
+        ul {
+            list-style-type: circle;
+        }
+
         h3 {
             display: grid;
             @include fluid-props(16px, 20px, margin-bottom);

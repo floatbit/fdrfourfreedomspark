@@ -11,7 +11,13 @@
     $empty_first_cell = $part_params['empty_first_cell'];
     $link = $part_params['link'];
     $link_text = $part_params['link_text'];
+    $title_size = $part_params['title_size'];
+    $cell_class = $part_params['cell_class'];
     $less_padding_class = '';
+
+    if ($title_size != null) {
+        $title_size.='-style';
+    }
 
     if ($link_text == null) {
         $link_text = 'Read More';
@@ -31,37 +37,31 @@
         <div class="cell medium-3 show-for-medium"></div>
     <?php endif; ?>
 
-    <div class="cell medium-3 <?php print $less_padding_class; ?>">
+    <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?>">
         <?php if ($eyebrow): ?>
             <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
                 <?php print $eyebrow; ?>
             </div>
         <?php endif; ?>
-        <div class="h3-style content-title">
+        <div class="<?php print $title_size; ?> content-title">
             <?php print $title; ?>
         </div>
     </div>
     
     <?php if ($less_padding == true): ?>
-        <div class="cell small-11 medium-6 background-cover content-image-background" style="background-image:url(<?php print $image; ?>)"></div>
+        <div class="cell small-11 medium-6 background-cover content-image-background <?php print $cell_class;?>" style="background-image:url(<?php print $image; ?>)"></div>
     <?php else : ?>
-        <div class="cell medium-6">
+        <div class="cell medium-6 <?php print $cell_class;?>">
             <img class="content-image" src="<?php print $image; ?>">
             
             <?php if ($text_with_image == true): ?>
                 <?php print apply_filters('the_content', $text); ?>
             <?php endif; ?>
-            
-            <?php if ($link): ?>
-                <div class="link-container">
-			    	<?php print do_shortcode( '[link-with-arrow title="Read More" url="'.$link.'" target="new" ]' ); ?>		
-                </div>
-            <?php endif; ?>
         </div>
     <?php endif; ?>
 
     <?php if($text_with_image == null || $text_with_image == false) : ?>
-        <div class="cell medium-3 <?php print $less_padding_class; ?> flex-container flex-dir-column">
+        <div class="cell medium-3 <?php print $less_padding_class.' '. $cell_class; ?> flex-container flex-dir-column">
             <div class="content-container">
                 <?php print apply_filters('the_content', $text); ?>
             </div>

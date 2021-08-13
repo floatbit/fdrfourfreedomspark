@@ -99,7 +99,7 @@
 
     &::before {
         transition: 250ms ease-in-out;
-        margin-right: 8px;
+        margin-right: rem-calc(8);
         font-family: 'Font Awesome 5 Pro';
         content: "\f053";
         font-weight: 600;
@@ -144,6 +144,7 @@
     .btn-with-back:hover {
         &::before {
             margin-right: rem-calc(16);
+            margin-left: rem-calc(-8);
         }
     }
 }

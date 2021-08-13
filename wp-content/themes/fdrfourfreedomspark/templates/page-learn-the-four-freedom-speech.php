@@ -17,13 +17,13 @@
 <main class="border-side">
     <section id="hero-section">
         <div class="hero-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
+            <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
                 <div class="cell">
-                    <div class="h1-style vert-pad-bottom">
+                    <div class="h1-style vert-pad-bottom-expanded">
                         <?php the_title(); ?>
                     </div>
                 </div>
-                <div class="cell hero-image background-cover show-for-medium" style="background-image:url(<?php print $intro['hero_image']; ?>)"></div>
+                <div class="cell hero-image background-cover show-for-medium vert-margin-top vert-margin-top" style="background-image:url(<?php print $intro['hero_image']; ?>)"></div>
                 <div class="cell hero-image background-cover show-for-small-only" style="background-image:url(<?php print ($intro['mobile_hero_image'] != null) ? $intro['mobile_hero_image'] : $intro['hero_image']; ?>)"></div>
             </div>
         </div>
@@ -40,10 +40,12 @@
                     'image' => $image,
                     'text' => $text,
                     'border_class' => 'vb-1 vb-2 vb-3',
-                    'additional_class' => 'grid-padding-y vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
+                    'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
                     'less_padding' => true,
                     'link' => '/learn/timeline',
-                    'link_text' => 'View Timeline'
+                    'link_text' => 'View Timeline',
+                    'cell_class' => 'vert-margin-top vert-margin-bottom',
+                    'title_size' => 'h1'
                 ));
                 get_template_part( 'parts/panel-content' );
             ?>
@@ -53,11 +55,23 @@
     <section id="sections-section">
         <div class="sections-container">
             <?php foreach($sections as $key => $item) : ?>
-                <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded sections-inner-container <?php print ($key == count($sections)-1) ? 'border-bottom vert-pad-bottom-expanded' : '' ?>">
-                    <div class="cell medium-3">
+                <?php 
+                    $first_cell_class = '';
+                    $last_class = '';
+                    if ($key == 0) {
+                        $first_cell_class = 'vert-margin-top';
+                    }
+
+                    if ($key == count($sections)-1) {
+                        $last_class = 'border-bottom vert-pad-bottom-expanded';
+                    }
+
+                ?>
+                <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded sections-inner-container <?php print $last_class; ?>">
+                    <div class="cell medium-3 <?php print $first_cell_class; ?>">
                         <?php print $item['first_column']; ?>
                     </div>
-                    <div class="cell medium-3">
+                    <div class="cell medium-3 <?php print $first_cell_class; ?>">
                         <?php print $item['second_column']; ?>
                         <div class="audio-controls">
                             <audio controls>
@@ -66,7 +80,7 @@
                         </div>
                         <p>Listen to the audio excerpt of Franklin D. Roosevelt’s Four Freedoms Speech</p>
                     </div>
-                    <div class="cell medium-6">
+                    <div class="cell medium-6 <?php print $first_cell_class; ?>">
                         <?php print $item['third_column']; ?>
                     </div>
                 </div>
@@ -105,30 +119,12 @@
                         'less_padding' => false,
                         'text_with_image' => true,
                         'empty_first_cell' => $even,
-                        'eyebrow_color' => 'color-black'
+                        'eyebrow_color' => 'color-black',
+                        'cell_class' => 'vert-margin-top vert-margin-bottom',
+                        'title_size' => 'h1'
                     ));
                     get_template_part( 'parts/panel-content' );
                 ?>
-                <!-- <div class="grid-x grid-padding-x pos-relative vb-1 <?php print ($odd) ? 'vb-3' : 'vb-2' ?> vert-pad-top-expanded sections-inner-container border-bottom vert-pad-bottom-expanded">
-                    <?php if (!$odd) : ?>
-                        <div class="cell medium-3"></div>
-                    <?php endif; ?>
-                    <div class="cell medium-3">
-                        <div class="p-style featured-category">
-                            <?php print $catName; ?>
-                        </div>
-                        <div class="h1-style featured-title">
-                            <?php the_title(); ?>
-                        </div>
-                    </div>
-                    <div class="cell medium-6">
-                        <img class="featured-image" src="<?php print $image; ?>">
-                        <div class="featured-desc">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
-                </div> -->
-
             <?php endforeach; ?>
         </div>
     </section>
