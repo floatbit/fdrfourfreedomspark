@@ -28,12 +28,12 @@
     <section id="contact-us-form" class="bg-color-gray">
         <div class="form-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top form-inner-container">
-                <div class="cell medium-3 medium-offset-3">
+                <div class="cell medium-3 medium-offset-3 vert-margin-top vert-margin-bottom">
                     <div class="h3-style">
                         Receive News and Updates From Four Freedoms Park Conservancy
                     </div>
                 </div>
-                <div class="cell medium-6">
+                <div class="cell medium-6 vert-margin-top vert-margin-bottom">
                     <?php print do_shortcode( '[gravityform id="1" ajax=true]' );?>
                 </div>
             </div>
@@ -42,21 +42,29 @@
 
     <section id="contact-us-info">
         <div class="info-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top info-inner-container">
+            <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top info-inner-container">
                 <?php foreach($contact_info as $key => $item): ?>
-                    <div class="cell medium-3 cancel-padding-top <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
+                    <?php 
+                        $cell_class = "";
+                        if ($key == 0) {
+                            $cell_class = "vert-margin-top";
+                        } else if ($key == count($contact_info)-1) {
+                            $cell_class = "vert-margin-bottom";
+                        }
+                    ?>
+                    <div class="cell medium-3 cancel-padding-top <?php print ($key == 0) ? '' : 'show-for-medium' ; ?> <?php print $cell_class; ?>">
                         <?php if($key == 0) : ?>
                             <div class="h1-style">
                                 Contact Information
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="cell medium-3 cancel-padding-top">
+                    <div class="cell medium-3 cancel-padding-top <?php print $cell_class; ?>">
                         <div class="h3-style">
                             <?php print do_shortcode( '[deck]'.$item['title'].'[/deck]' ); ?>
                         </div>
                     </div>
-                    <div class="cell medium-6 cancel-padding-top">
+                    <div class="cell medium-6 cancel-padding-top <?php print $cell_class; ?>">
                         <?php print $item['info'] ?>
                     </div>
                 <?php endforeach; ?>
@@ -71,11 +79,14 @@
                     $image = get_the_post_thumbnail_url($item->ID);
                     $title = get_the_title($item->ID);
                     $permalink = get_the_permalink($item->ID);
+
+                    $image_class = "vert-margin-top";
+                    $desc_class = "vert-margin-bottom";
                 ?>
-                <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top links-inner-container">
-                    <div class="cell medium-3 show-for-medium"></div>
-                    <div class="cell medium-6 background-cover links-image" style="background-image: url(<?php print $image; ?>)"></div>
-                    <div class="cell medium-6 medium-offset-3">
+                <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top links-inner-container">
+                    <div class="cell medium-3 show-for-medium <?php print $image_class; ?>"></div>
+                    <div class="cell small-11 medium-6 background-cover links-image <?php print $image_class; ?>" style="background-image: url(<?php print $image; ?>)"></div>
+                    <div class="cell medium-6 medium-offset-3 <?php print $desc_class; ?>">
                         <div class="h1-style links-title">
                             <?php print $title; ?>
                         </div>

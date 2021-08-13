@@ -20,7 +20,7 @@
     <section id="park-intro">
         <div class="intro-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-2-small vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
-                <div class="cell">
+                <div class="cell vert-margin-top vert-margin-bottom">
                     <div class="h1-style"><?php the_title(); ?></div>
                 </div>
             </div>
@@ -38,9 +38,9 @@
                     }
                 ?>
                 <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 border-top vert-pad-top-expanded vert-pad-bottom-expanded content-inner-container <?php print $container_color; ?>">
-                    <div class="cell medium-6">
+                    <div class="cell medium-6 vert-margin-top vert-margin-bottom show-for-medium">
                         <div class="grid-x grid-padding-x">
-                            <div class="cell medium-6 medium-offset-6 small-order-2 medium-order-1">
+                            <div class="cell medium-6 medium-offset-6">
                                 <?php if($item['title'] != null): ?>
                                     <div class="h3-style">
                                         <?php print $item['title'] ?>
@@ -48,17 +48,32 @@
                                 <?php endif; ?>
                             </div>
                             <?php if($item['image'] != null): ?>
-                                <div class="cell medium-6 small-order-1 medium-order-2 background-cover content-image" style="background-image:url(<?php print $item['image']; ?>)"></div>
+                                <div class="cell medium-6 background-cover content-image" style="background-image:url(<?php print $item['image']; ?>)"></div>
                             <?php endif; ?>
-                            <div class="cell medium-6 medium-offset-6 small-order-3">
+                            <div class="cell medium-6 medium-offset-6">
                                 <?php if($item['quote'] != null): ?>
                                     <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
                     </div>
-                    <div class="cell medium-6">
+                    <div class="cell show-for-small-only">
+                        <?php if($item['title'] != null): ?>
+                            <div class="h3-style">
+                                <?php print $item['title'] ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php if($item['image'] != null): ?>
+                        <div class="cell background-cover content-image show-for-small-only" style="background-image:url(<?php print $item['image']; ?>)"></div>
+                    <?php endif; ?>
+                    <div class="cell medium-6 vert-margin-top vert-margin-bottom">
                         <?php print $item['content']; ?>
+                    </div>
+                    <div class="cell show-for-small-only">
+                        <?php if($item['quote'] != null): ?>
+                            <?php print do_shortcode( '[quote by="'.$item['quote_person'].'"]'.$item['quote'].'[/quote]' ); ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -19,17 +19,23 @@
             }
 
             .bod-content{
-                .bod-image-container {
+                @include fluid-props(16px, 20px, margin-bottom);
+
+                &.last {
+                    margin-bottom: 0;
+                }
+
+                .bod-content-image-container {
                     @include fluid-props(4px, 12px, margin-bottom);
                     .bod-image {
                         width: 100%;
                     }
                 }
-                .bod-name {
+                .bod-content-name {
                     @include fluid-props(4px, 8px, margin-bottom);
                 }
 
-                .bod-title {
+                .bod-content-title {
                     
                 }
             }
@@ -44,6 +50,14 @@
                 @include breakpoint(small only) {
                     padding-top: 40px;
                 }
+            }
+        }
+    }
+
+    #conserv-vis-mis {
+        .vis-mis-container {
+            ul {
+                list-style-type: circle;
             }
         }
     }

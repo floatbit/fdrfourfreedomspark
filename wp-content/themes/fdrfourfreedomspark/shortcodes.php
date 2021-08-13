@@ -77,10 +77,10 @@
 
     function ffp_quote_shortcode($args=array(), $content){
         if (strpos($content, '<p>') !== false) {
-            $content = substr_replace($content, '<p>"', 0, 3);
-            $content = substr_replace($content, '"</p>', -5, 4);
+            $content = substr_replace($content, '<p>&#8220;', 0, 3);
+            $content = substr_replace($content, '&#8221;</p>', -5, 4);
         } else {
-            $content = '"'.$content.'"';
+            $content = '&#8220;'.$content.'&#8221;';
         }
 
         if ($args) {

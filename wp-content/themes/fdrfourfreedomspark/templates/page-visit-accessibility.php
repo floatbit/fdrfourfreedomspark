@@ -7,8 +7,8 @@
 <?php 
     $means_of_access = get_field('means_of_access');
     $extra_text = get_field('extra_text');
-    $extra_text = substr_replace($extra_text, '<p>"', 0, 3);
-    $extra_text = substr_replace($extra_text, '"</p>', -5, 4);
+    /* $extra_text = substr_replace($extra_text, '<p>"', 0, 3);
+    $extra_text = substr_replace($extra_text, '"</p>', -5, 4); */
 ?>
 
 <?php get_header();?>
@@ -45,6 +45,8 @@
                         'border_class' => 'vb-1 vb-2 vb-3',
                         'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
                         'less_padding' => true,
+                        'title_size' => 'h3',
+                        'cell_class' => 'vert-margin-top vert-margin-bottom'
                     ));
                     get_template_part( 'parts/panel-content' );
                 ?>

@@ -122,6 +122,10 @@
         margin-bottom: rem-calc(40);
     }
 
+    .quote-text {
+        @include fluid-props(8px, 12px, margin-bottom);
+    }
+
     .quote-by {
         i {
             @include fluid-props(8px, 12px, margin-right);
@@ -132,6 +136,10 @@
 .content-inner-container {
     @include breakpoint(small only) {
         justify-content: center;
+    }
+
+    li {
+        list-style-type: circle;
     }
 
     .content-eyebrow {
