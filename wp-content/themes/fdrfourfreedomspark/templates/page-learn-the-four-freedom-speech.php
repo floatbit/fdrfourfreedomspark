@@ -59,6 +59,12 @@
                     </div>
                     <div class="cell medium-3">
                         <?php print $item['second_column']; ?>
+                        <div class="audio-controls">
+                            <audio controls>
+                                <source src="<?php print TEMPLATE_PATH ?>/assets/audio/four-freedom-speech.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <p>Listen to the audio excerpt of Franklin D. Roosevelt’s Four Freedoms Speech</p>
                     </div>
                     <div class="cell medium-6">
                         <?php print $item['third_column']; ?>

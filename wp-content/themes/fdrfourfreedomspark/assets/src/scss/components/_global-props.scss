@@ -103,6 +103,14 @@ $def-expanded : 72px;
     }
 }
 
+.hor-pad-left {
+    @include fluid-props($def-small, $def-large, padding-left); 
+}
+
+.hor-pad-right {
+    @include fluid-props($def-small, $def-large, padding-right); 
+}
+
 .vert-pad-top {
   @include fluid-props($def-small, $def-large, padding-top); 
 }

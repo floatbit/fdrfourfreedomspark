@@ -10,6 +10,11 @@
                 @include fluid-props(656px, 810px, height);
             }
 
+            video {
+                object-fit: cover;
+                margin-bottom: rem-calc(-8);
+            }
+
             .hero-info-container {
                 position: absolute;
                 @include fluid-props(16px, 28px, right);

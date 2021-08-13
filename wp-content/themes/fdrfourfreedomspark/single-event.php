@@ -29,13 +29,10 @@
 	</div>
 	
 	<div class="border-top">
-		<div class="grid-x grid-padding-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
-			<div class="cell medium-8 title-cell cancel-padding-y cancel-padding-left">
+		<div class="grid-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
+			<div class="cell medium-8 title-cell cancel-padding-y hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded">
-					<div class="flex-container eyebrow color-blue">
-						<span class="fal fa-chevron-left"></span>
-						<p class="font-body-semibold"><?php print $tax; ?></p>
-					</div>
+                    <a href="/events-calendar/" class="btn-with-back bold color-blue">EVENTS</a>
 					<h1 class="title-text"><?php the_title();?></h1>
 					<?php print $intro?>
 				</div>
@@ -50,17 +47,19 @@
 		$price_info    = get_field('price_info');
 	?>
 	<div class="border-top">
-		<div class="grid-x grid-padding-x grid-padding-y content-section pos-relative vb-3 vert-pad-top-expanded vert-pad-bottom-expanded">
-			<div class="cell medium-9 small-order-2 medium-order-1 cancel-padding-left">
+		<div class="grid-x grid-padding-y content-section pos-relative vb-3 vert-pad-top-expanded vert-pad-bottom-expanded">
+			<div class="cell medium-9 small-order-2 medium-order-1 hor-pad-left-expanded hor-pad-right">
 				<div class="hor-pad-left-expanded">
 					<?php the_content();?>
 				</div>
 			</div>
-			<div class="cell medium-3 small-order-1 medium-order-2 right-cell cancel-padding-right">
+			<div class="cell medium-3 small-order-1 medium-order-2 right-cell hor-pad-left">
 				<div class="hor-pad-right-expanded">
 					<div class="show-for-medium">
-						<h3><?php print strtoupper(date("l",strtotime( $post->start_date ))); ?></h3>
-						<h3><?php print strtoupper(date("F d, Y", strtotime( $post->start_date ))); ?></h3>					
+						<h3>
+							<?php print date("l",strtotime( $post->start_date )); ?><br>
+							<?php print date("F d, Y", strtotime( $post->start_date )); ?>
+						</h3>					
 					</div>
 					<div class="show-for-small-only">
 						<h3><?php print strtoupper(date("l—F d, Y", strtotime( $post->start_date ))); ?></h3>					
@@ -84,7 +83,7 @@
 	</div>
 
 	<div class="grid-x vert-pad-bottom-expanded pos-relative vb-3 ">
-		<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom">
+		<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom hor-pad-left-expanded">
 			<div class="hor-pad-left-expanded">
 				<?php if ($event_type): ?>
 					<?php foreach ($event_type as $item): ?>

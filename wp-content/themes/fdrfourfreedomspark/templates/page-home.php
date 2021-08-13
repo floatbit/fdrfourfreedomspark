@@ -25,7 +25,14 @@
 <main class="border-side">
 	<section id="home-hero">
 		<div class="hero-container">
-			<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
+			<?php if(strtolower(end(explode(".",$hero['url']))) == "mp4"): ?>
+				<video muted autoplay loop playsinline class="hero-image background-cover">
+					<source src="<?php print $hero['url']; ?>" type="video/mp4" />
+				</video>	
+			<?php else: ?>
+				<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
+			<?php endif; ?>
+			
 			<div class="hero-info-container bg-color-white">
 				<div class="grid-x grid-padding-x">
 					<div class="cell medium-6 open-border hero-info-item">
