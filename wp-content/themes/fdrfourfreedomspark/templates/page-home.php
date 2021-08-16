@@ -211,7 +211,7 @@
 						'less_padding' => true,
 						'eyebrow_color' => 'color-black',
 						'link' => get_the_permalink(),
-						'cell_class' => 'vert-margin-top vert-margin-bottom',
+						'cell_class' => 'vert-margin-top',
 						'title_size' => 'h1',
 					));
 					get_template_part( 'parts/panel-content' );
