@@ -71,7 +71,7 @@
 
     <?php if($text_with_image == null || $text_with_image == false) : ?>
         <div class="cell medium-3 <?php print $less_padding_class.' '. $cell_class; ?> flex-container flex-dir-column">
-            <div class="content-container">
+            <div class="content-container vert-margin-bottom">
                 <?php print apply_filters('the_content', $text); ?>
             </div>
             
