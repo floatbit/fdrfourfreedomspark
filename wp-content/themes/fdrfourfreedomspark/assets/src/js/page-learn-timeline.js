@@ -37,15 +37,17 @@ timelineHandler = {
             cellSelector: '.timeline-cell',
             cellAlign: 'left',
             draggable: true,
+            contain: true,
             pageDots: false,
             prevNextButtons: false,
+            freeScroll: true,
         });
 
         $navContainer.flickity({
             asNavFor: '.timeline-carousel',
             contain: true,
             prevNextButtons: false,            
-            pageDots: false
+            pageDots: false,
         });
 
         $carousel.on( 'change.flickity', function( event, index ) {
