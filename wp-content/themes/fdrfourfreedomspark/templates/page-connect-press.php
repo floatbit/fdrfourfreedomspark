@@ -84,9 +84,7 @@
                     ?>
                     <div class="cell medium-3 <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
                         <?php if($key == 0) : ?>
-                            <h1>
-                                Press Coverage
-                            </div>
+                            <h1>Press Coverage</h1>
                         <?php endif; ?>
                     </div>
                     <div class="cell medium-3 coverage-image-container">

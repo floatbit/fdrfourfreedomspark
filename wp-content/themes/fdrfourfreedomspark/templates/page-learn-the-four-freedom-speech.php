@@ -23,7 +23,7 @@
                         <?php the_title(); ?>
                     </div>
                 </div>
-                <div class="cell hero-image background-cover show-for-medium vert-margin-top vert-margin-top" style="background-image:url(<?php print $intro['hero_image']; ?>)"></div>
+                <div class="cell hero-image background-cover show-for-medium" style="background-image:url(<?php print $intro['hero_image']; ?>)"></div>
                 <div class="cell hero-image background-cover show-for-small-only" style="background-image:url(<?php print ($intro['mobile_hero_image'] != null) ? $intro['mobile_hero_image'] : $intro['hero_image']; ?>)"></div>
             </div>
         </div>

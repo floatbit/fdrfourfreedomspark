@@ -6,9 +6,9 @@
                     justify-content: center;
                 }
 
-                .hero-image {
-                    @include fluid-props(240px, 644px, height);
-                }
+            }
+            .hero-image {
+                @include fluid-props(240px, 644px, height);
             }
         }
     }
