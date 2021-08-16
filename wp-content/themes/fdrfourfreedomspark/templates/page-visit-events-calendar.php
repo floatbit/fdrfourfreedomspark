@@ -45,7 +45,7 @@
 					if (!$text) {
 						$text = get_field('intro', $event->ID);
 					}
-					if (!text) {
+					if (!$text) {
 						$text = get_the_content($event->ID);
 					}
 
