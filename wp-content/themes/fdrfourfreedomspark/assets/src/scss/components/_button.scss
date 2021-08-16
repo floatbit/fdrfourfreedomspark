@@ -1,6 +1,6 @@
 .button {
-    @include fluid-props(3px, 3px, padding-top);
-    @include fluid-props(6px, 6px, padding-bottom);
+    @include fluid-props(4px, 4px, padding-top);
+    @include fluid-props(4px, 4px, padding-bottom);
     @include fluid-props(16px, 25px, padding-left);
     @include fluid-props(16px, 25px, padding-right);
 
@@ -40,9 +40,7 @@
     span {
         @extend .background-cover;
         display: inline-block;
-        margin-right: rem-calc(6);
         &.icon {
-            @include fluid-props(3px, 4px, margin-top);
             @include fluid-props(18px, 26px, height);
             @include fluid-props(18px, 26px, width);
         }
@@ -66,7 +64,6 @@
     border: none;
     @extend .color-blue;
     @extend .button-text;
-    letter-spacing: 1.2px;
 
     &::after {
         transition: 250ms ease-in-out;

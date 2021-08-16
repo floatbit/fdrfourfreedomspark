@@ -1,15 +1,11 @@
 <?php
 	$main_nav = wp_get_nav_menu_items('Main Nav');
 	$donate_link = get_field('donate_link', 'option');
-
-	/* foreach ($main_nav as $key => $value) {
-		var_dump($value->menu_item_parent);
-	} */
 ?>
 
 <header class="bg-color-white <?php print (is_front_page()) ? 'front-page' : ''; ?>">
 	<div class="grid-x align-middle">
-		<div class="cell auto medium-6">
+		<div class="cell auto large-6">
 			<div class="main-logo-container">
 				<a href="/">
 					<?php if(is_front_page()) : ?>
@@ -21,7 +17,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="cell medium-6 show-for-medium">
+		<div class="cell large-6 show-for-large">
 			<div class="menus-container flex-container align-middle align-right">
 				<?php foreach ($main_nav as $key => $value): ?>
 					<?php
@@ -60,9 +56,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="cell shrink hide-for-medium">
+		<div class="cell shrink hide-for-large">
 			<div class="right-section">
-				<a class="icon-bars-menu" href="#open-small-menu-nav"><i class="fas fa-bars color-black"></i></a>
+				<a class="icon-bars-menu" href="#open-small-menu-nav"><i class="fal fa-bars color-black"></i></a>
 			</div>
 			<div class="small-menu-navigation bg-color-white">
 				<div class="grid-container">
@@ -72,7 +68,7 @@
 								<img class="small-logo" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>">
 							</div>
 							<div class="cell shrink">
-								<a class="icon-close-menu" href="#open-small-menu-nav"><i class="fas fa-times color-black"></i></a>
+								<a class="icon-close-menu" href="#open-small-menu-nav"><i class="fal fa-times color-black"></i></a>
 							</div>
 						</div>
 					</div>

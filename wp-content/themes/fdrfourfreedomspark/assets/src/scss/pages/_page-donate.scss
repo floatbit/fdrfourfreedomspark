@@ -1,13 +1,5 @@
 .page-template-page-donate main {
   
-    .donate-container {
-        .donate-title {
-            @include breakpoint(small only) {
-                margin-bottom: rem-calc(40);
-            }
-        }
-    }
-
     .middle-content {
 
         ul {

@@ -22,10 +22,6 @@
 
                 .links-image {
                     @include fluid-props(232px, 580px, height);
-                    
-                    @include breakpoint(small only) {
-                        margin-bottom: rem-calc(20);
-                    }
                 }
 
                 .links-title {

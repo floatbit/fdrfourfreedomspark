@@ -22,13 +22,13 @@
 
 <?php get_header();?>
 
-<main class="border-side">
+<main class="border-side trim-headings">
   
     <section id="conserv-intro">
         <div class="intro-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
                 <div class="cell vert-margin-top vert-margin-bottom">
-                    <div class="h1-style"><?php the_title(); ?></div>
+                    <h1><?php the_title(); ?></h1>
                 </div>
             </div>
             <div class="pos-relative vb-1 vb-2 vb-3 background-cover intro-image" style="background-image:url(<?php print $intro_image ?>)"></div>
@@ -55,7 +55,7 @@
                                 $url = $item['url'];
                                 $target = '_blank';
                                 if ($url == null) {
-                                    $url = '#';
+                                    $url = '';
                                     $target = '';
                                 }
                                 
@@ -66,10 +66,10 @@
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
                                 <div class="bod-content <?php print $last_class; ?>">
-                                    <div class="bod-content-image-container">
-                                        <a href="<?php print $url ?>" target="<?php print $target; ?>">
-                                            <img src="<?php print $item['photo'] ?>" class="bod-image">
-                                        </a>
+                                    <div class="bod-content-image-container background-cover" style="background-image:url(<?php print $item['photo'] ?>)">
+                                        <?php if ($url): ?>
+                                            <a href="<?php print $url ?>" target="<?php print $target; ?>"></a>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="h3-style bod-content-name">
                                         <?php print $item['name'] ?>
@@ -82,7 +82,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="cell medium-3 bod-people-content vert-margin-top vert-margin-bottom">
+                <div class="cell medium-3 bod-people-content vert-margin-top vert-margin-bottom trim-paragraphs">
                     <?php print $people; ?>
                 </div>
             </div>
@@ -112,7 +112,7 @@
         </div>
     </section>
 
-    <section id="conserv-infos">
+    <section id="conserv-infos" class="trim-paragraphs">
         <div class="infos-container">
             <?php foreach($infos as $key => $item) : ?>
                 <?php 

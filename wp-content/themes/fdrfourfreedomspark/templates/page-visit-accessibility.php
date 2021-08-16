@@ -15,13 +15,13 @@
 
 <main class="border-side">
 	
-	<section id="access-intro">
+	<section id="access-intro" class="trim-headings">
         <div class="intro-container">
             <div class="grid-x grid-padding-y pos-relative vb-1 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded border-bottom intro-inner-container">
                 <div class="cell medium-3 padding-all">
-                    <div class="h1-style">
+                    <h1>
                         <?php the_title(); ?>
-                    </div>
+                    </h1>
                 </div>
                 <div class="cell medium-9 padding-all">
                     <div class="hor-pad-right-expanded">
@@ -33,7 +33,7 @@
     </section>
 
     <section id="access-content">
-        <div class="content-container">
+        <div class="content-container trim-paragraphs">
             <?php foreach($means_of_access as $item): ?>
                 <?php 
                     $title = $item['title'];

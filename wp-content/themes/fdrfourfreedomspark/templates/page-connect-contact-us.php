@@ -16,7 +16,7 @@
         <div class="hero-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top hero-inner-container">
                 <div class="cell vert-pad-bottom-expanded">
-                    <div class="h1-style">
+                    <h1>
                         <?php the_title(); ?>
                     </div>
                 </div>
@@ -29,9 +29,9 @@
         <div class="form-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top form-inner-container">
                 <div class="cell medium-3 medium-offset-3 vert-margin-top vert-margin-bottom">
-                    <div class="h3-style">
+                    <h3>
                         Receive News and Updates From Four Freedoms Park Conservancy
-                    </div>
+                    </h3>
                 </div>
                 <div class="cell medium-6 vert-margin-top vert-margin-bottom">
                     <?php print do_shortcode( '[gravityform id="1" ajax=true]' );?>
@@ -48,15 +48,13 @@
                         $cell_class = "";
                         if ($key == 0) {
                             $cell_class = "vert-margin-top";
-                        } else if ($key == count($contact_info)-1) {
-                            $cell_class = "vert-margin-bottom";
                         }
                     ?>
                     <div class="cell medium-3 cancel-padding-top <?php print ($key == 0) ? '' : 'show-for-medium' ; ?> <?php print $cell_class; ?>">
                         <?php if($key == 0) : ?>
-                            <div class="h1-style">
+                            <h1>
                                 Contact Information
-                            </div>
+                            </h1>
                         <?php endif; ?>
                     </div>
                     <div class="cell medium-3 cancel-padding-top <?php print $cell_class; ?>">
@@ -81,7 +79,7 @@
                     $permalink = get_the_permalink($item->ID);
 
                     $image_class = "vert-margin-top";
-                    $desc_class = "vert-margin-bottom";
+                    $desc_class = "vert-margin-top vert-margin-bottom";
                 ?>
                 <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vert-pad-top-expanded vert-pad-bottom-expanded border-top links-inner-container">
                     <div class="cell medium-3 show-for-medium <?php print $image_class; ?>"></div>

@@ -112,12 +112,17 @@ function ffp_is_current_navigation($nav_item) {
       }
     }
   }
+  if (!$result) {
+    if (is_singular('event')) {
+      $result = (strpos($nav_item->url, '/visit') !== FALSE);
+    }
+  }
   return $result;
 }
 
 function ffp_create_taxonomy() {
   $labels = array(
-    'name' => _x( 'Events Type', 'taxonomy general name' ),
+    'name' => _x( 'Event Types', 'taxonomy general name' ),
     'singular_name' => _x( 'Event Type', 'taxonomy singular name' ),
     'search_items' =>  __( 'Search Event Type' ),
     'popular_items' => __( 'Popular Event Type' ),
@@ -131,7 +136,7 @@ function ffp_create_taxonomy() {
     'separate_items_with_commas' => __( 'Separate event type with commas' ),
     'add_or_remove_items' => __( 'Add or remove event type' ),
     'choose_from_most_used' => __( 'Choose from the most used event type' ),
-    'menu_name' => __( 'Event Type' ),
+    'menu_name' => __( 'Event Types' ),
   ); 
  
   register_taxonomy('event_type', 'event_type', array(

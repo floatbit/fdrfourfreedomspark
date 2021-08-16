@@ -20,8 +20,8 @@
     <section id="park-intro">
         <div class="intro-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-2-small vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded">
-                <div class="cell vert-margin-top vert-margin-bottom">
-                    <div class="h1-style"><?php the_title(); ?></div>
+                <div class="cell vert-margin-top vert-margin-bottom trim-headings">
+                    <h1><?php the_title(); ?></h1>
                 </div>
             </div>
 			<div class="intro-image background-cover" style="background-image:url(<?php print $intro_image ?>)"></div>
@@ -42,9 +42,9 @@
                         <div class="grid-x grid-padding-x">
                             <div class="cell medium-6 medium-offset-6">
                                 <?php if($item['title'] != null): ?>
-                                    <div class="h3-style">
+                                    <h2>
                                         <?php print $item['title'] ?>
-                                    </div>
+                                    </h2>
                                 <?php endif; ?>
                             </div>
                             <?php if($item['image'] != null): ?>
@@ -62,15 +62,15 @@
                     </div>
                     <div class="cell show-for-small-only">
                         <?php if($item['title'] != null): ?>
-                            <div class="h3-style">
+                            <h2>
                                 <?php print $item['title'] ?>
-                            </div>
+                            </h2>
                         <?php endif; ?>
                     </div>
                     <?php if($item['image'] != null): ?>
                         <div class="cell background-cover content-image show-for-small-only" style="background-image:url(<?php print $item['image']; ?>)"></div>
                     <?php endif; ?>
-                    <div class="cell medium-6 vert-margin-top vert-margin-bottom">
+                    <div class="cell medium-6 vert-margin-top vert-margin-bottom trim-paragraphs">
                         <?php print $item['content']; ?>
                     </div>
                     <div class="cell show-for-small-only">

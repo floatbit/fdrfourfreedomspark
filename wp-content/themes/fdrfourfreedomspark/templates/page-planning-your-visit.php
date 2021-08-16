@@ -6,7 +6,7 @@
 
 <?php get_header();?>
 
-<main class="border-side">
+<main class="border-side trim-headings">
 
 	<div class="grid-x grid-padding-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
 		<div class="cell title-cell">
@@ -26,7 +26,7 @@
 		</div>
 		<div class="cell medium-3 ">
 			<div class="link-container">
-				<a href="<?php print $google_map_url; ?>" class="color-black"><p>View on Google Maps</p></a>
+				<a href="<?php print $google_map_url; ?>" target="_blank" class="color-black"><p>View on Google Maps</p></a>
 			</div>
 		</div>
 		<div class="cell medium-3 ">
@@ -75,7 +75,7 @@
 		?>
 		<?php foreach ($means_of_transport as $key => $item): ?>
 			<div class="cell medium-3 border-bottom cancel-padding-y">
-				<div class="item-container vert-pad-top-expanded vert-pad-bottom-expanded">	
+				<div class="item-container trim-paragraphs vert-pad-top-expanded vert-pad-bottom-expanded">	
 					<?php if ($item['icon']): ?>
 						<img src="<?php print $item['icon']; ?>" class="img-icon">
 					<?php endif; ?>
@@ -123,9 +123,7 @@
 
 	<div class="grid-x grid-padding-x grid-padding-y middle-image-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
 		<div class="cell medium-offset-3 medium-6">
-			<h1>Four Freedoms Park Conservancy<br>
-				strives to make the Park fully<br>
-				accessible for all.</h1>
+			<h1>Four Freedoms Park Conservancy strives to make the Park fully accessible for all.</h1>
 
 			<div class="vert-pad-top-expanded vert-pad-bottom-expanded">
 				<?php print do_shortcode( '[link-with-arrow title="Read More" url="/visit/accessibility" target="new" ]' ); ?>			
@@ -145,8 +143,7 @@
 			$description = $events_calendar['description'];
 		?>
 		<div class="cell medium-3">
-			<h1>Public Events<br>
-				Calendar</h1>
+			<h1>Public Events Calendar</h1>
 		</div>
 		<div class="cell middle-image vert-margin-top medium-6 background-cover" style="background-image:url(<?php print $image['url'] ?>)">
 		</div>		

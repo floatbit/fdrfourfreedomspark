@@ -12,6 +12,7 @@
     $link = $part_params['link'];
     $link_text = $part_params['link_text'];
     $title_size = $part_params['title_size'];
+    $title_tag = $part_params['title_tag'] ? $part_params['title_tag'] : 'h2';
     $cell_class = $part_params['cell_class'];
     $less_padding_class = '';
 
@@ -37,22 +38,30 @@
         <div class="cell medium-3 show-for-medium"></div>
     <?php endif; ?>
 
-    <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?>">
+    <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?> trim-headings">
         <?php if ($eyebrow): ?>
             <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
                 <?php print $eyebrow; ?>
             </div>
         <?php endif; ?>
-        <div class="<?php print $title_size; ?> content-title">
+        <<?php print $title_tag; ?> class="<?php print $title_size; ?> content-title">
             <?php print $title; ?>
-        </div>
+        </<?php print $title_tag; ?>>
     </div>
     
     <?php if ($less_padding == true): ?>
-        <div class="cell small-11 medium-6 background-cover content-image-background <?php print $cell_class;?>" style="background-image:url(<?php print $image; ?>)"></div>
+        <div class="cell small-11 medium-6 background-cover content-image-background <?php print $cell_class;?>" style="background-image:url(<?php print $image; ?>)">
+        <?php if ($link): ?>
+            <a href="<?php print $link; ?>"></a>
+        <?php endif; ?>
+        </div>
     <?php else : ?>
         <div class="cell medium-6 <?php print $cell_class;?>">
-            <img class="content-image" src="<?php print $image; ?>">
+            <?php if ($link): ?>
+                <a href="<?php print $link; ?>"><img class="content-image" src="<?php print $image; ?>"></a>
+            <?php else: ?>
+                <img class="content-image" src="<?php print $image; ?>">
+            <?php endif; ?>
             
             <?php if ($text_with_image == true): ?>
                 <?php print apply_filters('the_content', $text); ?>

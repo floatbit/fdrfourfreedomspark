@@ -18,8 +18,8 @@
     <section id="hero-section">
         <div class="hero-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top">
-                <div class="cell">
-                    <div class="h1-style vert-pad-bottom-expanded">
+                <div class="cell trim-headings">
+                    <h1 class="vert-pad-bottom-expanded">
                         <?php the_title(); ?>
                     </div>
                 </div>
@@ -42,8 +42,6 @@
                     'border_class' => 'vb-1 vb-2 vb-3',
                     'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
                     'less_padding' => true,
-                    'link' => '/learn/timeline',
-                    'link_text' => 'View Timeline',
                     'cell_class' => 'vert-margin-top vert-margin-bottom',
                     'title_size' => 'h1'
                 ));
@@ -53,7 +51,7 @@
     </section>
 
     <section id="sections-section">
-        <div class="sections-container">
+        <div class="sections-container trim-paragraphs">
             <?php foreach($sections as $key => $item) : ?>
                 <?php 
                     $first_cell_class = '';
@@ -83,7 +81,7 @@
     </section>
 
     <section id="featured-blogs-section">
-        <div class="featured-blogs-container">
+        <div class="featured-blogs-container trim-paragraphs">
             <?php foreach($featured_blogs as $key => $item) : ?>
                 <?php 
                     $cat = get_the_category($item->ID);
@@ -114,7 +112,7 @@
                         'text_with_image' => true,
                         'empty_first_cell' => $even,
                         'eyebrow_color' => 'color-black',
-                        'cell_class' => 'vert-margin-top vert-margin-bottom',
+                        'cell_class' => 'vert-margin-top',
                         'title_size' => 'h1'
                     ));
                     get_template_part( 'parts/panel-content' );

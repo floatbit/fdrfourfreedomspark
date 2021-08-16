@@ -1,6 +1,6 @@
 {
     "key": "group_61090604df1bf",
-    "title": "CPT: Events",
+    "title": "Single Event Fields",
     "fields": [
         {
             "key": "field_610906691a171",
@@ -97,7 +97,7 @@
         },
         {
             "key": "field_610908591a175",
-            "label": "Register Cta",
+            "label": "Register CTA",
             "name": "register_cta",
             "type": "link",
             "instructions": "",
@@ -128,5 +128,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628150764
+    "modified": 1629100296
 }

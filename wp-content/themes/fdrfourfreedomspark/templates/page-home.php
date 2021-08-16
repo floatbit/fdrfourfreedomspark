@@ -38,7 +38,7 @@
 					<div class="cell medium-6 open-border hero-info-item">
 						<div class="flex-container align-middle info-item">
 							<div class="p-style color-black info-open">
-								Open Today <span class="info-hour bold"><?php print $open_info; ?></span>
+								Open Today&nbsp;&nbsp;<span class="info-hour bold"><?php print $open_info; ?></span>
 							</div>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 						<div class="flex-container align-middle info-item">
 							<a href="/visit/accessibility" class="hero-link">
 								<div class="p-style color-black info-access">
-									<i class="fas fa-wheelchair"></i>Accessibility
+									<i class="fal fa-wheelchair"></i>Accessibility
 								</div>
 							</a>
 						</div>
@@ -87,9 +87,9 @@
 		<div class="intro-container">
 			<div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded border-top intro-inner-container">
 				<div class="cell medium-6 intro-title">
-					<div class="h1-style">
+					<h1>
 						<?php print $intro['title']; ?>
-					</div>
+					</h1>
 				</div>
 				<div class="cell medium-12 show-for-medium"></div>
 				<div class="cell medium-3 show-for-medium"></div>
@@ -145,7 +145,7 @@
 			if ($events):
 		?>
 			<div class="grid-x pos-relative vb-1 vb-2 border-top">
-				<div class="cell medium-3 padding-all flex-container flex-dir-column">
+				<div class="cell medium-3 padding-all cancel-padding-bottom flex-container flex-dir-column">
 					<div class="vert-pad-top-expanded flex-child-auto">
 						<h1><?php print $title; ?></h1>
 					</div>
@@ -158,7 +158,7 @@
 						foreach ($events as $event): 
 							$image 		= get_the_post_thumbnail_url($event->ID);
 							$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
-							$time_info  = strtoupper($event->time_info);
+							$time_info  = $event->time_info;
 							$first_sentence = ffp_get_first_sentence_of_content($event);
 
 							set_query_var( 'part_params', array(
@@ -177,7 +177,7 @@
 	</section>
 
 	<section id="home-featured-blog">
-		<div class="featured-blog-container">
+		<div class="featured-blog-container trim-paragraphs">
 			<?php foreach($featured_blogs as $key => $item) : ?>
 				<?php 
 					$cat = get_the_category($item->ID);
@@ -203,17 +203,18 @@
 
 					set_query_var( 'part_params', array(
 						'eyebrow' => $catName,
-                        'title' => get_the_title(),
-                        'image' => $image,
-                        'text' => get_the_content(),
-                        'border_class' => 'vb-1 vb-2 vb-3',
-                        'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class,
-                        'less_padding' => true,
+						'title' => get_the_title(),
+						'image' => $image,
+						'text' => get_the_content(),
+						'border_class' => 'vb-1 vb-2 vb-3',
+						'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class,
+						'less_padding' => true,
 						'eyebrow_color' => 'color-black',
 						'link' => get_the_permalink(),
+						'cell_class' => 'vert-margin-top vert-margin-bottom',
 						'title_size' => 'h1',
-                    ));
-                    get_template_part( 'parts/panel-content' );
+					));
+					get_template_part( 'parts/panel-content' );
 				?>
 			<?php endforeach; ?>
 		</div>

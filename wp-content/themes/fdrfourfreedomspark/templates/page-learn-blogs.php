@@ -44,6 +44,7 @@
 						'posts_per_page' => 1,
 					);
 					$post = get_posts($args)[0];
+					$featured_post_id = $post->ID;
 
 					$category 	= get_the_terms($post->ID, 'category');
 					$image 		= get_the_post_thumbnail_url($post->ID);
@@ -67,6 +68,7 @@
 						'text' 		=> $text,
 						'link'		=> $link,
 						'border_class' 		=> 'vb-1 vb-2 vb-3',
+						'cell_class' => 'vert-margin-top vert-margin-bottom',
 						'additional_class' 	=> 'vert-pad-bottom-expanded vert-pad-top-expanded',
 						'less_padding' 		=> true,
 					));
@@ -77,6 +79,7 @@
 		<div class="grid-x grid-padding-y posts-section pos-relative vb-2 border-top">
 			<?php foreach ($posts as $key => $post): ?>
 				<?php
+					if ($post-> ID == $featured_post_id) continue;
 					$category 	= get_the_terms($post->ID, 'category');
 					$image 		= get_the_post_thumbnail_url($post->ID);
 					$start_date = strtoupper(date("d M Y",strtotime($post->post_date)));

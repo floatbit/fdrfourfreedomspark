@@ -33,15 +33,21 @@
 	?>	
 
 	<?php if ($events): ?>
-		<div class="grid-x grid-padding-x grid-padding-y events-section pos-relative vb-2 border-top">
+		<div class="grid-x grid-padding-y events-section pos-relative vb-2 border-top">
 			<?php foreach ($events as $event): ?>
 				<?php
 					$event_type = get_the_terms($event->ID, 'event_type');
 					$image 		= get_the_post_thumbnail_url($event->ID);
 					$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
-					$time_info  = strtoupper($event->time_info);
+					$time_info  = $event->time_info;
 
-					$$text = get_the_excerpt($event);
+					$text = get_the_excerpt($event);
+					if (!$text) {
+						$text = get_field('intro', $event->ID);
+					}
+					if (!text) {
+						$text = get_the_content($event->ID);
+					}
 
 					$tax = '';
 					$tax_slug = '';

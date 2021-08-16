@@ -31,17 +31,17 @@
 	<div class="border-top">
 		<div class="grid-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
 			<div class="cell medium-8 title-cell cancel-padding-y hor-pad-left-expanded">
-				<div class="hor-pad-left-expanded">
+				<div class="hor-pad-left-expanded trim-paragraphs">
                     <a href="/events-calendar/" class="btn-with-back bold color-blue">EVENTS</a>
 					<h1 class="title-text"><?php the_title();?></h1>
-					<?php print $intro?>
+					<?php print $intro; ?>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<?php
-		$time_info  = strtoupper(get_field('time_info'));
+		$time_info  = get_field('time_info');
 		$venue_address = get_field('venue_address') ? : get_field('address', 'option');
 		$register_cta  = get_field('register_cta');
 		$price_info    = get_field('price_info');

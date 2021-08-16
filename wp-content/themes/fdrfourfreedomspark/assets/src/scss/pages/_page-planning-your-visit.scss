@@ -23,11 +23,6 @@
             @include fluid-props(66px, 66px, height);
             margin-bottom: rem-calc(20);
         }
-        .item-container {
-            p {
-                white-space: pre-wrap;
-            }
-        }
     }
 
     .park-rules-section {
