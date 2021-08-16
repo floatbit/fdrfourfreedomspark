@@ -8,7 +8,7 @@
 
 <main class="border-side">
 	
-	<div class="grid-x pos-relative vb-1 vb-2 vb-3 border-top border-bottom">
+	<div class="grid-x pos-relative border-top border-bottom">
 		<div class="cell timeline-container">
 			<div class="timeline-carousel">
 				<div class="timeline-cell timeline-cell-double cell-1 padding-all" data-decade="">
@@ -27,7 +27,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>January 30</strong>—Franklin<br>Roosevelt (FDR) born at<br>Hyde Park
+								<strong>January 30</strong>—Franklin Roosevelt (FDR) was born at Hyde Park
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1882_img.png"?>" class="img">
@@ -41,7 +41,7 @@
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1884_img.png"?>" class="img">
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>October 11</strong>—Eleanor<br>Roosevelt (ER) born in<br>New York City
+								<strong>October 11</strong>—Eleanor Roosevelt (ER) was born in New York City
 							</span>
 						</div>
 					</div>
@@ -53,7 +53,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>March 17</strong>—Franklin and<br>Eleanor are married
+								<strong>March 17</strong>—Franklin and Eleanor are married
 							</span>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								Franklin was elected to<br>New York State Senate
+								Franklin was elected to New York State Senate
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1910_img.png"?>" class="img">
@@ -78,7 +78,7 @@
 						</div>
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor attends her first<br>Democratic Party<br>Convention
+								Eleanor attends her first Democratic Party Convention
 							</span>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>April</strong>—Franklin was<br>appointed as Assistant<br>Secretary of the Navy
+								<strong>April</strong>—Franklin was appointed as Assistant Secretary of the Navy
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1913_img.png"?>" class="img">
@@ -103,9 +103,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text">
-								Eleanor works with the<br>
-								Red Cross, the Navy<br>Department to help<br>American Servicemen<br>
-								in WWI
+								Eleanor works with the Red Cross, the Navy Department to help American Servicemen in WWI
 							</span>
 						</div>
 					</div>
@@ -118,13 +116,13 @@
 							</div>
 							<div class="text-container">
 								<span class="quote-text color-white">
-									Franklin is nominated for<br>Vice President on ticket<br>with James N. Cox, but lost<br>to Coolidge and Harding
+									Franklin is nominated for Vice President on ticket with James N. Cox, but lost to Coolidge and Harding
 								</span>
 							</div>
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor joins League of<br>Women Voters and works<br>for womens’ political gains<br>following the successful<br>movement
+								Eleanor joins League of Women Voters and works for womens’ political gains following the successful movement
 							</span>
 						</div>
 					</div>
@@ -136,7 +134,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>August</strong>—Franklin  is<br>stricken with poliomyelitis<br>at Campobello, New<br>Brunswick, Canada
+								<strong>August</strong>—Franklin is stricken with poliomyelitis at Campobello, New Brunswick, Canada
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1921_img.png"?>" class="img">
@@ -149,7 +147,7 @@
 						</div>
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor writes <span class="font-heading-italic">“Why I Am<br>a Democrat,”</span>crystallizing<br>her ideals and commitment<br>to the Democratic Party
+								Eleanor writes <span class="font-heading-italic">“Why I Am a Democrat,”</span>crystallizing her ideals and commitment to the Democratic Party
 							</span>
 						</div>
 					</div>
@@ -159,7 +157,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								Franklin founded the<br>Georgia Warm Springs<br>Foundation therapy center<br>for the treatment of<br>polio victims
+								Franklin founded the Georgia Warm Springs Foundation therapy center for the treatment of polio victims
 							</span>
 						</div>
 					</div>
@@ -175,7 +173,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 6</strong>—Franklin<br>was elected as Governor<br>of New York
+								<strong>November 6</strong>—Franklin was elected as Governor of New York
 							</span>
 						</div>
 					</div>
@@ -188,7 +186,7 @@
 						</div>
 						<div class="text-container border-top">
 							<span class="quote-text color-white">
-								<strong>November 8</strong>—Franklin<br>was elected as President
+								<strong>November 8</strong>—Franklin was elected as President
 							</span>
 						</div>
 					</div>
@@ -198,7 +196,7 @@
 					<div class="timeline-block flex-container ">
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor states that the<br>country should not expect<br>the new First Lady to be a<br>symbol of elegance but<br>rather, “plain, ordinary<br>Mrs. Roosevelt.”
+								Eleanor states that the country should not expect the new First Lady to be a symbol of elegance but rather, “plain, ordinary Mrs. Roosevelt.”
 							</span>
 						</div>
 					</div>
@@ -212,14 +210,14 @@
 							</div>
 							<div class="text-container">
 								<span class="quote-text color-white">
-									<strong>March 4</strong>—Franklin was<br>Inaugurated as 32nd<br>President
+									<strong>March 4</strong>—Franklin was inaugurated as 32nd President
 								</span>
 							</div>
 							<img src="<?php print TEMPLATE_IMAGE_PATH."/1933_img.png"?>" class="img">
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>March 6</strong>—Eleanor<br>becomes the 1st First Lady<br>to hold a press conference<br>where only female<br>reporters are admitted
+								<strong>March 6</strong>—Eleanor becomes the 1st First Lady to hold a press conference where only female reporters are admitted
 							</span>
 						</div>
 					</div>
@@ -232,7 +230,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>June 16</strong>—Franklin signs<br>the National Industrial<br>Recovery Act, part of his<br>“New Deal” platform
+								<strong>June 16</strong>—Franklin signs the National Industrial Recovery Act, part of his “New Deal” platform
 							</span>
 						</div>
 					</div>
@@ -242,7 +240,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 3</strong>—Franklin was<br>Reelected as President
+								<strong>November 3</strong>—Franklin was Reelected as President
 							</span>
 						</div>
 					</div>
@@ -255,7 +253,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 5</strong>—Franklin was<br>reelected as President
+								<strong>November 5</strong>—Franklin was reelected as President
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1940_img.png"?>" class="img">
@@ -267,11 +265,11 @@
 						<div class="year-container">
 							<span class="h2-style color-white">1941</span> 
 						</div>
-						<div class="text-container">
-							<span class="quote-text color-white">
-								<strong>December 8</strong>—U.S.<br>declares war on Japan<br>
-								<br>
-								<strong>December 11</strong>—U.S.<br>declares war on Germany 
+						<div class="text-container flex-container">
+							<span class="quote-text color-white" style="width: 48%">
+								<strong>December 8</strong>—U.S. declares war on Japan
+								<br><br>
+								<strong>December 11</strong>—U.S. declares war on Germany 
 							</span>
 						</div>
 					</div>
@@ -284,7 +282,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>January 6</strong>—Franklin Gives<br>State of the Union speech<br>popularly known as<br>the <span class="font-heading-italic"><strong>“Four Freedoms”</strong></span>
+								<strong>January 6</strong>—Franklin Gives State of the Union speech popularly known as the <span class="font-heading-italic"><strong>“Four Freedoms”</strong></span>
 							</span>
 						</div>
 						<img src="<?php print TEMPLATE_IMAGE_PATH."/1942_img.png"?>" class="img">
@@ -297,20 +295,20 @@
 							<div class="year-container">
 								<span class="h2-style color-white">1945</span> 
 							</div>
-							<div class="text-container ">
-								<span class="quote-text color-white">
-									<strong>April 12</strong>—Franklin died in<br>Warm Springs, Georgia<br>
+							<div class="text-container flex-container">
+								<span class="quote-text color-white" style="width: 48%">
+									<strong>April 12</strong>—Franklin died in Warm Springs, Georgia<br>
 									<br>
-									<strong>April 15</strong>—Franklin buried<br>in Hyde Park, New York
+									<strong>April 15</strong>—Franklin buried in Hyde Park, New York
 								</span>
 							</div>
 						</div>
 						<div class="text-container flex-container align-justify text-container-bottom">
-							<span class="quote-text color-white">
-								Regarding Franklin’s death,<br>Eleanor says “ The story is<br>over,” and returns to<br>private life at her beloved<br>Val-Kill cottage<br>in Hyde Park
+							<span class="quote-text color-white" style="width: 48%">
+								Regarding Franklin’s death, Eleanor says “ The story is over,” and returns to private life at her beloved Val-Kill cottage in Hyde Park
 							</span>
-							<span class="quote-text color-white">
-								Eleanor accepts President<br>Harry Truman’s offer to<br>serve as a US delegate to<br>the United Nations
+							<span class="quote-text color-white" style="width: 48%">
+								Eleanor accepts President Harry Truman’s offer to serve as a US delegate to the United Nations
 							</span>
 						</div>
 					</div>
@@ -323,7 +321,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor begins work on<br>drafting the Declaration<br>of Human Rights
+								Eleanor begins work on drafting the Declaration of Human Rights
 							</span>
 						</div>
 					</div>
@@ -335,7 +333,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor resigns from the<br>UN delegation after the<br>election of Republican<br>President Eisenhower
+								Eleanor resigns from the UN delegation after the election of Republican President Eisenhower
 							</span>
 						</div>
 					</div>
@@ -348,7 +346,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor meets with John F.<br>Kennedy at Val-Kill
+								Eleanor meets with John F. Kennedy at Val-Kill
 							</span>
 						</div>
 					</div>
@@ -358,7 +356,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-							President Kennedy<br>reappoints Eleanor to the<br>UN and appoints her as<br>the first chairperson of the<br>President’s Commission<br>on the Status of Women
+							President Kennedy reappoints Eleanor to the UN and appoints her as the first chairperson of the President’s Commission on the Status of Women
 							</span>
 						</div>
 					</div>
@@ -371,7 +369,7 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>November 10</strong>—Eleanor dies<br>in NYC from disseminated<br>tuberculosis, aplastic anemia<br>and heart failure
+								<strong>November 10</strong>—Eleanor dies in NYC from disseminated tuberculosis, aplastic anemia and heart failure
 							</span>
 						</div>
 					</div>
