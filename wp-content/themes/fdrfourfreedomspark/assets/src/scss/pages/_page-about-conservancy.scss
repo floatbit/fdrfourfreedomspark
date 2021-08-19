@@ -18,7 +18,7 @@
 
                 .bod-content-image-container {
                     @include fluid-props(4px, 12px, margin-bottom);
-                    @include fluid-props(320px, 336px, height);
+                    // @include fluid-props(320px, 336px, height);
                     .bod-image {
                         width: 100%;
                     }
