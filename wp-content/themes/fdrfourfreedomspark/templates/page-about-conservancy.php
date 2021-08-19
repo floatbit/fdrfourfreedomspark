@@ -66,9 +66,13 @@
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
                                 <div class="bod-content <?php print $last_class; ?>">
-                                    <div class="bod-content-image-container background-cover" style="background-image:url(<?php print $item['photo'] ?>)">
+                                    <div class="bod-content-image-container background-cover">
                                         <?php if ($url): ?>
-                                            <a href="<?php print $url ?>" target="<?php print $target; ?>"></a>
+                                            <a href="<?php print $url ?>" target="<?php print $target; ?>">
+                                                <img src="<?php print $item['photo'] ?>" alt="<?php print $item['name']; ?>">
+                                            </a>
+                                        <?php else: ?>
+                                            <img src="<?php print $item['photo'] ?>" alt="<?php print $item['name']; ?>">
                                         <?php endif; ?>
                                     </div>
                                     <div class="h3-style bod-content-name">
