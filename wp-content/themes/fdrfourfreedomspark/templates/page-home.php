@@ -149,8 +149,8 @@
 					<div class="vert-pad-top-expanded flex-child-auto">
 						<h1><?php print $title; ?></h1>
 					</div>
-					<div class="vert-pad-bottom-expanded flex-child-shrink show-for-medium">
-                        <?php print do_shortcode( '[link-with-arrow title="See All Events" url="/events-calendar/"]' ); ?>
+					<div class="flex-child-shrink show-for-medium events-link">
+						<?php print do_shortcode( '[link-with-arrow title="See All Events" url="/events-calendar/"]' ); ?>
 					</div>
 				</div>
 				<div class="cell medium-9 vert-pad-top cell-events-container">
@@ -173,6 +173,12 @@
 						endforeach; 
 					?>
 				</div>
+				<div class="cell vert-pad-top-expanded vert-pad-bottom-expanded padding-all show-for-small-only">
+					<div class="vert-margin-top vert-margin-bottom">
+						<?php print do_shortcode( '[link-with-arrow title="See All Events" url="/events-calendar/"]' ); ?>
+					</div>
+				</div>
+			</div>
 		<?php endif ;?>
 	</section>
 

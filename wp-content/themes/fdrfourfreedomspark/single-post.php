@@ -14,7 +14,6 @@
     $middle_image = get_field('middle_image');
 	$second_section = get_field('second_section');
 	$related_blogs = get_field('related_blogs');
-	$social_media = get_field('social_media', 'option');  
     $cat = get_the_category();
     $date = get_the_date( 'd F Y');
     $catName = '';
@@ -58,14 +57,16 @@
                             CATEGORY
                         </div>
                         <?php foreach($cat as $catItem) : ?>
-                            <div class="p-style color-blue category-name">
-                                <?php print $catItem->name; ?>
-                            </div>
+                            <a href="/learn/blogs/?tax=<?php print $catItem->slug ?>">
+                                <div class="p-style color-blue category-name">
+                                    <?php print $catItem->name; ?>
+                                </div>
+                            </a>
                         <?php endforeach; ?>
                     </div>
                     <div class="flex-container social-media-container">
-                        <a class="icon-item" href="<?php print $social_media['twitter']; ?>"><i class="fab fa-twitter color-black"></i></a>
-                        <a class="icon-item" href="<?php print $social_media['facebook']; ?>"><i class="fab fa-facebook-square color-black"></i></a>
+                        <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter"><i class="fab fa-twitter color-black"></i></a>
+                        <a class="icon-item" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook"><i class="fab fa-facebook-square color-black"></i></a>
                     </div>
                 </div>
             </div>

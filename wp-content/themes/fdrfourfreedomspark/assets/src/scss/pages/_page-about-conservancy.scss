@@ -87,5 +87,21 @@
                 }
             }
         }
+
+        .about-conservancy-park-list {
+            td {
+                @include fluid-props(12px, 16px, padding-bottom);
+                @include fluid-props(12px, 16px, padding-left);
+
+                img {
+                    @include fluid-props(28px, 36px, height);
+                    @include fluid-props(28px, 36px, width);
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+            }
+        }
     }
 }

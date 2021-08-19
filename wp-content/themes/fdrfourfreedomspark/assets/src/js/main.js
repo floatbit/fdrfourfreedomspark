@@ -222,9 +222,14 @@ dataFilterHandler = {
 jQuery(document).ready(function($) {
 
   var header = document.querySelector("header");
+  var headerOffset = 300;
+  
+  if ($('header').hasClass('front-page')) {
+    headerOffset = 800;
+  }
   var options = {
     // vertical offset in px before element is first unpinned
-    offset : 800,
+    offset : headerOffset,
   };
   var headroom  = new Headroom(header, options);
   

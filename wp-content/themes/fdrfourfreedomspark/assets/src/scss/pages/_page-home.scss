@@ -82,6 +82,11 @@
                 padding-top: 0 ;
             }
         }
+
+        .events-link {
+            margin-bottom: rem-calc(124);
+            @include fluid-props(156px, 124px, margin-bottom);
+        }
     }
 
     #home-featured-blog {
