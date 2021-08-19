@@ -25,8 +25,8 @@
         margin-right: rem-calc(10);
         width: rem-calc(12);
         height: rem-calc(12);
-        border: 1px solid $spanish-gray;
-        background: $spanish-gray;
+        border: 1px solid $border-gray;
+        background: $border-gray;
         cursor: pointer;
         display: inline-block;
         vertical-align: text-top;
@@ -129,9 +129,6 @@
                 }
             }
         }
-        .gfield_label {
-            text-transform: uppercase;
-        }
     }
     .gform_footer {
         input[type=submit] {    
@@ -175,7 +172,7 @@
 
         #field_3_1, #field_3_5, #field_3_9, #field_3_12 {
             .gfield_label {
-                margin-bottom: rem-calc(4);
+                margin-bottom: rem-calc(8);
                 display: block;
             }
         }
@@ -266,27 +263,32 @@
                     flex-wrap: wrap;
                 }
                 span {
-                    margin-right: rem-calc(8);
+                    margin-right: rem-calc(24);
                     input[type=text] {
                         margin: 0;
                     }
                 }
                 #input_3_13_3_container {
                     order: 2;
-                    @include breakpoint (small only) {
-                        margin: 0;
-                    }
-                }                    
+                }
+                #input_3_13_3_container,
                 #input_3_13_4_container {
-                    order: 3;
-                    margin-right: 0;
                     @include breakpoint (small only) {
                         margin-top: 16px;
+                        margin-right: 0;
                         width: 100%;
                     }
                 }
+                #input_3_13_4_container {
+                    order: 3;
+                    margin-right: 0;
+                }
                 #input_3_13_5_container {
                     order: 1;
+                    @include breakpoint (small only) {
+                        margin-right: 0;
+                        width: 100%;
+                    }
                 }
             }
         }
