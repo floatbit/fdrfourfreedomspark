@@ -206,6 +206,20 @@
     }
 }
 
+#sb-instagram.sbi {
+    height: auto !important;
+    #sbi_images {
+        @include xy-grid;
+
+        .sbi_item {
+            @include xy-cell(6);
+            @include breakpoint(medium) {
+                @include xy-cell(4);
+            }
+        }
+    }
+}
+
 .no-touchevents {
     .panel-item-data .linked-panel:hover { 
         @extend .bg-color-gray;
