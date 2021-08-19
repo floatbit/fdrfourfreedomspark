@@ -26,19 +26,19 @@
 			</div>
 			<div class="footer-menu-container social-media-container">
 				<?php if ($social_media['instagram'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['instagram']; ?>"><i class="fab fa-instagram color-white"></i></a>
+					<a class="icon-item" href="<?php print $social_media['instagram']; ?>" target="_blank"><i class="fab fa-instagram color-white"></i></a>
 				<?php endif; ?>
 				<?php if ($social_media['twitter'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['twitter']; ?>"><i class="fab fa-twitter color-white"></i></a>
+					<a class="icon-item" href="<?php print $social_media['twitter']; ?>" target="_blank"><i class="fab fa-twitter color-white"></i></a>
 				<?php endif; ?>
 				<?php if ($social_media['facebook'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['facebook']; ?>"><i class="fab fa-facebook-square color-white"></i></a>
+					<a class="icon-item" href="<?php print $social_media['facebook']; ?>" target="_blank"><i class="fab fa-facebook-square color-white"></i></a>
 				<?php endif; ?>
 				<?php if ($social_media['youtube'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['youtube']; ?>"><i class="fab fa-youtube color-white"></i></a>
+					<a class="icon-item" href="<?php print $social_media['youtube']; ?>" target="_blank"><i class="fab fa-youtube color-white"></i></a>
 				<?php endif; ?>
 				<?php if ($social_media['medium'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['medium']; ?>"><i class="fab fa-medium color-white"></i></a>
+					<a class="icon-item" href="<?php print $social_media['medium']; ?>" target="_blank"><i class="fab fa-medium color-white"></i></a>
 				<?php endif; ?>
 			</div>
 		</div>
