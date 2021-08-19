@@ -97,7 +97,7 @@
                             <div class="p-style uppercase">
                                 <?php print $item['source']; ?>
                             </div>
-                            <a href="<?php print $url; ?>" class="coverage-title-link">
+                            <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-title-link">
                                 <div class="h3-style color-black title-text">
                                     <?php print $item['title']; ?>
                                 </div>

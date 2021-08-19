@@ -38,6 +38,25 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_611e004c6893e",
+            "label": "Side Text",
+            "name": "side_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -57,5 +76,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628156683
+    "modified": 1629356125
 }

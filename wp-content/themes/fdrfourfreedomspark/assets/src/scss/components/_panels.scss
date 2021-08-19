@@ -206,15 +206,34 @@
     }
 }
 
-#sb_instagram.sbi {
-    height: auto !important;
-    #sbi_images {
-        @include xy-grid;
-
-        .sbi_item {
-            @include xy-cell(6);
-            @include breakpoint(medium) {
-                @include xy-cell(4);
+#ig-feed {
+    > .grid-x > .cell:nth-child(2) {
+        @include breakpoint(xxlarge) {
+            margin-left: 0;
+        }
+    }
+    #sb_instagram.sbi {
+        height: auto !important;
+        #sbi_images {
+            @include xy-grid;
+            @include xy-gutters($negative: true);
+            .sbi_item {
+                @include xy-cell(6);
+                @include breakpoint(medium) {
+                    @include xy-cell(4);
+                }
+                @extend .vert-margin-bottom;
+                .sbi_link {
+                    display: none;
+                }
+                a.sbi_photo {
+                    display: block;
+                    width: 100%;
+                    transition: transform 250ms;
+                }
+                span.sbi-screenreader {
+                    display: none;
+                }
             }
         }
     }
@@ -223,5 +242,8 @@
 .no-touchevents {
     .panel-item-data .linked-panel:hover { 
         @extend .bg-color-gray;
+    }
+    #ig-feed #sb_instagram.sbi #sbi_images .sbi_item a.sbi_photo:hover {
+        transform: scale(1.05);
     }
 }

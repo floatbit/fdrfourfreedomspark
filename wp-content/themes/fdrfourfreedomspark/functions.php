@@ -49,6 +49,7 @@ function fdrfourfreedomspark_css_js() {
   wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), '', 'all' );
   wp_enqueue_style( 'flickity-css-fade', 'https://unpkg.com/flickity-fade@1/flickity-fade.css', array(), '', 'all' );
   wp_enqueue_style( 'app', get_template_directory_uri() . '/assets/css/app.css', array(), CSS_JS_VERSION, 'all' );
+  wp_dequeue_style( 'sb_instagram_styles' );
 }
 add_action('wp_enqueue_scripts', 'fdrfourfreedomspark_css_js');
 

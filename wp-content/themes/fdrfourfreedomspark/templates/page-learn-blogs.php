@@ -11,7 +11,6 @@
 	
 	<?php
 		global $post;
-
 		set_query_var( 'part_params', array(
 			'type' 	=> 'blog',
 			'title' => $post->post_title,

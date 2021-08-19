@@ -266,18 +266,22 @@ header {
     }
   }
 
+  &.headroom {
+    position: sticky;
+    top: 0;
+    transition: 250ms ease-in-out;
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
   &.front-page {
 
     .main-logo-container {
       .logo-white, .logo-blue {
         display: none;
       }
-    }
-
-    &.headroom {
-      position: sticky;
-      top: 0;
-      transition: 250ms ease-in-out;
     }
   
     &.headroom--top {
