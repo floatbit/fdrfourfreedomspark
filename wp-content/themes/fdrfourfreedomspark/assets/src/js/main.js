@@ -233,6 +233,72 @@ jQuery(document).ready(function($) {
   navHandler.init();
   dataFilterHandler.init();
 
+  // select styles
+  $('.address_country select').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+    $this.addClass('select-hidden');
+		$this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+
+    for (var i = 0; i < numberOfOptions; i++) {
+      if ($this.children('option').eq(i).is(':selected')) {
+        $styledSelect.text($this.children('option').eq(i).text());
+      }
+    }
+
+    $styledSelect.on("click", function(e) {
+			e.stopPropagation();
+			$('div.select-styled.active').not(this).each(function(){
+				$(this).removeClass('active').next('ul.select-options').hide();
+			});
+			var $selectOptions = $(this).closest('.select').find('.select-options').empty();
+			for (var i = 0; i < numberOfOptions; i++) {
+				var liProps = {
+					text: $this.children('option').eq(i).text(),
+					rel: $this.children('option').eq(i).val(),
+					class: ($this.children('option').eq(i).attr('disabled') ? 'disabled' : ''),
+				};
+				$('<li />', liProps).appendTo($selectOptions);
+			}			
+			$selectOptions.find('li').on("click", function(e) {
+				e.stopPropagation();
+				if (!$(e.target).is('.disabled')) {
+					$styledSelect.removeClass('active');
+					$this.val($(this).attr('rel')).trigger("change");
+					$selectOptions.hide();		
+				}
+			});	
+      $(this).toggleClass('active').next('ul.select-options').toggle();
+    })
+
+		$this.on("change", function() {
+		// sync select's value with front label
+			var currentValue = $this.val();
+			$styledSelect.removeClass('selected');
+			for (var i = 0; i < numberOfOptions; i++) {
+				if ($this.children('option').eq(i).attr('value') == currentValue) {
+					$styledSelect.text($this.children('option').eq(i).text());
+					if ($this.children('option').eq(i).val()) {
+						$styledSelect.addClass('selected');
+					}
+				}
+			}	
+		});
+
+    $(document).on("click", function() {
+      $styledSelect.removeClass('active');
+      $list.hide();
+    })
+	});
+
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
     $(this).parent().addClass('responsive-embed widescreen')
