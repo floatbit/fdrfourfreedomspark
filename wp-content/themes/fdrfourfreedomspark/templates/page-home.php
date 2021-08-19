@@ -219,7 +219,10 @@
 			<?php endforeach; ?>
 		</div>
 	</section>
-
+	
+	<?php 
+		get_template_part( 'parts/panel-instagram-feed' );
+	?>
 </main>
 
 <?php get_footer(); ?>
