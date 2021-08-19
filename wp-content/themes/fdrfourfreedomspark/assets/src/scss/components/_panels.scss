@@ -216,6 +216,16 @@
             @include breakpoint(medium) {
                 @include xy-cell(4);
             }
+            .sbi_link.sbi_disable_lightbox {
+                display: none;
+            }
+            a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
+                display: block;
+                width: 100%;
+            }
+            span.sbi-screenreader {
+                display: none;
+            }
         }
     }
 }
