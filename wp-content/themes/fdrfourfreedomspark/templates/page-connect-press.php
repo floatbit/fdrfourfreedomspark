@@ -71,7 +71,7 @@
 
     <section id="press-coverage">
         <div class="coverage-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top coverage-inner-container">
+            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom border-top coverage-inner-container">
                 <?php foreach($press_coverage as $key => $item) : ?>
                     <?php
                         $date = date('d M Y', strtotime($item['date']));
@@ -82,7 +82,7 @@
                             $target = '';
                         }
                     ?>
-                    <div class="cell medium-3 <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
+                    <div class="cell medium-3 trim-headings <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
                         <?php if($key == 0) : ?>
                             <h1>Press Coverage</h1>
                         <?php endif; ?>
@@ -92,7 +92,7 @@
                             <img src="<?php print $item['image']; ?>" class="coverage-image ">
                         </a>
                     </div>
-                    <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container">
+                    <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container <?php print ($key == count($press_coverage) - 1) ? 'last' : '';?>">
                         <div class="coverage-title">
                             <div class="p-style uppercase">
                                 <?php print $item['source']; ?>

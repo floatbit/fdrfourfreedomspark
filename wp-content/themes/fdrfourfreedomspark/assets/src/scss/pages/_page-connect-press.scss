@@ -30,6 +30,10 @@
 				.coverage-title-container {
 					@extend .border-bottom;
 
+					&.last {
+						border-bottom: none !important;
+					}
+
 					@include breakpoint(medium) {
 						border-bottom: none !important;
 					}

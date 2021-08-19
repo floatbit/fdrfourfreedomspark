@@ -91,11 +91,11 @@
         .about-conservancy-park-list {
             td {
                 @include fluid-props(12px, 16px, padding-bottom);
-                @include fluid-props(12px, 16px, padding-left);
+                padding-left: rem-calc(8);
+                vertical-align: top;
 
                 img {
-                    @include fluid-props(28px, 36px, height);
-                    @include fluid-props(28px, 36px, width);
+                    @include fluid-props(24px, 32px, width);
                 }
 
                 &:first-of-type {

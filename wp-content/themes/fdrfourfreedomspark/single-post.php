@@ -65,8 +65,8 @@
                         <?php endforeach; ?>
                     </div>
                     <div class="flex-container social-media-container">
-                        <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter"><i class="fab fa-twitter color-black"></i></a>
-                        <a class="icon-item" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook"><i class="fab fa-facebook-square color-black"></i></a>
+                        <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter" target="_blank"><i class="fab fa-twitter color-black"></i></a>
+                        <a class="icon-item" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook" target="_blank"><i class="fab fa-facebook-square color-black"></i></a>
                     </div>
                 </div>
             </div>
