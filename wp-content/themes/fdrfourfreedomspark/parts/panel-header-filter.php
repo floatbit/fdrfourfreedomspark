@@ -13,6 +13,7 @@
 		$filter_title = 'All Categories';
 		$datas = get_terms( 'category' );
 		$showing_text = 'Posts';
+		$data_tax = get_term_by('slug', $tax, 'category');
 	}
 
 ?>

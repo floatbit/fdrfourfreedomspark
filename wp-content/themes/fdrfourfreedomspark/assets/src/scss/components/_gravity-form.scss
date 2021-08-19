@@ -14,6 +14,95 @@
     }
 }
 
+.input-style-checkbox {
+    margin: 0 0.5rem 0 0 !important;
+    opacity: 0;
+    cursor: pointer;
+    & + label:before {
+        content: '';
+        @include fluid-props(3px, 4px, margin-top);
+        margin-left: rem-calc(-23);
+        margin-right: rem-calc(10);
+        width: rem-calc(12);
+        height: rem-calc(12);
+        border: 1px solid $spanish-gray;
+        background: $spanish-gray;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+
+    &:checked + label:before {
+        border: 1px solid $blue;
+        background: $blue;
+        cursor: pointer;
+    }
+}
+
+.select-hidden {
+    display: none;
+}
+
+.select-options,
+.select-styled {
+    @extend .input-style;
+    @extend .input-style.gray;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    position: absolute;
+}
+
+.select-styled{
+    &.active {
+        &::after {
+            content: '\f0de';
+            margin-top: 5px;
+        }
+    }    
+    display: flex;
+    top: 0;
+    left: 0;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    &::after {
+        content: '\f0dd';
+        font-family: FontAwesome;
+        color: $spanish-gray !important;
+        margin-top: -3px;
+    }
+
+}
+
+.select-options {
+    display: none;
+    padding: 0;
+    margin: 0;
+    background-color: $white;
+    border: 1px solid $gray;
+    overflow: overlay;
+    scrollbar-width: none;
+    max-height: 40vh;
+    overflow: auto;
+    @include breakpoint (medium) {
+        max-height: 60vh;
+    }
+    margin-left: rem-calc(-16) !important;
+    margin-top: rem-calc(30) !important;
+
+    &::-webkit-scrollbar { 
+        //display: none;
+    }
+    
+    li {
+        padding: rem-calc(10) rem-calc(16) ; 
+        &::before {
+            content: '';
+        }        
+        margin: 0 !important;
+    }
+}
 
 .gform_wrapper {
     .gform_heading {
@@ -28,6 +117,9 @@
                 input[type=text],
                 textarea {
                     @extend .input-style;
+                }
+                input[type=checkbox]{
+                    @extend .input-style-checkbox;
                 }
                 &.gfield_error {
                     input[type=text],
@@ -62,7 +154,7 @@
     }
 }
 
-#gform_wrapper_2 {
+#gform_wrapper_2, #gform_wrapper_3 {
     .gform_body {
         li {
             input[type=text],
@@ -71,6 +163,137 @@
             }
             &#field_2_2 {
                 margin-top: rem-calc(-6);
+            }
+        }
+    }
+}
+
+#gform_wrapper_3 {
+    ul {
+        list-style: none;
+        margin-left: 0;
+
+        #field_3_1, #field_3_5, #field_3_9, #field_3_12 {
+            .gfield_label {
+                margin-bottom: rem-calc(4);
+                display: block;
+            }
+        }
+
+        #field_3_4 {
+            .gfield_label, #label_3_4_1 {
+                @extend small;
+                text-transform: initial;
+            }
+        }
+        
+        
+        .ginput_container_radio {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                li {
+                    width: 48.5%;
+                }
+            }
+            input[type=radio] {
+                display: none;
+            }
+            input {
+                display: block;
+                & + label {            
+                    padding: rem-calc(10) rem-calc(16) ; 
+                    @extend .bg-color-gray;
+                    display: block;
+                    line-height: 1;
+                }
+                &:checked + label, &:checked + input[type=text] {
+                    @extend .bg-color-blue;
+                    @extend .color-white;                    
+                }
+            }
+        }
+
+        .ginput_container_name {
+            @include breakpoint (small only) {
+                #input_3_9_3_container {
+                    margin-bottom: rem-calc(16);
+                }
+            }
+            @include breakpoint (medium) {
+                column-count: 2;
+            }
+            span {
+                display: block;
+            }
+            label {
+                display: none;
+            }
+        }
+        #field_3_1 {
+            margin-bottom: 4px;
+        }
+
+        #field_3_10 {
+            @include fluid-props(30px, 44px, margin-bottom);
+        }
+
+        #field_3_10, #field_3_13 {
+            .gfield_label, label {
+                display: none;
+            }
+            input {
+                @include fluid-props(16px, 24px, margin-bottom);
+            }
+        }
+
+        .address_country {
+            .select {
+                @extend .input-style.gray;
+                line-height: 1.2;
+                padding: rem-calc(10) rem-calc(16) ; 
+                position: relative;
+                //@extend .bg-color-gray;
+            }
+        }
+
+        #field_3_13 {
+            .ginput_container_address {
+                display: flex;
+                flex-direction: row;
+                @include breakpoint (small only) {
+                    flex-wrap: wrap;
+                }
+                span {
+                    margin-right: rem-calc(8);
+                    input[type=text] {
+                        margin: 0;
+                    }
+                }
+                #input_3_13_3_container {
+                    order: 2;
+                    @include breakpoint (small only) {
+                        margin: 0;
+                    }
+                }                    
+                #input_3_13_4_container {
+                    order: 3;
+                    margin-right: 0;
+                    @include breakpoint (small only) {
+                        margin-top: 16px;
+                        width: 100%;
+                    }
+                }
+                #input_3_13_5_container {
+                    order: 1;
+                }
+            }
+        }
+
+        #field_3_12 {
+            .gfield_description {
+                @extend small;
             }
         }
     }
