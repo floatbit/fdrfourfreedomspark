@@ -52,15 +52,15 @@
     <?php if ($less_padding == true): ?>
         <div class="cell small-11 medium-6 background-cover content-image-background <?php print $cell_class;?>" style="background-image:url(<?php print $image; ?>)">
         <?php if ($link): ?>
-            <a href="<?php print $link; ?>"></a>
+            <a href="<?php print $link; ?>" alt="Link of <?php print $title; ?> Post" title="Link of <?php print $title; ?> Post"></a>
         <?php endif; ?>
         </div>
     <?php else : ?>
         <div class="cell medium-6 <?php print $cell_class;?>">
             <?php if ($link): ?>
-                <a href="<?php print $link; ?>"><img class="content-image" src="<?php print $image; ?>"></a>
+                <a href="<?php print $link; ?>" alt="Link <?php print $title; ?> Post" title="Link <?php print $title; ?> Post"><img class="content-image" src="<?php print $image; ?>" alt="Link of <?php print $title; ?> Post"></a>
             <?php else: ?>
-                <img class="content-image" src="<?php print $image; ?>">
+                <img class="content-image" src="<?php print $image; ?>" alt="Image of <?php print $title; ?> Post">
             <?php endif; ?>
             
             <?php if ($text_with_image == true): ?>

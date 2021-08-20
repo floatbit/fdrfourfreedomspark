@@ -9,6 +9,15 @@
 
     #conserv-bod {
         .bod-container {
+            .bod-content-image-container {
+                @include fluid-props(4px, 12px, margin-bottom);
+                @include fluid-props(272px, 228px, height);
+                @include fluid-props(288px, 304px, width);
+
+                &.large {
+                    @include fluid-props(376px, 336px, height);
+                }
+            }
             .bod-content{
                 @include fluid-props(16px, 20px, margin-bottom);
 
@@ -16,20 +25,9 @@
                     margin-bottom: 0;
                 }
 
-                .bod-content-image-container {
-                    @include fluid-props(4px, 12px, margin-bottom);
-                    // @include fluid-props(320px, 336px, height);
-                    .bod-image {
-                        width: 100%;
-                    }
-                    a {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
                 .bod-content-name {
                     @include fluid-props(4px, 8px, margin-bottom);
+                    line-height: 1.1;
                 }
 
                 .bod-content-title {

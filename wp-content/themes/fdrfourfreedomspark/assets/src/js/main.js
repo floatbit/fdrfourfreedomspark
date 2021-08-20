@@ -58,7 +58,7 @@ navHandler = {
 	    $(boderNavMen).removeClass('active');
     })
 
-    $('[href="#open-small-menu-nav"').on('click', function(e) {
+    $('.open-small-menu-nav').on('click', function(e) {
       e.preventDefault();
       if ($($smallMenuNavigation).hasClass('active')) {
         $($smallMenuNavigation).removeClass('active');
@@ -133,7 +133,7 @@ dataFilterHandler = {
           });
 
           //handle on click next page button
-          self.$pagingContainer.find('[href="#next-page"]').on("click", function(e){
+          self.$pagingContainer.find('.next-page]').on("click", function(e){
               e.preventDefault();
               var firstData = true;
               var lastData = false;
@@ -188,7 +188,7 @@ dataFilterHandler = {
           }
 
           if ($pageCount > pageShowCount) {
-             html += '<a href="#next-page" class="btn-with-arrow item-paging-button">NEXT</a>';
+             html += '<a href="#" class="btn-with-arrow item-paging-button next-page" alt="Button of Next Page">NEXT</a>';
           }
       }
       return html;

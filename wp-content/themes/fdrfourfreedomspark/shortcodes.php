@@ -100,7 +100,7 @@
                     .$content.
                 '</div>
                 <div class="quote-by p-style">
-                    <i class="fal fa-minus"></i>'.$by.
+                    —     '.$by.
                 '</div>
             </div>';
     }

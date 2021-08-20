@@ -36,7 +36,7 @@
             <div class="cell cancel-padding-x vert-margin-bottom-expanded background-cover hero-image" style="background-image:url(<?php print $hero_image ?>)"></div>
             <div class="cell vert-pad-bottom-expanded main-title">
                 <div class="hor-pad-left-expanded">
-                    <a href="/learn/blogs" class="btn-with-back bold">The Blog</a>
+                    <a href="/learn/blogs" class="btn-with-back bold" alt="Link of Blogs Page" title="Link of Blogs Page">The Blog</a>
                     <div class="h1-style">
                         <?php the_title(); ?>
                     </div>
@@ -57,7 +57,7 @@
                             CATEGORY
                         </div>
                         <?php foreach($cat as $catItem) : ?>
-                            <a href="/learn/blogs/?tax=<?php print $catItem->slug ?>">
+                            <a href="/learn/blogs/?tax=<?php print $catItem->slug ?>" alt="Link of <?php print $catItem->name; ?> Category" title="Link of <?php print $catItem->name; ?> Category">
                                 <div class="p-style color-blue category-name">
                                     <?php print $catItem->name; ?>
                                 </div>
@@ -65,8 +65,8 @@
                         <?php endforeach; ?>
                     </div>
                     <div class="flex-container social-media-container">
-                        <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter" target="_blank"><i class="fab fa-twitter color-black"></i></a>
-                        <a class="icon-item" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook" target="_blank"><i class="fab fa-facebook-square color-black"></i></a>
+                        <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter" target="_blank" alt="Link of Share on Twitter"><span class="fab fa-twitter color-black"></span></a>
+                        <a class="icon-item" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook" target="_blank" alt="Link of Share on Facebook"><span class="fab fa-facebook-square color-black"></span></a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="cell vert-pad-bottom">
-                <img src="<?php print $middle_image['url'] ?>" class="middle-image">
+                <img src="<?php print $middle_image['url'] ?>" class="middle-image" alt="<?php print $middle_image['alt']; ?>">
             </div>
             <div class="cell medium-3 vert-pad-bottom middle-image-title">
                 <div class="image-eyebrow color-spanish-gray">

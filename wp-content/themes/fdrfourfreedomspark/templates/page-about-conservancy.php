@@ -31,7 +31,7 @@
                     <h1><?php the_title(); ?></h1>
                 </div>
             </div>
-            <div class="pos-relative vb-1 vb-2 vb-3 background-cover intro-image" style="background-image:url(<?php print $intro_image ?>)"></div>
+            <div class="background-cover intro-image" style="background-image:url(<?php print $intro_image ?>)"></div>
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vb-3 border-top vert-pad-top-expanded vert-pad-bottom-expanded intro-inner-container bg-color-gray">
                 <div class="cell medium-6 medium-offset-3 vert-margin-top vert-margin-bottom">
                     <div class="h2-style"><?php print $intro_text ?></div>
@@ -60,21 +60,25 @@
                                 }
                                 
                                 $last_class = '';
+                                $image_class = '';
+
                                 if ($key == count($board_of_directors)-1) {
                                     $last_class = 'last';
                                 }
+
+                                if ($key < 2) {
+                                    $image_class = 'large';
+                                }
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
+                                <?php if ($url): ?>
+                                    <a href="<?php print $url ?>" target="<?php print $target; ?>" alt="Link of <?php $item['name']; ?> Bio" title="Link of <?php $item['name']; ?> Bio">
+                                        <div class="bod-content-image-container background-cover <?php print $image_class; ?>" style="background-image:url(<?php print $item['photo']; ?>)"></div>
+                                    </a>
+                                <?php else: ?>
+                                    <div class="bod-content-image-container background-cover <?php print $image_class; ?>" style="background-image:url(<?php print $item['photo']; ?>)"></div>
+                                <?php endif; ?>
                                 <div class="bod-content <?php print $last_class; ?>">
-                                    <div class="bod-content-image-container background-cover">
-                                        <?php if ($url): ?>
-                                            <a href="<?php print $url ?>" target="<?php print $target; ?>">
-                                                <img src="<?php print $item['photo'] ?>" alt="<?php print $item['name']; ?>">
-                                            </a>
-                                        <?php else: ?>
-                                            <img src="<?php print $item['photo'] ?>" alt="<?php print $item['name']; ?>">
-                                        <?php endif; ?>
-                                    </div>
                                     <div class="h3-style bod-content-name">
                                         <?php print $item['name'] ?>
                                     </div>
@@ -135,7 +139,7 @@
                         </div>
                         <div class="cell medium-3 cancel-padding-x vert-margin-top vert-margin-bottom">
                             <div class="infos-top-image-container">
-                                <img src="<?php print $image; ?>" class="infos-top-image">
+                                <img src="<?php print $image; ?>" class="infos-top-image" alt="Image of <?php print $text; ?> Post">
                             </div>
                             <div class="infos-top-text">
                                 <?php print $text ?>

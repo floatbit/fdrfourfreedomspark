@@ -7,12 +7,12 @@
 	<div class="grid-x align-middle">
 		<div class="cell auto large-6">
 			<div class="main-logo-container">
-				<a href="/">
+				<a href="/" alt="Link of Main Logo">
 					<?php if(is_front_page()) : ?>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>" class="logo-white">
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>" class="logo-white" alt="Four Freedom Park Conservacy Main Logo">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedom Park Conservacy Main Blue Logo">
 					<?php else: ?>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedom Park Conservacy Main Blue Logo">
 					<?php endif; ?>
 				</a>
 			</div>
@@ -31,7 +31,7 @@
 					<?php if ($value->menu_item_parent == 0): ?>
 					<div class="menu-item-container" data-menu-id=<?php print $value->ID; ?>>
 						<div class="main-nav-menu">
-							<a href="<?php print $value->url; ?>">
+							<a href="<?php print $value->url; ?>" alt="Link of Menu <?php print $value->title; ?>">
 								<div class="menu-title p-style "><?php print $value->title; ?></div>
 							</a>
 							<hr class="border-nav-menu <?php print (ffp_is_current_navigation($value)) ? 'current' : ''; ?>">
@@ -39,7 +39,7 @@
 						<div class="submenu-items hide">
 							<div class="items-container bg-color-white">
 								<?php foreach($subitems as $key => $item): ?>
-									<a href="<?php print $item->url; ?>" class=sub-nav-menu>
+									<a href="<?php print $item->url; ?>" class="sub-nav-menu" alt="Link of SubMenu <?php print $item->title; ?>">
 										<div class="p-style color-black submenu-title"><?php print $item->title; ?></div>
 									</a>
 									<?php if($key < count($subitems)-1) : ?>
@@ -52,13 +52,13 @@
 					<?php endif; ?>
 				<?php endforeach; ?>
 				<div class="button-donate">
-					<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button" target="<?php print $donate_link['target']; ?>"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
+					<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button" target="<?php print $donate_link['target']; ?>" alt="Link of Donate Button"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
 				</div>
 			</div>
 		</div>
 		<div class="cell shrink hide-for-large">
 			<div class="right-section">
-				<a class="icon-bars-menu" href="#open-small-menu-nav"><i class="fal fa-bars color-black"></i></a>
+				<a class="icon-bars-menu open-small-menu-nav" href="#" alt="Icon Bars of Small Menu Navigation"><span class="fal fa-bars color-black"></span></a>
 			</div>
 			<div class="small-menu-navigation bg-color-white">
 				<div class="grid-container">
@@ -68,7 +68,7 @@
 								<img class="small-logo" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>">
 							</div>
 							<div class="cell shrink">
-								<a class="icon-close-menu" href="#open-small-menu-nav"><i class="fal fa-times color-black"></i></a>
+								<a class="icon-close-menu open-small-menu-nav" href="#" alt="Icon Close of Small Menu Navigation"><span class="fal fa-times color-black"></span></a>
 							</div>
 						</div>
 					</div>
@@ -85,13 +85,13 @@
 							<?php if ($value->menu_item_parent == 0): ?>
 								<div class="accordion" data-accordion data-allow-all-closed="true">
 									<div class="accordion-item" data-accordion-item>
-										<a href="#" class="accordion-title">
+										<a href="#" class="accordion-title"  alt="Link of Menu <?php print $value->title; ?> on Small">
 											<div class="h3-style color-black"><?php print $value->title; ?></div>
 										</a>
 										<div class="accordion-content" data-tab-content>
 											<div class="small-subitem-container">
 												<?php foreach($subitems as $key => $item): ?>
-													<a href="<?php print $item->url; ?>" class=sub-nav-menu>
+													<a href="<?php print $item->url; ?>" class="sub-nav-menu" alt="Link of Menu <?php print $item->title; ?> on Small">
 														<div class="caption-text color-black"><?php print $item->title; ?></div>
 													</a>
 													<?php if($key < (count($subitems)-1)) : ?>
@@ -106,7 +106,7 @@
 							<?php endif; ?>
 						<?php endforeach; ?>
 						<div class="small-button-donate">
-							<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button outline" target="<?php print $donate_link['target']; ?>"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
+							<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button outline" target="<?php print $donate_link['target']; ?>" alt="Link of Donate Button on Small"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
 						</div>
 					</div>
 				</div>

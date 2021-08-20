@@ -97,6 +97,7 @@
         @extend .vert-pad-top;
         margin: 0;
         text-transform: uppercase;
+        line-height: 1.1;
         @include breakpoint (medium) {
             padding: 0;
         }
@@ -154,9 +155,6 @@
     }
 
     .quote-by {
-        i {
-            @include fluid-props(8px, 12px, margin-right);
-        }
     }
 }
 
