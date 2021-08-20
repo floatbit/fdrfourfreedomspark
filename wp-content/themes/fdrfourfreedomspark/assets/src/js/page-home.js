@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $('.home-upcoming-event]').on('click', function(e){
+    $('.home-upcoming-event').on('click', function(e){
         e.preventDefault();
         var url = $(this).attr("href");
         if (url.includes('#')) {
