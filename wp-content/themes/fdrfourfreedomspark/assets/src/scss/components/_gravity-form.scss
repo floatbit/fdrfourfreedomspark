@@ -162,6 +162,10 @@
             .StripeElement {
                 @extend .input-style.gray;
             }
+            .StripeElement {
+                border: 0;
+                border-radius: 0;
+            }
             &#field_2_2 {
                 margin-top: rem-calc(-6);
             }
