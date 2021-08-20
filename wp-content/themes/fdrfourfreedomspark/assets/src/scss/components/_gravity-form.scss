@@ -243,7 +243,7 @@
                     @extend .bg-color-gray;
                     height: 100%;
                 }
-                &:checked + label, &:checked + input[type=text] {
+                &:checked + label, &:checked + input[type=number] {
                     @extend .bg-color-blue;
                     @extend .color-white;                    
                 }
