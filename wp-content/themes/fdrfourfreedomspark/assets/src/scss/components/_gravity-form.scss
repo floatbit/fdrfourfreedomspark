@@ -129,6 +129,9 @@
                 }
             }
         }
+        .gfield_required.gfield_required_asterisk {
+            display: none;
+        }
     }
     .gform_footer {
         input[type=submit] {    
@@ -155,7 +158,8 @@
     .gform_body {
         li {
             input[type=text],
-            textarea {
+            textarea
+            .StripeElement {
                 @extend .input-style.gray;
             }
             &#field_2_2 {
@@ -170,7 +174,11 @@
         list-style: none;
         margin-left: 0;
 
-        #field_3_1, #field_3_5, #field_3_9, #field_3_12 {
+        #field_3_1, 
+        #field_3_5, 
+        #field_3_9, 
+        #field_3_12, 
+        #field_3_14 {
             .gfield_label {
                 margin-bottom: rem-calc(8);
                 display: block;

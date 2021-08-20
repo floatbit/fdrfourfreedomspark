@@ -30,6 +30,7 @@ var concatScripts = [
       'assets/src/js/page-home.js',
       'assets/src/js/page-visit-events-calendar.js',
       'assets/src/js/page-learn-timeline.js',
+      'assets/src/js/page-donate.js',
     ],
     'output': 'pages.js'
   }
