@@ -158,7 +158,7 @@
     .gform_body {
         li {
             input[type=text],
-            textarea
+            textarea,
             .StripeElement {
                 @extend .input-style.gray;
             }
