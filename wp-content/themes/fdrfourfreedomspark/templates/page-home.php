@@ -157,7 +157,7 @@
 					<?php 
 						foreach ($events as $event): 
 							$image 		= get_the_post_thumbnail_url($event->ID);
-							$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
+							$start_date = strtoupper(date("D d M Y",strtotime($event->start_date)));
 							$time_info  = $event->time_info;
 							$first_sentence = ffp_get_first_sentence_of_content($event);
 

@@ -57,12 +57,12 @@
                             </h1>
                         <?php endif; ?>
                     </div>
-                    <div class="cell medium-3 cancel-padding-top <?php print $cell_class; ?>">
+                    <div class="cell medium-3 vert-margin-bottom <?php print $cell_class; ?>">
                         <div class="h3-style">
                             <?php print do_shortcode( '[deck]'.$item['title'].'[/deck]' ); ?>
                         </div>
                     </div>
-                    <div class="cell medium-6 cancel-padding-top <?php print $cell_class; ?>">
+                    <div class="cell medium-6 vert-margin-bottom <?php print $cell_class; ?>">
                         <?php print $item['info'] ?>
                     </div>
                 <?php endforeach; ?>

@@ -37,6 +37,6 @@
 		<?php endif; ?>
 	</div>
 	<div class="cell medium-3 ">
-		<p class="color-dark-gray">Showing <span class="data-counter">0</span> <?php print $showing_text; ?> </p>
+		<p class="color-spanish-gray">Showing <span class="data-counter">0</span> <?php print $showing_text; ?> </p>
 	</div>
 </div>	
