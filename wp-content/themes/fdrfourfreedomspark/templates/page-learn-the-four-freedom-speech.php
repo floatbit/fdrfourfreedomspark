@@ -111,7 +111,7 @@
                         'less_padding' => false,
                         'text_with_image' => true,
                         'empty_first_cell' => $even,
-                        'eyebrow_color' => 'color-black',
+                        'eyebrow_color' => 'color-blue',
                         'cell_class' => 'vert-margin-top',
                         'title_size' => 'h1'
                     ));

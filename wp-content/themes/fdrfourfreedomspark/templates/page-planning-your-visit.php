@@ -26,7 +26,7 @@
 		</div>
 		<div class="cell medium-3 ">
 			<div class="link-container">
-				<a href="<?php print $google_map_url; ?>" target="_blank" class="color-black"><p>View on Google Maps</p></a>
+				<?php print do_shortcode( '[link-with-arrow title="View on Google Maps" url="'.$google_map_url.'" target="new" ]' ); ?>			
 			</div>
 		</div>
 		<div class="cell medium-3 ">
@@ -38,7 +38,9 @@
 				?> 
 				<div class="addres-container vert-pad-bottom">
 					<p class="font-body-semibold">ADDRESS</p>
-					<p><?php print $address; ?></p>
+					<a href="<?php print $google_map_url; ?>">
+						<p><?php print $address; ?></p>
+					</a>
 				</div>
 
 				<div class="hours-container vert-pad-bottom">
