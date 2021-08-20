@@ -180,6 +180,14 @@
             .StripeElement {
                 border: 0;
                 border-radius: 0;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0 rem-calc(16);
+
+                > * {
+                    width: 100%;
+                }
             }
             &#field_2_2 {
                 margin-top: rem-calc(-6);
