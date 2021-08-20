@@ -127,6 +127,7 @@
             li {
                 @include fluid-props(16px, 24px, margin-bottom);
                 input[type=text],
+                input[type=number],
                 textarea {
                     @extend .input-style;
                 }
@@ -173,6 +174,7 @@
     .gform_body {
         li {
             input[type=text],
+            input[type=number],
             textarea,
             .StripeElement {
                 @extend .input-style.gray;
