@@ -32,7 +32,7 @@
 		<div class="grid-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
 			<div class="cell medium-8 title-cell cancel-padding-y hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded trim-paragraphs">
-                    <a href="/events-calendar/" class="btn-with-back bold color-blue">EVENTS</a>
+                    <a href="/events-calendar/" class="btn-with-back bold color-blue" alt="Link of Events Page" title="Link of Events Page">EVENTS</a>
 					<h1 class="title-text"><?php the_title();?></h1>
 					<?php print $intro; ?>
 				</div>
@@ -69,13 +69,13 @@
 					<p><?php print $venue_address;?></p>
 					<?php if ($register_cta): ?>
 						<div class="vert-pad-top">
-							<a href="<?php print $register_cta['url'] ?>" class="button"><?php print $register_cta['title'] ?></a>
+							<a href="<?php print $register_cta['url'] ?>" class="button" alt="Link of <?php $register_cta['title']; ?> Register" title="Link of <?php $register_cta['title']; ?> Register"><?php print $register_cta['title'] ?></a>
 						</div>
 					<?php endif; ?>
 
 					<div class="share-box vert-pad-top">
-						<a target="_blank" class="share-button color-black" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter"><span class="fab fa-twitter"></span></a>
-						<a target="_blank" class="share-button color-black" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook"><span class="fab fa-facebook-square"></span></a>
+						<a target="_blank" class="share-button color-black" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter" alt="Link of Share on Twitter"><span class="fab fa-twitter"></span></a>
+						<a target="_blank" class="share-button color-black" href="https://www.facebook.com/sharer/sharer.php?u=<?php print get_the_permalink(); ?>" title="Share on Facebook" alt="Link of Share on Facebook"><span class="fab fa-facebook-square"></span></a>
 					</div>		
 				</div>	
 			</div>
@@ -87,7 +87,7 @@
 			<div class="hor-pad-left-expanded">
 				<?php if ($event_type): ?>
 					<?php foreach ($event_type as $item): ?>
-						<a href="/events-calendar/?tax=<?php print $item->slug ?>" class="button outline"> <?php print $item->name ?> </a>
+						<a href="/events-calendar/?tax=<?php print $item->slug ?>" class="button outline" alt="Link of Filtered Events" title="Link of Filtered Events"> <?php print $item->name ?> </a>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</div>

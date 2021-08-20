@@ -44,18 +44,18 @@
 					</div>
 					<div class="cell medium-2 border-left show-for-medium hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="#home-upcoming-event" class="hero-link">
+							<a href="#" class="hero-link home-upcoming-event" alt="Link of Hero">
 								<div class="p-style color-black info-event">
-									<i class="fal fa-calendar"></i>Upcoming Events
+									<span class="fal fa-calendar"></span>Upcoming Events
 								</div>
 							</a>
 						</div>
 					</div>
 					<div class="cell medium-2 border-bottom show-for-small-only hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="#home-upcoming-event" class="hero-link">
+							<a href="#" class="hero-link home-upcoming-event" alt="Link of Hero on Small">
 								<div class="p-style color-black info-event">
-									<i class="fal fa-calendar"></i>Upcoming Events
+									<span class="fal fa-calendar"></span>Upcoming Events
 								</div>
 							</a>
 						</div>
@@ -64,7 +64,7 @@
 						<div class="flex-container align-middle info-item">
 							<a href="/visit/plan-your-visit" class="hero-link">
 								<div class="p-style color-black info-getting">
-									<i class="fal fa-map-marker-alt"></i>Getting Here
+									<span class="fal fa-map-marker-alt"></span>Getting Here
 								</div>
 							</a>
 						</div>
@@ -73,7 +73,7 @@
 						<div class="flex-container align-middle info-item">
 							<a href="/visit/accessibility" class="hero-link">
 								<div class="p-style color-black info-access">
-									<i class="fal fa-wheelchair"></i>Accessibility
+									<span class="fal fa-wheelchair"></span>Accessibility
 								</div>
 							</a>
 						</div>

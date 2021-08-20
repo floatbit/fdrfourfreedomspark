@@ -22,7 +22,7 @@
 			$additional_text = $map['additional_text'];
 		?>
 		<div class="cell medium-6" >
-			<img src="<?php print $image ?>" class="image-maps">
+			<img src="<?php print $image ?>" class="image-maps" alt="Image of Map">
 		</div>
 		<div class="cell medium-3 ">
 			<div class="link-container">
@@ -76,10 +76,14 @@
 			$means_of_transport = $transportation['means_of_transport'];
 		?>
 		<?php foreach ($means_of_transport as $key => $item): ?>
+			<?php 
+				$index = $key;
+				$index++;
+			?>
 			<div class="cell medium-3 border-bottom cancel-padding-y">
 				<div class="item-container trim-paragraphs vert-pad-top-expanded vert-pad-bottom-expanded">	
 					<?php if ($item['icon']): ?>
-						<img src="<?php print $item['icon']; ?>" class="img-icon">
+						<img src="<?php print $item['icon']; ?>" class="img-icon" alt="Icon of Transportaion <?php print $index; ?>">
 					<?php endif; ?>
 					<?php print apply_filters( 'the_content', $item['description']); ?>
 				</div>

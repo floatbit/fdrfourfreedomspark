@@ -72,7 +72,7 @@
                             ?>
                             <div class="cell medium-6 vert-pad-bottom">
                                 <?php if ($url): ?>
-                                    <a href="<?php print $url ?>" target="<?php print $target; ?>">
+                                    <a href="<?php print $url ?>" target="<?php print $target; ?>" alt="Link of <?php $item['name']; ?> Bio" title="Link of <?php $item['name']; ?> Bio">
                                         <div class="bod-content-image-container background-cover <?php print $image_class; ?>" style="background-image:url(<?php print $item['photo']; ?>)"></div>
                                     </a>
                                 <?php else: ?>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="cell medium-3 cancel-padding-x vert-margin-top vert-margin-bottom">
                             <div class="infos-top-image-container">
-                                <img src="<?php print $image; ?>" class="infos-top-image">
+                                <img src="<?php print $image; ?>" class="infos-top-image" alt="Image of <?php print $text; ?> Post">
                             </div>
                             <div class="infos-top-text">
                                 <?php print $text ?>

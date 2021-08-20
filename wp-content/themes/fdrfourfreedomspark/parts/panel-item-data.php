@@ -30,7 +30,7 @@
 
 <div class="cell cancel-padding-y panel-item-data border-bottom data-item <?php print $cell_class ?>" data-tax="<?php print $data_tax ?>">
 	<?php if ($link != '#'): ?>
-		<a href="<?php print $link; ?>" class="color-black linked-panel">
+		<a href="<?php print $link; ?>" class="color-black linked-panel" alt="Link of <?php print $post_title; ?> Post">
 	<?php endif;?>		
 		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x item-data-container">
 			<div class="cell <?php print $cell_class_left ?> medium-order-1 <?php print $small_cell_order_title ?>">
@@ -38,7 +38,7 @@
 				<h3 class="color-black"> <?php print $post_title ?></h3>
 			</div>
 			<div class="cell <?php print $cell_class ?> medium-order-2 <?php print $small_cell_order_image ?>">
-				<img src="<?php print $image ?>" class="image">
+				<img src="<?php print $image ?>" class="image" alt="Image of <?php print $post_title; ?> Post">
 			</div>
 			<div class="cell <?php print $cell_class_left ?> date-container medium-order-3 small-order-4">
 				<p class="color-black show-for-medium">
