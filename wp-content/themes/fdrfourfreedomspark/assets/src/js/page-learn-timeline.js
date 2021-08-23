@@ -18,7 +18,7 @@ timelineHandler = {
                 }
 
                 self.$navContainer.append(
-                    '<div class="cell-nav item '+$addon+'"><p><strong>'+decade+'</strong></p></div>'
+                    '<div class="cell-nav item '+$addon+'" data-decade="'+decade+'"><p><strong>'+decade+'</strong></p></div>'
                 );
             } else {
                 self.$navContainer.append(
@@ -52,12 +52,33 @@ timelineHandler = {
             pageDots: false,
         });
 
+        if (Foundation.MediaQuery.is('small only')) {
+            self.$navContainer.removeClass('first-load'); 
+        }
+
         $carousel.on( 'change.flickity', function( event, index ) {
             if (index > 0) {
                 self.$navContainer.removeClass('first-load'); 
             } else {
                 self.$navContainer.addClass('first-load');
             }
+        });
+
+        $('.cell-nav').on('click', function(e){
+            e.preventDefault();
+            var decade = $(this).data('decade');
+            var offsetLeft = 0;
+            $('.timeline-cell').each(function(){
+                var timelineDecade = $(this).data('decade');
+                if (timelineDecade < decade) {
+                    var cellPadTop = parseFloat($(this).css('padding-top'));
+                    var cellPadBot = parseFloat($(this).css('padding-bottom'));
+                    var cellWidth = parseFloat($(this).width());
+                    var leftCalc = cellPadTop + cellPadBot + cellWidth;
+                    offsetLeft += leftCalc;
+                }
+            });
+            self.$timelineCar.find('.flickity-slider').animate({scrollLeft: offsetLeft}, 'slow');
         });
 
         self.$timelineCar.find('.flickity-slider').on('wheel', function(e) {
@@ -68,13 +89,6 @@ timelineHandler = {
             } else {
                 self.$navContainer.addClass('first-load');
             }
-            console.log(this.scrollLeft);
-        });
-
-        self.$expandTimeline.on('click', function(e){
-            e.preventDefault();
-            $carousel.flickity( 'select', 1 );
-            self.$navContainer.removeClass('first-load');
         });
     
         $(window).on('resize', function(e){

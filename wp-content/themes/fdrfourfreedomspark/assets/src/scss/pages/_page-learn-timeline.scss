@@ -14,10 +14,9 @@
             min-height: 100vh;
 
             .flickity-slider {
-                @include breakpoint (medium) {
-                    overflow-x: auto;
-                    overflow-y: hidden;
-                }
+                transform: none !important;
+                overflow-x: auto;
+                overflow-y: hidden;
             }
 
             .timeline-cell-double,
