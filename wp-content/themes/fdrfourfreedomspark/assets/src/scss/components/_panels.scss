@@ -96,8 +96,7 @@
     .text-taxonomy {
         @extend .vert-pad-top;
         margin: 0;
-        text-transform: uppercase;
-        line-height: 1.1;
+        line-height: 1.5;
         @include breakpoint (medium) {
             padding: 0;
         }

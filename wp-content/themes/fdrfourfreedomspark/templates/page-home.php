@@ -200,11 +200,15 @@
 
 					$first_class = '';
 					$middle_class = '';
+					$last_class = '';
 					if ($key == 0) {
 						$first_class = 'border-top';
 					}
 					if ($key < count($featured_blogs)-1) {
 						$middle_class = 'vert-pad-bottom';
+					}
+					if ($key == count($featured_blogs)-1){
+						$last_class = 'vert-pad-bottom-expanded-small vert-margin-bottom-small';
 					}
 
 					set_query_var( 'part_params', array(
@@ -213,7 +217,7 @@
 						'image' => $image,
 						'text' => get_the_content(),
 						'border_class' => 'vb-1 vb-2 vb-3',
-						'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class,
+						'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class.' '.$last_class,
 						'less_padding' => true,
 						'eyebrow_color' => 'color-black',
 						'link' => get_the_permalink(),

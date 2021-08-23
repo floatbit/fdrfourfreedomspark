@@ -67,6 +67,12 @@ p {
   @include fluid-type(14px, 14px);
 }
 
+.deck-text {
+  h2 {
+    @extend .h3-style;
+  }
+}
+
 ul li {
   @extend .p-style;
 }
@@ -351,7 +357,7 @@ footer {
         margin-top: rem-calc(16);
       }
       .copyright-container {
-        margin-top: rem-calc(8);
+        margin-top: rem-calc(28);
       }
 
       @include breakpoint(medium) {

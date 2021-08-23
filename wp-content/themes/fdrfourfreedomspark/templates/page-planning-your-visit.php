@@ -85,6 +85,11 @@
 					<?php if ($item['icon']): ?>
 						<img src="<?php print $item['icon']; ?>" class="img-icon" alt="Icon of Transportaion <?php print $index; ?>">
 					<?php endif; ?>
+					<?php if ($item['title']): ?>
+						<div class="h3-style">
+							<?php print $item['title']; ?>
+						</div>
+					<?php endif; ?>
 					<?php print apply_filters( 'the_content', $item['description']); ?>
 				</div>
 			</div>

@@ -41,6 +41,7 @@ timelineHandler = {
             pageDots: false,
             prevNextButtons: false,
             freeScroll: true,
+            adaptiveHeight: true
         });
 
         $navContainer.flickity({

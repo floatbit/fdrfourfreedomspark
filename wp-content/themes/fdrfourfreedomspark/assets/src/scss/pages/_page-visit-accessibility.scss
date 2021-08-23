@@ -1,4 +1,11 @@
 .page-template-page-visit-accessibility main {
+
+    #access-intro {
+        h2 {
+            @extend .h3-style;
+        }
+    }
+
     #access-content {
         .content-container{
             .content-inner-container {
