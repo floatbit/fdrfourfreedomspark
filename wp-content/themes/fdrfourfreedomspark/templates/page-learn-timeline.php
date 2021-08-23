@@ -6,7 +6,7 @@
 
 <?php get_header();?>
 
-<main class="border-side">
+<main class="timeline-main border-side">
 	
 	<div class="grid-x pos-relative border-top">
 		<div class="cell navigation-decade-container padding-all cancel-padding-y border-bottom">

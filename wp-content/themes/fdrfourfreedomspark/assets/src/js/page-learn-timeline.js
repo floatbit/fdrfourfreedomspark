@@ -3,6 +3,8 @@ timelineHandler = {
     $expandTimeline = $('[href=#expand-timeline]'),
     $navContainer = $('.nav-container'),
     $timelineCell = $('.timeline-cell'),
+    $timelineMain = $('.timeline-main'),
+    $navDecadeContainer = $('.navigation-decade-container'),
 
     generateNavigation = function(){
         var self = this;
@@ -24,7 +26,6 @@ timelineHandler = {
                 );
             }
             temp = decade;
-            console.log(decade);
         })
     },
 
@@ -59,12 +60,46 @@ timelineHandler = {
             }
         });
 
+        self.$timelineCar.find('.flickity-slider').on('wheel', function(e) {
+            e.preventDefault();
+            this.scrollLeft += e.originalEvent.wheelDelta;
+            if (this.scrollLeft > 0) {
+                self.$navContainer.removeClass('first-load'); 
+            } else {
+                self.$navContainer.addClass('first-load');
+            }
+            console.log(this.scrollLeft);
+        });
+
         self.$expandTimeline.on('click', function(e){
             e.preventDefault();
             $carousel.flickity( 'select', 1 );
             self.$navContainer.removeClass('first-load');
-        })
+        });
     
+        $(window).on('resize', function(e){
+            e.preventDefault();
+            var selfWindow = $(this);
+            var windowHeight = parseFloat(selfWindow.height());
+            var timelineHeight = 0;
+            var timelineNavHeight = 0;
+            self.$timelineCar.each(function(e){
+                timelineHeight = parseFloat($(this).height());
+            });
+            self.$navDecadeContainer.each(function(e){
+                timelineNavHeight = parseFloat($(this).height());
+            });
+            var contentHeight = timelineHeight + timelineNavHeight;
+            var scale = windowHeight / contentHeight;
+            var width = (1 / scale) * 100;
+
+            self.$timelineMain.css({
+                'transform' : 'scale('+scale.toFixed(2)+')',
+                'width' : width.toFixed(2)+'%'
+            });
+
+            $carousel.flickity('resize')
+        });
     }
 }
 
