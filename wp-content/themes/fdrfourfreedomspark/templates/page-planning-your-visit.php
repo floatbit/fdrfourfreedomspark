@@ -22,7 +22,7 @@
 			$additional_text = $map['additional_text'];
 		?>
 		<div class="cell medium-6" >
-			<img src="<?php print $image ?>" class="image-maps" alt="Image of Map">
+			<img src="<?php print $image ?>" class="image-maps" alt="Map of Four Freedoms Conservancy Park">
 		</div>
 		<div class="cell medium-3 ">
 			<div class="link-container">
@@ -140,7 +140,7 @@
 			<h1>Four Freedoms Park Conservancy strives to make the Park fully accessible for all.</h1>
 
 			<div class="vert-pad-top-expanded vert-pad-bottom-expanded">
-				<?php print do_shortcode( '[link-with-arrow title="Read More" url="/visit/accessibility" target="new" ]' ); ?>			
+				<?php print do_shortcode( '[link-with-arrow title="Read More" url="/visit/accessibility" alt="Accessibility" target="new" ]' ); ?>
 			</div>
 		</div>
 		<?php

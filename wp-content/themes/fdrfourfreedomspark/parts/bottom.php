@@ -26,19 +26,19 @@
 			</div>
 			<div class="footer-menu-container social-media-container">
 				<?php if ($social_media['instagram'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['instagram']; ?>" target="_blank" alt="Social Media Link of Instagram" title="Social Media Link of Instagram"><span class="fab fa-instagram color-white"></span></a>
+					<a class="icon-item" href="<?php print $social_media['instagram']; ?>" target="_blank" aria-label="Instagram" alt="Link to Instagram Account" title="Link to Instagram Account"><span class="fab fa-instagram color-white"></span></a>
 				<?php endif; ?>
 				<?php if ($social_media['twitter'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['twitter']; ?>" target="_blank" alt="Social Media Link of Twitter" title="Social Media Link of Instagram"><span class="fab fa-twitter color-white"></span></a>
+					<a class="icon-item" href="<?php print $social_media['twitter']; ?>" target="_blank" aria-label="Twitter" alt="Link to Twitter Account" title="Link to Twitter Account"><span class="fab fa-twitter color-white"></span></a>
 				<?php endif; ?>
 				<?php if ($social_media['facebook'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['facebook']; ?>" target="_blank" alt="Social Media Link of Facebook" title="Social Media Link of Instagram"><span class="fab fa-facebook-square color-white"></span></a>
+					<a class="icon-item" href="<?php print $social_media['facebook']; ?>" target="_blank" aria-label="Facebook" alt="Link to Facebook Account" title="Link to Facebook Account"><span class="fab fa-facebook-square color-white"></span></a>
 				<?php endif; ?>
 				<?php if ($social_media['youtube'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['youtube']; ?>" target="_blank" alt="Social Media Link of Youtube" title="Social Media Link of Instagram"><span class="fab fa-youtube color-white"></span></a>
+					<a class="icon-item" href="<?php print $social_media['youtube']; ?>" target="_blank"  aria-label="Youtube" alt="Link to Youtube Account" title="Link to Youtube Account"><span class="fab fa-youtube color-white"></span></a>
 				<?php endif; ?>
 				<?php if ($social_media['medium'] != null) : ?>
-					<a class="icon-item" href="<?php print $social_media['medium']; ?>" target="_blank" alt="Social Media Link of Medium" title="Social Media Link of Instagram"><span class="fab fa-medium color-white"></span></a>
+					<a class="icon-item" href="<?php print $social_media['medium']; ?>" target="_blank" aria-label="Medium" alt="Link to Medium Account" title="Link to Medium Account"><span class="fab fa-medium color-white"></span></a>
 				<?php endif; ?>
 			</div>
 		</div>

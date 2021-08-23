@@ -58,15 +58,15 @@
     <?php if ($less_padding == true): ?>
         <div class="cell small-11 medium-6 background-cover content-image-background <?php print $cell_class;?>" style="background-image:url(<?php print $image; ?>)">
         <?php if ($link): ?>
-            <a href="<?php print $link; ?>" alt="Link of <?php print $title; ?> Post" title="Link of <?php print $title; ?> Post"></a>
+            <a href="<?php print $link; ?>" alt="<?php print $title; ?>" title="<?php print $title; ?>"></a>
         <?php endif; ?>
         </div>
     <?php else : ?>
         <div class="cell medium-6 <?php print $cell_class;?>">
             <?php if ($link): ?>
-                <a href="<?php print $link; ?>" alt="Link <?php print $title; ?> Post" title="Link <?php print $title; ?> Post"><img class="content-image" src="<?php print $image; ?>" alt="Link of <?php print $title; ?> Post"></a>
+                <a href="<?php print $link; ?>" alt="<?php print $title; ?>" title="<?php print $title; ?>"><img class="content-image" src="<?php print $image; ?>" alt="Link of <?php print $title; ?> Post"></a>
             <?php else: ?>
-                <img class="content-image" src="<?php print $image; ?>" alt="Image of <?php print $title; ?> Post">
+                <img class="content-image" src="<?php print $image; ?>" alt="Thumbnail for <?php print $title; ?> Post">
             <?php endif; ?>
             
             <?php if ($text_with_image == true): ?>
@@ -83,7 +83,7 @@
             
             <?php if ($link): ?>
                 <div class="link-container">
-			    	<?php print do_shortcode( '[link-with-arrow title="'.$link_text.'" url="'.$link.'" target="new"]' ); ?>		
+			    	<?php print do_shortcode( '[link-with-arrow title="'.$link_text.'" alt="'.$title.'" url="'.$link.'" target="new"]' ); ?>		
                 </div>
             <?php endif; ?>
         </div>

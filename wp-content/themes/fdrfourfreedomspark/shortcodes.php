@@ -49,7 +49,7 @@
             $icon = '';
         }
 
-        $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'"> <span class="icon icon-'.$icon.'"></span>'.$args['title'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="btn-link-with-icon" target="'.$args['target'].'" alt="'.$args['alt'].'"> <span class="icon icon-'.$icon.'"></span>'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-with-icon', 'ffp_link_with_icon_shortcode');
@@ -70,7 +70,7 @@
         $target = ($args['target'] != null) ? $args['target'] : '';
         $class  = ($args['class']  != null) ? $args['class'] : '';
 
-        $html = '<a href="'.$args['url'].'" class="btn-link '.$class.'" target="'.$target.'">'.$args['title'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="btn-link '.$class.'" target="'.$target.'" alt="'.$args['alt'].'">'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-button', 'ffp_link_button_shortcode');
@@ -91,7 +91,7 @@
         $target = ($args['target'] != null) ? $args['target'] : '';
         $class  = ($args['class']  != null) ? $args['class'] : '';
 
-        $html = '<a href="'.$args['url'].'" class="btn-with-arrow '.$class.'" target="'.$target.'">'.$args['title'].'</a>';
+        $html = '<a href="'.$args['url'].'" class="btn-with-arrow '.$class.'" target="'.$target.'" alt="'.$args['alt'].'" aria-label="'.$args['alt'].'">'.$args['title'].'</a>';
         return $html;
     }
     add_shortcode('link-with-arrow', 'ffp_link_with_arrow_shortcode');

@@ -38,7 +38,7 @@
 				<div class="h3-style color-black"> <?php print $post_title ?></div>
 			</div>
 			<div class="cell <?php print $cell_class ?> medium-order-2 <?php print $small_cell_order_image ?>">
-				<img src="<?php print $image ?>" class="image" alt="Image of <?php print $post_title; ?> Post">
+				<img src="<?php print $image ?>" class="image" alt="Thumbnail for <?php print $post_title; ?> Post">
 			</div>
 			<div class="cell <?php print $cell_class_left ?> date-container medium-order-3 small-order-4">
 				<p class="color-black show-for-medium">
