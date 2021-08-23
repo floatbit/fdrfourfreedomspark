@@ -9,10 +9,10 @@
 			<div class="main-logo-container">
 				<a href="/" alt="Link of Main Logo">
 					<?php if(is_front_page()) : ?>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>" class="logo-white" alt="Four Freedom Park Conservacy Main Logo">
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedom Park Conservacy Main Blue Logo">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main.svg" ?>" class="logo-white" alt="Four Freedoms Park Conservacy Main Logo">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedoms Park Conservacy Main Blue Logo">
 					<?php else: ?>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedom Park Conservacy Main Blue Logo">
+						<img src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" class="logo-blue" alt="Four Freedoms Park Conservacy Main Blue Logo">
 					<?php endif; ?>
 				</a>
 			</div>
@@ -69,17 +69,17 @@
 		</div>
 		<div class="cell shrink hide-for-large">
 			<div class="right-section">
-				<a class="icon-bars-menu open-small-menu-nav" href="#" alt="Icon Bars of Small Menu Navigation"><span class="fal fa-bars color-black"></span></a>
+				<a class="icon-bars-menu open-small-menu-nav" href="#" alt="Open Mobile Menu"><span class="fal fa-bars color-black"></span></a>
 			</div>
 			<div class="small-menu-navigation bg-color-white">
 				<div class="grid-container">
 					<div class="small-top-container">
 						<div class="grid-x align-middle">
 							<div class="cell auto">						
-								<img class="small-logo" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>">
+								<img class="small-logo" src="<?php print TEMPLATE_IMAGE_PATH."/logo-main-blue.svg" ?>" alt="Four Freedoms Park Conservacy Main Logo" >
 							</div>
 							<div class="cell shrink">
-								<a class="icon-close-menu open-small-menu-nav" href="#" alt="Icon Close of Small Menu Navigation"><span class="fal fa-times color-black"></span></a>
+								<a class="icon-close-menu open-small-menu-nav" href="#" alt="Icon Close of Mobile Menu Navigation"><span class="fal fa-times color-black"></span></a>
 							</div>
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 							<?php if ($value->menu_item_parent == 0): ?>
 								<div class="accordion" data-accordion data-allow-all-closed="true">
 									<div class="accordion-item" data-accordion-item>
-										<a href="#" class="accordion-title"  alt="Link of Menu <?php print $value->title; ?> on Small">
+										<a href="#" class="accordion-title"  alt="Menu <?php print $value->title; ?> under Mobile Menu">
 											<div class="h3-style color-black"><?php print $value->title; ?></div>
 										</a>
 										<div class="accordion-content" data-tab-content>
@@ -108,7 +108,7 @@
 															$target = '_blank';
 														}
 													?>
-													<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Link of Menu <?php print $item->title; ?> on Small">
+													<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Menu <?php print $item->title; ?> under Mobile Menu">
 														<div class="caption-text color-black">
 															<?php print $item->title; ?>
 															<?php if ($target != ''): ?>
@@ -128,7 +128,7 @@
 							<?php endif; ?>
 						<?php endforeach; ?>
 						<div class="small-button-donate">
-							<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button outline" target="<?php print $donate_link['target']; ?>" alt="Link of Donate Button on Small"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
+							<a href="<?php print ($donate_link['url'] != null) ? $donate_link['url'] : '#'; ?>" class="button outline" target="<?php print $donate_link['target']; ?>" alt="Donate Button on Mobile Menu"><?php print ($donate_link['title'] != null) ? $donate_link['title'] : 'Donate'; ?></a>
 						</div>
 					</div>
 				</div>
