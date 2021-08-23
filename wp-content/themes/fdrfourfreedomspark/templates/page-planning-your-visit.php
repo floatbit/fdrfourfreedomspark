@@ -39,7 +39,7 @@
 				?> 
 				<div class="addres-container vert-pad-bottom">
 					<p class="font-body-semibold">ADDRESS</p>
-					<a href="<?php print $google_map_url; ?>" class="color-black">
+					<a href="<?php print $google_map_url; ?>" class="color-black" target="_blank">
 						<p><?php print $address; ?></p>
 					</a>
 				</div>
@@ -111,7 +111,7 @@
 			$nos = $park_rules['nos'];
 		?>
 		<div class="cell medium-3">
-			<?php print do_shortcode( '[deck]'.$intro.'[/deck]' ); ?>
+			<?php print do_shortcode($intro); ?>
 		</div>
 		<div class="cell medium-3">
 			<p class="static-text">	
