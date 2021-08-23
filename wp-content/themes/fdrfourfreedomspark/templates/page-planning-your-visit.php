@@ -27,7 +27,7 @@
 		<div class="cell medium-3 ">
 			<div class="link-container">
 				<p>
-					<a href="<?php print $google_map_url; ?>" target="new">View on Google Maps</a>
+					<a class="btn-link" href="<?php print $google_map_url; ?>" target="new">View on Google Maps</a>
 					<!-- <?php print do_shortcode( '[link-with-arrow title="View on Google Maps" url="'.$google_map_url.'" target="new" ]' ); ?>			 -->
 				</p>
 			</div>
