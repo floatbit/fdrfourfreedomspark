@@ -61,7 +61,7 @@
         <div class="extra-container">
             <div class="grid-x grid-padding-x pos-relative vert-pad-top-expanded vert-pad-bottom-expanded border-bottom align-center">
                 <div class="cell medium-6">
-                    <div class="extra-text-container">
+                    <div class="extra-text-container trim-paragraphs">
                         <?php print $extra_text; ?>
                     </div>
                 </div>
