@@ -185,7 +185,7 @@
 	</section>
 
 	<section id="home-featured-blog">
-		<div class="featured-blog-container trim-paragraphs">
+		<div class="featured-blog-container trim-paragraphs border-bottom">
 			<?php foreach($featured_blogs as $key => $item) : ?>
 				<?php 
 					$cat = get_the_category($item->ID);
