@@ -39,8 +39,19 @@
 						<div class="submenu-items hide">
 							<div class="items-container bg-color-white">
 								<?php foreach($subitems as $key => $item): ?>
-									<a href="<?php print $item->url; ?>" class="sub-nav-menu" alt="Link of SubMenu <?php print $item->title; ?>">
-										<div class="p-style color-black submenu-title"><?php print $item->title; ?></div>
+									<?php 
+										$target = '';
+										if (strpos(strtolower($item->url), 'timeline') !== false) {
+											$target = '_blank';
+										}
+									?>
+									<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Link of SubMenu <?php print $item->title; ?>">
+										<div class="p-style color-black submenu-title">
+											<?php print $item->title; ?>
+											<?php if ($target != ''): ?>
+												<span class="fal fa-external-link"></span>
+											<?php endif; ?>
+										</div>
 									</a>
 									<?php if($key < count($subitems)-1) : ?>
 										<hr>
@@ -91,8 +102,19 @@
 										<div class="accordion-content" data-tab-content>
 											<div class="small-subitem-container">
 												<?php foreach($subitems as $key => $item): ?>
-													<a href="<?php print $item->url; ?>" class="sub-nav-menu" alt="Link of Menu <?php print $item->title; ?> on Small">
-														<div class="caption-text color-black"><?php print $item->title; ?></div>
+													<?php 
+														$target = '';
+														if (strpos(strtolower($item->url), 'timeline') !== false) {
+															$target = '_blank';
+														}
+													?>
+													<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Link of Menu <?php print $item->title; ?> on Small">
+														<div class="caption-text color-black">
+															<?php print $item->title; ?>
+															<?php if ($target != ''): ?>
+																<span class="fal fa-external-link"></span>
+															<?php endif; ?>
+														</div>
 													</a>
 													<?php if($key < (count($subitems)-1)) : ?>
 														<hr>

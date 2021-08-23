@@ -83,7 +83,7 @@
 	</div>
 
 	<?php if ($event_type): ?>
-		<div class="grid-x grid-margin-x vert-pad-bottom-expanded pos-relative vb-3 ">
+		<div class="grid-x grid-padding-x vert-pad-bottom-expanded pos-relative vb-3 ">
 			<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded">
 					<?php foreach ($event_type as $item): ?>

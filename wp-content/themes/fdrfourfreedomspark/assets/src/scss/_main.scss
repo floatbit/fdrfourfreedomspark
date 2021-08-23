@@ -174,6 +174,10 @@ header {
 
           .submenu-title {
             line-height: 1.6;
+
+            span {
+              margin-left: rem-calc(4);
+            }
           }
         }
       }
@@ -253,6 +257,14 @@ header {
           margin-top: rem-calc(20);
           padding: 0;
           border: none;
+
+          .small-subitem-container {
+            .sub-nav-menu {
+              span {
+                margin-left: rem-calc(4);
+              }
+            }
+          }
         }
 
         &.is-active {

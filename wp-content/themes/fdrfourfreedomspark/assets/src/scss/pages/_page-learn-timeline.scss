@@ -1,168 +1,182 @@
-.page-template-page-learn-timeline main {
-   
-    .left-container {
-        min-height: 100vh;
+.page-template-page-learn-timeline {
+    overflow: hidden;
+    width: 100vw;
+
+    header, footer {
+        @extend .hide;
     }
 
-    .timeline-container {
-        min-height: 100vh;
+    main {
+        transform-origin: top left;
+        max-height: 100vh;
 
-        .timeline-cell-double,
-        .timeline-cell {
-            height: 780px;   
-            min-height: 780px;     
-            @extend .border-bottom;
-        }
+        .timeline-container {
+            min-height: 100vh;
 
-        .timeline-cell {
-            width: 360px;
-        }
-        .timeline-cell-double {
-            width: 720px;
-        }
-
-        .timeline-block-half, .timeline-block {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            @extend .border-left;
-            @extend .border-right;
-            
-            .year-container {
-                padding: rem-calc(46) rem-calc(32) rem-calc(36);
-            }
-            .text-container {
-                @extend .border-top;
-                padding: rem-calc(20) rem-calc(31);
-                width: 100%;
-            }
-            .text-container-bottom {
-                min-height: rem-calc(250);
-            }
-            .img {
-                align-self: center;
-            }    
-        } 
-
-        .timeline-block-half {
-            width: 50%;
-        }
-        
-        .cell-1 {
-            display: flex;
-            flex-direction: column;
-            @include breakpoint (small only) {
-                width: 100%;
-            }
-            @include breakpoint (medium) {
-                justify-content: center;
-            }
-        }
-
-        .cell-2 {
-            .img {
-                width: rem-calc(253);
-                margin-top: rem-calc(84);
-            }    
-        }
-        .cell-3 {
-            .img {
-                width: rem-calc(253);
-                margin-bottom: rem-calc(36);
-            }
-        }      
-        .cell-4 {
-            .img {
-                width: rem-calc(300);
-                margin-top: rem-calc(72);
-            }
-        }        
-        .cell-13 {
-            .timeline-block {
-                justify-content: flex-end;
-            }
-        }
-       
-
-        .cell-6, .cell-9, .cell-16, .cell-11, .cell-18 {
-            .img {
-                position: absolute;
-            }
-        }
-
-        .cell-11 {
-            .img {
-                max-width: rem-calc(490) !important;
-                height: rem-calc(515);
-                bottom: 0;
-                right: 1px;
-            }
-        } 
-        .cell-16 {
-            .img {
-                min-width: rem-calc(348);
-                margin-top: 77%;
-                left: -12%;
-            }
-        }
-        .cell-18 {
-            .img {
-                min-width: rem-calc(510);
-                min-height: rem-calc(472);
-                bottom: 0;
-                right: 10%;
-            }
-        }    
-        .cell-20, .cell-3 {
-            background-position: left;
-        }
-        .cell-20-A, .cell-3-A {
-            background-position: right;
-        }
-    }
-
-    .navigation-decade-container {
-        .nav-container {
-            transition: margin-left 300ms ease-in-out;
-            &.first-load {
-                margin-left: 100%;
+            .flickity-slider {
                 @include breakpoint (medium) {
-                    margin-left: 52%;
+                    overflow-x: auto;
+                    overflow-y: hidden;
                 }
             }
-            width: 100%;
 
+            .timeline-cell-double,
+            .timeline-cell {
+                height: 780px;   
+                min-height: 780px;     
+                @extend .border-bottom;
+            }
+
+            .timeline-cell {
+                width: 360px;
+            }
+            .timeline-cell-double {
+                width: 720px;
+            }
+
+            .timeline-block-half, .timeline-block {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                @extend .border-left;
+                @extend .border-right;
+                
+                .year-container {
+                    padding: rem-calc(46) rem-calc(32) rem-calc(36);
+                }
+                .text-container {
+                    @extend .border-top;
+                    padding: rem-calc(20) rem-calc(31);
+                    width: 100%;
+                }
+                .text-container-bottom {
+                    min-height: rem-calc(250);
+                }
+                .img {
+                    align-self: center;
+                }    
+            } 
+
+            .timeline-block-half {
+                width: 50%;
+            }
+            
+            .cell-1 {
+                display: flex;
+                flex-direction: column;
+                @include breakpoint (small only) {
+                    width: 100%;
+                }
+                @include breakpoint (medium) {
+                    justify-content: center;
+                }
+            }
+
+            .cell-2 {
+                .img {
+                    width: rem-calc(253);
+                    margin-top: rem-calc(84);
+                }    
+            }
+            .cell-3 {
+                .img {
+                    width: rem-calc(253);
+                    margin-bottom: rem-calc(36);
+                }
+            }      
+            .cell-4 {
+                .img {
+                    width: rem-calc(300);
+                    margin-top: rem-calc(72);
+                }
+            }        
+            .cell-13 {
+                .timeline-block {
+                    justify-content: flex-end;
+                }
+            }
         
-            .cell-nav {
-                display: none;
-                height: rem-calc(68);
-                &.item {
-                    display: flex;
-                    align-items: center;
-                    margin-right: 10px;
-                    &::after {
-                        @include fluid-props(20px, 136px, width);
-                        content: "";
-                        background-color: $border-gray;
-                        height: 2px;
-                        margin-left: 10px;
-                        margin-top: 5px;
+
+            .cell-6, .cell-9, .cell-16, .cell-11, .cell-18 {
+                .img {
+                    position: absolute;
+                }
+            }
+
+            .cell-11 {
+                .img {
+                    max-width: rem-calc(490) !important;
+                    height: rem-calc(515);
+                    bottom: 0;
+                    right: 1px;
+                }
+            } 
+            .cell-16 {
+                .img {
+                    min-width: rem-calc(348);
+                    margin-top: 77%;
+                    left: -12%;
+                }
+            }
+            .cell-18 {
+                .img {
+                    min-width: rem-calc(510);
+                    min-height: rem-calc(472);
+                    bottom: 0;
+                    right: 10%;
+                }
+            }    
+            .cell-20, .cell-3 {
+                background-position: left;
+            }
+            .cell-20-A, .cell-3-A {
+                background-position: right;
+            }
+        }
+
+        .navigation-decade-container {
+            .nav-container {
+                transition: margin-left 300ms ease-in-out;
+                &.first-load {
+                    margin-left: 100%;
+                    @include breakpoint (medium) {
+                        margin-left: 52%;
                     }
                 }
-                &.last {
-                    &::after {
-                        content: none !important;
+                width: 100%;
+
+            
+                .cell-nav {
+                    display: none;
+                    height: rem-calc(68);
+                    &.item {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 10px;
+                        &::after {
+                            @include fluid-props(20px, 136px, width);
+                            content: "";
+                            background-color: $border-gray;
+                            height: 2px;
+                            margin-left: 10px;
+                            margin-top: 5px;
+                        }
                     }
-                }
-                p {
-                    color: $border-gray;
-                    margin: 0;
-                    cursor: pointer;
-                }
-                &.is-selected {
+                    &.last {
+                        &::after {
+                            content: none !important;
+                        }
+                    }
                     p {
-                        @extend .color-blue;
+                        color: $border-gray;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                    &.is-selected {
+                        p {
+                            @extend .color-blue;
+                        }
                     }
                 }
             }
