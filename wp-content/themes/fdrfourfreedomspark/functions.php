@@ -173,9 +173,9 @@ function ffp_create_posttype() {
 add_action( 'init', 'ffp_create_posttype' );
 
 function ffp_get_first_sentence_of_content($post){
-  $str = get_the_excerpt($event);
+  $str = get_the_excerpt($post);
   if (!$str) {
-    $str = get_field('intro', $event->ID);
+    $str = get_field('intro', $post->ID);
   }
   if (!$str) {
     $str = $post->post_content;									
