@@ -31,6 +31,7 @@
 			<div class="filter-item-container bg-color-white padding-all vert-pad-bottom border-bottom">
 				<div class="item-filter p-style border-bottom <?php print ($tax) ? : 'selected'; ?>" value=""> <?php print $filter_title; ?> </div>
 				<?php foreach ($datas as $key => $data): ?>
+					<?php if ($data->slug == 'uncategorized') continue; ?>
 					<div class="item-filter p-style border-bottom <?php print ($tax == $data->slug) ? 'selected' :''; ?>" data-value="<?php print $data->slug ?>"><?php print $data->name ?></div>
 				<?php endforeach; ?>
 			</div>

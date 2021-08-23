@@ -1,5 +1,5 @@
 <?php
-define( 'CSS_JS_VERSION', 1.02);
+define( 'CSS_JS_VERSION', 1.04);
 define( 'TEMPLATE_PATH', get_bloginfo('stylesheet_directory'));
 define( 'TEMPLATE_IMAGE_PATH', get_bloginfo('stylesheet_directory') . '/assets/img');
 
@@ -173,11 +173,17 @@ function ffp_create_posttype() {
 add_action( 'init', 'ffp_create_posttype' );
 
 function ffp_get_first_sentence_of_content($post){
-  $str = $post->post_content;									
-  $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
-  $str = strip_tags($str, '<a><strong><em>');
-  $pos = strpos($str, '.');
-  $str = substr($str, 0, $pos+1);
+  $str = get_the_excerpt($event);
+  if (!$str) {
+    $str = get_field('intro', $event->ID);
+  }
+  if (!$str) {
+    $str = $post->post_content;									
+    $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
+    $str = strip_tags($str, '<a><strong><em>');
+    $pos = strpos($str, '.');
+    $str = substr($str, 0, $pos+1);
+  }
 
   return '<p>' . $str . '</p>';
 }

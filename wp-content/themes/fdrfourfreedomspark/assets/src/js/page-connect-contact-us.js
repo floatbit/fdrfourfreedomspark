@@ -8,7 +8,6 @@ contactUsHandler = {
             $linksImage = $(this);
             var imgWidth = parseFloat($linksImage.width());
             var imgHeight = (imgWidth / 4) * 3;
-            console.log(imgHeight);
   
             $linksImage.css({
                 'height': imgHeight+"px"

@@ -54,6 +54,27 @@
     }
     add_shortcode('link-with-icon', 'ffp_link_with_icon_shortcode');
 
+    function ffp_link_button_shortcode($args=array()) {
+        if (!$args) {
+            $args = array();
+        }
+
+        if ( empty( $args['url'] ) ) {
+            return '';
+        } 
+        
+        if ( empty( $args['title'] ) ) {
+            return '';
+        }
+        
+        $target = ($args['target'] != null) ? $args['target'] : '';
+        $class  = ($args['class']  != null) ? $args['class'] : '';
+
+        $html = '<a href="'.$args['url'].'" class="btn-link '.$class.'" target="'.$target.'">'.$args['title'].'</a>';
+        return $html;
+    }
+    add_shortcode('link-button', 'ffp_link_button_shortcode');
+
     function ffp_link_with_arrow_shortcode($args=array()) {
         if (!$args) {
             $args = array();
@@ -105,6 +126,19 @@
             </div>';
     }
     add_shortcode('quote', 'ffp_quote_shortcode');
+
+    function ffp_quote_paragraph_shortcode($args=array(), $content){
+        if (strpos($content, '<p>') !== false) {
+            $content = substr_replace($content, '<p>&#8220;', 0, 3);
+            $content = substr_replace($content, '&#8221;</p>', -5, 4);
+        } else {
+            $content = '<p>&#8220;'.$content.'&#8221;</p>';
+        }
+
+        return 
+            str_ireplace('<p>', '<p class="quote-indent">', $content);
+    }
+    add_shortcode('quote-paragraph', 'ffp_quote_paragraph_shortcode');
 
     function ffp_audio_file_shortcode($args=array()) {
         if ($args['filename'] == '') {

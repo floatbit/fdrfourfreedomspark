@@ -15,7 +15,7 @@
 	$second_section = get_field('second_section');
 	$related_blogs = get_field('related_blogs');
     $cat = get_the_category();
-    $date = get_the_date( 'd F Y');
+    $date = get_the_date( 'j F Y');
     $catName = '';
     foreach($cat as $catKey => $catItem) {
         if ($catKey == 0) {

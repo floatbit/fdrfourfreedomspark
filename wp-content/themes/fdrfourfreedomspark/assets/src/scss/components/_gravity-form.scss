@@ -1,6 +1,6 @@
 .input-style {
     @extend .p-style;
-    padding: rem-calc(10) rem-calc(16);
+    padding: 0 rem-calc(16);
     outline: none;
     border: 0;
     width: 100%;
@@ -12,6 +12,17 @@
     &.gray {
         @extend .bg-color-gray;
     }
+}
+
+.input-style, 
+.select,
+#gform_wrapper_3 ul .ginput_container_radio ul li label,
+.StripeElement {
+    @include fluid-props(54px, 48px, height);
+}
+#gform_wrapper_3 ul .ginput_container_radio ul li label,
+.select-styled {
+    @include fluid-props(54px, 48px, line-height);
 }
 
 .input-style-checkbox {
@@ -79,6 +90,7 @@
     display: none;
     padding: 0;
     margin: 0;
+    min-height: 40vh;
     background-color: $white;
     border: 1px solid $gray;
     overflow: overlay;
@@ -115,19 +127,27 @@
             li {
                 @include fluid-props(16px, 24px, margin-bottom);
                 input[type=text],
+                input[type=number],
                 textarea {
                     @extend .input-style;
+                }
+                textarea {
+                    height: unset;
                 }
                 input[type=checkbox]{
                     @extend .input-style-checkbox;
                 }
                 &.gfield_error {
                     input[type=text],
+                    input[type=number],
                     textarea {
                         border: 1px solid get-color(alert);
                     }
                 }
             }
+        }
+        .gfield_required.gfield_required_asterisk {
+            display: none;
         }
     }
     .gform_footer {
@@ -155,8 +175,22 @@
     .gform_body {
         li {
             input[type=text],
-            textarea {
+            input[type=number],
+            textarea,
+            .StripeElement {
                 @extend .input-style.gray;
+            }
+            .StripeElement {
+                border: 0;
+                border-radius: 0;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0 rem-calc(16);
+
+                > * {
+                    width: 100%;
+                }
             }
             &#field_2_2 {
                 margin-top: rem-calc(-6);
@@ -170,7 +204,11 @@
         list-style: none;
         margin-left: 0;
 
-        #field_3_1, #field_3_5, #field_3_9, #field_3_12 {
+        #field_3_1, 
+        #field_3_5, 
+        #field_3_9, 
+        #field_3_12, 
+        #field_3_14 {
             .gfield_label {
                 margin-bottom: rem-calc(8);
                 display: block;
@@ -184,6 +222,11 @@
             }
         }
         
+        #field_3_14 {
+            .gfield_description {
+                font-size: 80%;
+            }
+        }
         
         .ginput_container_radio {
             ul {
@@ -200,12 +243,12 @@
             input {
                 display: block;
                 & + label {            
-                    padding: rem-calc(10) rem-calc(16) ; 
-                    @extend .bg-color-gray;
+                    padding: 0 rem-calc(16) ; 
                     display: block;
-                    line-height: 1;
+                    @extend .bg-color-gray;
+                    height: 100%;
                 }
-                &:checked + label, &:checked + input[type=text] {
+                &:checked + label, &:checked + input[type=number] {
                     @extend .bg-color-blue;
                     @extend .color-white;                    
                 }
@@ -230,10 +273,6 @@
         }
         #field_3_1 {
             margin-bottom: 4px;
-        }
-
-        #field_3_10 {
-            @include fluid-props(30px, 44px, margin-bottom);
         }
 
         #field_3_10, #field_3_13 {

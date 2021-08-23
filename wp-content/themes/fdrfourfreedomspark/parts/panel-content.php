@@ -2,6 +2,7 @@
     $eyebrow = $part_params['eyebrow'];
     $eyebrow_color = $part_params['eyebrow_color'];
     $title = $part_params['title'];
+    $addtn_left_content = $part_params['addtn_left_content'];
     $image = $part_params['image'];
     $text = $part_params['text'];
     $border_class = $part_params['border_class'];
@@ -25,7 +26,7 @@
     }
 
     if ($eyebrow_color == null) {
-        $eyebrow_color = 'color-blue';
+        $eyebrow_color = '';
     }
 
     if ($less_padding == true) {
@@ -38,15 +39,20 @@
         <div class="cell medium-3 show-for-medium"></div>
     <?php endif; ?>
 
-    <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?> trim-headings">
-        <?php if ($eyebrow): ?>
-            <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
-                <?php print $eyebrow; ?>
-            </div>
+    <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?> trim-headings flex-container flex-dir-column align-justify">
+        <div>
+            <?php if ($eyebrow): ?>
+                <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
+                    <?php print $eyebrow; ?>
+                </div>
+            <?php endif; ?>
+            <<?php print $title_tag; ?> class="<?php print $title_size; ?> content-title">
+                <?php print $title; ?>
+            </<?php print $title_tag; ?>>
+        </div>
+        <?php if ($addtn_left_content) : ?>
+            <div class="addtn-left-content"><?php print $addtn_left_content; ?></div>
         <?php endif; ?>
-        <<?php print $title_tag; ?> class="<?php print $title_size; ?> content-title">
-            <?php print $title; ?>
-        </<?php print $title_tag; ?>>
     </div>
     
     <?php if ($less_padding == true): ?>

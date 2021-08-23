@@ -52,7 +52,7 @@
                 margin-right: 12px;
                 font-family: 'Font Awesome 5 Pro';
                 content: "\f05a";
-                font-weight: 600;
+                font-weight: 400;
             }
         }
         &.icon-bus {
@@ -60,25 +60,30 @@
     }
 }
 
-.btn-with-arrow {
+.btn-link,
+.btn-with-arrow,
+.btn-with-download,
+.btn-with-back {
     border: none;
     @extend .color-blue;
     @extend .button-text;
+}
+
+.btn-with-arrow {
 
     &::after {
         transition: 250ms ease-in-out;
         margin-right: 4px;
         margin-left: 12px;
         font-family: 'Font Awesome 5 Pro';
-        content: "\f061";
-        font-weight: 600;
+        font-size: 125%;
+        font-weight: 300;
+        vertical-align: middle;
+        content: "\f178";
     }
 }
 
 .btn-with-download {
-    border: none;
-    @extend .color-blue;
-    @extend .button-text;
 
     &::before {
         transition: 250ms ease-in-out;
@@ -90,9 +95,6 @@
 }
 
 .btn-with-back {
-    border: none;
-    @extend .color-blue;
-    @extend .button-text;
 
     &::before {
         transition: 250ms ease-in-out;

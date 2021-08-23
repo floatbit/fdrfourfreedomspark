@@ -150,11 +150,15 @@
 
     .quote-text {
         @include fluid-props(8px, 12px, margin-bottom);
-        text-indent: -0.5rem;
     }
 
     .quote-by {
     }
+}
+
+.quote-text,
+.quote-indent {
+    text-indent: -0.5rem;
 }
 
 .content-inner-container {
@@ -232,6 +236,9 @@
                     display: none;
                 }
             }
+        }
+        .sbi_lightbox_carousel_icon {
+            display: none;
         }
     }
 }
