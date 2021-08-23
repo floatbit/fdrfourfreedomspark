@@ -1,8 +1,7 @@
 .page-template-page-visit-accessibility main {
 
     #access-intro {
-        h2 {
-            @extend .h3-style;
+        .h3-style {
             margin-bottom: 0;
         }
     }
