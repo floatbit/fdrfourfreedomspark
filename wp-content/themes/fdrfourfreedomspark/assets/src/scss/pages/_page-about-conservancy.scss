@@ -10,12 +10,19 @@
     #conserv-bod {
         .bod-container {
             .bod-content-image-container {
-                @include fluid-props(4px, 12px, margin-bottom);
-                @include fluid-props(272px, 228px, height);
-                @include fluid-props(288px, 304px, width);
+                @include fluid-props(8px, 12px, margin-bottom);
+                @include fluid-props(224px, 228px, height);
+                width: 100%;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    max-width: rem-calc(320);
+                }
 
                 &.large {
-                    @include fluid-props(376px, 336px, height);
+                    @include fluid-props(320px, 336px, height);
                 }
             }
             .bod-content{
