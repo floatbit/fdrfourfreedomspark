@@ -38,7 +38,7 @@
 				<?php
 					$event_type = get_the_terms($event->ID, 'event_type');
 					$image 		= get_the_post_thumbnail_url($event->ID);
-					$start_date = strtoupper(date("D, d M Y",strtotime($event->start_date)));
+					$start_date = strtoupper(date("D d M Y",strtotime($event->start_date)));
 					$time_info  = $event->time_info;
 					$time_info = str_ireplace('am','AM',$time_info);
 					$time_info = str_ireplace('pm','PM',$time_info);
