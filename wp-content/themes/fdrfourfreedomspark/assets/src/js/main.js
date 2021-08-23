@@ -133,7 +133,7 @@ dataFilterHandler = {
           });
 
           //handle on click next page button
-          self.$pagingContainer.find('.next-page]').on("click", function(e){
+          self.$pagingContainer.find('.next-page').on("click", function(e){
               e.preventDefault();
               var firstData = true;
               var lastData = false;
@@ -157,6 +157,10 @@ dataFilterHandler = {
                   $pagingContainer.find('.item-paging-button').addClass('hide');
               }
           });
+      }
+
+      if (pageCount == 0) {
+        $pagingContainer.parent().addClass('hide');
       }
 
   },

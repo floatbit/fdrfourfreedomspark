@@ -103,6 +103,7 @@ $def-expanded : 72px;
     }
 }
 
+
 .hor-pad-right-expanded-double {
     @include breakpoint(medium) {
         @include horiz-grid-space(padding-right, 2);
@@ -139,6 +140,18 @@ $def-expanded : 72px;
   
 .vert-margin-bottom-expanded {
     @include fluid-props($def-large, 70px, margin-bottom);
+}
+  
+.vert-pad-bottom-expanded-small {
+    @include breakpoint(small only) {
+        padding-bottom: rem-calc($def-large);
+    }
+}
+
+.vert-margin-bottom-small {
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc($def-small);
+    }
 }
 
 .margin-all {

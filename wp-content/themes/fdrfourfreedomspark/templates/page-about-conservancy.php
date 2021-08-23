@@ -139,10 +139,10 @@
                         </div>
                         <div class="cell medium-3 cancel-padding-x vert-margin-top vert-margin-bottom">
                             <div class="infos-top-image-container">
-                                <img src="<?php print $image; ?>" class="infos-top-image" alt="Image of <?php print $text; ?> Post">
+                                <img src="<?php print $image; ?>" class="infos-top-image" alt="Image of <?php print $title; ?>">
                             </div>
                             <div class="infos-top-text">
-                                <?php print $text ?>
+                                <?php print $text; ?>
                             </div>
                         </div>
                     <?php if ($key == 1) : ?>

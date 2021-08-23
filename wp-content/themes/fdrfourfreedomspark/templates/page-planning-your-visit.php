@@ -26,7 +26,8 @@
 		</div>
 		<div class="cell medium-3 ">
 			<div class="link-container">
-				<?php print do_shortcode( '[link-with-arrow title="View on Google Maps" url="'.$google_map_url.'" target="new" ]' ); ?>			
+				<a href="<?php print $google_map_url; ?>" class="color-black" target="new">View on Google Maps</a>
+				<!-- <?php print do_shortcode( '[link-with-arrow title="View on Google Maps" url="'.$google_map_url.'" target="new" ]' ); ?>			 -->
 			</div>
 		</div>
 		<div class="cell medium-3 ">
@@ -38,7 +39,7 @@
 				?> 
 				<div class="addres-container vert-pad-bottom">
 					<p class="font-body-semibold">ADDRESS</p>
-					<a href="<?php print $google_map_url; ?>">
+					<a href="<?php print $google_map_url; ?>" class="color-black">
 						<p><?php print $address; ?></p>
 					</a>
 				</div>
@@ -84,6 +85,11 @@
 				<div class="item-container trim-paragraphs vert-pad-top-expanded vert-pad-bottom-expanded">	
 					<?php if ($item['icon']): ?>
 						<img src="<?php print $item['icon']; ?>" class="img-icon" alt="Icon of Transportaion <?php print $index; ?>">
+					<?php endif; ?>
+					<?php if ($item['title']): ?>
+						<div class="h3-style">
+							<?php print $item['title']; ?>
+						</div>
 					<?php endif; ?>
 					<?php print apply_filters( 'the_content', $item['description']); ?>
 				</div>

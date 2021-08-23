@@ -8,7 +8,12 @@
 
 <main class="border-side">
 	
-	<div class="grid-x pos-relative border-top border-bottom">
+	<div class="grid-x pos-relative border-top">
+		<div class="cell navigation-decade-container padding-all cancel-padding-y border-bottom">
+			<div class="nav-container first-load">
+				
+			</div>
+		</div>
 		<div class="cell timeline-container">
 			<div class="timeline-carousel">
 				<div class="timeline-cell timeline-cell-double cell-1 padding-all" data-decade="">
@@ -374,11 +379,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="cell navigation-decade-container padding-all cancel-padding-y">
-			<div class="nav-container first-load">
-				
 			</div>
 		</div>
 	</div>

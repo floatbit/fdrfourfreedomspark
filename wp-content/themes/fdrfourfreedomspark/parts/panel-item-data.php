@@ -34,8 +34,8 @@
 	<?php endif;?>		
 		<div class="grid-x vert-pad-top-expanded vert-pad-bottom-expanded grid-padding-x item-data-container">
 			<div class="cell <?php print $cell_class_left ?> medium-order-1 <?php print $small_cell_order_title ?>">
-				<p class="color-blue text-taxonomy"><?php print $tax ?></p>
-				<h3 class="color-black"> <?php print $post_title ?></h3>
+				<div class="p-style color-blue uppercase text-taxonomy"><?php print $tax; ?></div>
+				<div class="h3-style color-black"> <?php print $post_title ?></div>
 			</div>
 			<div class="cell <?php print $cell_class ?> medium-order-2 <?php print $small_cell_order_image ?>">
 				<img src="<?php print $image ?>" class="image" alt="Image of <?php print $post_title; ?> Post">

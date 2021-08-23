@@ -29,11 +29,11 @@
 	</div>
 	
 	<div class="border-top">
-		<div class="grid-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
+		<div class="grid-x grid-padding-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
 			<div class="cell medium-8 title-cell cancel-padding-y hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded trim-paragraphs">
                     <a href="/events-calendar/" class="btn-with-back bold color-blue" alt="Link of Events Page" title="Link of Events Page">EVENTS</a>
-					<h1 class="title-text"><?php the_title();?></h1>
+					<div class="h1-style title-text"><?php the_title();?></div>
 					<?php print $intro; ?>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 		$price_info    = get_field('price_info');
 	?>
 	<div class="border-top">
-		<div class="grid-x grid-padding-y content-section pos-relative vb-3 vert-pad-top-expanded vert-pad-bottom-expanded">
+		<div class="grid-x grid-padding-x grid-padding-y content-section pos-relative vb-3 vert-pad-top-expanded vert-pad-bottom-expanded">
 			<div class="cell medium-9 small-order-2 medium-order-1 hor-pad-left-expanded hor-pad-right">
 				<div class="hor-pad-left-expanded">
 					<?php the_content();?>
@@ -82,17 +82,17 @@
 		</div>
 	</div>
 
-	<div class="grid-x vert-pad-bottom-expanded pos-relative vb-3 ">
-		<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom hor-pad-left-expanded">
-			<div class="hor-pad-left-expanded">
-				<?php if ($event_type): ?>
+	<?php if ($event_type): ?>
+		<div class="grid-x grid-margin-x vert-pad-bottom-expanded pos-relative vb-3 ">
+			<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom hor-pad-left-expanded">
+				<div class="hor-pad-left-expanded">
 					<?php foreach ($event_type as $item): ?>
 						<a href="/events-calendar/?tax=<?php print $item->slug ?>" class="button outline" alt="Link of Filtered Events" title="Link of Filtered Events"> <?php print $item->name ?> </a>
 					<?php endforeach; ?>
-				<?php endif; ?>
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php endif; ?>
 												
 </main>
 

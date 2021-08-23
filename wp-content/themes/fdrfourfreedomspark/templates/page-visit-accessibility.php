@@ -7,6 +7,7 @@
 <?php 
     $means_of_access = get_field('means_of_access');
     $extra_text = get_field('extra_text');
+    $intro_text = get_field('intro_text');
     /* $extra_text = substr_replace($extra_text, '<p>"', 0, 3);
     $extra_text = substr_replace($extra_text, '"</p>', -5, 4); */
 ?>
@@ -24,8 +25,8 @@
                     </h1>
                 </div>
                 <div class="cell medium-9 padding-all">
-                    <div class="hor-pad-right-expanded">
-                        <?php the_content(); ?>
+                    <div class="hor-pad-right-expanded h3-style">
+                        <?php print $intro_text; ?>
                     </div>
                 </div>
             </div>

@@ -63,6 +63,8 @@
 					set_query_var( 'part_params', array(
 						'eyebrow' 	=> $tax,
 						'title' 	=> $post->post_title,
+						'title_size' => 'h1',
+						'addtn_left_content' => $start_date,
 						'image' 	=> $image,
 						'text' 		=> $text,
 						'link'		=> $link,

@@ -29,9 +29,9 @@
         <div class="form-container">
             <div class="grid-x grid-padding-x pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom-expanded border-top form-inner-container">
                 <div class="cell medium-3 medium-offset-3 vert-margin-top vert-margin-bottom">
-                    <h3>
+                    <div class="h3-style">
                         Receive News and Updates From Four Freedoms Park Conservancy
-                    </h3>
+                    </div>
                 </div>
                 <div class="cell medium-6 vert-margin-top vert-margin-bottom">
                     <?php print do_shortcode( '[gravityform id="1" ajax=true]' );?>

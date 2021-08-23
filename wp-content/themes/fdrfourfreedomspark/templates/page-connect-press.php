@@ -94,7 +94,7 @@
                     </div>
                     <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container <?php print ($key == count($press_coverage) - 1) ? 'last' : '';?>">
                         <div class="coverage-title">
-                            <div class="p-style uppercase color-blue">
+                            <div class="p-style uppercase">
                                 <?php print $item['source']; ?>
                             </div>
                             <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-title-link" alt="Link of <?php print $item['title']; ?> Press" title="Link of <?php print $item['title']; ?> Press">

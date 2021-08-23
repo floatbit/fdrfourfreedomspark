@@ -96,8 +96,7 @@
     .text-taxonomy {
         @extend .vert-pad-top;
         margin: 0;
-        text-transform: uppercase;
-        line-height: 1.1;
+        line-height: 1.5;
         @include breakpoint (medium) {
             padding: 0;
         }
@@ -151,11 +150,15 @@
 
     .quote-text {
         @include fluid-props(8px, 12px, margin-bottom);
-        text-indent: -0.5rem;
     }
 
     .quote-by {
     }
+}
+
+.quote-text,
+.quote-indent {
+    text-indent: -0.5rem;
 }
 
 .content-inner-container {

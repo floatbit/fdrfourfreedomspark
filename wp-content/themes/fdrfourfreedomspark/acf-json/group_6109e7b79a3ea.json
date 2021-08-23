@@ -103,6 +103,25 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_612320f07ea2c",
+            "label": "Intro Text",
+            "name": "intro_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -122,5 +141,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628058939
+    "modified": 1629692158
 }
