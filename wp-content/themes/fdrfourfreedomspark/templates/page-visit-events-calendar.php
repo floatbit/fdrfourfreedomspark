@@ -36,27 +36,18 @@
 		<div class="grid-x grid-padding-y events-section pos-relative vb-2 border-top">
 			<?php foreach ($events as $event): ?>
 				<?php
-					$event_type = get_the_terms($event->ID, 'event_type');
 					$image 		= get_the_post_thumbnail_url($event->ID);
 					$start_date = strtoupper(date("D d M Y",strtotime($event->start_date)));
 					$time_info  = $event->time_info;
 					$time_info = str_ireplace('am','AM',$time_info);
 					$time_info = str_ireplace('pm','PM',$time_info);
 					$text = ffp_get_first_sentence_of_content($event);
-
-					$tax = '';
-					$tax_slug = '';
-					if ($event_type) {
-						foreach ($event_type as $item) {
-							$tax .= (($tax != '')?', ':'').strtoupper($item->name);
-							$tax_slug .= (($tax_slug != '')?',':'').$item->slug;
-						}
-					}
+					$cat_names = ffp_get_post_categ_urls($event, 'event_type', 'events');
 
 					set_query_var( 'part_params', array(
 						'link' 		=> '/event/'.$event->post_name,
-						'data_tax'	=> $tax_slug,
-						'tax'		=> $tax,
+						'data_tax'	=> $cat_names['slugs'],
+						'tax'		=> $cat_names['names'],
 						'post_title'=> $event->post_title,
 						'start_date'=> $start_date,
 						'time_info' => $time_info,

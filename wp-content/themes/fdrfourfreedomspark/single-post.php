@@ -16,14 +16,7 @@
 	$related_blogs = get_field('related_blogs');
     $cat = get_the_category();
     $date = get_the_date( 'j F Y');
-    $catName = '';
-    foreach($cat as $catKey => $catItem) {
-        if ($catKey == 0) {
-            $catName = $catItem->name;
-        } else {
-            $catName.=', '.$catItem->name;
-        }
-    }
+    $cat_names = ffp_get_post_categ_urls($post, 'category', 'blogs');
 
     //var_dump($middle_image);
 ?>
@@ -56,13 +49,7 @@
                         <div class="p-style color-spanish-gray category-text">
                             CATEGORY
                         </div>
-                        <?php foreach($cat as $catItem) : ?>
-                            <a href="/learn/blogs/?tax=<?php print $catItem->slug ?>" alt="Link of <?php print $catItem->name; ?> Category" title="Link of <?php print $catItem->name; ?> Category">
-                                <div class="p-style color-blue category-name">
-                                    <?php print $catItem->name; ?>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
+                        <?php print $cat_names['names']; ?>
                     </div>
                     <div class="flex-container social-media-container">
                         <a class="icon-item" href="https://twitter.com/intent/tweet?url=<?php print get_the_permalink(); ?>" title="Share on Twitter" target="_blank" alt="Link of Share on Twitter"><span class="fab fa-twitter color-black"></span></a>
@@ -116,22 +103,14 @@
                             $image = get_the_post_thumbnail_url($item->ID);
                             $date = get_the_date( 'd M Y', $item->ID);
                             $post = get_post($item->ID);
-                            $catName = '';
-
-                            foreach($cat as $catKey => $catItem) {
-                                if ($catKey == 0) {
-                                    $catName = $catItem->name;
-                                } else {
-                                    $catName.=', '.$catItem->name;
-                                }
-                            }
-                        ?>
+                            $cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
+                            ?>
                         <?php 
                             set_query_var( 'part_params', array(
                                 'post_title' => get_the_title(),
                                 'image' => $image,
                                 'text' => get_the_excerpt(),
-                                'tax' => $catName,
+                                'tax' => $cat_names['names'],
                                 'start_date' => $date,
                                 'cell_wide' => true,
                                 'small_title_first' => true

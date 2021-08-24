@@ -1,6 +1,5 @@
 <?php
     $eyebrow = $part_params['eyebrow'];
-    $eyebrow_color = $part_params['eyebrow_color'];
     $title = $part_params['title'];
     $addtn_left_content = $part_params['addtn_left_content'];
     $image = $part_params['image'];
@@ -25,10 +24,6 @@
         $link_text = 'Read More';
     }
 
-    if ($eyebrow_color == null) {
-        $eyebrow_color = '';
-    }
-
     if ($less_padding == true) {
         $less_padding_class = 'cancel-padding-top';
     }
@@ -42,7 +37,7 @@
     <div class="cell medium-3 <?php print $less_padding_class.' '.$cell_class; ?> trim-headings flex-container flex-dir-column align-justify">
         <div>
             <?php if ($eyebrow): ?>
-                <div class="p-style content-eyebrow <?php print $eyebrow_color; ?>">
+                <div class="p-style content-eyebrow">
                     <?php print $eyebrow; ?>
                 </div>
             <?php endif; ?>

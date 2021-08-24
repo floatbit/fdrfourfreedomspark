@@ -172,7 +172,7 @@
 
     .content-eyebrow {
         text-transform: uppercase;
-        @include fluid-props(12px, 12px, margin-bottom);
+        margin-bottom: rem-calc(8);
         letter-spacing: 0.05rem;
     }
 
@@ -244,7 +244,7 @@
 }
 
 .no-touchevents {
-    .panel-item-data .linked-panel:hover { 
+    .panel-item-data:hover { 
         @extend .bg-color-gray;
     }
     #ig-feed #sb_instagram.sbi #sbi_images .sbi_item a.sbi_photo:hover {

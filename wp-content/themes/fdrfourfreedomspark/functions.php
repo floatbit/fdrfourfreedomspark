@@ -188,4 +188,41 @@ function ffp_get_first_sentence_of_content($post){
   return '<p>' . $str . '</p>';
 }
 
+function ffp_get_post_categ_urls($post, $tax_name, $post_type, $array = FALSE) {
+  $cat = get_the_terms($post->ID, $tax_name);
+  $cat_name = '';
+  $cat_slugs = '';
+  $cat_array = [];
+  switch ($post_type) {
+    case 'events':
+      $url_head = '/visit/events-calendar';
+      break;
+    default:
+      $url_head = '/learn/blogs';
+  }
+  foreach ($cat as $cat_key => $cat_item) {
+    $cat_entry = '<a href="'.$url_head.'?tax='.$cat_item->slug.'" alt="View '.$post_type.' categorized under '.$cat_item->name.'">'.$cat_item->name.'</a>';
+    $cat_array[] = array(
+      'url' => $url_head.'?tax='.$cat_item->slug,
+      'label' => $cat_item->name,
+      'alt' => 'View '.$post_type.' categorized under '.$cat_item->name,
+    );
+    if ($cat_key == 0) {
+      $cat_name = $cat_entry;
+      $cat_slugs = $cat_item->slug;
+    } else {
+      $cat_name .= ', '.$cat_entry;
+      $cat_slugs .= ','.$cat_item->slug;
+    }
+  }
+  if ($array) {
+    return $cat_array;
+  } else {
+    return array(
+      'names' => $cat_name,
+      'slugs' => $cat_slugs,
+    );  
+  }
+}
+
 require_once(__DIR__.'/shortcodes.php');

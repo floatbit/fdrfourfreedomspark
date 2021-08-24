@@ -188,17 +188,9 @@
 		<div class="featured-blog-container trim-paragraphs border-bottom">
 			<?php foreach($featured_blogs as $key => $item) : ?>
 				<?php 
-					$cat = get_the_category($item->ID);
 					$image = get_the_post_thumbnail_url($item->ID);
 					$post = get_post($item->ID);
-					$catName = '';
-					foreach($cat as $catKey => $catItem) {
-						if ($catKey == 0) {
-							$catName = $catItem->name;
-						} else {
-							$catName.=', '.$catItem->name;
-						}
-					}
+					$cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
 
 					$first_class = '';
 					$middle_class = '';
@@ -214,7 +206,7 @@
 					}
 
 					set_query_var( 'part_params', array(
-						'eyebrow' => $catName,
+						'eyebrow' => $cat_names['names'],
 						'title' => get_the_title(),
 						'image' => $image,
 						'text' => get_the_content(),

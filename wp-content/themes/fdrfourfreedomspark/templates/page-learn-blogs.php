@@ -45,23 +45,14 @@
 					$post = get_posts($args)[0];
 					$featured_post_id = $post->ID;
 
-					$category 	= get_the_terms($post->ID, 'category');
 					$image 		= get_the_post_thumbnail_url($post->ID);
 					$start_date = strtoupper(date("d M Y",strtotime($post->post_date)));
 					$text 		= get_the_excerpt($post);
 					$link 		= get_permalink($post->ID);
-
-					$tax = '';
-					$tax_slug = '';
-					if ($category) {
-						foreach ($category as $item) {
-							$tax .= (($tax != '')?', ':'').strtoupper($item->name);
-							$tax_slug .= (($tax_slug != '')?',':'').$item->slug;
-						}
-					}
+					$cat_names = ffp_get_post_categ_urls($post, 'category', 'blogs');
 
 					set_query_var( 'part_params', array(
-						'eyebrow' 	=> $tax,
+						'eyebrow' 	=> $cat_names['names'],
 						'title' 	=> $post->post_title,
 						'title_size' => 'h1',
 						'addtn_left_content' => $start_date,
@@ -81,25 +72,15 @@
 			<?php foreach ($posts as $key => $post): ?>
 				<?php
 					if ($post-> ID == $featured_post_id) continue;
-					$category 	= get_the_terms($post->ID, 'category');
 					$image 		= get_the_post_thumbnail_url($post->ID);
 					$start_date = strtoupper(date("d M Y",strtotime($post->post_date)));
 					$text 		= get_the_excerpt($post);
 					$link 		= get_permalink($post->ID);
-
-					$tax = '';
-					$tax_slug = '';
-					if ($category) {
-						foreach ($category as $item) {
-							$tax .= (($tax != '')?', ':'').strtoupper($item->name);
-							$tax_slug .= (($tax_slug != '')?',':'').$item->slug;
-						}
-					}
-
+					$cat_names = ffp_get_post_categ_urls($post, 'category', 'blogs');
 					set_query_var( 'part_params', array(
 						'link' 		=> $link,
-						'data_tax'	=> $tax_slug,
-						'tax'		=> $tax,
+						'data_tax'	=> $cat_names['slugs'],
+						'tax'		=> $cat_names['names'],
 						'post_title'=> $post->post_title,
 						'start_date'=> $start_date,
 						'text'		=> $text,

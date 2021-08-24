@@ -11,18 +11,10 @@
 	<?php
 		global $post;
 
-		$event_type = get_the_terms($post->ID, 'event_type');
 		$image 		= get_the_post_thumbnail_url();
 		$intro 		= get_field('intro');
+		$cat_names = ffp_get_post_categ_urls($post, 'event_type', 'events', TRUE);
 
-		$tax = '';
-		$tax_slug = '';
-		if ($event_type) {
-			foreach ($event_type as $item) {
-				$tax .= (($tax != '')?', ':'').strtoupper($item->name);
-				$tax_slug .= (($tax_slug != '')?',':'').$item->slug;
-			}
-		}
 	?>
 	<div class="grid-x">
 		<div class="cell cell-hero background-cover" style="background-image:url(<?php print $image; ?>)"></div>
@@ -32,7 +24,7 @@
 		<div class="grid-x grid-padding-x grid-padding-y title-section pos-relative vb-1 vb-2 vb-3 vb-2-small vert-pad-top-expanded vert-pad-bottom-expanded ">
 			<div class="cell medium-8 title-cell cancel-padding-y hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded trim-paragraphs">
-                    <a href="/events-calendar/" class="btn-with-back bold color-blue" alt="Link of Events Page" title="Link of Events Page">EVENTS</a>
+          <a href="/events-calendar/" class="btn-with-back bold color-blue" alt="Link of Events Page" title="Link of Events Page">EVENTS</a>
 					<div class="h1-style title-text"><?php the_title();?></div>
 					<?php print $intro; ?>
 				</div>
@@ -82,12 +74,12 @@
 		</div>
 	</div>
 
-	<?php if ($event_type): ?>
+	<?php if ($cat_names): ?>
 		<div class="grid-x grid-padding-x vert-pad-bottom-expanded pos-relative vb-3 ">
 			<div class="cell medium-9 border-top vert-pad-top-expanded vert-pad-bottom hor-pad-left-expanded">
 				<div class="hor-pad-left-expanded">
-					<?php foreach ($event_type as $item): ?>
-						<a href="/events-calendar/?tax=<?php print $item->slug ?>" class="button outline" alt="Link of Filtered Events" title="Link of Filtered Events"> <?php print $item->name ?> </a>
+					<?php foreach ($cat_names as $item): ?>
+						<a href="<?php print $item['url']; ?>" class="button outline" alt="<?php print $item['alt']; ?>" title="<?php print $item['alt']; ?>"><?php print $item['label']; ?></a>
 					<?php endforeach; ?>
 				</div>
 			</div>
