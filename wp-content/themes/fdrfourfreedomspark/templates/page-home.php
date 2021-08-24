@@ -18,6 +18,11 @@
 			break;
 		}
 	}
+	if (stripos($open_info, 'close') !== FALSE) {
+		$open_info = 'Closed Today';
+	} else {
+		$open_info = 'Open Today&nbsp;&nbsp;<span class="info-hour bold">'.$open_info.'</span>';
+	}
 ?>
 
 <?php get_header();?>
@@ -38,7 +43,7 @@
 					<div class="cell medium-6 open-border hero-info-item">
 						<div class="flex-container align-middle info-item">
 							<div class="p-style color-black info-open">
-								Open Today&nbsp;&nbsp;<span class="info-hour bold"><?php print $open_info; ?></span>
+								<?php print $open_info; ?>
 							</div>
 						</div>
 					</div>
