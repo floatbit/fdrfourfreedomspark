@@ -167,6 +167,7 @@ header {
         transition: 250ms ease-in-out;
 
         .items-container {
+          border: 1px solid $border-gray;
           padding: rem-calc(28) rem-calc(26);
           min-width: rem-calc(280);
           margin-top: rem-calc(52);

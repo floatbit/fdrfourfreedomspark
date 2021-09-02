@@ -128,12 +128,13 @@
                         ?>
                         <?php 
                             set_query_var( 'part_params', array(
+                                'link' 		 => get_permalink( $item->ID ),
                                 'post_title' => get_the_title(),
-                                'image' => $image,
-                                'text' => get_the_excerpt(),
-                                'tax' => $catName,
+                                'image'      => $image,
+                                'text'       => get_the_excerpt(),
+                                'tax'        => $catName,
                                 'start_date' => $date,
-                                'cell_wide' => true,
+                                'cell_wide'  => true,
                                 'small_title_first' => true
                             ));
                             get_template_part( 'parts/panel-item-data' );
