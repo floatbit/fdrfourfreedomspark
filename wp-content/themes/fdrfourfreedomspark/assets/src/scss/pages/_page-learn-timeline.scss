@@ -71,6 +71,11 @@
                 @include breakpoint (medium) {
                     justify-content: center;
                 }
+                .timeline-plain-mode-link {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: rem-calc(48);
+                }
             }
 
             .cell-2 {
