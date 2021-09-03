@@ -250,6 +250,22 @@
                     },
                     "default_value": "",
                     "placeholder": ""
+                },
+                {
+                    "key": "field_61302c116d538",
+                    "label": "Vimeo",
+                    "name": "vimeo",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         }
@@ -271,5 +287,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1629423387
+    "modified": 1630546970
 }
