@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="19px" viewBox="0 0 9 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.1.5-FDR-Timeline-landing-page-v3" transform="translate(-251.000000, -651.000000)" stroke="#006EAB" stroke-width="1.2">
+            <g id="Group" transform="translate(251.000000, 651.000000)">
+                <polyline id="Path-2" points="1.5 15 4.5 18 7.5 15"></polyline>
+                <rect id="Rectangle" x="0.6" y="0.6" width="7.8" height="11.8" rx="3.9"></rect>
+                <line x1="4.5" y1="3.375" x2="4.5" y2="5.625" id="Line" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>
