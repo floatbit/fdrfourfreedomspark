@@ -109,15 +109,9 @@
                             set_query_var( 'part_params', array(
                                 'link' 		 => get_permalink( $item->ID ),
                                 'post_title' => get_the_title(),
-<<<<<<< HEAD
                                 'image' => $image,
                                 'text' => get_the_excerpt(),
                                 'tax' => $cat_names['names'],
-=======
-                                'image'      => $image,
-                                'text'       => get_the_excerpt(),
-                                'tax'        => $catName,
->>>>>>> 0888d5508189c13a8f0236438750369118c7bf4e
                                 'start_date' => $date,
                                 'cell_wide'  => true,
                                 'small_title_first' => true
