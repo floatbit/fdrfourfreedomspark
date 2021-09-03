@@ -37,6 +37,9 @@
 				<?php if ($social_media['youtube'] != null) : ?>
 					<a class="icon-item" href="<?php print $social_media['youtube']; ?>" target="_blank"  aria-label="Youtube" alt="Link to Youtube Account" title="Link to Youtube Account"><span class="fab fa-youtube color-white"></span></a>
 				<?php endif; ?>
+				<?php if ($social_media['vimeo'] != null) : ?>
+					<a class="icon-item" href="<?php print $social_media['vimeo']; ?>" target="_blank" alt="Social Media Link of Vimeo" title="Social Media Link of Vimeo"><span class="fab fa-vimeo color-white"></span></a>
+				<?php endif; ?>
 				<?php if ($social_media['medium'] != null) : ?>
 					<a class="icon-item" href="<?php print $social_media['medium']; ?>" target="_blank" aria-label="Medium" alt="Link to Medium Account" title="Link to Medium Account"><span class="fab fa-medium color-white"></span></a>
 				<?php endif; ?>
