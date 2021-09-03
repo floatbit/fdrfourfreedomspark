@@ -1,5 +1,7 @@
 $(document).foundation();
 
+var fdrTimelineWindow;
+
 verticalBorderHandler = {
   $vh1 = $('.vb-1'),
   $vh2 = $('.vb-2'),
@@ -307,6 +309,11 @@ jQuery(document).ready(function($) {
       $list.hide();
     })
 	});
+
+  $('a[href="#open-timeline"]').on("click", function(e) {
+    e.preventDefault();
+    fdrTimelineWindow = window.open('/learn/timeline', 'fdrTimeline');
+  });
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {

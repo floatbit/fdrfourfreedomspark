@@ -45,7 +45,7 @@ timelineHandler = {
             adaptiveHeight: true
         });
 
-        $navContainer.flickity({
+        self.$navContainer.flickity({
             asNavFor: '.timeline-carousel',
             contain: true,
             prevNextButtons: false,            
@@ -112,7 +112,16 @@ timelineHandler = {
                 'width' : width.toFixed(2)+'%'
             });
 
-            $carousel.flickity('resize')
+            $carousel.flickity('resize');
+            self.$navContainer.flickity('resize');
+        }).trigger(("resize"));
+
+        $('a[href="#close-window"]').on("click", function(e) {
+            e.preventDefault();
+            window.close();
+            if (!window.closed) {
+                window.location.href = '/';
+            }
         });
     }
 }

@@ -70,16 +70,27 @@
 }
 
 .btn-with-arrow {
-
-    &::after {
+    &::after,
+    &.reversed::before {
         transition: 250ms ease-in-out;
-        margin-right: 4px;
-        margin-left: 12px;
         font-family: 'Font Awesome 5 Pro';
         font-size: 125%;
         font-weight: 300;
         vertical-align: middle;
+        @include fluid-props(2px,4px,margin-top);
+    }
+    &::after {
+        margin-right: 4px;
+        margin-left: 12px;
         content: "\f178";
+    }
+    &.reversed::after {
+        content: '';
+    }
+    &.reversed::before {
+        margin-left: 4px;
+        margin-right: 12px;
+        content: "\f177";
     }
 }
 
@@ -133,6 +144,13 @@
         &::after {
             margin-left: 16px;
             margin-right: 0px;
+        }
+    }
+
+    .btn-with-arrow.reversed:hover {    
+        &::before {
+            margin-right: 16px;
+            margin-left: 0px;
         }
     }
 

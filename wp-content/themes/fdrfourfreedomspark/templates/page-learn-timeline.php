@@ -10,9 +10,8 @@
 	
 	<div class="grid-x pos-relative border-top">
 		<div class="cell navigation-decade-container padding-all cancel-padding-y border-bottom">
-			<div class="nav-container first-load">
-				
-			</div>
+			<div class="nav-container first-load"></div>
+			<div class="back-nav"><?php print do_shortcode('[link-with-arrow url="#close-window" title="Back to Main Site" class="reversed flex-container align-middle" alt="Back to Main Site"]'); ?></div>
 		</div>
 		<div class="cell timeline-container">
 			<div class="timeline-carousel">
@@ -22,8 +21,15 @@
 						<div class="content h3-style">
 							<?php the_content();?>
 						</div>
-						<?php print do_shortcode( '[link-with-arrow title="View Timeline" url="#expand-timeline"]' ); ?>
-					</div>	
+						<?php if (wp_is_mobile()): ?>
+							<div class="scroll-down-to-start button-text color-blue">Swipe to start&nbsp;&nbsp;<span class="fal fa-long-arrow-right"></div>
+						<?php else: ?>
+							<div class="scroll-down-to-start button-text color-blue">Scroll down to start&nbsp;&nbsp;<img src="<?php print TEMPLATE_IMAGE_PATH."/icon-scroll-down.svg"?>"></div>
+						<?php endif; ?>
+					</div>
+					<div class="timeline-plain-mode-link">
+						<a href="/learn/timeline-plain">View Plain Text Version</a>
+					</div>
 				</div>
 				<div class="timeline-cell bg-color-blue background-cover cell-2" data-decade="1880">
 					<div class="timeline-block">
@@ -383,6 +389,10 @@
 		</div>
 	</div>
 											
+</main>
+
+<main class="timeline-main-plain border-side">
+
 </main>
 
 <?php get_footer(); ?>

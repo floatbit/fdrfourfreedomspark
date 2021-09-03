@@ -40,12 +40,14 @@
 							<div class="items-container bg-color-white">
 								<?php foreach($subitems as $key => $item): ?>
 									<?php 
+										$href = $item->url;
 										$target = '';
 										if (strpos(strtolower($item->url), 'timeline') !== false) {
-											$target = '_blank';
+											$href = '#open-timeline';
+											$target = 'new-window';
 										}
 									?>
-									<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Link of SubMenu <?php print $item->title; ?>">
+									<a href="<?php print $href; ?>" class="sub-nav-menu" alt="<?php print $item->title; ?> navigation submenu">
 										<div class="p-style color-black submenu-title">
 											<?php print $item->title; ?>
 											<?php if ($target != ''): ?>
@@ -103,12 +105,14 @@
 											<div class="small-subitem-container">
 												<?php foreach($subitems as $key => $item): ?>
 													<?php 
+														$href = $item->url;
 														$target = '';
 														if (strpos(strtolower($item->url), 'timeline') !== false) {
-															$target = '_blank';
+															$href = '#open-timeline';
+															$target = 'new-window';
 														}
 													?>
-													<a href="<?php print $item->url; ?>" target="<?php print $target; ?>" class="sub-nav-menu" alt="Menu <?php print $item->title; ?> under Mobile Menu">
+													<a href="<?php print $href; ?>" class="sub-nav-menu" alt="Menu <?php print $item->title; ?> under Mobile Menu">
 														<div class="caption-text color-black">
 															<?php print $item->title; ?>
 															<?php if ($target != ''): ?>
