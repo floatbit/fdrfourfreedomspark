@@ -97,9 +97,7 @@
                     img {
                         width: 50%;
                         object-fit: cover;
-                        @include breakpoint (small only) {
-                            max-height: rem-calc(260);
-                        }
+                        @include fluid-props (260px, 208px, max-height);
                     }
                 } 
 
