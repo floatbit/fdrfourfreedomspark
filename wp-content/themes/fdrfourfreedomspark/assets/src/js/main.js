@@ -36,6 +36,7 @@ navHandler = {
   $subMenuItems = $('.submenu-items'),
   $smallMenuNavigation = $('.small-menu-navigation'),
   $smallMenuItemContainer = $('.small-menu-item-container'),
+  $backToTop = $('[href="#back-to-top"]'),
 
   init = function(){
     var self = this;
@@ -59,6 +60,11 @@ navHandler = {
       /* $(subitem).removeClass('active'); */
 	    $(boderNavMen).removeClass('active');
     })
+
+    this.$backToTop.on('click', function(e) {
+      e.preventDefault();
+      $('html,body').animate({scrollTop: 0}, 'slow');
+    }),
 
     $('.open-small-menu-nav').on('click', function(e) {
       e.preventDefault();

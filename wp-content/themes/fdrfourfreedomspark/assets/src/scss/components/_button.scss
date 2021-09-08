@@ -92,6 +92,9 @@
         margin-right: 12px;
         content: "\f177";
     }
+    &.arrow-up::after {   
+        content: "\f176";
+    }
 }
 
 .btn-with-download {

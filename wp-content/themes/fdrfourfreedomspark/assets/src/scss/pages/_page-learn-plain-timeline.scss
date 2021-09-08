@@ -1,0 +1,134 @@
+.page-template-page-learn-plain-timeline {
+    
+    header, footer {
+        @extend .hide;
+    }
+
+    main {
+        position: relative;
+        @include breakpoint (small only) {
+            .h1-style {
+                font-size: 200%;
+            }
+
+            .grid-content {
+                padding-bottom: 0 !important;
+                margin-bottom: rem-calc(-28);
+                
+                .cell-year {
+                    .h3-style {
+                        font-size: 200%;
+                        margin: 0;
+                    }
+                }
+                
+                .cell-text {
+                    margin-top: rem-calc(-16);
+                    .quote-text {
+                        font-size: 165%;
+                        line-height: 1.6;
+                    }
+                }
+                
+                .cell-image {
+                    margin-bottom: 12px;
+                }
+            }
+            
+            .grid-back-to-top {
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                .cell {
+                    text-align: center;
+                    a {
+                        display: inline;
+                    }
+                }
+            }
+            
+            .grid-title-small {
+                .cell {
+                    width: 90%;
+                }
+            }    
+        }
+
+        .grid-header {
+            text-align: right;
+            .cell {
+                .icon-close {
+                    @include fluid-type(16px, 22px);
+                }
+            }
+        }
+
+        .cell-year {
+            @include breakpoint (medium) {
+                text-align: right;
+            }
+        }
+
+        .cell-text {
+            .quote-text {
+                text-indent: 0;
+                &:not(&:first-of-type) {
+                    @include fluid-props(12px, 16px, margin-top);
+                }
+            }
+            &.show-for-small-only {
+                margin-top: 0;
+            }
+        }
+
+        .cell-image {
+            position: relative;
+            .img-container {
+                width: 100%;
+                @include breakpoint (medium) {
+                    position: absolute;
+                }
+                img {
+                    width: 100%;
+                }            
+                
+                &.img-double {
+                    img {
+                        width: 50%;
+                        object-fit: cover;
+                        @include breakpoint (small only) {
+                            max-height: rem-calc(260);
+                        }
+                    }
+                } 
+
+                &.img-1936 {
+                    text-align: center;
+                    img {
+                        width: 70%;
+                    }
+                }
+
+                &.img-1945 {
+                    @include breakpoint (medium) {
+                        padding-top: rem-calc(105);
+                    }
+                }
+
+                &.img-1962 {
+                    position: relative;
+                }
+
+                &.img-1942 {
+                    @include breakpoint (small only) {
+                        text-align: center;
+                        img {
+                            width: 91%;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}

@@ -225,4 +225,158 @@ function ffp_get_post_categ_urls($post, $tax_name, $post_type, $array = FALSE) {
   }
 }
 
+function ffp_get_array_timeline_text() {
+  $arr = array(
+    '1882' => array(
+      'text1' => '<strong>January 30</strong>—Franklin Roosevelt (FDR) was born at Hyde Park',
+      'text2' => '',
+    ),
+    '1884' => array(
+      'text1' => '<strong>October 11</strong>—Eleanor Roosevelt (ER) was born in New York City',
+      'text2' => '',
+    ),
+    '1905' => array(
+      'text1' => '<strong>March 17</strong>—Franklin and Eleanor are married',
+      'text2' => '',
+    ),
+    '1910' => array(
+      'text1' => 'Franklin was elected to New York State Senate',
+      'text2' => '',
+    ),
+    '1912' => array(
+      'text1' => 'Eleanor attends her first Democratic Party Convention',
+      'text2' => '',
+    ),
+    '1913' => array(
+      'text1' => '<strong>April</strong>—Franklin was appointed as Assistant Secretary of the Navy',
+      'text2' => '',
+    ),
+    '1918' => array(
+      'text1' => 'Eleanor works with the Red Cross, the Navy Department to help American Servicemen in WWI',
+      'text2' => '',
+    ),
+    '1920' => array(
+      'text1' => 'Franklin is nominated for Vice President on ticket with James N. Cox, but lost to Coolidge and Harding',
+      'text2' => 'Eleanor joins League of Women Voters and works for womens’ political gains following the successful movement',
+    ),
+    '1921' => array(
+      'text1' => '<strong>August</strong>—Franklin is stricken with poliomyelitis at Campobello, New Brunswick, Canada',
+    ),
+    '1922' => array(
+      'text1' => 'Eleanor writes <span class="font-heading-italic">“Why I Am a Democrat,”</span>crystallizing her ideals and commitment to the Democratic Party',
+    ),
+    '1927' => array(
+      'text1' => 'Franklin founded the Georgia Warm Springs Foundation therapy center for the treatment of polio victims',
+    ),
+    '1928' => array(
+      'text1' => '<strong>November 6</strong>—Franklin was elected as Governor of New York',
+    ),
+    '1932' => array(
+      'text1' => '<strong>November 8</strong>—Franklin was elected as President',
+      'text2' => 'Eleanor states that the country should not expect the new First Lady to be a symbol of elegance but rather, “plain, ordinary Mrs. Roosevelt.”',
+    ),
+    '1933' => array(
+      'text1' => '<strong>March 4</strong>—Franklin was inaugurated as 32nd President',
+      'text2' => '<strong>March 6</strong>—Eleanor becomes the 1st First Lady to hold a press conference where only female reporters are admitted',
+      'text3' => '<strong>June 16</strong>—Franklin signs the National Industrial Recovery Act, part of his “New Deal” platform',
+    ),
+    '1936' => array(
+      'text1' => '<strong>November 3</strong>—Franklin was Reelected as President',
+    ),
+    '1940' => array(
+      'text1' => '<strong>November 5</strong>—Franklin was reelected as President',
+    ),
+    '1941' => array(
+      'text1' => '<strong>December 8</strong>—U.S. declares war on Japan<br><br><strong>December 11</strong>—U.S. declares war on Germany',
+    ),
+    '1942' => array(
+      'text1' => '<strong>January 6</strong>—Franklin Gives State of the Union speech popularly known as the <span class="font-heading-italic"><strong>“Four Freedoms”</strong></span>',
+    ),
+    '1945' => array(
+      'text1' => '<strong>April 12</strong>—Franklin died in Warm Springs, Georgia<br><br><strong>April 15</strong>—Franklin buried in Hyde Park, New York',
+      'text2' => 'Regarding Franklin’s death, Eleanor says “ The story is over,” and returns to private life at her beloved Val-Kill cottage in Hyde Park',
+      'text3' => 'Eleanor accepts President Harry Truman’s offer to serve as a US delegate to the United Nations',
+    ),
+    '1947' => array(
+      'text1' => 'Eleanor begins work on drafting the Declaration of Human Rights',
+    ),
+    '1952' => array(
+      'text1' => 'Eleanor resigns from the UN delegation after the election of Republican President Eisenhower',
+    ),
+    '1960' => array(
+      'text1' => 'Eleanor meets with John F. Kennedy at Val-Kill',
+    ),
+    '1961' => array(
+      'text1' => 'President Kennedy reappoints Eleanor to the UN and appoints her as the first chairperson of the President’s Commission on the Status of Women',
+    ),
+    '1962' => array(
+      'text1' => '<strong>November 10</strong>—Eleanor dies in NYC from disseminated tuberculosis, aplastic anemia and heart failure',
+    ),
+  );
+ 
+  return $arr;
+}
+
+function ffp_get_array_timeline_image() {
+  $arr = array(
+    '1882' => TEMPLATE_IMAGE_PATH."/1882_img.png",
+    '1884' => TEMPLATE_IMAGE_PATH."/1884_img.png",
+    '1910' => TEMPLATE_IMAGE_PATH."/1910_img.png",
+    '1913' => TEMPLATE_IMAGE_PATH."/1913_img.png",
+    '1921' => TEMPLATE_IMAGE_PATH."/1921_img.png",
+    '1928' => TEMPLATE_IMAGE_PATH."/1928_img.png",
+    '1933' => TEMPLATE_IMAGE_PATH."/1933_img.png",
+    '1940' => TEMPLATE_IMAGE_PATH."/1940_img.png",
+    '1942' => TEMPLATE_IMAGE_PATH."/1942_img.png",
+    // image for plain timeline 
+    '1905' => TEMPLATE_IMAGE_PATH."/1905_img.png",
+    '1918' => TEMPLATE_IMAGE_PATH."/1918_img.png",
+    '1927' => TEMPLATE_IMAGE_PATH."/1927_img.png",
+    '1932' => TEMPLATE_IMAGE_PATH."/1932_img.png",
+    '1945' => TEMPLATE_IMAGE_PATH."/1945_img.png",
+    '1962' => TEMPLATE_IMAGE_PATH."/1962_img.png",
+    '1947' => TEMPLATE_IMAGE_PATH."/1947_img.png",
+  );
+  return $arr;
+}
+
+function ffp_get_array_timeline_image_background() {
+  $arr = array(
+    '1884' => TEMPLATE_IMAGE_PATH."/1884_bg.png",
+    '1912' => TEMPLATE_IMAGE_PATH."/1912_bg.png",
+    '1918' => TEMPLATE_IMAGE_PATH."/1918_bg.png",
+    '1920' => TEMPLATE_IMAGE_PATH."/1920_bg.png",
+    '1927' => TEMPLATE_IMAGE_PATH."/1927_bg.png",
+    '1932' => TEMPLATE_IMAGE_PATH."/1932_bg.png",
+    '1932_2' => TEMPLATE_IMAGE_PATH."/1932_2_bg.png",
+    '1936' => TEMPLATE_IMAGE_PATH."/1936_bg.png",
+    '1941' => TEMPLATE_IMAGE_PATH."/1941_bg.png",
+    '1945' => TEMPLATE_IMAGE_PATH."/1945_bg.png",
+    '1947' => TEMPLATE_IMAGE_PATH."/1947_bg.png",
+    '1960' => TEMPLATE_IMAGE_PATH."/1960_bg.png",
+    '1962' => TEMPLATE_IMAGE_PATH."/1962_bg.png",
+    // image for plain timeline 
+    '1921' => TEMPLATE_IMAGE_PATH."/1921_bg.png",
+    '1933' => TEMPLATE_IMAGE_PATH."/1933_bg.png",
+    '1942' => TEMPLATE_IMAGE_PATH."/1942_bg.png"
+  );
+  return $arr;
+}
+
+function ffp_get_text_by_year($year, $type = 1) {
+  $arr = ffp_get_array_timeline_text();
+  return $arr[$year]['text'.$type];
+}
+
+function ffp_get_img_by_year($year) {
+  $arr = ffp_get_array_timeline_image();
+  return $arr[$year];
+}
+
+function ffp_get_img_bg_by_year($year) {
+  $arr = ffp_get_array_timeline_image_background();
+  return $arr[$year];
+}
+
+
 require_once(__DIR__.'/shortcodes.php');

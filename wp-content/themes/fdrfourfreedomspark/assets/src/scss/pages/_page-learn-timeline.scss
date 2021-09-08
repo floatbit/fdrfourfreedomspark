@@ -82,12 +82,14 @@
                 .img {
                     width: rem-calc(253);
                     margin-top: rem-calc(84);
+                    transform: rotate(-2deg);
                 }    
             }
             .cell-3 {
                 .img {
                     width: rem-calc(253);
                     margin-bottom: rem-calc(36);
+                    transform: rotate(2deg);
                 }
             }      
             .cell-4 {
@@ -122,6 +124,7 @@
                     min-width: rem-calc(348);
                     margin-top: 77%;
                     left: -12%;
+                    transform: rotate(-5deg);
                 }
             }
             .cell-18 {

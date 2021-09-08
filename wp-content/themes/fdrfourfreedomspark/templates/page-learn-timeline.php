@@ -2,7 +2,7 @@
 	/*
 	Template Name: Learn Timeline
 	*/
-?>
+?> 
 
 <?php get_header();?>
 
@@ -38,33 +38,33 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>January 30</strong>—Franklin Roosevelt (FDR) was born at Hyde Park
+								<?php print	ffp_get_text_by_year(1882); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1882_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1882) ?>" class="img">
 					</div>
 				</div>
-				<div class="timeline-cell background-cover flex-container cell-3" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1884_bg.png" ?>)" data-decade="1880">
+				<div class="timeline-cell background-cover flex-container cell-3" style="background-image:url(<?php print ffp_get_img_bg_by_year(1884) ?>)" data-decade="1880">
 					<div class="timeline-block">
 						<div class="year-container">
 							<span class="h2-style color-white">1884</span> 
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1884_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1884) ?>" class="img">
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>October 11</strong>—Eleanor Roosevelt (ER) was born in New York City
+								<?php print	ffp_get_text_by_year(1884); ?>
 							</span>
 						</div>
 					</div>
 				</div>
-				<div class="timeline-cell background-cover flex-container cell-3-A" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1884_bg.png" ?>)" data-decade="1900">
+				<div class="timeline-cell background-cover flex-container cell-3-A" style="background-image:url(<?php print ffp_get_img_bg_by_year(1884) ?>)" data-decade="1900">
 					<div class="timeline-block">
 						<div class="year-container">
 							<span class="h2-style color-white">1905</span> 
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>March 17</strong>—Franklin and Eleanor are married
+								<?php print	ffp_get_text_by_year(1905); ?>
 							</span>
 						</div>
 					</div>
@@ -76,20 +76,20 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								Franklin was elected to New York State Senate
+								<?php print	ffp_get_text_by_year(1910); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1910_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1910) ?>" class="img">
 					</div>
 				</div>
-				<div class="timeline-cell background-cover flex-container cell-5" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1912_bg.png" ?>)" data-decade="1910">
+				<div class="timeline-cell background-cover flex-container cell-5" style="background-image:url(<?php print ffp_get_img_bg_by_year(1912) ?>)" data-decade="1910">
 					<div class="timeline-block flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1912</span> 
 						</div>
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor attends her first Democratic Party Convention
+								<?php print	ffp_get_text_by_year(1912); ?>
 							</span>
 						</div>
 					</div>
@@ -101,25 +101,25 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>April</strong>—Franklin was appointed as Assistant Secretary of the Navy
+								<?php print	ffp_get_text_by_year(1913); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1913_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1913) ?>" class="img">
 					</div>
 				</div>
-				<div class="timeline-cell background-cover cell-7 " style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1918_bg.png" ?>)" data-decade="1910">
+				<div class="timeline-cell background-cover cell-7 " style="background-image:url(<?php print ffp_get_img_bg_by_year(1918) ?>)" data-decade="1910">
 					<div class="timeline-block  flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style">1918</span> 
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text">
-								Eleanor works with the Red Cross, the Navy Department to help American Servicemen in WWI
+								<?php print	ffp_get_text_by_year(1918); ?>
 							</span>
 						</div>
 					</div>
 				</div>
-				<div class="timeline-cell background-cover cell-8 " style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1920_bg.png" ?>)" data-decade="1920">
+				<div class="timeline-cell background-cover cell-8 " style="background-image:url(<?php print ffp_get_img_bg_by_year(1920) ?>)" data-decade="1920">
 					<div class="timeline-block flex-container align-justify">
 						<div class="top-section">
 							<div class="year-container">
@@ -127,13 +127,13 @@
 							</div>
 							<div class="text-container">
 								<span class="quote-text color-white">
-									Franklin is nominated for Vice President on ticket with James N. Cox, but lost to Coolidge and Harding
+									<?php print	ffp_get_text_by_year(1920); ?>
 								</span>
 							</div>
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor joins League of Women Voters and works for womens’ political gains following the successful movement
+								<?php print	ffp_get_text_by_year(1920, 2); ?>
 							</span>
 						</div>
 					</div>
@@ -145,20 +145,20 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>August</strong>—Franklin is stricken with poliomyelitis at Campobello, New Brunswick, Canada
+								<?php print	ffp_get_text_by_year(1921); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1921_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1921) ?>" class="img">
 					</div>
 				</div>				
-				<div class="timeline-cell timeline-cell-double background-cover flex-container cell-10" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1927_bg.png" ?>)"  data-decade="1920">
+				<div class="timeline-cell timeline-cell-double background-cover flex-container cell-10" style="background-image:url(<?php print ffp_get_img_bg_by_year(1927) ?>)"  data-decade="1920">
 					<div class="timeline-block-half flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1922</span> 
 						</div>
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor writes <span class="font-heading-italic">“Why I Am a Democrat,”</span>crystallizing her ideals and commitment to the Democratic Party
+								<?php print	ffp_get_text_by_year(1922); ?>
 							</span>
 						</div>
 					</div>
@@ -168,7 +168,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								Franklin founded the Georgia Warm Springs Foundation therapy center for the treatment of polio victims
+								<?php print	ffp_get_text_by_year(1927); ?>
 							</span>
 						</div>
 					</div>
@@ -176,7 +176,7 @@
 
 				<div class="timeline-cell bg-color-blue background-cover cell-11" data-decade="1920">
 					<div class="img-container">
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1928_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1928)?>" class="img">
 					</div>		
 					<div class="timeline-block">
 						<div class="year-container">
@@ -184,30 +184,30 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 6</strong>—Franklin was elected as Governor of New York
+								<?php print	ffp_get_text_by_year(1928); ?>
 							</span>
 						</div>
 					</div>
 				</div>	
 
-				<div class="timeline-cell background-cover flex-container cell-12" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1932_bg.png" ?>)" data-decade="1930">
+				<div class="timeline-cell background-cover flex-container cell-12" style="background-image:url(<?php print ffp_get_img_bg_by_year(1932) ?>)" data-decade="1930">
 					<div class="timeline-block">
 						<div class="year-container">
 							<span class="h2-style color-white">1932</span> 
 						</div>
 						<div class="text-container border-top">
 							<span class="quote-text color-white">
-								<strong>November 8</strong>—Franklin was elected as President
+								<?php print	ffp_get_text_by_year(1932); ?>
 							</span>
 						</div>
 					</div>
 				</div>						
 
-				<div class="timeline-cell background-cover cell-13" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1932_2_bg.png" ?>)" data-decade="1930">
+				<div class="timeline-cell background-cover cell-13" style="background-image:url(<?php print ffp_get_img_bg_by_year('1932_2') ?>)" data-decade="1930">
 					<div class="timeline-block flex-container ">
 						<div class="text-container border-top text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor states that the country should not expect the new First Lady to be a symbol of elegance but rather, “plain, ordinary Mrs. Roosevelt.”
+								<?php print	ffp_get_text_by_year(1932, 2); ?>
 							</span>
 						</div>
 					</div>
@@ -221,27 +221,27 @@
 							</div>
 							<div class="text-container">
 								<span class="quote-text color-white">
-									<strong>March 4</strong>—Franklin was inaugurated as 32nd President
+									<?php print	ffp_get_text_by_year(1933); ?>
 								</span>
 							</div>
-							<img src="<?php print TEMPLATE_IMAGE_PATH."/1933_img.png"?>" class="img">
+							<img src="<?php print ffp_get_img_by_year(1933);?>" class="img">
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>March 6</strong>—Eleanor becomes the 1st First Lady to hold a press conference where only female reporters are admitted
+								<?php print	ffp_get_text_by_year(1933, 2); ?>
 							</span>
 						</div>
 					</div>
 				</div>	
 				
-				<div class="timeline-cell timeline-cell-double background-cover cell-15 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1936_bg.png" ?>)" data-decade="1930">
+				<div class="timeline-cell timeline-cell-double background-cover cell-15 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1936) ?>)" data-decade="1930">
 					<div class="timeline-block-half">
 						<div class="year-container">
 							<span class="h2-style color-white">&nbsp;</span> 
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>June 16</strong>—Franklin signs the National Industrial Recovery Act, part of his “New Deal” platform
+								<?php print	ffp_get_text_by_year(1933, 3); ?>
 							</span>
 						</div>
 					</div>
@@ -251,7 +251,7 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 3</strong>—Franklin was Reelected as President
+								<?php print	ffp_get_text_by_year(1936); ?>
 							</span>
 						</div>
 					</div>
@@ -264,23 +264,21 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>November 5</strong>—Franklin was reelected as President
+								<?php print	ffp_get_text_by_year(1940); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1940_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1940); ?>" class="img">
 					</div>
 				</div>	
 				
-				<div class="timeline-cell timeline-cell-double background-cover cell-17 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1941_bg.png" ?>)" data-decade="1940">
+				<div class="timeline-cell timeline-cell-double background-cover cell-17 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1941) ?>)" data-decade="1940">
 					<div class="timeline-block">
 						<div class="year-container">
 							<span class="h2-style color-white">1941</span> 
 						</div>
 						<div class="text-container flex-container">
 							<span class="quote-text color-white" style="width: 48%">
-								<strong>December 8</strong>—U.S. declares war on Japan
-								<br><br>
-								<strong>December 11</strong>—U.S. declares war on Germany 
+								<?php print	ffp_get_text_by_year(1941); ?>
 							</span>
 						</div>
 					</div>
@@ -293,14 +291,14 @@
 						</div>
 						<div class="text-container">
 							<span class="quote-text color-white">
-								<strong>January 6</strong>—Franklin Gives State of the Union speech popularly known as the <span class="font-heading-italic"><strong>“Four Freedoms”</strong></span>
+								<?php print	ffp_get_text_by_year(1942); ?>
 							</span>
 						</div>
-						<img src="<?php print TEMPLATE_IMAGE_PATH."/1942_img.png"?>" class="img">
+						<img src="<?php print ffp_get_img_by_year(1942); ?>" class="img">
 					</div>
 				</div>	
 				
-				<div class="timeline-cell timeline-cell-double background-cover cell-19 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1945_bg.png" ?>)" data-decade="1940">
+				<div class="timeline-cell timeline-cell-double background-cover cell-19 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1945) ?>)" data-decade="1940">
 					<div class="timeline-block flex-container align-justify">
 						<div class="top-section">
 							<div class="year-container">
@@ -308,56 +306,54 @@
 							</div>
 							<div class="text-container flex-container">
 								<span class="quote-text color-white" style="width: 48%">
-									<strong>April 12</strong>—Franklin died in Warm Springs, Georgia<br>
-									<br>
-									<strong>April 15</strong>—Franklin buried in Hyde Park, New York
+									<?php print	ffp_get_text_by_year(1945); ?>
 								</span>
 							</div>
 						</div>
 						<div class="text-container flex-container align-justify text-container-bottom">
 							<span class="quote-text color-white" style="width: 48%">
-								Regarding Franklin’s death, Eleanor says “ The story is over,” and returns to private life at her beloved Val-Kill cottage in Hyde Park
+								<?php print	ffp_get_text_by_year(1945, 2); ?>
 							</span>
 							<span class="quote-text color-white" style="width: 48%">
-								Eleanor accepts President Harry Truman’s offer to serve as a US delegate to the United Nations
+								<?php print	ffp_get_text_by_year(1945, 3); ?>
 							</span>
 						</div>
 					</div>
 				</div>	
 				
-				<div class="timeline-cell background-cover cell-20 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1947_bg.png" ?>)" data-decade="1940">
+				<div class="timeline-cell background-cover cell-20 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1947) ?>)" data-decade="1940">
 					<div class="timeline-block flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1947</span> 
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor begins work on drafting the Declaration of Human Rights
+								<?php print	ffp_get_text_by_year(1947); ?>
 							</span>
 						</div>
 					</div>
 				</dif>
-				<div class="timeline-cell background-cover cell-20-A flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1947_bg.png" ?>)" data-decade="1950">
+				<div class="timeline-cell background-cover cell-20-A flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1947) ?>)" data-decade="1950">
 					<div class="timeline-block flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1952</span> 
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor resigns from the UN delegation after the election of Republican President Eisenhower
+								<?php print	ffp_get_text_by_year(1952); ?>
 							</span>
 						</div>
 					</div>
 				</div>	
 
-				<div class="timeline-cell timeline-cell-double background-cover cell-21 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1960_bg.png" ?>)" data-decade="1960">
+				<div class="timeline-cell timeline-cell-double background-cover cell-21 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1960) ?>)" data-decade="1960">
 					<div class="timeline-block-half  flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1960</span> 
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								Eleanor meets with John F. Kennedy at Val-Kill
+								<?php print	ffp_get_text_by_year(1960); ?>
 							</span>
 						</div>
 					</div>
@@ -367,20 +363,20 @@
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-							President Kennedy reappoints Eleanor to the UN and appoints her as the first chairperson of the President’s Commission on the Status of Women
+								<?php print	ffp_get_text_by_year(1961); ?>
 							</span>
 						</div>
 					</div>
 				</div>
 
-				<div class="timeline-cell background-cover cell-21 flex-container" style="background-image:url(<?php print TEMPLATE_IMAGE_PATH."/1962_bg.png" ?>)" data-decade="1960">
+				<div class="timeline-cell background-cover cell-21 flex-container" style="background-image:url(<?php print ffp_get_img_bg_by_year(1962) ?>)" data-decade="1960">
 					<div class="timeline-block  flex-container align-justify">
 						<div class="year-container">
 							<span class="h2-style color-white">1962</span> 
 						</div>
 						<div class="text-container text-container-bottom">
 							<span class="quote-text color-white">
-								<strong>November 10</strong>—Eleanor dies in NYC from disseminated tuberculosis, aplastic anemia and heart failure
+								<?php print	ffp_get_text_by_year(1962); ?>
 							</span>
 						</div>
 					</div>
