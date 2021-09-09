@@ -1,5 +1,5 @@
 <?php
-define( 'CSS_JS_VERSION', 1.09);
+define( 'CSS_JS_VERSION', 1.10);
 define( 'TEMPLATE_PATH', get_bloginfo('stylesheet_directory'));
 define( 'TEMPLATE_IMAGE_PATH', get_bloginfo('stylesheet_directory') . '/assets/img');
 
@@ -263,7 +263,7 @@ function ffp_get_array_timeline_text() {
       'text1' => '<strong>August</strong>—Franklin is stricken with poliomyelitis at Campobello, New Brunswick, Canada',
     ),
     '1922' => array(
-      'text1' => 'Eleanor writes <span class="font-heading-italic">“Why I Am a Democrat,”</span>crystallizing her ideals and commitment to the Democratic Party',
+      'text1' => 'Eleanor writes <span class="font-heading-italic">“Why I Am a Democrat,”</span> crystallizing her ideals and commitment to the Democratic Party',
     ),
     '1927' => array(
       'text1' => 'Franklin founded the Georgia Warm Springs Foundation therapy center for the treatment of polio victims',

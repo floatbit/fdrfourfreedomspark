@@ -1,6 +1,6 @@
 <?php
   /*
-  Template Name: Timeline Plain 
+  Template Name: Learn Timeline (Plain View)
   */
 ?>
 
