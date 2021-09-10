@@ -67,7 +67,7 @@
 					</div>
 					<div class="cell small-6 medium-2 border-left hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="/visit/plan-your-visit" class="hero-link">
+							<a href="/visit/planning-your-visit" class="hero-link">
 								<div class="p-style color-black info-getting">
 									<span class="fal fa-map-marker-alt"></span>Getting Here
 								</div>

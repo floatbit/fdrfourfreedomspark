@@ -68,9 +68,12 @@
 .panel-item-data {
     z-index: -1;
     .image {
-        @include fluid-props(216px, 228px, height);
+        @include fluid-props(216px, 432px, height, 375px, 1100px);
         width: 100%;
         object-fit: cover;  
+        @include breakpoint(medium) {
+            height: 228px;
+        }
     }
     &.cell-wide {
         .image {

@@ -71,6 +71,11 @@
                 @include breakpoint (medium) {
                     justify-content: center;
                 }
+                .scroll-down-to-start {
+                    img {
+                        width: rem-calc(12);
+                    }
+                }
                 .timeline-plain-mode-link {
                     position: absolute;
                     bottom: 0;
@@ -103,7 +108,16 @@
                     justify-content: flex-end;
                 }
             }
-        
+            .cell-14 {
+                .top-container {
+                    flex: 1 1 100%;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+            }
 
             .cell-6, .cell-9, .cell-16, .cell-11, .cell-18 {
                 .img {

@@ -70,14 +70,16 @@
 }
 
 .btn-with-arrow {
+    display: inline-flex;
+    align-items: center;
     &::after,
     &.reversed::before {
         transition: 250ms ease-in-out;
         font-family: 'Font Awesome 5 Pro';
         font-size: 125%;
         font-weight: 300;
-        vertical-align: middle;
-        @include fluid-props(2px,4px,margin-top);
+        line-height: 1;
+        height: 14px;
     }
     &::after {
         margin-right: 4px;
