@@ -89,6 +89,25 @@ timelineHandler = {
             } else {
                 self.$navContainer.addClass('first-load');
             }
+            var decade = '';
+            self.$timelineCell.each(function() {
+                if ($(this).offset().left > this.scrollLeft) {
+                    decade = $(this).data('decade');
+                    return false;
+                }
+            });
+            if (decade != '') {
+                var navIndex = 0;
+                self.$navDecadeContainer.find('.cell-nav').each(function() {
+                    if ($(this).data('decade') == decade) {
+                        return false;
+                    }
+                    navIndex++;
+                });
+                if (navIndex >= 0) {
+                    self.$navContainer.flickity('select', navIndex);
+                }
+            }
         });
     
         $(window).on('resize', function(e){

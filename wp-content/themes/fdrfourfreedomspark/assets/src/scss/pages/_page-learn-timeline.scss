@@ -168,10 +168,7 @@
             }
             .nav-container {
                 transition: margin-left 300ms ease-in-out;
-                margin-left: 50%;
-                @include breakpoint(medium) {
-                    margin-left: 20%;
-                }
+                margin-left: rem-calc(208);
                 &.first-load {
                     margin-left: 100%;
                     @include breakpoint (medium) {
