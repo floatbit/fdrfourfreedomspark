@@ -72,8 +72,10 @@
                     justify-content: center;
                 }
                 .scroll-down-to-start {
+                    font-size: 115%;
                     img {
-                        width: rem-calc(12);
+                        width: 14px; //please keep this and the next one in px!
+                        margin-top: 7px;
                     }
                 }
                 .timeline-plain-mode-link {

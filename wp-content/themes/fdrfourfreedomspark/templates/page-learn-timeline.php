@@ -24,7 +24,7 @@
 						<?php if (wp_is_mobile()): ?>
 							<div class="scroll-down-to-start button-text color-blue">Swipe to start&nbsp;&nbsp;<span class="fal fa-long-arrow-right"></div>
 						<?php else: ?>
-							<div class="scroll-down-to-start button-text color-blue">Scroll down to start&nbsp;&nbsp;<img src="<?php print TEMPLATE_IMAGE_PATH."/icon-scroll-down.svg"?>"></div>
+							<div class="scroll-down-to-start button-text color-blue">Scroll to start&nbsp;&nbsp;<img src="<?php print TEMPLATE_IMAGE_PATH."/icon-scroll-down.gif"?>"></div>
 						<?php endif; ?>
 					</div>
 					<div class="timeline-plain-mode-link">
