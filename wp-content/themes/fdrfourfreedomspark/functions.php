@@ -198,7 +198,7 @@ function ffp_get_post_categ_urls($post, $tax_name, $post_type, $array = FALSE) {
       $url_head = '/visit/events-calendar';
       break;
     default:
-      $url_head = '/learn/blogs';
+      $url_head = '/learn/blog';
   }
   foreach ($cat as $cat_key => $cat_item) {
     $cat_entry = '<a href="'.$url_head.'?tax='.$cat_item->slug.'" alt="View '.$post_type.' categorized under '.$cat_item->name.'">'.$cat_item->name.'</a>';

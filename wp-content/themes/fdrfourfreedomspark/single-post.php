@@ -29,7 +29,7 @@
             <div class="cell cancel-padding-x vert-margin-bottom-expanded background-cover hero-image" style="background-image:url(<?php print $hero_image ?>)"></div>
             <div class="cell vert-pad-bottom-expanded main-title">
                 <div class="hor-pad-left-expanded">
-                    <a href="/learn/blogs" class="btn-with-back bold" alt="Link of Blogs Page" title="Link of Blogs Page">The Blog</a>
+                    <a href="/learn/blog" class="btn-with-back bold" alt="Link of Blogs Page" title="Link of Blogs Page">The Blog</a>
                     <div class="h1-style">
                         <?php the_title(); ?>
                     </div>

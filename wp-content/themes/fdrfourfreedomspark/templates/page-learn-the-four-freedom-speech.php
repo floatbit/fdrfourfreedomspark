@@ -117,7 +117,7 @@
         <div class="see-all-container">
             <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vert-pad-top vert-pad-bottom-expanded">
                 <div class="cell medium-3">
-		            <?php print do_shortcode( '[link-with-arrow title="See All Posts" url="/learn/blogs" ]' ); ?>
+		            <?php print do_shortcode( '[link-with-arrow title="See All Posts" url="/learn/blog" ]' ); ?>
                 </div>
             </div>
         </div>
