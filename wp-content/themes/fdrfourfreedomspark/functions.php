@@ -200,19 +200,21 @@ function ffp_get_post_categ_urls($post, $tax_name, $post_type, $array = FALSE) {
     default:
       $url_head = '/learn/blog';
   }
-  foreach ($cat as $cat_key => $cat_item) {
-    $cat_entry = '<a href="'.$url_head.'?tax='.$cat_item->slug.'" alt="View '.$post_type.' categorized under '.$cat_item->name.'">'.$cat_item->name.'</a>';
-    $cat_array[] = array(
-      'url' => $url_head.'?tax='.$cat_item->slug,
-      'label' => $cat_item->name,
-      'alt' => 'View '.$post_type.' categorized under '.$cat_item->name,
-    );
-    if ($cat_key == 0) {
-      $cat_name = $cat_entry;
-      $cat_slugs = $cat_item->slug;
-    } else {
-      $cat_name .= ', '.$cat_entry;
-      $cat_slugs .= ','.$cat_item->slug;
+  if (is_array($cat)) {
+    foreach ($cat as $cat_key => $cat_item) {
+      $cat_entry = '<a href="'.$url_head.'?tax='.$cat_item->slug.'" alt="View '.$post_type.' categorized under '.$cat_item->name.'">'.$cat_item->name.'</a>';
+      $cat_array[] = array(
+        'url' => $url_head.'?tax='.$cat_item->slug,
+        'label' => $cat_item->name,
+        'alt' => 'View '.$post_type.' categorized under '.$cat_item->name,
+      );
+      if ($cat_key == 0) {
+        $cat_name = $cat_entry;
+        $cat_slugs = $cat_item->slug;
+      } else {
+        $cat_name .= ', '.$cat_entry;
+        $cat_slugs .= ','.$cat_item->slug;
+      }
     }
   }
   if ($array) {
