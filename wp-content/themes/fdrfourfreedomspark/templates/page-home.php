@@ -49,7 +49,7 @@
 					</div>
 					<div class="cell medium-2 border-left show-for-medium hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="#" class="hero-link home-upcoming-event" alt="Link of Hero">
+							<a href="/visit/events-calendar" class="hero-link home-upcoming-event" alt="Upcoming Events">
 								<div class="p-style color-black info-event">
 									<span class="fal fa-calendar"></span>Upcoming Events
 								</div>
@@ -58,7 +58,7 @@
 					</div>
 					<div class="cell medium-2 border-bottom show-for-small-only hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="#" class="hero-link home-upcoming-event" alt="Link of Hero on Small">
+							<a href="/visit/events-calendar" class="hero-link home-upcoming-event" alt="Upcoming Events">
 								<div class="p-style color-black info-event">
 									<span class="fal fa-calendar"></span>Upcoming Events
 								</div>

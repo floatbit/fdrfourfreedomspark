@@ -140,7 +140,7 @@
 			<h1>Four Freedoms Park Conservancy strives to make the Park fully accessible for all.</h1>
 
 			<div class="vert-pad-top-expanded vert-pad-bottom-expanded">
-				<?php print do_shortcode( '[link-with-arrow title="Read More" url="/visit/accessibility" alt="Accessibility" target="new" ]' ); ?>
+				<?php print do_shortcode( '[link-with-arrow title="Read More" url="/visit/accessibility" alt="Accessibility"]' ); ?>
 			</div>
 		</div>
 		<?php
