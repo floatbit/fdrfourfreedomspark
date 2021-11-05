@@ -188,45 +188,47 @@
 			</div>
 		<?php endif ;?>
 	</section>
+	
+	<?php if ($featured_blogs): ?>
+		<section id="home-featured-blog">
+			<div class="featured-blog-container trim-paragraphs border-bottom">
+				<?php foreach($featured_blogs as $key => $item) : ?>
+					<?php 
+						$image = get_the_post_thumbnail_url($item->ID);
+						$post = get_post($item->ID);
+						$cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
 
-	<section id="home-featured-blog">
-		<div class="featured-blog-container trim-paragraphs border-bottom">
-			<?php foreach($featured_blogs as $key => $item) : ?>
-				<?php 
-					$image = get_the_post_thumbnail_url($item->ID);
-					$post = get_post($item->ID);
-					$cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
+						$first_class = '';
+						$middle_class = '';
+						$last_class = '';
+						if ($key == 0) {
+							$first_class = 'border-top';
+						}
+						if ($key < count($featured_blogs)-1) {
+							$middle_class = 'vert-pad-bottom';
+						}
+						if ($key == count($featured_blogs)-1){
+							$last_class = 'vert-pad-bottom-expanded-small vert-margin-bottom-small';
+						}
 
-					$first_class = '';
-					$middle_class = '';
-					$last_class = '';
-					if ($key == 0) {
-						$first_class = 'border-top';
-					}
-					if ($key < count($featured_blogs)-1) {
-						$middle_class = 'vert-pad-bottom';
-					}
-					if ($key == count($featured_blogs)-1){
-						$last_class = 'vert-pad-bottom-expanded-small vert-margin-bottom-small';
-					}
-
-					set_query_var( 'part_params', array(
-						'eyebrow' => $cat_names['names'],
-						'title' => get_the_title(),
-						'image' => $image,
-						'text' => get_the_content(),
-						'border_class' => 'vb-1 vb-2 vb-3',
-						'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class.' '.$last_class,
-						'less_padding' => true,
-						'link' => get_the_permalink(),
-						'cell_class' => 'vert-margin-top',
-						'title_size' => 'h1',
-					));
-					get_template_part( 'parts/panel-content' );
-				?>
-			<?php endforeach; ?>
-		</div>
-	</section>
+						set_query_var( 'part_params', array(
+							'eyebrow' => $cat_names['names'],
+							'title' => get_the_title(),
+							'image' => $image,
+							'text' => get_the_content(),
+							'border_class' => 'vb-1 vb-2 vb-3',
+							'additional_class' => 'vert-pad-top-expanded '.$first_class.' '.$middle_class.' '.$last_class,
+							'less_padding' => true,
+							'link' => get_the_permalink(),
+							'cell_class' => 'vert-margin-top',
+							'title_size' => 'h1',
+						));
+						get_template_part( 'parts/panel-content' );
+					?>
+				<?php endforeach; ?>
+			</div>
+		</section>
+	<?php endif; ?>
 	
 	<?php 
 		get_template_part( 'parts/panel-instagram-feed' );
