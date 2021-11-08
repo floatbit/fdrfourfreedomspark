@@ -207,6 +207,10 @@ header {
     bottom: 0;
     left: 100%;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: rem-calc(96);
+    overscroll-behavior: contain;
 
     .small-top-container {
       padding-top: 16px;
