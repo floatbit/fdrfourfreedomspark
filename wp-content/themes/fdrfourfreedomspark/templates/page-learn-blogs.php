@@ -11,16 +11,6 @@
 	
 	<?php
 		global $post;
-		set_query_var( 'part_params', array(
-			'type' 	=> 'blog',
-			'title' => $post->post_title,
-			'items_per_page' => 8,
-			'tax' => $_GET['tax']
-		) );
-		get_template_part( 'parts/panel-header-filter' );
-	?>
-	
-	<?php
 		$args = array(
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
@@ -29,8 +19,16 @@
 			'posts_per_page' => -1,
 		);
 		$posts = get_posts($args);
-	?>	
-
+		set_query_var( 'part_params', array(
+			'type' 	=> 'blog',
+			'title' => $post->post_title,
+			'items_per_page' => 8,
+			'tax' => $_GET['tax'],
+			'data_count' => count($posts),
+		) );
+		get_template_part( 'parts/panel-header-filter' );
+	?>
+	
 	<?php if ($posts): ?>
 		<div class="grid-x posts-section pos-relative vb-1 vb-2 vb-3 border-top">
 			<div class="cell">

@@ -365,33 +365,32 @@ footer {
     margin: 0;
   }
 
+  a {
+    color: $white;
+    transition: none;
+  }
+
   .footer-container {
+    .footer-menu-container {
+      margin-top: rem-calc(16);
+    }
+    .copyright-container {
+      margin-top: rem-calc(28);
+    }
+
+    @include breakpoint(medium) {
+      .footer-menu-container:first-child {
+        margin-top: 0;
+      }
+    }
+
+    @include breakpoint(large) {
       .footer-menu-container {
-        margin-top: rem-calc(16);
+        margin-top: 0;
+        @include fluid-props(12px, 32px, margin-left);
       }
-      .copyright-container {
-        margin-top: rem-calc(28);
-      }
+    }
 
-      @include breakpoint(medium) {
-        .footer-menu-container:first-child {
-          margin-top: 0;
-        }
-      }
-
-      @include breakpoint(large) {
-        .footer-menu-container {
-          margin-top: 0;
-          @include fluid-props(12px, 32px, margin-left);
-        }
-      }
-
-      @include breakpoint(xlarge) {
-        .copyright-container {
-          margin-top: 0;
-        }
-      }
-    
     .footer-left {
       > * {
         @include breakpoint(xlarge) {
@@ -403,6 +402,18 @@ footer {
       }
     }
 
+    @include breakpoint(xlarge only) {
+      .copyright-container {
+        margin-left: 0;
+      }
+    }
+  
+    @include breakpoint(xlarge) {
+      .copyright-container {
+        margin-top: 0;
+      }
+    }
+    
     .footer-logo-container {
       @include fluid-props(44px, 48px, height);
     }
@@ -421,18 +432,9 @@ footer {
 .no-touchevents {
   footer {
     .footer-container {
-      .footer-menu-container {
-        .menu-link:hover{
-          .footer-menu-title{
-            opacity: 0.6;
-          }
-        }
-      }
-      
-      .social-media-container {
-        .icon-item:hover {
-          opacity: 0.6;
-        }
+      a:hover {
+        color: $white;
+        opacity: 0.6;
       }
     }
   }

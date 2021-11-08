@@ -71,44 +71,55 @@
 
     <section id="press-coverage">
         <div class="coverage-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom border-top coverage-inner-container">
-                <?php foreach($press_coverage as $key => $item) : ?>
-                    <?php
-                        $date = date('d M Y', strtotime($item['date']));
-                        $url = $item['url'];
-                        $target = '_blank';
-                        if ($url == null) {
-                            $url = '#';
-                            $target = '';
-                        }
-                    ?>
-                    <div class="cell medium-3 trim-headings <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
-                        <?php if($key == 0) : ?>
-                            <h1>Press Coverage</h1>
-                        <?php endif; ?>
-                    </div>
-                    <div class="cell medium-3 coverage-image-container">
-                        <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-image-link" alt="Link of <?php print $item['title']; ?> Press" title="Link of <?php print $item['title']; ?> Press">
-                            <img src="<?php print $item['image']; ?>" class="coverage-image" alt="Image of <?php print $item['title']; ?> Press">
-                        </a>
-                    </div>
-                    <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container <?php print ($key == count($press_coverage) - 1) ? 'last' : '';?>">
-                        <div class="coverage-title">
-                            <div class="p-style uppercase">
-                                <?php print $item['source']; ?>
-                            </div>
-                            <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-title-link" alt="Link of <?php print $item['title']; ?> Press" title="Link of <?php print $item['title']; ?> Press">
-                                <div class="h3-style color-black title-text">
-                                    <?php print $item['title']; ?>
-                                </div>
+            <?php if (is_array($press_coverage) && count($press_coverage) > 0): ?>
+                <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vb-2 vert-pad-top-expanded vert-pad-bottom border-top coverage-inner-container">
+                    <?php foreach($press_coverage as $key => $item) : ?>
+                        <?php
+                            $date = date('d M Y', strtotime($item['date']));
+                            $url = $item['url'];
+                            $target = '_blank';
+                            if ($url == null) {
+                                $url = '#';
+                                $target = '';
+                            }
+                        ?>
+                        <div class="cell medium-3 trim-headings <?php print ($key == 0) ? '' : 'show-for-medium' ; ?>">
+                            <?php if($key == 0) : ?>
+                                <h1>Press Coverage</h1>
+                            <?php endif; ?>
+                        </div>
+                        <div class="cell medium-3 coverage-image-container">
+                            <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-image-link" alt="Link of <?php print $item['title']; ?> Press" title="Link of <?php print $item['title']; ?> Press">
+                                <img src="<?php print $item['image']; ?>" class="coverage-image" alt="Image of <?php print $item['title']; ?> Press">
                             </a>
                         </div>
-                        <div class="p-style uppercase">
-                            <?php print $date; ?>
+                        <div class="cell medium-6 flex-container align-justify flex-dir-column coverage-title-container <?php print ($key == count($press_coverage) - 1) ? 'last' : '';?>">
+                            <div class="coverage-title">
+                                <div class="p-style uppercase">
+                                    <?php print $item['source']; ?>
+                                </div>
+                                <a href="<?php print $url; ?>" target="<?php print $target; ?>" class="coverage-title-link" alt="Link of <?php print $item['title']; ?> Press" title="Link of <?php print $item['title']; ?> Press">
+                                    <div class="h3-style color-black title-text">
+                                        <?php print $item['title']; ?>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-style uppercase">
+                                <?php print $date; ?>
+                            </div>
                         </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php else: ?>
+                <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vert-pad-top-expanded vert-pad-bottom border-top coverage-inner-container">
+                    <div class="cell medium-3 trim-headings">
+                        <h1>Press Coverage</h1>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                    <div class="cell medium-9">
+                        Coming soon!
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 </main>

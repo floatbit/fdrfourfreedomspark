@@ -4,24 +4,24 @@
 	$social_media = get_field('social_media', 'option');  
 ?>
 <footer class="bg-color-blue">
-	<div class="grid-x footer-container">
-		<div class="cell medium-6 large-shrink footer-left xlarge-flex-container align-middle align-left">
+	<div class="grid-x grid-margin-x footer-container">
+		<div class="cell medium-6 large-shrink footer-left xxlarge-flex-container align-middle align-left">
 			<a href="/" alt="Link of Footer Logo">
 				<img class="footer-logo-container" src="<?php print TEMPLATE_IMAGE_PATH."/logo-footer.svg" ?>" alt="Four Freedom Park Conservacy Footer Logo">
 			</a>
-			<div class="copyright-container font-body-alt color-white">© <?php print date('Y'); ?> Four Freedoms Park Conservancy</div>
+			<div class="copyright-container font-body-alt color-white">© <?php print date('Y'); ?> Four Freedoms Park Conservancy&nbsp;&nbsp;|&nbsp;&nbsp;Website by <a href="https://www.kudos.nyc" target="_blank">kudos.nyc</a></div>
 		</div>
 		<div class="cell medium-6 large-auto footer-right large-flex-container align-middle align-right">
 			<?php foreach($footer_nav as $item) : ?>
 				<div class="footer-menu-container">
 					<a href="<?php print $item->url; ?>" class="menu-link" alt="Link of Menu <?php print $item->title; ?> on Footer">
-						<div class="footer-menu-title font-body-alt color-white"><?php print $item->title; ?></div>
+						<span class="footer-menu-title font-body-alt"><?php print $item->title; ?></span>
 					</a>
 				</div>
 			<?php endforeach; ?>
 			<div class="footer-menu-container email-container">
 				<a href="mailto:<?php print $email; ?>" class="menu-link" alt="Link of Four Freedom Park Conservacy Email">
-					<div class="footer-menu-title font-body-alt color-white"><?php print $email; ?></div>
+					<span class="footer-menu-title font-body-alt"><?php print $email; ?></span>
 				</a>
 			</div>
 			<div class="footer-menu-container social-media-container">

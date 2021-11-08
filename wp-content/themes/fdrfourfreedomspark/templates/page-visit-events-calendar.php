@@ -11,16 +11,6 @@
 	<?php
 		global $post;
 
-		set_query_var( 'part_params', array(
-			'type' 	=> 'event',
-			'title' => $post->post_title,
-			'items_per_page' => 6,
-			'tax' => $_GET['tax']
-		) );
-		get_template_part( 'parts/panel-header-filter' );
-	?>
-	
-	<?php
 		$args = array(
 			'post_type'      => 'event',
 			'post_status'    => 'publish',
@@ -30,8 +20,17 @@
 			'posts_per_page' => -1,
 		);
 		$events = get_posts($args);
-	?>	
 
+		set_query_var( 'part_params', array(
+			'type' 	=> 'event',
+			'title' => $post->post_title,
+			'items_per_page' => 6,
+			'tax' => $_GET['tax'],
+			'data_count' => count($events),
+		) );
+		get_template_part( 'parts/panel-header-filter' );
+	?>
+	
 	<?php if ($events): ?>
 		<div class="grid-x grid-padding-y events-section pos-relative vb-2 border-top">
 			<?php foreach ($events as $event): ?>
