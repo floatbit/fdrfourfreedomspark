@@ -255,7 +255,9 @@ header {
           &::before {
             font-family: 'Font Awesome 5 Pro';
             content: "\f078";
-            font-weight: 600;
+            font-weight: 400;
+            right: 0;
+            font-size: 20px;
 
             @extend .color-black;
           }
