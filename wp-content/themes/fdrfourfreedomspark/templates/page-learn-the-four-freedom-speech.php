@@ -79,49 +79,51 @@
             <?php endforeach; ?>
         </div>
     </section>
+    
+    <?php if (is_array($featured_blogs) && count($featured_blogs) > 0): ?>
+        <section id="featured-blogs-section">
+            <div class="featured-blogs-container trim-paragraphs">
+                <?php foreach($featured_blogs as $key => $item) : ?>
+                    <?php 
+                        $cat = get_the_category($item->ID);
+                        $image = get_the_post_thumbnail_url($item->ID);
+                        $post = get_post($item->ID);
+                        $cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
+                        $even = false;
+                        $border_class = 'vb-1 vb-3';
+                        if (($key+1) % 2 == 0) {
+                            $even = true;
+                            $border_class = 'vb-1 vb-2';
+                        }
+                        set_query_var( 'part_params', array(
+                            'eyebrow' => $cat_names['names'],
+                            'title' => get_the_title(),
+                            'image' => $image,
+                            'text' => get_the_content(),
+                            'border_class' => $border_class,
+                            'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
+                            'less_padding' => false,
+                            'text_with_image' => true,
+                            'empty_first_cell' => $even,
+                            'cell_class' => 'vert-margin-top',
+                            'title_size' => 'h1'
+                        ));
+                        get_template_part( 'parts/panel-content' );
+                    ?>
+                <?php endforeach; ?>
+            </div>
+        </section>
 
-    <section id="featured-blogs-section">
-        <div class="featured-blogs-container trim-paragraphs">
-            <?php foreach($featured_blogs as $key => $item) : ?>
-                <?php 
-                    $cat = get_the_category($item->ID);
-                    $image = get_the_post_thumbnail_url($item->ID);
-                    $post = get_post($item->ID);
-					$cat_names = ffp_get_post_categ_urls($item, 'category', 'blogs');
-                    $even = false;
-                    $border_class = 'vb-1 vb-3';
-                    if (($key+1) % 2 == 0) {
-                        $even = true;
-                        $border_class = 'vb-1 vb-2';
-                    }
-					set_query_var( 'part_params', array(
-						'eyebrow' => $cat_names['names'],
-                        'title' => get_the_title(),
-                        'image' => $image,
-                        'text' => get_the_content(),
-                        'border_class' => $border_class,
-                        'additional_class' => 'vert-pad-top-expanded vert-pad-bottom-expanded border-bottom',
-                        'less_padding' => false,
-                        'text_with_image' => true,
-                        'empty_first_cell' => $even,
-                        'cell_class' => 'vert-margin-top',
-                        'title_size' => 'h1'
-                    ));
-                    get_template_part( 'parts/panel-content' );
-                ?>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-    <section id="see-all-section">
-        <div class="see-all-container">
-            <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vert-pad-top vert-pad-bottom-expanded">
-                <div class="cell medium-3">
-		            <?php print do_shortcode( '[link-with-arrow title="See All Posts" url="/learn/blog" ]' ); ?>
+        <section id="see-all-section">
+            <div class="see-all-container">
+                <div class="grid-x grid-padding-x grid-padding-y pos-relative vb-1 vert-pad-top vert-pad-bottom-expanded">
+                    <div class="cell medium-3">
+                        <?php print do_shortcode( '[link-with-arrow title="See All Posts" url="/learn/blog" ]' ); ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php get_footer();?>
