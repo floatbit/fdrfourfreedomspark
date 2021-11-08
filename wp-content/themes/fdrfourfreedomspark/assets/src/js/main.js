@@ -70,8 +70,10 @@ navHandler = {
       e.preventDefault();
       if ($($smallMenuNavigation).hasClass('active')) {
         $($smallMenuNavigation).removeClass('active');
+        $('html').removeClass('disable-scroll');
       } else {				
         $($smallMenuNavigation).addClass('active');
+        $('html').addClass('disable-scroll');
       }
     })
   }

@@ -8,7 +8,7 @@
             @include fluid-props(-64px, -104px, margin-top);
 
             .hero-image {
-                width: 100vw;
+                width: 100%;
                 height: 100vh;
                 @include fluid-props(656px, 810px, height);
             }
