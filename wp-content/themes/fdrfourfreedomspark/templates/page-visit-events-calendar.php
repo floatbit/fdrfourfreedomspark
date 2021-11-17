@@ -27,6 +27,7 @@
 			'items_per_page' => 6,
 			'tax' => $_GET['tax'],
 			'data_count' => count($events),
+                        'no_events_text' => apply_filters('the_content', $post->post_content)
 		) );
 		get_template_part( 'parts/panel-header-filter' );
 	?>

@@ -4,6 +4,7 @@
 	$items_per_page = $part_params['items_per_page'];
 	$tax = $part_params['tax'];
 	$data_count = $part_params['data_count'] ? : 0;
+        $no_events_text = $part_params['no_events_text'];
 	
 	if ($type == 'event') {
 		$filter_title = 'All Event Types';
@@ -11,6 +12,9 @@
 		$showing_text = 'Events';
 		$data_tax = get_term_by('slug', $tax, 'event_type');
 		$empty_text = 'More events will be announced soon. Join our <a href="/connect/contact-us">mailing list</a>.';
+                if ($no_events_text) {
+                   $empty_text = $no_events_text;
+                }
 	} else if ($type == 'blog') {
 		$filter_title = 'All Categories';
 		$filter_options = get_terms( 'category' );
