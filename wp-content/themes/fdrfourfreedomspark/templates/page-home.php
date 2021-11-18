@@ -78,7 +78,7 @@
 						<div class="flex-container align-middle info-item">
 							<a href="/donate" class="hero-link">
 								<div class="p-style color-black info-donate">
-									<span class="fal fa-wheelchair"></span>Donate
+									<span class="fal fa-hand-holding-heart"></span>Donate
 								</div>
 							</a>
 						</div>
