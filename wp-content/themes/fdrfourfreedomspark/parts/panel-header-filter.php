@@ -10,7 +10,7 @@
 		$filter_options = get_terms( 'event_type' );
 		$showing_text = 'Events';
 		$data_tax = get_term_by('slug', $tax, 'event_type');
-		$empty_text = 'More events will be announced soon. Join our <a href="/connect/contact-us">mailing list</a>.';
+		$empty_text = 'Check back in in March for our Spring 2022 Events Season.';
 	} else if ($type == 'blog') {
 		$filter_title = 'All Categories';
 		$filter_options = get_terms( 'category' );

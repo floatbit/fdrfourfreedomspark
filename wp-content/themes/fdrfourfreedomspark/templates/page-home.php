@@ -76,9 +76,9 @@
 					</div>
 					<div class="cell small-6 medium-2 border-left hero-info-item">
 						<div class="flex-container align-middle info-item">
-							<a href="/visit/accessibility" class="hero-link">
-								<div class="p-style color-black info-access">
-									<span class="fal fa-wheelchair"></span>Accessibility
+							<a href="/donate" class="hero-link">
+								<div class="p-style color-black info-donate">
+									<span class="fal fa-wheelchair"></span>Donate
 								</div>
 							</a>
 						</div>

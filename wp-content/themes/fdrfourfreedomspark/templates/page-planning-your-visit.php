@@ -117,8 +117,7 @@
 		</div>
 		<div class="cell medium-3">
 			<p class="static-text">	
-				Help us maintain the State Park by<br>
-				observing the following:</p>
+				Help us maintain the State Park.</p>
 			
 			<div class="text-rules-container vert-pad-top">
 				<?php print do_shortcode( '[deck]Rules[/deck]' ); ?>
