@@ -30,13 +30,20 @@
 <main class="border-side">
 	<section id="home-hero">
 		<div class="hero-container">
-			<?php if(strtolower(end(explode(".",$hero['url']))) == "mp4"): ?>
-				<video muted autoplay loop playsinline class="hero-image background-cover">
-					<source src="<?php print $hero['url']; ?>" type="video/mp4" />
-				</video>	
-			<?php else: ?>
-				<div class="hero-image background-cover" style="background-image:url(<?php print $hero['url'] ?>)"></div>
-			<?php endif; ?>
+			<div class="carousel carousel-main">
+				<?php foreach($hero as $hero_item): ?>
+						<div class="carousel-cell">
+							<?php if(strtolower(end(explode(".",$hero_item['file']['url']))) == "mp4"): ?>
+								<video muted autoplay loop playsinline class="hero-image background-cover">
+									<source src="<?php print $hero_item['file']['url']; ?>" type="video/mp4" />
+								</video>	
+							<?php else: ?>
+								<div class="hero-image background-cover" style="background-image:url(<?php print $hero_item['file']['url']; ?>)"></div>
+							<?php endif; ?>
+						</div>
+				<?php endforeach; ?>
+				
+			</div>
 			
 			<div class="hero-info-container bg-color-white">
 				<div class="grid-x grid-padding-x">

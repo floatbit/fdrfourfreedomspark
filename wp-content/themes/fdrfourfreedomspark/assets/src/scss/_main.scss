@@ -438,6 +438,16 @@ footer {
   }
 }
 
+.carousel {
+  .carousel-cell {
+    width: 100%;
+  }
+  .flickity-prev-next-button {
+    background-color: transparent;
+    color: $white;
+  }
+}
+
 .no-touchevents {
   footer {
     .footer-container {

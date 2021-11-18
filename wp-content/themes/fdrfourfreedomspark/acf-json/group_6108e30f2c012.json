@@ -6,7 +6,7 @@
             "key": "field_6108e33638171",
             "label": "Hero",
             "name": "hero",
-            "type": "file",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,11 +15,32 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "png,jpg,mp4"
+            "collapsed": "",
+            "min": 1,
+            "max": 6,
+            "layout": "table",
+            "button_label": "Add Media",
+            "sub_fields": [
+                {
+                    "key": "field_6195d9bc866d7",
+                    "label": "File",
+                    "name": "file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "png,jpg,mp4"
+                }
+            ]
         },
         {
             "key": "field_6108e37d38172",
@@ -140,5 +161,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627992878
+    "modified": 1637229959
 }
