@@ -133,6 +133,7 @@
                 }
                 textarea {
                     height: unset;
+                    padding: rem-calc(16);
                 }
                 input[type=checkbox]{
                     @extend .input-style-checkbox;
