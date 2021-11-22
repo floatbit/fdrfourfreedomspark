@@ -199,10 +199,14 @@
     }
 }
 
-#gform_wrapper_3 {
+#gform_wrapper_3,
+#gform_confirmation_wrapper_3 {
     @include breakpoint(small only) {
         margin-bottom: rem-calc(32);
     }
+}
+
+#gform_wrapper_3 {
     ul {
         list-style: none;
         margin-left: 0;
