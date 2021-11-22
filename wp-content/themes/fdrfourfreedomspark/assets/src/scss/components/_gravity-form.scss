@@ -228,6 +228,12 @@
                 margin-top: rem-calc(8);
             }
         }
+
+        #field_3_16 {
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
         
         .ginput_container_radio {
             ul {
