@@ -200,6 +200,9 @@
 }
 
 #gform_wrapper_3 {
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc(32);
+    }
     ul {
         list-style: none;
         margin-left: 0;
