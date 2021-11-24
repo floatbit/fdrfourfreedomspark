@@ -157,6 +157,13 @@
             margin-top: rem-calc(16);
         }
     }
+    .gform_validation_errors {
+        h2 {
+            @extend .p-style;
+            color: get-color(alert);
+            margin-bottom: $paragraph-margin-bottom;
+        }
+    }
 }
 
 #gform_wrapper_1 {
