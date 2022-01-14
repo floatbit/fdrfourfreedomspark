@@ -31,6 +31,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <section id="press-releases">
         <div class="releases-container">
@@ -67,7 +68,7 @@
                 <?php endforeach; ?>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <section id="press-coverage">
         <div class="coverage-container">
