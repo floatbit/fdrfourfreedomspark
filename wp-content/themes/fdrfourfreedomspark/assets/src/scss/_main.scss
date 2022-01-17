@@ -136,6 +136,10 @@ header {
 
   .menus-container {
 
+    a, a:hover {
+      text-decoration: none;
+    }
+
     .menu-item-container {
       position: relative;
       cursor: pointer;
@@ -378,11 +382,6 @@ footer {
     margin: 0;
   }
 
-  a {
-    color: $white;
-    transition: none;
-  }
-
   .footer-container {
     .footer-menu-container {
       margin-top: rem-calc(16);
@@ -390,7 +389,12 @@ footer {
     .copyright-container {
       margin-top: rem-calc(28);
     }
-
+    a {
+      color: $white;
+      transition: none;
+      text-decoration: none;
+    }
+    
     @include breakpoint(medium) {
       .footer-menu-container:first-child {
         margin-top: 0;
@@ -456,8 +460,7 @@ footer {
   footer {
     .footer-container {
       a:hover {
-        color: $white;
-        opacity: 0.6;
+        text-decoration: underline;
       }
     }
   }

@@ -7,6 +7,10 @@
             position: relative;
             @include fluid-props(-64px, -104px, margin-top);
 
+            a {
+                text-decoration: none;
+            }
+
             .hero-image {
                 width: 100%;
                 height: 100vh;

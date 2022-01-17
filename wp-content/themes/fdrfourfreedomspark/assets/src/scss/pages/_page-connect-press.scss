@@ -48,13 +48,19 @@
 	}
 }
 
+#press-releases, #press-coverages {
+	a {
+		text-decoration: none;
+	}
+}
+
 .no-touchevents {
 	#press-releases {
 		.releases-container {
 			.releases-inner-container {
 				.releases-title-link:hover {
 					.releases-title {
-						opacity: 0.6;
+						color: get-color(primary);
 					}
 				}
 			}
@@ -74,7 +80,7 @@
 					.coverage-title {
 						.coverage-title-link:hover {
 							.title-text {
-								opacity: 0.6;
+								color: get-color(primary);
 							}
 						}
 					}

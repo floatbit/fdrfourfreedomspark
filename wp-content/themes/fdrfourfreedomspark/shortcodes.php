@@ -110,7 +110,7 @@
             if ($args['text_color']) {
                 $text_color = $args['text_color'];
             } else {
-                $text_color = 'color-blue';
+                $text_color = '';
             }
 
         }
