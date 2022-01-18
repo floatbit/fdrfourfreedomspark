@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 			draggable: true,
 			pageDots: false,
 			wrapAround: true,
-			autoPlay: 2500,
+			autoPlay: 6000,
 			prevNextButtons: true,
 		});	
 	}
