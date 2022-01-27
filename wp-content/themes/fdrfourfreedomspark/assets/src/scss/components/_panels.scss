@@ -162,6 +162,9 @@
 .quote-text,
 .quote-indent {
     text-indent: -0.5rem;
+    &.cancel-indent {
+        text-indent: 0;
+    }
 }
 
 .content-inner-container {

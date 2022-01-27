@@ -1,7 +1,8 @@
 <?php 
 	$footer_nav = wp_get_nav_menu_items('Footer Nav');
 	$email = get_field('email', 'option');
-	$social_media = get_field('social_media', 'option');  
+	$social_media = get_field('social_media', 'option');
+	get_template_part( 'parts/panel-popup' );
 ?>
 <footer class="bg-color-blue">
 	<div class="grid-x grid-margin-x footer-container">

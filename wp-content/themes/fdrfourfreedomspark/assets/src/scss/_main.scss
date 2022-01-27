@@ -80,6 +80,39 @@ p {
   }
 }
 
+.popup-reveal {
+  outline: 0;
+  position: relative;
+  @include fluid-props(20px, 32px, padding-left);
+  @include fluid-props(20px, 32px, padding-right);
+  @include fluid-props(48px, 64px, padding-top);
+  @include fluid-props(48px, 64px, padding-bottom);
+  top: 50% !important;
+  transform: translateY(-50%);
+  @include breakpoint(small only) {
+    width: calc(100% - 40px);
+    height: unset;
+    min-height: unset;
+    left: 20px;
+  }
+  .cell-close {
+    position: absolute;
+    @include fluid-props(16px, 20px, right);
+    @include fluid-props(16px, 20px, top);
+  }
+  .quote-text {
+    @include fluid-props(28px, 28px, margin-bottom);
+  }
+  .cta {
+    a {
+      color: $white;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
 ul li {
   @extend .p-style;
 }

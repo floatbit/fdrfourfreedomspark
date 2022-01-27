@@ -323,6 +323,11 @@ jQuery(document).ready(function($) {
     fdrTimelineWindow = window.open('/learn/timeline', 'fdrTimeline');
   });
 
+  var $popup = $('#popup-reveal');
+  if ($popup.length > 0) {
+    $popup.foundation('open');
+  }
+
 	// Adds Flex Video to YouTube and Vimeo Embeds
   $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
     $(this).parent().addClass('responsive-embed widescreen')
