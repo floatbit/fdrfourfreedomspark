@@ -325,7 +325,9 @@ jQuery(document).ready(function($) {
 
   var $popup = $('#popup-reveal');
   if ($popup.length > 0) {
-    $popup.foundation('open');
+    setTimeout(function() {
+      $popup.foundation('open');
+    }, 1500);
   }
 
 	// Adds Flex Video to YouTube and Vimeo Embeds

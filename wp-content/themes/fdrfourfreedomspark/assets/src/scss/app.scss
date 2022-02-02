@@ -4,6 +4,9 @@
 @import 'foundation';
 @import 'motion-ui';
 
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
 // Global styles
 @include foundation-global-styles;
 // @include foundation-forms;
